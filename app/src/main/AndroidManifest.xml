@@ -64,7 +64,7 @@
 		android:requestLegacyExternalStorage="true"
 		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
-		android:theme="@style/Theme.Kotatsu"
+		android:theme="@style/Theme.Futon"
 		tools:ignore="UnusedAttribute">
 
 		<activity
@@ -90,10 +90,29 @@
 				<category android:name="android.intent.category.DEFAULT" />
 				<category android:name="android.intent.category.BROWSABLE" />
 
-				<data android:scheme="http" />
-				<data android:scheme="https" />
-				<data android:host="kotatsu.app" />
-				<data android:path="/manga" />
+				<data
+					android:scheme="https"
+					android:host="futon.app"
+					android:pathPrefix="/manga" />
+				<data
+					android:scheme="http"
+					android:host="futon.app"
+					android:pathPrefix="/manga" />
+			</intent-filter>
+			<intent-filter android:autoVerify="true">
+				<action android:name="android.intent.action.VIEW" />
+
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+
+				<data
+					android:scheme="https"
+					android:host="kotatsu.app"
+					android:pathPrefix="/manga" />
+				<data
+					android:scheme="http"
+					android:host="kotatsu.app"
+					android:pathPrefix="/manga" />
 			</intent-filter>
 			<intent-filter>
 				<action android:name="android.intent.action.VIEW" />
@@ -101,9 +120,15 @@
 				<category android:name="android.intent.category.DEFAULT" />
 				<category android:name="android.intent.category.BROWSABLE" />
 
-				<data android:scheme="kotatsu" />
-				<data android:host="manga" />
-				<data android:host="kotatsu.app" />
+				<data android:scheme="futon" android:host="manga" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+
+				<data android:scheme="kotatsu" android:host="manga" />
 			</intent-filter>
 		</activity>
 		<activity
@@ -156,9 +181,31 @@
 				<category android:name="android.intent.category.DEFAULT" />
 				<category android:name="android.intent.category.BROWSABLE" />
 
-				<data android:scheme="kotatsu" />
-				<data android:host="about" />
-				<data android:host="sync-settings" />
+				<data android:scheme="futon" android:host="about" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+
+				<data android:scheme="futon" android:host="sync-settings" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+
+				<data android:scheme="kotatsu" android:host="about" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+
+				<data android:scheme="kotatsu" android:host="sync-settings" />
 			</intent-filter>
 		</activity>
 		<activity
