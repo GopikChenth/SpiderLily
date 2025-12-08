@@ -76,19 +76,17 @@ jobs:
       - name: Get version
         id: version
         run: |
-          # Extract version from build (e.g., N20251208)
-          APK=$(find app/build/outputs/apk/nightly -name "*.apk" | head -1)
-          if [ -f "$APK" ]; then
-            # Get BuildInfo from APK or use current date
-            DATE=$(date -u +"%Y%m%d")
-            echo "version=N$DATE" >> $GITHUB_OUTPUT
-          fi
+          # Use short commit SHA for nightly tag
+          COMMIT_SHA=$(git rev-parse --short=7 HEAD)
+          DATE=$(date -u +"%Y%m%d")
+          echo "version=nightly-$DATE-$COMMIT_SHA" >> $GITHUB_OUTPUT
+          echo "display_name=Nightly $DATE ($COMMIT_SHA)" >> $GITHUB_OUTPUT
 
       - name: Create Nightly Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.version.outputs.version }}
-          name: Futon Nightly ${{ steps.version.outputs.version }}
+          name: Futon ${{ steps.version.outputs.display_name }}
           draft: false
           prerelease: true
           files: |

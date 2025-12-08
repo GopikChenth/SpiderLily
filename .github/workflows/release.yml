@@ -22,6 +22,17 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
+      - name: Get version from tag
+        id: version
+        run: |
+          TAG=${GITHUB_REF#refs/tags/}
+          VERSION=${TAG#v}
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          # Extract major.minor.patch and calculate version code
+          IFS='.' read -r MAJOR MINOR PATCH <<< "$VERSION"
+          VERSION_CODE=$((MAJOR * 10000 + MINOR * 100 + PATCH))
+          echo "version_code=$VERSION_CODE" >> $GITHUB_OUTPUT
+
       - name: Decode keystore
         run: |
           echo "${{ secrets.KEYSTORE_FILE }}" | base64 -d > keystore.jks
@@ -32,13 +43,10 @@ jobs:
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
-        run: ./gradlew assembleRelease
-
-      - name: Get version from tag
-        id: version
         run: |
-          TAG=${GITHUB_REF#refs/tags/}
-          echo "version=${TAG#v}" >> $GITHUB_OUTPUT
+          ./gradlew assembleRelease \
+            -PversionName=${{ steps.version.outputs.version }} \
+            -PversionCode=${{ steps.version.outputs.version_code }}
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
