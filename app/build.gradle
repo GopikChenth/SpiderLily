@@ -18,7 +18,7 @@ android {
 	namespace = 'org.koitharu.kotatsu'
 
 	defaultConfig {
-		applicationId 'org.koitharu.kotatsu'
+		applicationId 'io.github.landwarderer.futon'
 		minSdk = 23
 		targetSdk = 36
 		versionCode = project.hasProperty('versionCode') ? project.property('versionCode').toInteger() : 1033
