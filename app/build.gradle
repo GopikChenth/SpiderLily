@@ -21,9 +21,9 @@ android {
 		applicationId 'io.github.landwarderer.futon'
 		minSdk = 23
 		targetSdk = 36
-		versionCode = project.hasProperty('versionCode') ? project.property('versionCode').toInteger() : 1033
-		versionName = project.hasProperty('versionName') ? project.property('versionName') : '9.4.1'
-		generatedDensities = []
+        versionCode project.hasProperty('versionCode') ? project.property('versionCode').toInteger() : 1033
+        versionName project.hasProperty('versionName') ? project.property('versionName') : '9.4.1'
+        generatedDensities = []
 		testInstrumentationRunner 'org.koitharu.kotatsu.HiltTestRunner'
 		ksp {
 			arg('room.generateKotlin', 'true')
@@ -41,10 +41,10 @@ android {
 	}
 	signingConfigs {
 		release {
-			storeFile = file(System.getenv('KEYSTORE_FILE') ?: 'keystore.jks')
-			storePassword = System.getenv('KEYSTORE_PASSWORD') ?: System.console()?.readPassword("Store password: ")?.toString()
-			keyAlias = System.getenv('KEY_ALIAS') ?: System.console()?.readLine("Key alias: ")
-			keyPassword = System.getenv('KEY_PASSWORD') ?: System.console()?.readPassword("Key password: ")?.toString()
+            storeFile file(System.getenv('KEYSTORE_FILE') ?: 'keystore.jks')
+            storePassword System.getenv('KEYSTORE_PASSWORD') ?: System.console()?.readPassword("Store password: ")?.toString()
+            keyAlias System.getenv('KEY_ALIAS') ?: System.console()?.readLine("Key alias: ")
+            keyPassword = System.getenv('KEY_PASSWORD') ?: System.console()?.readPassword("Key password: ")?.toString()
 		}
 	}
 	buildTypes {
@@ -81,12 +81,12 @@ android {
 	}
 	compileOptions {
 		coreLibraryDesugaringEnabled true
-		sourceCompatibility JavaVersion.VERSION_11
-		targetCompatibility JavaVersion.VERSION_11
+		sourceCompatibility JavaVersion.VERSION_17
+		targetCompatibility JavaVersion.VERSION_17
 	}
 	kotlinOptions {
-		jvmTarget = JavaVersion.VERSION_11.toString()
-		freeCompilerArgs += [
+        jvmTarget = JavaVersion.VERSION_17
+        freeCompilerArgs += [
 			'-opt-in=kotlin.ExperimentalStdlibApi',
 			'-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi',
 			'-opt-in=kotlinx.coroutines.ExperimentalForInheritanceCoroutinesApi',
