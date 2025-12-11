@@ -39,6 +39,11 @@ class MainMenuProvider(
 			true
 		}
 
+		R.id.action_downloads -> {
+			router.openDownloads()
+			true
+		}
+
 		else -> false
 	}
 }
