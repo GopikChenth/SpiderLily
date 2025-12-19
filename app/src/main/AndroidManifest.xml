@@ -107,11 +107,11 @@
 
 				<data
 					android:scheme="https"
-					android:host="kotatsu.app"
+					android:host="futonapp.pages.dev"
 					android:pathPrefix="/manga" />
 				<data
 					android:scheme="http"
-					android:host="kotatsu.app"
+					android:host="futonapp.pages.dev"
 					android:pathPrefix="/manga" />
 			</intent-filter>
 			<intent-filter>
@@ -121,14 +121,6 @@
 				<category android:name="android.intent.category.BROWSABLE" />
 
 				<data android:scheme="futon" android:host="manga" />
-			</intent-filter>
-			<intent-filter>
-				<action android:name="android.intent.action.VIEW" />
-
-				<category android:name="android.intent.category.DEFAULT" />
-				<category android:name="android.intent.category.BROWSABLE" />
-
-				<data android:scheme="kotatsu" android:host="manga" />
 			</intent-filter>
 		</activity>
 		<activity
@@ -197,7 +189,7 @@
 				<category android:name="android.intent.category.DEFAULT" />
 				<category android:name="android.intent.category.BROWSABLE" />
 
-				<data android:scheme="kotatsu" android:host="about" />
+				<data android:scheme="futon" android:host="about" />
 			</intent-filter>
 			<intent-filter>
 				<action android:name="android.intent.action.VIEW" />
@@ -205,7 +197,7 @@
 				<category android:name="android.intent.category.DEFAULT" />
 				<category android:name="android.intent.category.BROWSABLE" />
 
-				<data android:scheme="kotatsu" android:host="sync-settings" />
+				<data android:scheme="futon" android:host="sync-settings" />
 			</intent-filter>
 		</activity>
 		<activity
@@ -284,7 +276,7 @@
 				<category android:name="android.intent.category.DEFAULT" />
 				<category android:name="android.intent.category.BROWSABLE" />
 
-				<data android:scheme="kotatsu" />
+				<data android:scheme="futon" />
 				<data android:host="shikimori-auth" />
 				<data android:host="anilist-auth" />
 				<data android:host="mal-auth" />
@@ -303,7 +295,7 @@
 			<intent-filter>
 				<action android:name="android.intent.action.VIEW" />
 				<category android:name="android.intent.category.DEFAULT" />
-				<data android:scheme="kotatsu+kitsu" />
+				<data android:scheme="futon+kitsu" />
 			</intent-filter>
 		</activity>
 		<activity
@@ -460,7 +452,7 @@
 			android:name="org.koitharu.kotatsu.core.exceptions.resolve.CaptchaHandler$DiscardReceiver"
 			android:exported="false">
 			<intent-filter>
-				<action android:name="org.koitharu.kotatsu.CAPTCHA_DISCARD" />
+				<action android:name="org.koitharu.futon.CAPTCHA_DISCARD" />
 			</intent-filter>
 		</receiver>
 		<receiver

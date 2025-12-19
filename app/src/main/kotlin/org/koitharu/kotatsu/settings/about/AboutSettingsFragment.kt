@@ -31,6 +31,7 @@ class AboutSettingsFragment : BasePreferenceFragment(R.string.about) {
 		findPreference<Preference>(AppSettings.KEY_APP_VERSION)?.run {
 			title = getString(R.string.app_version, BuildConfig.VERSION_NAME)
 		}
+		findPreference<Preference>(AppSettings.KEY_LINK_TELEGRAM)?.isVisible = false
 		findPreference<SwitchPreferenceCompat>(AppSettings.KEY_UPDATES_UNSTABLE)?.run {
 			isEnabled = VersionId(BuildConfig.VERSION_NAME).isStable
 			if (!isEnabled) isChecked = true

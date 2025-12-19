@@ -1,4 +1,4 @@
-Kotatsu là một ứng dụng đọc truyện mã nguồn mở miễn phí dành cho các thiết bị Android
+Futon là một ứng dụng đọc truyện mã nguồn mở miễn phí dành cho các thiết bị Android
 
 
 Các tính năng chính:
