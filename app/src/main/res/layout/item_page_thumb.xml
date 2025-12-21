@@ -8,7 +8,7 @@
 	android:layout_height="wrap_content"
 	app:cardBackgroundColor="?colorBackgroundFloating">
 
-	<org.koitharu.kotatsu.image.ui.CoverImageView
+	<io.github.landwarderer.futon.image.ui.CoverImageView
 		android:id="@+id/imageView_thumb"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"

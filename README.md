@@ -9,13 +9,13 @@
 
 **Futon is a free and open-source manga reader for Android with built-in online content sources.**
 
-![Android 6.0](https://img.shields.io/badge/android-6.0+-brightgreen) [![Sources count](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2FKotatsuApp%2Fkotatsu-parsers%2Frefs%2Fheads%2Fmaster%2F.github%2Fsummary.yaml&query=total&label=manga%20sources&color=%23E9321C)](https://github.com/KotatsuApp/kotatsu-parsers) [![License](https://img.shields.io/github/license/KotatsuApp/Kotatsu)](https://github.com/KotatsuApp/Kotatsu/blob/devel/LICENSE)
+![Android 6.0](https://img.shields.io/badge/android-6.0+-brightgreen) [![Sources count](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2FAppFuton%2Ffuton-parsers%2Frefs%2Fheads%2Fmaster%2F.github%2Fsummary.yaml&query=total&label=manga%20sources&color=%23E9321C)](https://github.com/AppFuton/futon-parsers) [![License](https://img.shields.io/github/license/AppFuton/Futon)](https://github.com/AppFuton/Futon/blob/devel/LICENSE)
 
 ### Main Features
 
 <div align="left">
 
-* Online [manga catalogues](https://github.com/KotatsuApp/kotatsu-parsers) (with 1200+ manga sources)
+* Online [manga catalogues](https://github.com/AppFuton/futon-parsers) (with 1200+ manga sources)
 * Search manga by name, genres and more filters
 * Favorites organized by user-defined categories
 * Reading history, bookmarks and incognito mode support
@@ -46,7 +46,7 @@
 <div align="center">
     <img src="./metadata/en-US/images/tenInchScreenshots/1.png" alt="Tablet view" width="400"/>
     <img src="./metadata/en-US/images/tenInchScreenshots/2.png" alt="Tablet view" width="400"/>
-</div>
+</div>⁹
 
 ### Contributing
 
@@ -96,7 +96,7 @@ We are deeply grateful to:
 * **The original Kotatsu developers** for creating such an outstanding manga reader and making it open source
 * **The Kotatsu community** for their contributions, testing, and support
 * **All translators** who helped localize Kotatsu through [Weblate](https://hosted.weblate.org/engage/kotatsu/)
-* **Parser contributors** who maintain the extensive library of [manga sources](https://github.com/KotatsuApp/kotatsu-parsers)
+* **Parser contributors** who maintain the extensive library of [manga sources](https://github.com/AppFuton/futon-parsers)
 
 This project stands on the shoulders of giants. The Kotatsu team's dedication to creating a feature-rich, user-friendly manga reader has provided an incredible foundation for Futon to build upon.
 

@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <org.koitharu.kotatsu.core.ui.sheet.AdaptiveSheetHeaderBar
+    <io.github.landwarderer.futon.core.ui.sheet.AdaptiveSheetHeaderBar
         android:id="@+id/headerBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
             android:paddingHorizontal="@dimen/margin_small"
             android:paddingBottom="@dimen/margin_normal">
 
-            <org.koitharu.kotatsu.filter.ui.FilterFieldLayout
+            <io.github.landwarderer.futon.filter.ui.FilterFieldLayout
                 android:id="@+id/layout_order"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -54,16 +54,16 @@
 
                 </com.google.android.material.card.MaterialCardView>
 
-            </org.koitharu.kotatsu.filter.ui.FilterFieldLayout>
+            </io.github.landwarderer.futon.filter.ui.FilterFieldLayout>
 
-            <org.koitharu.kotatsu.filter.ui.FilterFieldLayout
+            <io.github.landwarderer.futon.filter.ui.FilterFieldLayout
                 android:id="@+id/layout_saved_filters"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_small"
                 app:title="@string/saved_filters">
 
-                <org.koitharu.kotatsu.core.ui.widgets.ChipsView
+                <io.github.landwarderer.futon.core.ui.widgets.ChipsView
                     android:id="@+id/chips_saved_filters"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -71,9 +71,9 @@
                     android:layout_marginTop="@dimen/margin_small"
                     app:chipStyle="@style/Widget.Futon.Chip.Filter" />
 
-            </org.koitharu.kotatsu.filter.ui.FilterFieldLayout>
+            </io.github.landwarderer.futon.filter.ui.FilterFieldLayout>
 
-            <org.koitharu.kotatsu.filter.ui.FilterFieldLayout
+            <io.github.landwarderer.futon.filter.ui.FilterFieldLayout
                 android:id="@+id/layout_locale"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -98,9 +98,9 @@
 
                 </com.google.android.material.card.MaterialCardView>
 
-            </org.koitharu.kotatsu.filter.ui.FilterFieldLayout>
+            </io.github.landwarderer.futon.filter.ui.FilterFieldLayout>
 
-            <org.koitharu.kotatsu.filter.ui.FilterFieldLayout
+            <io.github.landwarderer.futon.filter.ui.FilterFieldLayout
                 android:id="@+id/layout_original_locale"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -125,9 +125,9 @@
 
                 </com.google.android.material.card.MaterialCardView>
 
-            </org.koitharu.kotatsu.filter.ui.FilterFieldLayout>
+            </io.github.landwarderer.futon.filter.ui.FilterFieldLayout>
 
-            <org.koitharu.kotatsu.filter.ui.FilterFieldLayout
+            <io.github.landwarderer.futon.filter.ui.FilterFieldLayout
                 android:id="@+id/layout_genres"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -135,7 +135,7 @@
                 app:showMoreButton="true"
                 app:title="@string/genres">
 
-                <org.koitharu.kotatsu.core.ui.widgets.ChipsView
+                <io.github.landwarderer.futon.core.ui.widgets.ChipsView
                     android:id="@+id/chips_genres"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -143,9 +143,9 @@
                     android:layout_marginTop="@dimen/margin_small"
                     app:chipStyle="@style/Widget.Futon.Chip.Filter" />
 
-            </org.koitharu.kotatsu.filter.ui.FilterFieldLayout>
+            </io.github.landwarderer.futon.filter.ui.FilterFieldLayout>
 
-            <org.koitharu.kotatsu.filter.ui.FilterFieldLayout
+            <io.github.landwarderer.futon.filter.ui.FilterFieldLayout
                 android:id="@+id/layout_genresExclude"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -153,7 +153,7 @@
                 app:showMoreButton="true"
                 app:title="@string/genres_exclude">
 
-                <org.koitharu.kotatsu.core.ui.widgets.ChipsView
+                <io.github.landwarderer.futon.core.ui.widgets.ChipsView
                     android:id="@+id/chips_genresExclude"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -161,9 +161,9 @@
                     android:layout_marginTop="@dimen/margin_small"
                     app:chipStyle="@style/Widget.Futon.Chip.Filter" />
 
-            </org.koitharu.kotatsu.filter.ui.FilterFieldLayout>
+            </io.github.landwarderer.futon.filter.ui.FilterFieldLayout>
 
-            <org.koitharu.kotatsu.filter.ui.FilterFieldLayout
+            <io.github.landwarderer.futon.filter.ui.FilterFieldLayout
                 android:id="@+id/layout_author"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -171,7 +171,7 @@
                 app:showMoreButton="false"
                 app:title="@string/author">
 
-                <org.koitharu.kotatsu.core.ui.widgets.ChipsView
+                <io.github.landwarderer.futon.core.ui.widgets.ChipsView
                     android:id="@+id/chips_author"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -179,16 +179,16 @@
                     android:layout_marginTop="@dimen/margin_small"
                     app:chipStyle="@style/Widget.Futon.Chip.Filter" />
 
-            </org.koitharu.kotatsu.filter.ui.FilterFieldLayout>
+            </io.github.landwarderer.futon.filter.ui.FilterFieldLayout>
 
-            <org.koitharu.kotatsu.filter.ui.FilterFieldLayout
+            <io.github.landwarderer.futon.filter.ui.FilterFieldLayout
                 android:id="@+id/layout_types"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_small"
                 app:title="@string/type">
 
-                <org.koitharu.kotatsu.core.ui.widgets.ChipsView
+                <io.github.landwarderer.futon.core.ui.widgets.ChipsView
                     android:id="@+id/chips_types"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -196,16 +196,16 @@
                     android:layout_marginTop="@dimen/margin_small"
                     app:chipStyle="@style/Widget.Futon.Chip.Filter" />
 
-            </org.koitharu.kotatsu.filter.ui.FilterFieldLayout>
+            </io.github.landwarderer.futon.filter.ui.FilterFieldLayout>
 
-            <org.koitharu.kotatsu.filter.ui.FilterFieldLayout
+            <io.github.landwarderer.futon.filter.ui.FilterFieldLayout
                 android:id="@+id/layout_state"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_small"
                 app:title="@string/state">
 
-                <org.koitharu.kotatsu.core.ui.widgets.ChipsView
+                <io.github.landwarderer.futon.core.ui.widgets.ChipsView
                     android:id="@+id/chips_state"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -213,16 +213,16 @@
                     android:layout_marginTop="@dimen/margin_small"
                     app:chipStyle="@style/Widget.Futon.Chip.Filter" />
 
-            </org.koitharu.kotatsu.filter.ui.FilterFieldLayout>
+            </io.github.landwarderer.futon.filter.ui.FilterFieldLayout>
 
-            <org.koitharu.kotatsu.filter.ui.FilterFieldLayout
+            <io.github.landwarderer.futon.filter.ui.FilterFieldLayout
                 android:id="@+id/layout_contentRating"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_small"
                 app:title="@string/content_rating">
 
-                <org.koitharu.kotatsu.core.ui.widgets.ChipsView
+                <io.github.landwarderer.futon.core.ui.widgets.ChipsView
                     android:id="@+id/chips_contentRating"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -230,16 +230,16 @@
                     android:layout_marginTop="@dimen/margin_small"
                     app:chipStyle="@style/Widget.Futon.Chip.Filter" />
 
-            </org.koitharu.kotatsu.filter.ui.FilterFieldLayout>
+            </io.github.landwarderer.futon.filter.ui.FilterFieldLayout>
 
-            <org.koitharu.kotatsu.filter.ui.FilterFieldLayout
+            <io.github.landwarderer.futon.filter.ui.FilterFieldLayout
                 android:id="@+id/layout_demographics"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_small"
                 app:title="@string/demographics">
 
-                <org.koitharu.kotatsu.core.ui.widgets.ChipsView
+                <io.github.landwarderer.futon.core.ui.widgets.ChipsView
                     android:id="@+id/chips_demographics"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -247,9 +247,9 @@
                     android:layout_marginTop="@dimen/margin_small"
                     app:chipStyle="@style/Widget.Futon.Chip.Filter" />
 
-            </org.koitharu.kotatsu.filter.ui.FilterFieldLayout>
+            </io.github.landwarderer.futon.filter.ui.FilterFieldLayout>
 
-            <org.koitharu.kotatsu.filter.ui.FilterFieldLayout
+            <io.github.landwarderer.futon.filter.ui.FilterFieldLayout
                 android:id="@+id/layout_year"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -267,9 +267,9 @@
                     tools:valueFrom="1900"
                     tools:valueTo="2090" />
 
-            </org.koitharu.kotatsu.filter.ui.FilterFieldLayout>
+            </io.github.landwarderer.futon.filter.ui.FilterFieldLayout>
 
-            <org.koitharu.kotatsu.filter.ui.FilterFieldLayout
+            <io.github.landwarderer.futon.filter.ui.FilterFieldLayout
                 android:id="@+id/layout_yearsRange"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -287,7 +287,7 @@
                     tools:valueFrom="1900"
                     tools:valueTo="2090" />
 
-            </org.koitharu.kotatsu.filter.ui.FilterFieldLayout>
+            </io.github.landwarderer.futon.filter.ui.FilterFieldLayout>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

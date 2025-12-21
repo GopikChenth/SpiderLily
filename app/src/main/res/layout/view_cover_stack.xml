@@ -3,9 +3,9 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
-	tools:parentTag="org.koitharu.kotatsu.core.ui.widgets.StackLayout">
+	tools:parentTag="io.github.landwarderer.futon.core.ui.widgets.StackLayout">
 
-	<org.koitharu.kotatsu.image.ui.CoverImageView
+	<io.github.landwarderer.futon.image.ui.CoverImageView
 		android:id="@+id/imageView_cover3"
 		android:layout_width="wrap_content"
 		android:layout_height="64dp"
@@ -21,7 +21,7 @@
 		tools:src="@tools:sample/backgrounds/scenic"
 		tools:tint="#99FFFFFF" />
 
-	<org.koitharu.kotatsu.image.ui.CoverImageView
+	<io.github.landwarderer.futon.image.ui.CoverImageView
 		android:id="@+id/imageView_cover2"
 		android:layout_width="wrap_content"
 		android:layout_height="64dp"
@@ -36,7 +36,7 @@
 		tools:src="@tools:sample/backgrounds/scenic"
 		tools:tint="#4DFFFFFF" />
 
-	<org.koitharu.kotatsu.image.ui.CoverImageView
+	<io.github.landwarderer.futon.image.ui.CoverImageView
 		android:id="@+id/imageView_cover1"
 		android:layout_width="wrap_content"
 		android:layout_height="64dp"

@@ -46,9 +46,9 @@
 	</queries>
 
 	<application
-		android:name="org.koitharu.kotatsu.KotatsuApp"
+		android:name="io.github.landwarderer.futon.FutonApp"
 		android:allowBackup="true"
-		android:backupAgent="org.koitharu.kotatsu.backups.domain.AppBackupAgent"
+		android:backupAgent="io.github.landwarderer.futon.backups.domain.AppBackupAgent"
 		android:dataExtractionRules="@xml/backup_rules"
 		android:enableOnBackInvokedCallback="@bool/is_predictive_back_enabled"
 		android:extractNativeLibs="true"
@@ -68,7 +68,7 @@
 		tools:ignore="UnusedAttribute">
 
 		<activity
-			android:name="org.koitharu.kotatsu.main.ui.MainActivity"
+			android:name="io.github.landwarderer.futon.main.ui.MainActivity"
 			android:exported="true">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
@@ -76,10 +76,10 @@
 			</intent-filter>
 			<meta-data
 				android:name="android.app.default_searchable"
-				android:value="org.koitharu.kotatsu.search.ui.multi.MultiSearchActivity" />
+				android:value="io.github.landwarderer.futon.search.ui.multi.MultiSearchActivity" />
 		</activity>
 		<activity
-			android:name="org.koitharu.kotatsu.details.ui.DetailsActivity"
+			android:name="io.github.landwarderer.futon.details.ui.DetailsActivity"
 			android:exported="true">
 			<intent-filter>
 				<action android:name="${applicationId}.action.VIEW_MANGA" />
@@ -124,7 +124,7 @@
 			</intent-filter>
 		</activity>
 		<activity
-			android:name="org.koitharu.kotatsu.reader.ui.ReaderActivity"
+			android:name="io.github.landwarderer.futon.reader.ui.ReaderActivity"
 			android:exported="true">
 			<intent-filter>
 				<action android:name="${applicationId}.action.READ_MANGA" />
@@ -138,7 +138,7 @@
 				android:resource="@xml/remote_action" />
 		</activity>
 		<activity
-			android:name="org.koitharu.kotatsu.search.ui.MangaListActivity"
+			android:name="io.github.landwarderer.futon.search.ui.MangaListActivity"
 			android:exported="true"
 			android:label="@string/manga_list">
 			<intent-filter>
@@ -146,25 +146,25 @@
 			</intent-filter>
 		</activity>
 		<activity
-			android:name="org.koitharu.kotatsu.history.ui.HistoryActivity"
+			android:name="io.github.landwarderer.futon.history.ui.HistoryActivity"
 			android:label="@string/history" />
 		<activity
-			android:name="org.koitharu.kotatsu.tracker.ui.updates.UpdatesActivity"
+			android:name="io.github.landwarderer.futon.tracker.ui.updates.UpdatesActivity"
 			android:label="@string/updates" />
 		<activity
-			android:name="org.koitharu.kotatsu.favourites.ui.FavouritesActivity"
+			android:name="io.github.landwarderer.futon.favourites.ui.FavouritesActivity"
 			android:label="@string/favourites" />
 		<activity
-			android:name="org.koitharu.kotatsu.bookmarks.ui.AllBookmarksActivity"
+			android:name="io.github.landwarderer.futon.bookmarks.ui.AllBookmarksActivity"
 			android:label="@string/bookmarks" />
 		<activity
-			android:name="org.koitharu.kotatsu.suggestions.ui.SuggestionsActivity"
+			android:name="io.github.landwarderer.futon.suggestions.ui.SuggestionsActivity"
 			android:label="@string/suggestions" />
 		<activity
-			android:name="org.koitharu.kotatsu.details.ui.related.RelatedMangaActivity"
+			android:name="io.github.landwarderer.futon.details.ui.related.RelatedMangaActivity"
 			android:label="@string/related_manga" />
 		<activity
-			android:name="org.koitharu.kotatsu.settings.SettingsActivity"
+			android:name="io.github.landwarderer.futon.settings.SettingsActivity"
 			android:exported="true"
 			android:label="@string/settings">
 			<intent-filter>
@@ -201,29 +201,29 @@
 			</intent-filter>
 		</activity>
 		<activity
-			android:name="org.koitharu.kotatsu.settings.reader.ReaderTapGridConfigActivity"
+			android:name="io.github.landwarderer.futon.settings.reader.ReaderTapGridConfigActivity"
 			android:label="@string/reader_actions" />
 		<activity
-			android:name="org.koitharu.kotatsu.settings.storage.directories.MangaDirectoriesActivity"
+			android:name="io.github.landwarderer.futon.settings.storage.directories.MangaDirectoriesActivity"
 			android:label="@string/local_manga_directories" />
 		<activity
-			android:name="org.koitharu.kotatsu.browser.BrowserActivity"
+			android:name="io.github.landwarderer.futon.browser.BrowserActivity"
 			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
 			android:windowSoftInputMode="adjustResize" />
 		<activity
-			android:name="org.koitharu.kotatsu.browser.cloudflare.CloudFlareActivity"
+			android:name="io.github.landwarderer.futon.browser.cloudflare.CloudFlareActivity"
 			android:autoRemoveFromRecents="true"
 			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
 			android:windowSoftInputMode="adjustResize" />
 		<activity
-			android:name="org.koitharu.kotatsu.settings.sources.auth.SourceAuthActivity"
+			android:name="io.github.landwarderer.futon.settings.sources.auth.SourceAuthActivity"
 			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
 			android:windowSoftInputMode="adjustResize" />
 		<activity
-			android:name="org.koitharu.kotatsu.favourites.ui.categories.FavouriteCategoriesActivity"
+			android:name="io.github.landwarderer.futon.favourites.ui.categories.FavouriteCategoriesActivity"
 			android:label="@string/manage_categories" />
 		<activity
-			android:name="org.koitharu.kotatsu.widget.shelf.ShelfWidgetConfigActivity"
+			android:name="io.github.landwarderer.futon.widget.shelf.ShelfWidgetConfigActivity"
 			android:exported="true"
 			android:label="@string/manga_shelf">
 			<intent-filter>
@@ -231,7 +231,7 @@
 			</intent-filter>
 		</activity>
 		<activity
-			android:name="org.koitharu.kotatsu.widget.recent.RecentWidgetConfigActivity"
+			android:name="io.github.landwarderer.futon.widget.recent.RecentWidgetConfigActivity"
 			android:exported="true"
 			android:label="@string/recent_manga">
 			<intent-filter>
@@ -239,33 +239,33 @@
 			</intent-filter>
 		</activity>
 		<activity
-			android:name="org.koitharu.kotatsu.search.ui.multi.SearchActivity"
+			android:name="io.github.landwarderer.futon.search.ui.multi.SearchActivity"
 			android:label="@string/search" />
 		<activity
-			android:name="org.koitharu.kotatsu.main.ui.protect.ProtectActivity"
+			android:name="io.github.landwarderer.futon.main.ui.protect.ProtectActivity"
 			android:noHistory="true"
 			android:windowSoftInputMode="adjustResize" />
 		<activity
-			android:name="org.koitharu.kotatsu.settings.protect.ProtectSetupActivity"
+			android:name="io.github.landwarderer.futon.settings.protect.ProtectSetupActivity"
 			android:windowSoftInputMode="adjustResize" />
 		<activity
-			android:name="org.koitharu.kotatsu.download.ui.list.DownloadsActivity"
+			android:name="io.github.landwarderer.futon.download.ui.list.DownloadsActivity"
 			android:label="@string/downloads"
 			android:launchMode="singleTop" />
-		<activity android:name="org.koitharu.kotatsu.image.ui.ImageActivity" />
-		<activity android:name="org.koitharu.kotatsu.favourites.ui.categories.edit.FavouritesCategoryEditActivity" />
+		<activity android:name="io.github.landwarderer.futon.image.ui.ImageActivity" />
+		<activity android:name="io.github.landwarderer.futon.favourites.ui.categories.edit.FavouritesCategoryEditActivity" />
 		<activity
-			android:name="org.koitharu.kotatsu.settings.override.OverrideConfigActivity"
+			android:name="io.github.landwarderer.futon.settings.override.OverrideConfigActivity"
 			android:label="@string/edit" />
 		<activity
-			android:name="org.koitharu.kotatsu.sync.ui.SyncAuthActivity"
+			android:name="io.github.landwarderer.futon.sync.ui.SyncAuthActivity"
 			android:exported="true"
 			android:label="@string/sync" />
 		<activity
-			android:name="org.koitharu.kotatsu.reader.ui.colorfilter.ColorFilterConfigActivity"
+			android:name="io.github.landwarderer.futon.reader.ui.colorfilter.ColorFilterConfigActivity"
 			android:label="@string/color_correction" />
 		<activity
-			android:name="org.koitharu.kotatsu.scrobbling.common.ui.config.ScrobblerConfigActivity"
+			android:name="io.github.landwarderer.futon.scrobbling.common.ui.config.ScrobblerConfigActivity"
 			android:exported="true"
 			android:label="@string/settings"
 			android:launchMode="singleTop">
@@ -285,10 +285,10 @@
 
 		</activity>
 		<activity
-			android:name="org.koitharu.kotatsu.settings.sources.catalog.SourcesCatalogActivity"
+			android:name="io.github.landwarderer.futon.settings.sources.catalog.SourcesCatalogActivity"
 			android:label="@string/sources_catalog" />
 		<activity
-			android:name="org.koitharu.kotatsu.scrobbling.kitsu.ui.KitsuAuthActivity"
+			android:name="io.github.landwarderer.futon.scrobbling.kitsu.ui.KitsuAuthActivity"
 			android:exported="false"
 			android:label="@string/kitsu"
 			tools:ignore="AppLinkUrlError">
@@ -299,19 +299,19 @@
 			</intent-filter>
 		</activity>
 		<activity
-			android:name="org.koitharu.kotatsu.stats.ui.StatsActivity"
+			android:name="io.github.landwarderer.futon.stats.ui.StatsActivity"
 			android:label="@string/reading_stats" />
 		<activity
-			android:name="org.koitharu.kotatsu.alternatives.ui.AlternativesActivity"
+			android:name="io.github.landwarderer.futon.alternatives.ui.AlternativesActivity"
 			android:label="@string/alternatives" />
 		<activity
-			android:name="org.koitharu.kotatsu.settings.about.AppUpdateActivity"
+			android:name="io.github.landwarderer.futon.settings.about.AppUpdateActivity"
 			android:label="@string/app_update_available" />
 		<activity
-			android:name="org.koitharu.kotatsu.tracker.ui.debug.TrackerDebugActivity"
+			android:name="io.github.landwarderer.futon.tracker.ui.debug.TrackerDebugActivity"
 			android:label="@string/tracker_debug_info" />
 		<activity
-			android:name="org.koitharu.kotatsu.picker.ui.PageImagePickActivity"
+			android:name="io.github.landwarderer.futon.picker.ui.PageImagePickActivity"
 			android:exported="true"
 			android:label="@string/pick_manga_page">
 			<intent-filter>
@@ -329,7 +329,7 @@
 			</intent-filter>
 		</activity>
 		<activity
-			android:name="org.koitharu.kotatsu.scrobbling.discord.ui.DiscordAuthActivity"
+			android:name="io.github.landwarderer.futon.scrobbling.discord.ui.DiscordAuthActivity"
 			android:label="@string/discord" />
 
 		<service
@@ -337,42 +337,42 @@
 			android:foregroundServiceType="dataSync"
 			tools:node="merge" />
 		<service
-			android:name="org.koitharu.kotatsu.local.ui.LocalChaptersRemoveService"
+			android:name="io.github.landwarderer.futon.local.ui.LocalChaptersRemoveService"
 			android:foregroundServiceType="dataSync"
 			android:label="@string/local_manga_processing" />
 		<service
-			android:name="org.koitharu.kotatsu.backups.ui.periodical.PeriodicalBackupService"
+			android:name="io.github.landwarderer.futon.backups.ui.periodical.PeriodicalBackupService"
 			android:foregroundServiceType="dataSync"
 			android:label="@string/periodic_backups" />
 		<service
-			android:name="org.koitharu.kotatsu.alternatives.ui.AutoFixService"
+			android:name="io.github.landwarderer.futon.alternatives.ui.AutoFixService"
 			android:foregroundServiceType="dataSync"
 			android:label="@string/fixing_manga" />
 		<service
-			android:name="org.koitharu.kotatsu.local.ui.LocalIndexUpdateService"
+			android:name="io.github.landwarderer.futon.local.ui.LocalIndexUpdateService"
 			android:label="@string/local_manga_processing" />
 		<service
-			android:name="org.koitharu.kotatsu.backups.ui.backup.BackupService"
+			android:name="io.github.landwarderer.futon.backups.ui.backup.BackupService"
 			android:foregroundServiceType="dataSync"
 			android:label="@string/creating_backup" />
 		<service
-			android:name="org.koitharu.kotatsu.backups.ui.restore.RestoreService"
+			android:name="io.github.landwarderer.futon.backups.ui.restore.RestoreService"
 			android:foregroundServiceType="dataSync"
 			android:label="@string/restoring_backup" />
 		<service
-			android:name="org.koitharu.kotatsu.local.ui.ImportService"
+			android:name="io.github.landwarderer.futon.local.ui.ImportService"
 			android:foregroundServiceType="dataSync"
 			android:label="@string/importing_manga" />
 		<service
-			android:name="org.koitharu.kotatsu.widget.shelf.ShelfWidgetService"
+			android:name="io.github.landwarderer.futon.widget.shelf.ShelfWidgetService"
 			android:label="@string/manga_shelf"
 			android:permission="android.permission.BIND_REMOTEVIEWS" />
 		<service
-			android:name="org.koitharu.kotatsu.widget.recent.RecentWidgetService"
+			android:name="io.github.landwarderer.futon.widget.recent.RecentWidgetService"
 			android:label="@string/recent_manga"
 			android:permission="android.permission.BIND_REMOTEVIEWS" />
 		<service
-			android:name="org.koitharu.kotatsu.sync.ui.SyncAuthenticatorService"
+			android:name="io.github.landwarderer.futon.sync.ui.SyncAuthenticatorService"
 			android:exported="true"
 			tools:ignore="ExportedService">
 			<intent-filter>
@@ -383,7 +383,7 @@
 				android:resource="@xml/authenticator_sync" />
 		</service>
 		<service
-			android:name="org.koitharu.kotatsu.sync.ui.favourites.FavouritesSyncService"
+			android:name="io.github.landwarderer.futon.sync.ui.favourites.FavouritesSyncService"
 			android:exported="false"
 			android:label="@string/favourites">
 			<intent-filter>
@@ -394,7 +394,7 @@
 				android:resource="@xml/sync_favourites" />
 		</service>
 		<service
-			android:name="org.koitharu.kotatsu.sync.ui.history.HistorySyncService"
+			android:name="io.github.landwarderer.futon.sync.ui.history.HistorySyncService"
 			android:exported="false"
 			android:label="@string/history">
 			<intent-filter>
@@ -405,15 +405,15 @@
 				android:resource="@xml/sync_history" />
 		</service>
 		<service
-			android:name="org.koitharu.kotatsu.details.service.MangaPrefetchService"
+			android:name="io.github.landwarderer.futon.details.service.MangaPrefetchService"
 			android:exported="false"
 			android:label="@string/prefetch_content" />
 		<service
-			android:name="org.koitharu.kotatsu.browser.AdListUpdateService"
+			android:name="io.github.landwarderer.futon.browser.AdListUpdateService"
 			android:exported="false" />
 
 		<provider
-			android:name="org.koitharu.kotatsu.search.ui.MangaSuggestionsProvider"
+			android:name="io.github.landwarderer.futon.search.ui.MangaSuggestionsProvider"
 			android:authorities="${applicationId}.MangaSuggestionsProvider"
 			android:exported="false" />
 		<provider
@@ -426,13 +426,13 @@
 				android:resource="@xml/filepaths" />
 		</provider>
 		<provider
-			android:name="org.koitharu.kotatsu.sync.ui.favourites.FavouritesSyncProvider"
+			android:name="io.github.landwarderer.futon.sync.ui.favourites.FavouritesSyncProvider"
 			android:authorities="@string/sync_authority_favourites"
 			android:exported="false"
 			android:label="@string/favourites"
 			android:syncable="true" />
 		<provider
-			android:name="org.koitharu.kotatsu.sync.ui.history.HistorySyncProvider"
+			android:name="io.github.landwarderer.futon.sync.ui.history.HistorySyncProvider"
 			android:authorities="@string/sync_authority_history"
 			android:exported="false"
 			android:label="@string/history"
@@ -449,14 +449,14 @@
 		</provider>
 
 		<receiver
-			android:name="org.koitharu.kotatsu.core.exceptions.resolve.CaptchaHandler$DiscardReceiver"
+			android:name="io.github.landwarderer.futon.core.exceptions.resolve.CaptchaHandler$DiscardReceiver"
 			android:exported="false">
 			<intent-filter>
 				<action android:name="org.koitharu.futon.CAPTCHA_DISCARD" />
 			</intent-filter>
 		</receiver>
 		<receiver
-			android:name="org.koitharu.kotatsu.widget.shelf.ShelfWidgetProvider"
+			android:name="io.github.landwarderer.futon.widget.shelf.ShelfWidgetProvider"
 			android:exported="true"
 			android:label="@string/manga_shelf">
 			<intent-filter>
@@ -467,7 +467,7 @@
 				android:resource="@xml/widget_shelf" />
 		</receiver>
 		<receiver
-			android:name="org.koitharu.kotatsu.widget.recent.RecentWidgetProvider"
+			android:name="io.github.landwarderer.futon.widget.recent.RecentWidgetProvider"
 			android:exported="true"
 			android:label="@string/recent_manga">
 			<intent-filter>
@@ -478,7 +478,7 @@
 				android:resource="@xml/widget_recent" />
 		</receiver>
 		<receiver
-			android:name="org.koitharu.kotatsu.core.ErrorReporterReceiver"
+			android:name="io.github.landwarderer.futon.core.ErrorReporterReceiver"
 			android:exported="false">
 			<intent-filter>
 				<action android:name="${applicationId}.action.REPORT_ERROR" />
@@ -496,9 +496,9 @@
 			android:value="@bool/com_samsung_android_icon_container_has_icon_container" />
 
 		<activity-alias
-			android:name="org.koitharu.kotatsu.details.ui.DetailsByLinkActivity"
+			android:name="io.github.landwarderer.futon.details.ui.DetailsByLinkActivity"
 			android:exported="true"
-			android:targetActivity="org.koitharu.kotatsu.details.ui.DetailsActivity">
+			android:targetActivity="io.github.landwarderer.futon.details.ui.DetailsActivity">
 
 			<intent-filter android:autoVerify="false">
 				<action android:name="android.intent.action.VIEW" />

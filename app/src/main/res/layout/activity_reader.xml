@@ -23,7 +23,7 @@
 		app:icon="@drawable/ic_timelapse"
 		app:layout_insetEdge="bottom" />
 
-	<org.koitharu.kotatsu.core.ui.widgets.ZoomControl
+	<io.github.landwarderer.futon.core.ui.widgets.ZoomControl
 		android:id="@+id/zoomControl"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
@@ -35,7 +35,7 @@
 		app:layout_dodgeInsetEdges="bottom"
 		tools:visibility="visible" />
 
-	<org.koitharu.kotatsu.reader.ui.ReaderInfoBarView
+	<io.github.landwarderer.futon.reader.ui.ReaderInfoBarView
 		android:id="@+id/infoBar"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
 		android:visibility="gone"
 		tools:visibility="visible" />
 
-	<org.koitharu.kotatsu.reader.ui.ScrollTimerControlView
+	<io.github.landwarderer.futon.reader.ui.ScrollTimerControlView
 		android:id="@+id/timerControl"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -84,7 +84,7 @@
 		app:cardBackgroundColor="?colorSurfaceContainer"
 		app:layout_insetEdge="bottom">
 
-		<org.koitharu.kotatsu.reader.ui.ReaderActionsView
+		<io.github.landwarderer.futon.reader.ui.ReaderActionsView
 			android:id="@+id/actionsView"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
@@ -92,7 +92,7 @@
 
 	</com.google.android.material.dockedtoolbar.DockedToolbarLayout>
 
-	<org.koitharu.kotatsu.reader.ui.ReaderToastView
+	<io.github.landwarderer.futon.reader.ui.ReaderToastView
 		android:id="@+id/toastView"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"

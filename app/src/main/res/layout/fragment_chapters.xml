@@ -17,7 +17,7 @@
 		android:paddingHorizontal="@dimen/list_spacing"
 		android:scrollbars="none">
 
-		<org.koitharu.kotatsu.core.ui.widgets.ChipsView
+		<io.github.landwarderer.futon.core.ui.widgets.ChipsView
 			android:id="@+id/chips_filter"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
 
 	</HorizontalScrollView>
 
-	<org.koitharu.kotatsu.core.ui.list.fastscroll.FastScrollRecyclerView
+	<io.github.landwarderer.futon.core.ui.list.fastscroll.FastScrollRecyclerView
 		android:id="@+id/recyclerView_chapters"
 		android:layout_width="0dp"
 		android:layout_height="0dp"

@@ -26,7 +26,7 @@
 				android:layout_height="?attr/actionBarSize"
 				app:layout_collapseMode="pin">
 
-				<org.koitharu.kotatsu.core.image.CoilImageView
+				<io.github.landwarderer.futon.core.image.CoilImageView
 					android:id="@+id/imageView_avatar"
 					android:layout_width="28dp"
 					android:layout_height="28dp"

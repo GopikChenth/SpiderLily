@@ -13,7 +13,7 @@
 		android:layout_height="wrap_content"
 		android:paddingBottom="?actionBarSize">
 
-		<org.koitharu.kotatsu.image.ui.CoverImageView
+		<io.github.landwarderer.futon.image.ui.CoverImageView
 			android:id="@+id/imageView_cover"
 			android:layout_width="0dp"
 			android:layout_height="0dp"
@@ -149,7 +149,7 @@
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintTop_toTopOf="@id/button_read" />
 
-		<org.koitharu.kotatsu.core.ui.widgets.ChipsView
+		<io.github.landwarderer.futon.core.ui.widgets.ChipsView
 			android:id="@+id/chips_tags"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
@@ -161,7 +161,7 @@
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/button_read" />
 
-		<org.koitharu.kotatsu.core.ui.widgets.SelectableTextView
+		<io.github.landwarderer.futon.core.ui.widgets.SelectableTextView
 			android:id="@+id/textView_description"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"

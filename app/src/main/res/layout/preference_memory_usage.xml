@@ -9,7 +9,7 @@
 	android:paddingBottom="4dp"
 	tools:ignore="RtlSymmetry">
 
-	<org.koitharu.kotatsu.core.ui.widgets.SegmentedBarView
+	<io.github.landwarderer.futon.core.ui.widgets.SegmentedBarView
 		android:id="@+id/bar"
 		android:layout_width="match_parent"
 		android:layout_height="18dp"

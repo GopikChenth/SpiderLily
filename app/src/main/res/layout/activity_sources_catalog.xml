@@ -29,7 +29,7 @@
 			android:paddingHorizontal="@dimen/list_spacing_large"
 			android:scrollbars="none">
 
-			<org.koitharu.kotatsu.core.ui.widgets.ChipsView
+			<io.github.landwarderer.futon.core.ui.widgets.ChipsView
 				android:id="@+id/chips_filter"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
 
 	</com.google.android.material.appbar.AppBarLayout>
 
-	<org.koitharu.kotatsu.core.ui.list.fastscroll.FastScrollRecyclerView
+	<io.github.landwarderer.futon.core.ui.list.fastscroll.FastScrollRecyclerView
 		android:id="@+id/recyclerView"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"

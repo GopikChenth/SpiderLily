@@ -15,7 +15,7 @@ plugins {
 android {
 	compileSdk = 36
 	buildToolsVersion = '35.0.0'
-	namespace = 'org.koitharu.kotatsu'
+	namespace = 'io.github.landwarderer.futon'
 
 	defaultConfig {
 		applicationId 'io.github.landwarderer.futon'
@@ -24,7 +24,7 @@ android {
         versionCode project.hasProperty('versionCode') ? project.property('versionCode').toInteger() : 1033
         versionName project.hasProperty('versionName') ? project.property('versionName') : '9.4.1'
         generatedDensities = []
-		testInstrumentationRunner 'org.koitharu.kotatsu.HiltTestRunner'
+		testInstrumentationRunner 'io.github.landwarderer.futon.HiltTestRunner'
 		ksp {
 			arg('room.generateKotlin', 'true')
 		}
@@ -112,7 +112,7 @@ android {
 		unitTests.includeAndroidResources true
 		unitTests.returnDefaultValues false
 		kotlinOptions {
-			freeCompilerArgs += ['-opt-in=org.koitharu.kotatsu.parsers.InternalParsersApi']
+			freeCompilerArgs += ['-opt-in=io.github.landwarderer.futon.parsers.InternalParsersApi']
 		}
 	}
 	applicationVariants.configureEach { variant ->
