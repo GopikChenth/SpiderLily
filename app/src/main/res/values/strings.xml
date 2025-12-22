@@ -122,7 +122,7 @@
     <string name="clear_updates_feed">Clear updates feed</string>
     <string name="updates_feed_cleared">Cleared</string>
     <string name="rotate_screen">Rotate screen</string>
-    <string name="update">Update</string>
+    <string name="update">View Release</string>
     <string name="feed_will_update_soon">Feed update will start soon</string>
     <string name="track_sources">Look for updates</string>
     <string name="dont_check">Don\'t check</string>
@@ -371,7 +371,7 @@
     <string name="scrobbling_empty_hint">To track reading progress, select Menu → Track on the manga details screen.</string>
     <string name="services">Services</string>
     <string name="allow_unstable_updates">Allow unstable updates</string>
-    <string name="allow_unstable_updates_summary">Receive notifications about unstable builds</string>
+    <string name="allow_unstable_updates_summary">Check for nightly builds in addition to stable releases</string>
     <string name="download_started">Download started</string>
     <string name="got_it">Got it</string>
     <string name="sources_reorder_tip">Tap and hold on an item to reorder them</string>
