@@ -20,6 +20,7 @@ import io.github.landwarderer.futon.core.ui.BaseActivity
 import io.github.landwarderer.futon.core.util.ext.consumeAllSystemBarsInsets
 import io.github.landwarderer.futon.core.util.ext.getDisplayMessage
 import io.github.landwarderer.futon.core.util.ext.observe
+import io.github.landwarderer.futon.core.util.ext.observeEvent
 import io.github.landwarderer.futon.core.util.ext.setTextAndVisible
 import io.github.landwarderer.futon.core.util.ext.systemBarsInsets
 import io.github.landwarderer.futon.databinding.ActivityAppUpdateBinding
@@ -39,9 +40,7 @@ class AppUpdateActivity : BaseActivity<ActivityAppUpdateBinding>(), View.OnClick
 		viewModel.isLoading.observe(this) { isLoading ->
 			viewBinding.buttonUpdate.isEnabled = viewModel.nextVersion.value != null && !isLoading
 		}
-		viewModel.onError.observe(this) { event ->
-			event?.consume()?.let { onError(it) }
-		}
+		viewModel.onError.observeEvent(this, ::onError)
 	}
 
 	override fun onApplyWindowInsets(
