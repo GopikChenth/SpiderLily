@@ -39,7 +39,9 @@ class AppUpdateActivity : BaseActivity<ActivityAppUpdateBinding>(), View.OnClick
 		viewModel.isLoading.observe(this) { isLoading ->
 			viewBinding.buttonUpdate.isEnabled = viewModel.nextVersion.value != null && !isLoading
 		}
-		viewModel.onError.observe(this) { onError(it) }
+		viewModel.onError.observe(this) { event ->
+			event?.consume()?.let { onError(it) }
+		}
 	}
 
 	override fun onApplyWindowInsets(
