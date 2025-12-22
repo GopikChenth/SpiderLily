@@ -15,7 +15,6 @@ import io.github.landwarderer.futon.core.network.BaseHttpClient
 import io.github.landwarderer.futon.core.prefs.AppSettings
 import io.github.landwarderer.futon.core.util.ext.printStackTraceDebug
 import io.github.landwarderer.futon.parsers.util.await
-import io.github.landwarderer.futon.parsers.util.parseJsonObject
 import io.github.landwarderer.futon.parsers.util.runCatchingCancellable
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -47,7 +46,8 @@ class AppUpdateRepository @Inject constructor(
 				.get()
 				.url(latestReleaseUrl)
 				.build()
-			val json = okHttp.newCall(request).await().parseJsonObject()
+			val response = okHttp.newCall(request).await()
+			val json = JSONObject(response.body?.string() ?: "{}")
 			
 			val currentVersion = VersionId(BuildConfig.VERSION_NAME)
 			val releaseVersion = VersionId(json.getString("name").removePrefix("v"))

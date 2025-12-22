@@ -17,15 +17,8 @@ class ChangelogViewModel @Inject constructor(
 
 	init {
 		launchLoadingJob(Dispatchers.Default) {
-			val versions = appUpdateRepository.getAvailableVersions()
-			val stringJoiner = StringUtil.StringJoiner("\n\n\n")
-			for (version in versions) {
-				stringJoiner.add("# ")
-					.append(version.name)
-					.append("\n\n")
-					.append(version.description)
-			}
-			changelog.value = stringJoiner.complete()
+			val version = appUpdateRepository.fetchUpdate()
+			changelog.value = version?.let { "# ${it.name}\n\n${it.description}" }
 		}
 	}
 }
