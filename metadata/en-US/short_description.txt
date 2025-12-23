@@ -1,1 +1,1 @@
-Manga reader with online catalogues
+Manga reader with online catalogues ( kotatsu fork )
