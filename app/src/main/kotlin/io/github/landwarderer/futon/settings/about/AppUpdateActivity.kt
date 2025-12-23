@@ -81,6 +81,9 @@ class AppUpdateActivity : BaseActivity<ActivityAppUpdateBinding>(), View.OnClick
 				appendLine()
 				appendLine()
 				append(markwon.toMarkdown(version.description))
+				appendLine()
+				appendLine()
+				append(getString(R.string.github_download_warning))
 			}
 		}
 		markwon.setParsedMarkdown(viewBinding.textViewContent, message)

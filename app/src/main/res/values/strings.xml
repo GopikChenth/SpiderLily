@@ -123,6 +123,7 @@
     <string name="updates_feed_cleared">Cleared</string>
     <string name="rotate_screen">Rotate screen</string>
     <string name="update">View Release</string>
+    <string name="github_download_warning">Downloading from GitHub will bypass security checks performed by IzzyOnDroid.</string>
     <string name="feed_will_update_soon">Feed update will start soon</string>
     <string name="track_sources">Look for updates</string>
     <string name="dont_check">Don\'t check</string>
