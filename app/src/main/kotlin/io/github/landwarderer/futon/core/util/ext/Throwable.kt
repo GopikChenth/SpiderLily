@@ -12,8 +12,9 @@ import okhttp3.internal.http2.StreamResetException
 import okio.FileNotFoundException
 import okio.IOException
 import okio.ProtocolException
-import org.acra.ktx.sendSilentlyWithAcra
-import org.acra.ktx.sendWithAcra
+import android.util.Log
+
+
 import org.jsoup.HttpStatusException
 import io.github.landwarderer.futon.BuildConfig
 import io.github.landwarderer.futon.R
@@ -233,12 +234,13 @@ fun Throwable.isNetworkError(): Boolean {
 
 fun Throwable.report(silent: Boolean = false) {
     val exception = CaughtException(this)
-    if (!silent) {
-        exception.sendWithAcra()
-    } else if (!BuildConfig.DEBUG) {
-        exception.sendSilentlyWithAcra()
-    }
-}
+	// ACRA removed: use logging as a placeholder for crash reporting
+	if (!silent) {
+		exception.printStackTrace()
+		Log.e("Futon", "Exception reported", exception)
+	} else if (!BuildConfig.DEBUG) {
+		exception.printStackTrace()
+		Log.w("Futon", "Silent exception reported", exception)
 
 fun Throwable.isWebViewUnavailable(): Boolean {
     val trace = stackTraceToString()

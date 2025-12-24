@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentManager.FragmentLifecycleCallbacks
-import org.acra.ACRA
 import io.github.landwarderer.futon.core.ui.DefaultActivityLifecycleCallbacks
 import java.time.LocalTime
 import java.time.temporal.ChronoUnit
@@ -15,6 +14,10 @@ import java.util.WeakHashMap
 import javax.inject.Inject
 import javax.inject.Singleton
 
+/**
+ * Legacy placeholder for ACRA screen logging. Converted to a no-op implementation
+ * so the app no longer depends on ACRA while preserving lifecycle registration behavior.
+ */
 @Singleton
 class AcraScreenLogger @Inject constructor() : FragmentLifecycleCallbacks(), DefaultActivityLifecycleCallbacks {
 
@@ -22,24 +25,22 @@ class AcraScreenLogger @Inject constructor() : FragmentLifecycleCallbacks(), Def
 
 	override fun onFragmentAttached(fm: FragmentManager, f: Fragment, context: Context) {
 		super.onFragmentAttached(fm, f, context)
-		ACRA.errorReporter.putCustomData(f.key(), f.arguments.contentToString())
+		// No-op: removed ACRA dependency
 	}
 
 	override fun onFragmentDetached(fm: FragmentManager, f: Fragment) {
 		super.onFragmentDetached(fm, f)
-		ACRA.errorReporter.removeCustomData(f.key())
 		keys.remove(f)
 	}
 
 	override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
 		super.onActivityCreated(activity, savedInstanceState)
-		ACRA.errorReporter.putCustomData(activity.key(), activity.intent.extras.contentToString())
+		// Keep fragment lifecycle registration so behavior remains similar
 		(activity as? FragmentActivity)?.supportFragmentManager?.registerFragmentLifecycleCallbacks(this, true)
 	}
 
 	override fun onActivityDestroyed(activity: Activity) {
 		super.onActivityDestroyed(activity)
-		ACRA.errorReporter.removeCustomData(activity.key())
 		keys.remove(activity)
 	}
 

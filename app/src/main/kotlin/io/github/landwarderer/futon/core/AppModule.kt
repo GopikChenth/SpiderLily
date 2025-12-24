@@ -46,7 +46,7 @@ import io.github.landwarderer.futon.core.parser.favicon.FaviconFetcher
 import io.github.landwarderer.futon.core.prefs.AppSettings
 import io.github.landwarderer.futon.core.ui.image.CoilImageGetter
 import io.github.landwarderer.futon.core.ui.util.ActivityRecreationHandle
-import io.github.landwarderer.futon.core.util.AcraScreenLogger
+
 import io.github.landwarderer.futon.core.util.FileSize
 import io.github.landwarderer.futon.core.util.ext.connectivityManager
 import io.github.landwarderer.futon.core.util.ext.isLowRamDevice
@@ -174,14 +174,12 @@ interface AppModule {
 		fun provideActivityLifecycleCallbacks(
 			appProtectHelper: AppProtectHelper,
 			activityRecreationHandle: ActivityRecreationHandle,
-			acraScreenLogger: AcraScreenLogger,
 			screenshotPolicyHelper: ScreenshotPolicyHelper,
 		): Set<@JvmSuppressWildcards Application.ActivityLifecycleCallbacks> = arraySetOf(
 			appProtectHelper,
 			activityRecreationHandle,
-			acraScreenLogger,
 			screenshotPolicyHelper,
-		)
+		) 
 
 		@Provides
 		@Singleton
