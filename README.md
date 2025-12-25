@@ -52,6 +52,9 @@
 ### Downloads
 
 [<img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroidButtonGreyBorder_nofont.png" height="80" alt="Get it at IzzyOnDroid">](https://apt.izzysoft.de/packages/io.github.landwarderer.futon)
+![Static Badge](https://img.shields.io/badge/github-release-orange?style=for-the-badge&logo=github&link=https%3A%2F%2Fgithub.com%2FAppFuton%2FFuton%2Freleases%2Flatest)
+![Static Badge](https://img.shields.io/badge/github-nightly-darkblue?style=for-the-badge&logo=github&link=https%3A%2F%2Fgithub.com%2FAppFuton%2FFuton%2Freleases)
+
 
 ### Contributing
 
