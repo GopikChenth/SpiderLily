@@ -1,5 +1,5 @@
 name: 🐞 Bug report
-description: Report a bug in Kotatsu
+description: Report a bug in Futon
 labels: [bug]
 body:
 
@@ -26,12 +26,12 @@ body:
 
 
     - type: input
-      id: kotatsu-version
+      id: futon-version
       attributes:
-          label: Kotatsu version
-          description: You can find your Kotatsu version in **Settings → About**.
+          label: Futon version
+          description: You can find your Futon version in **Settings → About**.
           placeholder: |
-              Example: "3.3"
+              Example: "9.6.8"
       validations:
           required: true
 
