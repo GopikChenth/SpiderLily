@@ -811,8 +811,6 @@
     <string name="exclude_nsfw_from_suggestions_summary">El manga para adultos no aparecerá en las sugerencias. Esta opción puede funcionar de forma inexacta con algunas fuentes</string>
     <string name="include_disabled_sources">Incluir fuentes deshabilitadas</string>
     <string name="suggestions_disabled_sources_summary">Mostrar sugerencias de todas las fuentes de manga, incluidas las deshabilitadas</string>
-    <string name="tags_warnings">Destacar géneros peligrosos</string>
-    <string name="tags_warnings_summary">Resaltar los géneros que pueden ser inapropiados para la mayoría de los usuarios</string>
     <string name="error_non_file_uri">La ruta seleccionada no se puede utilizar porque no indica un archivo o directorio</string>
     <string name="manga_override_hint">Estos cambios afectarán a la forma en que se muestra el manga en la aplicación</string>
     <string name="pick_manga_page">Seleccionar página</string>

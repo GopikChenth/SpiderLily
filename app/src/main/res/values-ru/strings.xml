@@ -795,8 +795,6 @@
     <string name="error_disclaimer_manga">Попробуйте открыть мангу в браузере, чтобы убедиться, что она доступна в источнике.</string>
     <string name="disable_captcha_notifications">Отключить уведомления о CAPTCHA</string>
     <string name="disable_captcha_notifications_summary">Вы не будете получать уведомления о прохождении CAPTCHA для этого источника, но это может привести к тому, что фоновые операции перестанут работать (проверка новых глав, обновление рекомендаций и т. д.)</string>
-    <string name="tags_warnings">Выделять опасные жанры</string>
-    <string name="tags_warnings_summary">Выделять жанры, которые могут быть неприемлемы для большинства пользователей</string>
     <string name="clear_browser_data">Очистить данные браузера</string>
     <string name="no_write_permission_to_file">Нет прав на запись в файл</string>
     <string name="link_to_manga_on_s">Ссылка на мангу на %s</string>

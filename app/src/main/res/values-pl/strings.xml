@@ -778,7 +778,6 @@
     <string name="disable_captcha_notifications">Wyłącz powiadomenia o captcha</string>
     <string name="clear_browser_data_summary">Wyczyść dane przeglądarki takie jak pliki cookie i cache. Uwaga: Upoważnienia w źródłach mangi mogą stać się nieaktualne</string>
     <string name="reader_info_bar_transparent">Przeźroczysty pasek informacji w czytniku</string>
-    <string name="tags_warnings_summary">Wyróżnij gatunki, które mogą być nieodpowiednie dla większości użytkowników</string>
     <string name="error_connection_reset">Połączenie zresetowane przez zdalny host</string>
     <string name="nsfw_16">16+</string>
     <string name="open_telegram_bot">Otwórz bota z Telegram</string>
@@ -791,7 +790,6 @@
     <string name="clear_browser_data">Wyczyść dane przeglądarki</string>
     <string name="include_disabled_sources">Uwzględnij wyłączone źródła</string>
     <string name="suggestions_disabled_sources_summary">Pokaż sugestie ze wszystkich źródeł mangi, uwzględniając też wyłączone</string>
-    <string name="tags_warnings">Wyróżnij niebezpieczne gatunki</string>
     <string name="use_default_cover">Użyj domyślnej okładki</string>
     <string name="pick_manga_page">Wybierz stronę mangi</string>
     <string name="pick_custom_file">Wybierz plik niestandardowy</string>

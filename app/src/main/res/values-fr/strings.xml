@@ -802,7 +802,6 @@
     <string name="nsfw_16">16+</string>
     <string name="exclude_nsfw_from_suggestions_summary">Les mangas pour adultes ne seront pas affichés dans les suggestions. Cette option peut fonctionner de manière inexacte avec certaines sources</string>
     <string name="suggestions_disabled_sources_summary">Afficher les suggestions de toutes les sources de mangas, y compris celles désactivées</string>
-    <string name="tags_warnings">Mettre en évidence les genres dangereux</string>
     <string name="incognito_mode_hint_nsfw">Ce manga peut contenir du contenu réservé aux adultes. Voulez-vous utiliser le mode navigation privée ?</string>
     <string name="incognito_for_nsfw">Mode navigation privée pour les mangas NSFW</string>
     <string name="dont_ask_again">Ne plus demander</string>
@@ -810,7 +809,6 @@
     <string name="changelog">Journal des modifications</string>
     <string name="pick_manga_page">Choisissez une page de manga</string>
     <string name="manga_override_hint">Ces changements affecteront la façon dont les mangas sont affichés dans l\'application</string>
-    <string name="tags_warnings_summary">Mettre en évidence les genres qui peuvent être inappropriés pour la plupart des utilisateurs</string>
     <string name="change_cover">Changer la couverture</string>
     <string name="changelog_summary">Historique des modifications pour les versions récemment publiées</string>
     <string name="use_default_cover">Utiliser la couverture par défaut</string>

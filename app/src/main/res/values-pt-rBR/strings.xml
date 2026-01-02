@@ -797,8 +797,6 @@
     <string name="disable_captcha_notifications_summary">Você não receberá notificações sobre solucionar CAPTCHA para essa fonte, mas isso pode causar falha em operações de segundo plano (checagem de novos capítulos, obtenção de recomendações, etc)</string>
     <string name="global_search">Pesquisa global</string>
     <string name="badges_in_lists">Emblemas em listas</string>
-    <string name="tags_warnings">Destacar gêneros perigosos</string>
-    <string name="tags_warnings_summary">Destacar gêneros que podem ser inapropriados para a maioria dos usuários</string>
     <string name="nsfw_16">+16</string>
     <string name="exclude_nsfw_from_suggestions_summary">Mangás adultos não serão exibidos nas sugestões. Esta opção pode funcionar de forma imprecisa com algumas fontes</string>
     <string name="include_disabled_sources">Incluir fontes desabilitadas</string>

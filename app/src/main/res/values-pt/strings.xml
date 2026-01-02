@@ -792,8 +792,6 @@
     <string name="no_write_permission_to_file">Não há permissão para modificar um ficheiro</string>
     <string name="include_disabled_sources">Incluir fontes desabilitadas</string>
     <string name="suggestions_disabled_sources_summary">Mostrar sugestões de todas as fontes de mangá, incluindo as desabilitadas</string>
-    <string name="tags_warnings">Destacar géneros perigosos</string>
-    <string name="tags_warnings_summary">Destacar géneros que podem ser inapropriados para a maioria dos utilizadores</string>
     <string name="manga_override_hint">Estás mudanças vão afetar como mangá é apresentado na aplicação</string>
     <string name="use_default_cover">Usar capa padrão</string>
     <string name="pick_manga_page">Escolher página do mangá</string>

@@ -791,8 +791,6 @@
     <string name="error_disclaimer_app_outdated">Vypadá to, že vaše verze Futon je zastaralá. Prosíme, nainstalujte nejnovější verzi pro získání všech dostupných oprav chyb.</string>
     <string name="disable_captcha_notifications">Vypnout oznámení o captcha</string>
     <string name="disable_captcha_notifications_summary">Nebudete dostávat oznámení o řešení CAPTCHA pro tento zdroj, ale to může vést k rozbití operací na pozadí (hledání nových kapitol, získávání doporučení atd)</string>
-    <string name="tags_warnings">Zvýraznit nebezpečné žánry</string>
-    <string name="tags_warnings_summary">Zvýraznit žánry, které mohou být nevhodné pro většinu uživatelů</string>
     <string name="nsfw_16">16+</string>
     <string name="link_to_manga_in_app">Odkaz na mangau v Futon</string>
     <string name="clear_browser_data">Vyčistit data prohlížeče</string>

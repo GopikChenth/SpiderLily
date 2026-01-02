@@ -799,8 +799,6 @@
     <string name="exclude_nsfw_from_suggestions_summary">அகவை வந்த மங்கா பரிந்துரைகளில் காட்டப்படாது. இந்த விருப்பம் சில ஆதாரங்களுடன் தவறானது</string>
     <string name="include_disabled_sources">ஊனமுற்ற ஆதாரங்களைச் சேர்க்கவும்</string>
     <string name="suggestions_disabled_sources_summary">ஊனமுற்றோர் உட்பட அனைத்து மங்கா மூலங்களிலிருந்தும் பரிந்துரைகளைக் காட்டுங்கள்</string>
-    <string name="tags_warnings">ஆபத்தான வகைகளை முன்னிலைப்படுத்தவும்</string>
-    <string name="tags_warnings_summary">பெரும்பாலான பயனர்களுக்கு பொருத்தமற்றதாக இருக்கும் வகைகளை முன்னிலைப்படுத்தவும்</string>
     <string name="error_non_file_uri">தேர்ந்தெடுக்கப்பட்ட பாதையை பயன்படுத்த முடியாது, ஏனெனில் அது ஒரு கோப்பு அல்லது கோப்பகத்தைக் குறிக்கவில்லை</string>
     <string name="manga_override_hint">இந்த மாற்றங்கள் பயன்பாட்டில் மங்கா எவ்வாறு காட்டப்படும் என்பதை பாதிக்கும்</string>
     <string name="use_default_cover">இயல்புநிலை அட்டையைப் பயன்படுத்தவும்</string>

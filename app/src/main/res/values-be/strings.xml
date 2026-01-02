@@ -797,8 +797,6 @@
     <string name="clear_browser_data">Ачысціць дадзеныя браўзэра</string>
     <string name="include_disabled_sources">Уключыць адключаныя крыніцы</string>
     <string name="suggestions_disabled_sources_summary">Адлюстроўваць рэкамендацыі з усіх крыніц мангі, у тым ліку адключаныя</string>
-    <string name="tags_warnings">Вылучаць небяспечныя жанры</string>
-    <string name="tags_warnings_summary">Вылучаць жанры, якія могуць быць непрымальныя для большасці карыстальнікаў</string>
     <string name="pick_manga_page">Выбраць старонку мангі</string>
     <string name="pick_custom_file">Выбраць карыстацкі файл</string>
     <string name="change_cover">Змяніць вокладку</string>

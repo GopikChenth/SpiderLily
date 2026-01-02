@@ -798,8 +798,6 @@
     <string name="error_disclaimer_app_outdated">Изгледа да је твоја верзија Котатсу-а застарела. Молим инсталирај најновију верзију да би добио све доступне исправке.</string>
     <string name="link_to_manga_on_s">Веза до Манге на %s</string>
     <string name="link_to_manga_in_app">Повезница до Манге у Котатсу</string>
-    <string name="tags_warnings">Означи опасне жанрове</string>
-    <string name="tags_warnings_summary">Означи жанрове који могу бити неприкладни за већину корисника</string>
     <string name="no_write_permission_to_file">Нема дозволу за писање датотеке</string>
     <string name="clear_browser_data_summary">Избриши податке претраживача као што су кеш меморија и колачићи. Упозорење: Овлашћења у манга изворима могу постати неважећа</string>
     <string name="include_disabled_sources">Обухвати онемогућене изворе</string>

@@ -803,8 +803,6 @@
     <string name="exclude_nsfw_from_suggestions_summary">لن تظهر المانغا المخصصة للبالغين في الاقتراحات. قد لا يعمل هذا الخيار بدقة مع بعض المصادر.</string>
     <string name="include_disabled_sources">"شمل المصادر  المعطلة."</string>
     <string name="suggestions_disabled_sources_summary">"اضهار الاقتراحات من كل مصادر المانقا  شامل المعطلين."</string>
-    <string name="tags_warnings">­ابراز التصنيفات الخطيرة</string>
-    <string name="tags_warnings_summary">ابراز التصنيفات التي قد تكون غير مناسبة لغالبية المستخدين.</string>
     <string name="error_non_file_uri">لا يمكن استخدام المسار المحدد لأنه لا يشير إلى ملف أو دليل.</string>
     <string name="manga_override_hint">ستؤثر هذه التغييرات على كيفية عرض المانجا في التطبيق.</string>
 </resources>

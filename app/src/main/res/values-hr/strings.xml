@@ -800,8 +800,6 @@
     <string name="exclude_nsfw_from_suggestions_summary">Manga za odrasle se neće prikazivati u prijedlozima. Ova opcija možda neće točno funkcionirati s nekim izvorima</string>
     <string name="include_disabled_sources">Uključi deaktivirane izvore</string>
     <string name="suggestions_disabled_sources_summary">Prikaži prijedloge iz svih izvora mange, uključujući deaktivirane</string>
-    <string name="tags_warnings">Istakni opasne žanrove</string>
-    <string name="tags_warnings_summary">Istakni žanrove koji bi mogli biti neprikladni za većinu korisnika</string>
     <string name="pull_to_prev_chapter">Otpusti za otvaranje prethodnog poglavlja</string>
     <string name="pull_to_next_chapter">Otpusti za otvaranje sljedećeg poglavlja</string>
     <string name="pull_top_no_prev">Nema prethodnog poglavlja</string>
