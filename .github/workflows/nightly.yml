@@ -1,8 +1,8 @@
 name: Nightly Build
 
 on:
-  schedule:
-    - cron: '0 2 * * 0'  # Every Sunday at 2:00 UTC
+  #schedule:
+  #  - cron: '0 2 * * 0'  # Every Sunday at 2:00 UTC
   workflow_dispatch:
 
 permissions:
