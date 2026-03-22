@@ -1,16 +1,3 @@
-> [!NOTE]
-> **Futon is a fork of [Kotatsu](https://github.com/KotatsuApp/Kotatsu)** — a free and open-source manga reader for Android.
-> 
-> This fork continues development and maintenance of the manga reader, building upon the excellent foundation created by the Kotatsu team.
-
-> [!WARNING]
-> Most of the sources are currently outdated or just straight up nonexistent. I am sorry for this as I've never been able to completely fix all the sources.(They will be fixed as soon as im done with some work that I've got)
->
-> But a lot of the sources do actually still work and work really well so dont worry about you not being able to enjoy manga
->
-> We welcome contributions if anyone is willing to provide fixes for any sources.
----
-
 <div align="center">
 
 **Futon is a free and open-source manga reader for Android with built-in online content sources.**
