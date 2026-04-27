@@ -171,7 +171,6 @@ We are deeply grateful to:
 * **The original Kotatsu developers** for creating such an outstanding manga reader and making it open source
 * **The Kotatsu community** for their contributions, testing, and support
 * **All translators** who helped localize Kotatsu through [Weblate](https://hosted.weblate.org/engage/kotatsu/)
-* **Parser contributors** who maintain the extensive library of [manga sources](https://github.com/Kotatsu-Redo/kotatsu-parsers-redo)
 * **[Kotatsu-Redo](https://github.com/Kotatsu-Redo/kotatsu-parsers-redo)** for continuing parser development and maintenance
 * **[Kototoro](https://github.com/Kototoro-app/Kototoro)** for the Tachiyomi extension integration guide
 
