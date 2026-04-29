@@ -123,7 +123,7 @@
     <string name="updates_feed_cleared">Cleared</string>
     <string name="rotate_screen">Rotate screen</string>
     <string name="update">View Release</string>
-    <string name="github_download_warning">Downloading from GitHub will bypass security checks performed by IzzyOnDroid.</string>
+    <string name="github_download_warning">Downloading from GitHub will bypass security checks performed by IzzyOnDroid and Fdroid.</string>
     <string name="feed_will_update_soon">Feed update will start soon</string>
     <string name="track_sources">Look for updates</string>
     <string name="dont_check">Don\'t check</string>
@@ -135,7 +135,7 @@
     <string name="passwords_mismatch">Mismatching passwords</string>
     <string name="about">About</string>
     <string name="app_version">Version %s</string>
-    <string name="check_for_updates">Check for updates</string>
+    <string name="check_for_updates">Check for updates: This checks for newer GitHub release. If you installed Futon from a store, better use the store\'s client for this.</string>
     <string name="no_update_available">No updates available</string>
     <string name="right_to_left">Right-to-left</string>
     <string name="create_category">New category</string>

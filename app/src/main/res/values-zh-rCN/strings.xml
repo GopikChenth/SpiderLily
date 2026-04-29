@@ -866,7 +866,7 @@
     <string name="enable_pull_gesture_summary">条漫模式下使用推拉手势切换章节</string>
     <string name="auto_double_foldable">折叠设备自动双页</string>
     <string name="saved_filters">保存的筛选</string>
-    <string name="github_download_warning">从Github下载会跳过由IzzyOnDroid执行的安全检查</string>
+    <string name="github_download_warning">从Github下载会跳过由IzzyOnDroid和F-Droid执行的安全检查</string>
     <string name="enter_name">输入名称</string>
     <string name="pinned_sources_only">仅置顶图源</string>
     <string name="hide_empty_sources">隐藏空白结果的图源</string>
