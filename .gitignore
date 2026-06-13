@@ -1,0 +1,26 @@
+*.iml
+.gradle
+/local.properties
+/.idea/
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Cloned Futon repository used for exploration
+/Futon/
+
+# Built artifacts
+*.apk
+*.ap_
+*.aab
+*.dex
+*.class
+
+# Log files
+*.log
+
+# OS-specific
+Thumbs.db
