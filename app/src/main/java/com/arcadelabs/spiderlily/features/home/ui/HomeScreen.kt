@@ -110,16 +110,14 @@ fun HomeScreen(
                 )
             }
             item(span = { GridItemSpan(maxLineSpan) }) {
-                // Remove horizontal padding in inner composable since parent grid has it
                 SpiderLilyFilterRow(
                     filters = uiState.filters,
                     selectedFilter = uiState.selectedFilter,
                     onFilterClick = onFilterSelected,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = (-16).dp), // negate grid horizontal padding
+                    modifier = Modifier.fillMaxWidth(),
                 )
             }
+
             uiState.sections.forEach { section ->
                 item(key = section.title, span = { GridItemSpan(maxLineSpan) }) {
                     Text(

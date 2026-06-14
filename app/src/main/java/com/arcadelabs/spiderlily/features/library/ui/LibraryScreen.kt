@@ -91,9 +91,7 @@ fun LibraryScreen(
                             .firstOrNull { it.title == title }
                             ?.let { onCategorySelected(it.id) }
                     },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = (-16).dp),
+                    modifier = Modifier.fillMaxWidth(),
                 )
             }
             item(span = { GridItemSpan(maxLineSpan) }) {
