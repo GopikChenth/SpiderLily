@@ -213,7 +213,7 @@ fun MangaPosterCard(
         Text(
             text = title,
             color = WarmIvory,
-            style = MaterialTheme.typography.titleMedium,
+            style = MaterialTheme.typography.titleSmall,
             fontWeight = FontWeight.Bold,
             maxLines = 2,
             overflow = TextOverflow.Ellipsis,
@@ -223,7 +223,7 @@ fun MangaPosterCard(
             Text(
                 text = subtitle,
                 color = WarmClay,
-                style = MaterialTheme.typography.bodyMedium,
+                style = MaterialTheme.typography.bodySmall,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
             )
