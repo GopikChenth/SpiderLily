@@ -1,0 +1,27 @@
+package com.arcadelabs.spiderlily.core.db.dao
+
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
+import androidx.room.Transaction
+import com.arcadelabs.spiderlily.core.db.entity.ChapterEntity
+
+@Dao
+abstract class ChaptersDao {
+
+    @Query("SELECT * FROM chapters WHERE manga_id = :mangaId ORDER BY `index` ASC")
+    abstract suspend fun findAll(mangaId: Long): List<ChapterEntity>
+
+    @Query("DELETE FROM chapters WHERE manga_id = :mangaId")
+    abstract suspend fun deleteAll(mangaId: Long)
+
+    @Transaction
+    open suspend fun replaceAll(mangaId: Long, entities: Collection<ChapterEntity>) {
+        deleteAll(mangaId)
+        insert(entities)
+    }
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    protected abstract suspend fun insert(entities: Collection<ChapterEntity>)
+}

@@ -27,9 +27,16 @@ class LibraryViewModel(
         getCategories(),
         getLibrary(),
     ) { state, categories, libraryManga ->
+        val filteredManga = libraryManga
+            .visibleFor(state.selectedCategoryId)
+            .filter {
+                state.searchQuery.isBlank() ||
+                        it.title.contains(state.searchQuery, ignoreCase = true) ||
+                        it.source.contains(state.searchQuery, ignoreCase = true)
+            }
         state.copy(
             categories = categories,
-            libraryManga = libraryManga.visibleFor(state.selectedCategoryId),
+            libraryManga = filteredManga,
         )
     }.stateIn(
         scope = viewModelScope,
@@ -40,6 +47,12 @@ class LibraryViewModel(
     fun onCategorySelected(categoryId: String) {
         viewModelState.update { state ->
             state.copy(selectedCategoryId = categoryId)
+        }
+    }
+
+    fun onSearchQueryChanged(query: String) {
+        viewModelState.update { state ->
+            state.copy(searchQuery = query)
         }
     }
 

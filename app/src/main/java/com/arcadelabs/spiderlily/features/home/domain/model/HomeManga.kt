@@ -6,7 +6,8 @@ data class HomeManga(
     val id: String,
     val title: String,
     val source: String,
-    val chapterLabel: String,
-    val progressPercent: Int,
-    val accentColor: Color,
+    val coverUrl: String? = null,
+    val chapterLabel: String = "",
+    val progressPercent: Int = 0,
+    val accentColor: Color = Color(0xFF5C4033),
 )

@@ -45,11 +45,6 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.arcadelabs.spiderlily.ui.theme.MutedText
-import com.arcadelabs.spiderlily.ui.theme.Obsidian
-import com.arcadelabs.spiderlily.ui.theme.SurfaceRaised
-import com.arcadelabs.spiderlily.ui.theme.WarmClay
-import com.arcadelabs.spiderlily.ui.theme.WarmIvory
 
 data class SpiderLilyNavItem(
     val label: String,
@@ -63,60 +58,48 @@ val SpiderLilyHomeNavItems = listOf(
     SpiderLilyNavItem("Feed", Icons.Filled.RssFeed),
 )
 
+/**
+ * Simple static search bar pill for secondary screens (Explore, Library, Feed).
+ * The Home screen uses the full M3 SearchBar instead.
+ */
 @Composable
 fun SpiderLilySearchBar(
     query: String,
     modifier: Modifier = Modifier,
     placeholder: String = "Search manga",
     onSearchClick: () -> Unit = {},
-    onDownloadsClick: () -> Unit = {},
-    onMoreClick: () -> Unit = {},
 ) {
     Surface(
         modifier = modifier.fillMaxWidth(),
-        color = Color(0xFF171717),
-        shape = RoundedCornerShape(34.dp),
+        color = MaterialTheme.colorScheme.surfaceContainer,
+        shape = RoundedCornerShape(28.dp),
         onClick = onSearchClick,
     ) {
         Row(
             modifier = Modifier
-                .height(68.dp)
-                .padding(start = 20.dp, end = 8.dp),
+                .height(56.dp)
+                .padding(start = 16.dp, end = 8.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Icon(
                 imageVector = Icons.Filled.Search,
                 contentDescription = null,
-                tint = WarmIvory,
-                modifier = Modifier.size(30.dp),
+                tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.size(24.dp),
             )
-            Spacer(modifier = Modifier.width(14.dp))
+            Spacer(modifier = Modifier.width(12.dp))
             Text(
                 text = query.ifBlank { placeholder },
-                color = if (query.isBlank()) WarmIvory else WarmClay,
-                style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.Bold,
+                color = if (query.isBlank()) MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f) else MaterialTheme.colorScheme.onSurface,
+                style = MaterialTheme.typography.bodyLarge,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
                 modifier = Modifier.weight(1f),
             )
-            IconButton(onClick = onDownloadsClick) {
-                Icon(
-                    imageVector = Icons.Filled.Download,
-                    contentDescription = "Downloads",
-                    tint = WarmIvory,
-                )
-            }
-            IconButton(onClick = onMoreClick) {
-                Icon(
-                    imageVector = Icons.Filled.MoreVert,
-                    contentDescription = "More",
-                    tint = WarmIvory,
-                )
-            }
         }
     }
 }
+
 
 @Composable
 fun SpiderLilyFilterRow(
@@ -136,7 +119,7 @@ fun SpiderLilyFilterRow(
                 modifier = Modifier
                     .border(
                         width = 1.dp,
-                        color = if (selected) WarmIvory.copy(alpha = 0.72f) else MutedText,
+                        color = if (selected) MaterialTheme.colorScheme.onSurface.copy(alpha = 0.72f) else MaterialTheme.colorScheme.outline.copy(alpha = 0.4f),
                         shape = RoundedCornerShape(12.dp),
                     )
                     .clickable { onFilterClick(filter) },
@@ -145,7 +128,7 @@ fun SpiderLilyFilterRow(
             ) {
                 Text(
                     text = filter,
-                    color = if (selected) WarmIvory else WarmClay,
+                    color = if (selected) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onSurfaceVariant,
                     style = MaterialTheme.typography.labelLarge,
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier.padding(horizontal = 16.dp, vertical = 12.dp),
@@ -165,11 +148,13 @@ fun MangaPosterCard(
     subtitle: String? = null,
     onClick: () -> Unit = {},
 ) {
+    val cardBackground = MaterialTheme.colorScheme.surfaceContainerLow
+    val cardSurface = MaterialTheme.colorScheme.surface
     Column(modifier = modifier) {
         Surface(
             onClick = onClick,
-            shape = RoundedCornerShape(16.dp),
-            color = SurfaceRaised,
+            shape = RoundedCornerShape(12.dp),
+            color = cardBackground,
             modifier = Modifier
                 .fillMaxWidth()
                 .aspectRatio(13f / 18f),
@@ -178,14 +163,14 @@ fun MangaPosterCard(
                 modifier = Modifier
                     .background(
                         Brush.verticalGradient(
-                            colors = listOf(accent.copy(alpha = 0.95f), SurfaceRaised, Obsidian),
+                            colors = listOf(accent.copy(alpha = 0.95f), cardBackground, cardSurface),
                         ),
                     )
                     .padding(10.dp),
             ) {
                 Text(
                     text = source.take(2).uppercase(),
-                    color = WarmIvory,
+                    color = MaterialTheme.colorScheme.onSurface,
                     style = MaterialTheme.typography.labelLarge,
                     modifier = Modifier
                         .clip(RoundedCornerShape(8.dp))
@@ -202,7 +187,7 @@ fun MangaPosterCard(
                 ) {
                     Text(
                         text = "$progressPercent%",
-                        color = WarmIvory,
+                        color = MaterialTheme.colorScheme.onSurface,
                         style = MaterialTheme.typography.labelLarge,
                         fontWeight = FontWeight.Bold,
                     )
@@ -212,9 +197,9 @@ fun MangaPosterCard(
         Spacer(modifier = Modifier.height(8.dp))
         Text(
             text = title,
-            color = WarmIvory,
+            color = MaterialTheme.colorScheme.onSurface,
             style = MaterialTheme.typography.titleSmall,
-            fontWeight = FontWeight.Bold,
+            fontWeight = FontWeight.Medium,
             maxLines = 2,
             overflow = TextOverflow.Ellipsis,
         )
@@ -222,7 +207,7 @@ fun MangaPosterCard(
             Spacer(modifier = Modifier.height(2.dp))
             Text(
                 text = subtitle,
-                color = WarmClay,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
                 style = MaterialTheme.typography.bodySmall,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
@@ -240,7 +225,6 @@ fun SpiderLilyBottomBar(
 ) {
     NavigationBar(
         modifier = modifier,
-        containerColor = Color(0xFF151515),
         tonalElevation = 0.dp,
     ) {
         items.forEachIndexed { index, item ->
@@ -260,13 +244,6 @@ fun SpiderLilyBottomBar(
                         overflow = TextOverflow.Ellipsis,
                     )
                 },
-                colors = NavigationBarItemDefaults.colors(
-                    selectedIconColor = WarmIvory,
-                    selectedTextColor = WarmIvory,
-                    indicatorColor = Color(0xFF4D4D4D),
-                    unselectedIconColor = WarmClay,
-                    unselectedTextColor = WarmClay,
-                ),
             )
         }
     }
