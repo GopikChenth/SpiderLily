@@ -1,18 +1,19 @@
-package com.arcadelabs.spiderlily.features.favourites.ui
+package com.arcadelabs.spiderlily.features.library.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.GridItemSpan
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -26,19 +27,19 @@ import com.arcadelabs.spiderlily.core.designsystem.MangaPosterCard
 import com.arcadelabs.spiderlily.core.designsystem.SpiderLilyBottomBar
 import com.arcadelabs.spiderlily.core.designsystem.SpiderLilyFilterRow
 import com.arcadelabs.spiderlily.core.designsystem.SpiderLilySearchBar
-import com.arcadelabs.spiderlily.features.favourites.domain.model.FavouriteManga
+import com.arcadelabs.spiderlily.features.library.domain.model.LibraryManga
 import com.arcadelabs.spiderlily.ui.theme.MutedText
 import com.arcadelabs.spiderlily.ui.theme.VelvetBlack
 import com.arcadelabs.spiderlily.ui.theme.WarmIvory
 
 @Composable
-fun FavouritesRoute(
+fun LibraryRoute(
     selectedNavIndex: Int,
     onNavItemSelected: (Int) -> Unit,
-    viewModel: FavouritesViewModel = viewModel(),
+    viewModel: LibraryViewModel = viewModel(),
 ) {
     val uiState = viewModel.uiState.collectAsStateWithLifecycle().value
-    FavouritesScreen(
+    LibraryScreen(
         uiState = uiState,
         selectedNavIndex = selectedNavIndex,
         onCategorySelected = viewModel::onCategorySelected,
@@ -47,8 +48,8 @@ fun FavouritesRoute(
 }
 
 @Composable
-fun FavouritesScreen(
-    uiState: FavouritesUiState,
+fun LibraryScreen(
+    uiState: LibraryUiState,
     selectedNavIndex: Int,
     onCategorySelected: (String) -> Unit,
     onNavItemSelected: (Int) -> Unit,
@@ -65,21 +66,23 @@ fun FavouritesScreen(
             )
         },
     ) { innerPadding ->
-        LazyColumn(
+        LazyVerticalGrid(
+            columns = GridCells.Adaptive(minSize = 105.dp),
             modifier = Modifier
                 .fillMaxSize()
                 .background(VelvetBlack)
                 .padding(innerPadding),
-            contentPadding = PaddingValues(top = 24.dp, bottom = 116.dp),
+            contentPadding = PaddingValues(top = 24.dp, bottom = 116.dp, start = 16.dp, end = 16.dp),
+            horizontalArrangement = Arrangement.spacedBy(14.dp),
             verticalArrangement = Arrangement.spacedBy(20.dp),
         ) {
-            item {
+            item(span = { GridItemSpan(maxLineSpan) }) {
                 SpiderLilySearchBar(
                     query = uiState.searchQuery,
-                    modifier = Modifier.padding(horizontal = 16.dp),
+                    modifier = Modifier.fillMaxWidth(),
                 )
             }
-            item {
+            item(span = { GridItemSpan(maxLineSpan) }) {
                 SpiderLilyFilterRow(
                     filters = uiState.categories.map { it.title },
                     selectedFilter = uiState.selectedCategoryTitle,
@@ -88,23 +91,32 @@ fun FavouritesScreen(
                             .firstOrNull { it.title == title }
                             ?.let { onCategorySelected(it.id) }
                     },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = (-16).dp),
                 )
             }
-            item {
-                FavouritesHeader(
-                    count = uiState.favourites.size,
+            item(span = { GridItemSpan(maxLineSpan) }) {
+                LibraryHeader(
+                    count = uiState.libraryManga.size,
                     categoryTitle = uiState.selectedCategoryTitle,
+                    modifier = Modifier.fillMaxWidth(),
                 )
             }
-            if (uiState.favourites.isEmpty()) {
-                item {
-                    EmptyFavouritesState()
+            if (uiState.libraryManga.isEmpty()) {
+                item(span = { GridItemSpan(maxLineSpan) }) {
+                    EmptyLibraryState()
                 }
             } else {
-                uiState.favourites.chunked(2).forEachIndexed { index, rowItems ->
-                    item(key = "favourites-row-$index") {
-                        FavouritesCardRow(items = rowItems)
-                    }
+                items(uiState.libraryManga, key = { it.id }) { manga ->
+                    MangaPosterCard(
+                        title = manga.title,
+                        source = manga.source,
+                        subtitle = manga.subtitle,
+                        progressPercent = manga.progressPercent,
+                        accent = manga.accentColor,
+                        modifier = Modifier.fillMaxWidth(),
+                    )
                 }
             }
         }
@@ -112,14 +124,14 @@ fun FavouritesScreen(
 }
 
 @Composable
-private fun FavouritesHeader(
+private fun LibraryHeader(
     count: Int,
     categoryTitle: String,
     modifier: Modifier = Modifier,
 ) {
-    Column(modifier = modifier.padding(horizontal = 16.dp)) {
+    Column(modifier = modifier) {
         Text(
-            text = "Favourites",
+            text = "Library",
             color = WarmIvory,
             style = MaterialTheme.typography.titleLarge,
             fontWeight = FontWeight.Bold,
@@ -135,44 +147,17 @@ private fun FavouritesHeader(
 }
 
 @Composable
-private fun FavouritesCardRow(
-    items: List<FavouriteManga>,
-    modifier: Modifier = Modifier,
-) {
-    Row(
-        modifier = modifier
-            .fillMaxWidth()
-            .padding(horizontal = 16.dp),
-        horizontalArrangement = Arrangement.spacedBy(14.dp),
-    ) {
-        items.forEach { manga ->
-            MangaPosterCard(
-                title = manga.title,
-                source = manga.source,
-                subtitle = manga.subtitle,
-                progressPercent = manga.progressPercent,
-                accent = manga.accentColor,
-                modifier = Modifier.weight(1f),
-            )
-        }
-        if (items.size == 1) {
-            Box(modifier = Modifier.weight(1f))
-        }
-    }
-}
-
-@Composable
-private fun EmptyFavouritesState(
+private fun EmptyLibraryState(
     modifier: Modifier = Modifier,
 ) {
     Column(
         modifier = modifier
             .fillMaxWidth()
-            .padding(horizontal = 28.dp, vertical = 40.dp),
+            .padding(vertical = 40.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         Text(
-            text = "No favourites here",
+            text = "No items here",
             color = WarmIvory,
             style = MaterialTheme.typography.titleMedium,
             fontWeight = FontWeight.Bold,
@@ -185,7 +170,7 @@ private fun EmptyFavouritesState(
     }
 }
 
-private val FavouriteManga.subtitle: String
+private val LibraryManga.subtitle: String
     get() = if (unreadChapters > 0) {
         "$latestChapter - $unreadChapters unread"
     } else {

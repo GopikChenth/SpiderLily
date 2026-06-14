@@ -58,7 +58,7 @@ data class SpiderLilyNavItem(
 
 val SpiderLilyHomeNavItems = listOf(
     SpiderLilyNavItem("Home", Icons.Filled.History),
-    SpiderLilyNavItem("Favourites", Icons.Filled.FavoriteBorder),
+    SpiderLilyNavItem("Library", Icons.Filled.FavoriteBorder),
     SpiderLilyNavItem("Explore", Icons.Filled.Explore),
     SpiderLilyNavItem("Feed", Icons.Filled.RssFeed),
 )

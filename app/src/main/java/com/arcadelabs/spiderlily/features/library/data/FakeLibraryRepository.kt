@@ -1,28 +1,28 @@
-package com.arcadelabs.spiderlily.features.favourites.data
+package com.arcadelabs.spiderlily.features.library.data
 
 import androidx.compose.ui.graphics.Color
-import com.arcadelabs.spiderlily.features.favourites.domain.model.FavouriteCategory
-import com.arcadelabs.spiderlily.features.favourites.domain.model.FavouriteManga
-import com.arcadelabs.spiderlily.features.favourites.domain.repository.FavouritesRepository
+import com.arcadelabs.spiderlily.features.library.domain.model.LibraryCategory
+import com.arcadelabs.spiderlily.features.library.domain.model.LibraryManga
+import com.arcadelabs.spiderlily.features.library.domain.repository.LibraryRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
 
-class FakeFavouritesRepository : FavouritesRepository {
-    override fun observeCategories(): Flow<List<FavouriteCategory>> = flowOf(sampleCategories)
+class FakeLibraryRepository : LibraryRepository {
+    override fun observeCategories(): Flow<List<LibraryCategory>> = flowOf(sampleCategories)
 
-    override fun observeFavourites(): Flow<List<FavouriteManga>> = flowOf(sampleFavourites)
+    override fun observeLibrary(): Flow<List<LibraryManga>> = flowOf(sampleFavourites)
 
     private companion object {
         val sampleCategories = listOf(
-            FavouriteCategory(id = "all", title = "All"),
-            FavouriteCategory(id = "reading", title = "Reading"),
-            FavouriteCategory(id = "saved", title = "Saved"),
-            FavouriteCategory(id = "completed", title = "Completed"),
-            FavouriteCategory(id = "offline", title = "On device"),
+            LibraryCategory(id = "all", title = "All"),
+            LibraryCategory(id = "reading", title = "Reading"),
+            LibraryCategory(id = "saved", title = "Saved"),
+            LibraryCategory(id = "completed", title = "Completed"),
+            LibraryCategory(id = "offline", title = "On device"),
         )
 
         val sampleFavourites = listOf(
-            FavouriteManga(
+            LibraryManga(
                 id = "fragrant-flower",
                 title = "The Fragrant Flower Blooms With Dignity",
                 source = "MangaDex",
@@ -32,7 +32,7 @@ class FakeFavouritesRepository : FavouritesRepository {
                 categoryIds = setOf("reading", "saved"),
                 accentColor = Color(0xFF5EB7D9),
             ),
-            FavouriteManga(
+            LibraryManga(
                 id = "last-train",
                 title = "My Bias Gets on the Last Train",
                 source = "MangaDex",
@@ -42,7 +42,7 @@ class FakeFavouritesRepository : FavouritesRepository {
                 categoryIds = setOf("reading", "offline"),
                 accentColor = Color(0xFFE35A7A),
             ),
-            FavouriteManga(
+            LibraryManga(
                 id = "novels-extra",
                 title = "The Novel's Extra (Remake)",
                 source = "MangaBuddy",
@@ -52,7 +52,7 @@ class FakeFavouritesRepository : FavouritesRepository {
                 categoryIds = setOf("completed", "saved", "offline"),
                 accentColor = Color(0xFF735CE8),
             ),
-            FavouriteManga(
+            LibraryManga(
                 id = "ember-path",
                 title = "The Ember Path",
                 source = "MangaDex",
@@ -62,7 +62,7 @@ class FakeFavouritesRepository : FavouritesRepository {
                 categoryIds = setOf("reading"),
                 accentColor = Color(0xFFFF8A55),
             ),
-            FavouriteManga(
+            LibraryManga(
                 id = "night-market",
                 title = "Night Market Alchemist",
                 source = "Local",

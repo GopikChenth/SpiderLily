@@ -19,7 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.arcadelabs.spiderlily.core.designsystem.SpiderLilyBottomBar
-import com.arcadelabs.spiderlily.features.favourites.ui.FavouritesRoute
+import com.arcadelabs.spiderlily.features.library.ui.LibraryRoute
 import com.arcadelabs.spiderlily.features.home.ui.HomeRoute
 import com.arcadelabs.spiderlily.ui.theme.MutedText
 import com.arcadelabs.spiderlily.ui.theme.VelvetBlack
@@ -35,7 +35,7 @@ fun SpiderLilyApp() {
             onNavItemSelected = { selectedNavIndex = it },
         )
 
-        1 -> FavouritesRoute(
+        1 -> LibraryRoute(
             selectedNavIndex = selectedNavIndex,
             onNavItemSelected = { selectedNavIndex = it },
         )

@@ -1,8 +1,8 @@
-package com.arcadelabs.spiderlily.features.favourites.domain.model
+package com.arcadelabs.spiderlily.features.library.domain.model
 
 import androidx.compose.ui.graphics.Color
 
-data class FavouriteManga(
+data class LibraryManga(
     val id: String,
     val title: String,
     val source: String,
