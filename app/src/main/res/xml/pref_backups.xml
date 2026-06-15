@@ -17,7 +17,7 @@
         android:title="@string/restore_backup" />
 
     <PreferenceScreen
-        android:fragment="io.github.landwarderer.futon.backups.ui.periodical.PeriodicalBackupSettingsFragment"
+        android:fragment="com.arcadelabs.spiderlily.backups.ui.periodical.PeriodicalBackupSettingsFragment"
         android:key="backup_periodic"
         android:persistent="false"
         android:title="@string/periodic_backups" />

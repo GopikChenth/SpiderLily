@@ -12,7 +12,7 @@
 		android:layout_height="match_parent"
 		tools:background="@color/grey" />
 
-	<io.github.landwarderer.futon.core.ui.widgets.ZoomControl
+	<com.arcadelabs.spiderlily.core.ui.widgets.ZoomControl
 		android:id="@+id/zoomControl"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
@@ -24,7 +24,7 @@
 		app:layout_dodgeInsetEdges="bottom"
 		tools:visibility="visible" />
 
-	<io.github.landwarderer.futon.reader.ui.ReaderInfoBarView
+	<com.arcadelabs.spiderlily.reader.ui.ReaderInfoBarView
 		android:id="@+id/infoBar"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
 		android:visibility="gone"
 		tools:visibility="visible" />
 
-	<io.github.landwarderer.futon.reader.ui.ScrollTimerControlView
+	<com.arcadelabs.spiderlily.reader.ui.ScrollTimerControlView
 		android:id="@+id/timerControl"
 		android:layout_width="320dp"
 		android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
 			app:elevation="@dimen/m3_card_elevated_elevation"
 			tools:menu="@menu/opt_reader">
 
-			<io.github.landwarderer.futon.reader.ui.ReaderActionsView
+			<com.arcadelabs.spiderlily.reader.ui.ReaderActionsView
 				android:id="@+id/actionsView"
 				android:layout_width="400dp"
 				android:layout_height="wrap_content"
@@ -72,7 +72,7 @@
 
 	</com.google.android.material.appbar.AppBarLayout>
 
-	<io.github.landwarderer.futon.reader.ui.ReaderToastView
+	<com.arcadelabs.spiderlily.reader.ui.ReaderToastView
 		android:id="@+id/toastView"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"

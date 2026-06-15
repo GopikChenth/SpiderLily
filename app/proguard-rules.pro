@@ -16,12 +16,12 @@
 -dontwarn com.google.j2objc.annotations.**
 -dontwarn coil3.PlatformContext
 
--keep class io.github.landwarderer.futon.settings.NotificationSettingsLegacyFragment
--keep class io.github.landwarderer.futon.settings.about.changelog.ChangelogFragment
+-keep class com.arcadelabs.spiderlily.settings.NotificationSettingsLegacyFragment
+-keep class com.arcadelabs.spiderlily.settings.about.changelog.ChangelogFragment
 
--keep class io.github.landwarderer.futon.core.exceptions.* { *; }
--keep class io.github.landwarderer.futon.core.prefs.ScreenshotsPolicy { *; }
--keep class io.github.landwarderer.futon.backups.ui.periodical.PeriodicalBackupSettingsFragment { *; }
+-keep class com.arcadelabs.spiderlily.core.exceptions.* { *; }
+-keep class com.arcadelabs.spiderlily.core.prefs.ScreenshotsPolicy { *; }
+-keep class com.arcadelabs.spiderlily.backups.ui.periodical.PeriodicalBackupSettingsFragment { *; }
 -keep class org.jsoup.parser.Tag
 -keep class org.jsoup.internal.StringUtil
 
@@ -37,11 +37,11 @@
 -keeppackagenames uy.kohesive.injekt.**
 -keepclassmembers class uy.kohesive.injekt.** { *; }
 
--keep class io.github.landwarderer.futon.mihon.** { *; }
--keeppackagenames io.github.landwarderer.futon.mihon.**
+-keep class com.arcadelabs.spiderlily.mihon.** { *; }
+-keeppackagenames com.arcadelabs.spiderlily.mihon.**
 
 # Keep everything related to dynamic loading
--keep class io.github.landwarderer.futon.mihon.ChildFirstPathClassLoader { *; }
+-keep class com.arcadelabs.spiderlily.mihon.ChildFirstPathClassLoader { *; }
 -keep public class * extends dalvik.system.PathClassLoader { *; }
 -keep public class * extends dalvik.system.BaseDexClassLoader { *; }
 

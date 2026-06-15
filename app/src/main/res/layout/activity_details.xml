@@ -26,7 +26,7 @@
 
 	</com.google.android.material.appbar.AppBarLayout>
 
-    <io.github.landwarderer.futon.image.ui.CoverImageView
+    <com.arcadelabs.spiderlily.image.ui.CoverImageView
         android:id="@+id/imageView_blur_background"
         android:layout_width="match_parent"
         android:layout_height="500dp"
@@ -65,7 +65,7 @@
 				android:layout_height="match_parent"
 				android:paddingBottom="@dimen/margin_normal">
 
-				<io.github.landwarderer.futon.image.ui.CoverImageView
+				<com.arcadelabs.spiderlily.image.ui.CoverImageView
 					android:id="@+id/imageView_cover"
 					android:layout_width="0dp"
 					android:layout_height="0dp"
@@ -114,7 +114,7 @@
 					app:layout_constraintBottom_toBottomOf="@id/imageView_cover"
 					app:layout_constraintEnd_toEndOf="@id/imageView_cover" />
 
-				<io.github.landwarderer.futon.core.ui.widgets.SelectableTextView
+				<com.arcadelabs.spiderlily.core.ui.widgets.SelectableTextView
 					android:id="@+id/textView_title"
 					android:layout_width="0dp"
 					android:layout_height="wrap_content"
@@ -130,7 +130,7 @@
 					app:layout_constraintTop_toTopOf="parent"
 					tools:text="@tools:sample/lorem" />
 
-				<io.github.landwarderer.futon.core.ui.widgets.SelectableTextView
+				<com.arcadelabs.spiderlily.core.ui.widgets.SelectableTextView
 					android:id="@+id/textView_subtitle"
 					android:layout_width="0dp"
 					android:layout_height="wrap_content"
@@ -194,7 +194,7 @@
 					app:layout_constraintBaseline_toBaselineOf="@id/textView_description_title"
 					app:layout_constraintEnd_toEndOf="parent" />
 
-				<io.github.landwarderer.futon.core.ui.widgets.SelectableTextView
+				<com.arcadelabs.spiderlily.core.ui.widgets.SelectableTextView
 					android:id="@+id/textView_description"
 					android:layout_width="0dp"
 					android:layout_height="wrap_content"
@@ -212,7 +212,7 @@
 					tools:ignore="UnusedAttribute"
 					tools:text="@tools:sample/lorem/random" />
 
-				<io.github.landwarderer.futon.core.ui.widgets.ChipsView
+				<com.arcadelabs.spiderlily.core.ui.widgets.ChipsView
 					android:id="@+id/chips_tags"
 					android:layout_width="0dp"
 					android:layout_height="wrap_content"
@@ -336,7 +336,7 @@
 
 	<androidx.fragment.app.FragmentContainerView
 		android:id="@+id/container_bottom_sheet"
-		android:name="io.github.landwarderer.futon.details.ui.pager.ChaptersPagesSheet"
+		android:name="com.arcadelabs.spiderlily.details.ui.pager.ChaptersPagesSheet"
 		style="@style/Widget.Material3.BottomSheet"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <io.github.landwarderer.futon.core.ui.sheet.AdaptiveSheetHeaderBar
+    <com.arcadelabs.spiderlily.core.ui.sheet.AdaptiveSheetHeaderBar
         android:id="@+id/headerBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -74,7 +74,7 @@
 
     </com.google.android.material.appbar.MaterialToolbar>
 
-    <io.github.landwarderer.futon.core.ui.widgets.TouchBlockLayout
+    <com.arcadelabs.spiderlily.core.ui.widgets.TouchBlockLayout
         android:id="@+id/layout_touchBlock"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -83,6 +83,6 @@
             android:id="@+id/pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-    </io.github.landwarderer.futon.core.ui.widgets.TouchBlockLayout>
+    </com.arcadelabs.spiderlily.core.ui.widgets.TouchBlockLayout>
 
 </LinearLayout>

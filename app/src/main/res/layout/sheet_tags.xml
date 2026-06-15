@@ -6,7 +6,7 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
 
-	<io.github.landwarderer.futon.core.ui.sheet.AdaptiveSheetHeaderBar
+	<com.arcadelabs.spiderlily.core.ui.sheet.AdaptiveSheetHeaderBar
 		android:id="@+id/headerBar"
 		android:layout_width="0dp"
 		android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
 
 	</com.google.android.material.textfield.TextInputLayout>
 
-	<io.github.landwarderer.futon.core.ui.list.fastscroll.FastScrollRecyclerView
+	<com.arcadelabs.spiderlily.core.ui.list.fastscroll.FastScrollRecyclerView
 		android:id="@+id/recyclerView"
 		android:layout_width="0dp"
 		android:layout_height="0dp"

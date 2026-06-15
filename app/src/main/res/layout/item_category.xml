@@ -10,7 +10,7 @@
 	android:paddingStart="?android:listPreferredItemPaddingStart"
 	tools:ignore="RtlSymmetry">
 
-	<io.github.landwarderer.futon.image.ui.CoverStackView
+	<com.arcadelabs.spiderlily.image.ui.CoverStackView
 		android:id="@+id/coversView"
 		android:layout_width="0dp"
 		android:layout_height="@dimen/category_covers_height"

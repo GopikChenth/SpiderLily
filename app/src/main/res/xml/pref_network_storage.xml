@@ -7,10 +7,10 @@
 
     <PreferenceCategory android:title="@string/storage_usage">
 
-        <io.github.landwarderer.futon.settings.userdata.storage.StorageUsagePreference android:key="storage_usage" />
+        <com.arcadelabs.spiderlily.settings.userdata.storage.StorageUsagePreference android:key="storage_usage" />
 
         <Preference
-            android:fragment="io.github.landwarderer.futon.settings.userdata.storage.DataCleanupSettingsFragment"
+            android:fragment="com.arcadelabs.spiderlily.settings.userdata.storage.DataCleanupSettingsFragment"
             android:persistent="false"
             android:title="@string/data_removal" />
 
@@ -35,7 +35,7 @@
         app:useSimpleSummaryProvider="true" />
 
     <PreferenceScreen
-        android:fragment="io.github.landwarderer.futon.settings.ProxySettingsFragment"
+        android:fragment="com.arcadelabs.spiderlily.settings.ProxySettingsFragment"
         android:key="proxy"
         android:title="@string/proxy"
         app:allowDividerAbove="true" />

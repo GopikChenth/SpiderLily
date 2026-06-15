@@ -16,7 +16,7 @@ plugins {
 
 android {
 	compileSdk = 36
-	namespace = 'io.github.landwarderer.futon'
+	namespace = 'com.arcadelabs.spiderlily'
 
 	dependenciesInfo {
 		// Disables dependency metadata when building APKs (for IzzyOnDroid/F-Droid)
@@ -26,13 +26,13 @@ android {
 	}
 
 	defaultConfig {
-		applicationId 'io.github.landwarderer.futon'
+		applicationId 'com.arcadelabs.spiderlily'
 		minSdk = 23
 		targetSdk = 36
 		versionCode project.hasProperty('versionCode') ? project.property('versionCode').toInteger() : 90700
         versionName project.hasProperty('versionName') ? project.property('versionName') : '9.7'
         generatedDensities = []
-		testInstrumentationRunner 'io.github.landwarderer.futon.HiltTestRunner'
+		testInstrumentationRunner 'com.arcadelabs.spiderlily.HiltTestRunner'
 		ksp {
 			arg('room.generateKotlin', 'true')
 		}

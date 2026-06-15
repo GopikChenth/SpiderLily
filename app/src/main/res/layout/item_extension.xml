@@ -13,7 +13,7 @@
     android:paddingStart="?listPreferredItemPaddingStart"
     tools:ignore="RtlSymmetry">
 
-	<io.github.landwarderer.futon.core.image.CoilImageView
+	<com.arcadelabs.spiderlily.core.image.CoilImageView
 		android:id="@+id/imageView_icon"
 		android:layout_width="40dp"
 		android:layout_height="40dp"

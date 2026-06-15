@@ -7,7 +7,7 @@
 	android:layout_height="match_parent"
 	android:orientation="vertical">
 
-	<io.github.landwarderer.futon.core.ui.sheet.AdaptiveSheetHeaderBar
+	<com.arcadelabs.spiderlily.core.ui.sheet.AdaptiveSheetHeaderBar
 		android:id="@+id/headerBar"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"

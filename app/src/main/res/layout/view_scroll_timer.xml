@@ -59,7 +59,7 @@
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="@id/slider_timer" />
 
-	<io.github.landwarderer.futon.core.ui.widgets.CubicSlider
+	<com.arcadelabs.spiderlily.core.ui.widgets.CubicSlider
 		android:id="@+id/slider_timer"
 		android:layout_width="0dp"
 		android:layout_height="wrap_content"

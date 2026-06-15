@@ -12,7 +12,7 @@
 		android:layout_height="wrap_content"
 		android:paddingBottom="16dp">
 
-		<io.github.landwarderer.futon.core.ui.sheet.AdaptiveSheetHeaderBar
+		<com.arcadelabs.spiderlily.core.ui.sheet.AdaptiveSheetHeaderBar
 			android:id="@+id/headerBar"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
@@ -21,7 +21,7 @@
 			app:layout_constraintTop_toTopOf="parent"
 			app:title="@string/tracking" />
 
-		<io.github.landwarderer.futon.image.ui.CoverImageView
+		<com.arcadelabs.spiderlily.image.ui.CoverImageView
 			android:id="@+id/imageView_cover"
 			android:layout_width="0dp"
 			android:layout_height="0dp"
@@ -124,7 +124,7 @@
 			app:barrierMargin="8dp"
 			app:constraint_referenced_ids="imageView_cover,spinner_status" />
 
-		<io.github.landwarderer.futon.core.ui.widgets.SelectableTextView
+		<com.arcadelabs.spiderlily.core.ui.widgets.SelectableTextView
 			android:id="@+id/textView_description"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"

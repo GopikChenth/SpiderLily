@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:title="@string/appearance">
 
-    <io.github.landwarderer.futon.settings.utils.ThemeChooserPreference
+    <com.arcadelabs.spiderlily.settings.utils.ThemeChooserPreference
         android:key="color_theme"
         android:title="@string/color_theme" />
 
@@ -22,7 +22,7 @@
         android:summary="@string/black_dark_theme_summary"
         android:title="@string/black_dark_theme" />
 
-    <io.github.landwarderer.futon.settings.utils.ActivityListPreference
+    <com.arcadelabs.spiderlily.settings.utils.ActivityListPreference
         android:key="app_locale"
         android:title="@string/language" />
 
@@ -34,7 +34,7 @@
             android:title="@string/list_mode"
             app:useSimpleSummaryProvider="true" />
 
-        <io.github.landwarderer.futon.settings.utils.SliderPreference
+        <com.arcadelabs.spiderlily.settings.utils.SliderPreference
             android:key="grid_size"
             android:stepSize="5"
             android:title="@string/grid_size"
@@ -94,7 +94,7 @@
             android:title="@string/search_suggestions" />
 
         <PreferenceScreen
-            android:fragment="io.github.landwarderer.futon.settings.nav.NavConfigFragment"
+            android:fragment="com.arcadelabs.spiderlily.settings.nav.NavConfigFragment"
             android:key="nav_main"
             android:title="@string/main_screen_sections" />
 

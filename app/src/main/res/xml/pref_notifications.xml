@@ -27,7 +27,7 @@
 		android:key="notifications_light"
 		android:title="@string/light_indicator" />
 
-	<io.github.landwarderer.futon.settings.utils.LinksPreference
+	<com.arcadelabs.spiderlily.settings.utils.LinksPreference
 		android:icon="@drawable/ic_info_outline"
 		android:key="tracker_notifications_info"
 		android:persistent="false"

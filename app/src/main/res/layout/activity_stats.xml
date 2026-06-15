@@ -77,7 +77,7 @@
 
 	</HorizontalScrollView>
 
-	<io.github.landwarderer.futon.stats.ui.views.PieChartView
+	<com.arcadelabs.spiderlily.stats.ui.views.PieChartView
 		android:id="@+id/chart"
 		android:layout_width="0dp"
 		android:layout_height="0dp"

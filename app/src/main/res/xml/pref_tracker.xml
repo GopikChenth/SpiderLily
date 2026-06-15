@@ -41,7 +41,7 @@
 
 	<Preference
 		android:dependency="tracker_enabled"
-		android:fragment="io.github.landwarderer.futon.settings.NotificationSettingsLegacyFragment"
+		android:fragment="com.arcadelabs.spiderlily.settings.NotificationSettingsLegacyFragment"
 		android:key="notifications_settings"
 		android:title="@string/notifications_settings" />
 
@@ -76,7 +76,7 @@
 			android:title="@string/disable_battery_optimization"
 			app:isPreferenceVisible="false" />
 
-		<io.github.landwarderer.futon.settings.utils.LinksPreference
+		<com.arcadelabs.spiderlily.settings.utils.LinksPreference
 			android:icon="@drawable/ic_info_outline"
 			android:key="track_warning"
 			android:persistent="false"

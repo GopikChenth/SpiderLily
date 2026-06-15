@@ -3,7 +3,7 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto">
 
-	<io.github.landwarderer.futon.settings.utils.SplitSwitchPreference
+	<com.arcadelabs.spiderlily.settings.utils.SplitSwitchPreference
 		android:key="leak_canary"
 		android:persistent="false"
 		android:title="LeakCanary" />

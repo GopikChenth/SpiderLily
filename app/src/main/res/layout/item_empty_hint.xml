@@ -7,7 +7,7 @@
 	android:layout_height="wrap_content"
 	android:padding="@dimen/margin_normal">
 
-	<io.github.landwarderer.futon.core.image.CoilImageView
+	<com.arcadelabs.spiderlily.core.image.CoilImageView
 		android:id="@+id/icon"
 		android:layout_width="120dp"
 		android:layout_height="120dp"

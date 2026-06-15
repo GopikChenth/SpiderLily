@@ -6,7 +6,7 @@
 	tools:orientation="horizontal"
 	tools:parentTag="android.widget.LinearLayout">
 
-	<io.github.landwarderer.futon.core.ui.widgets.CheckableImageView
+	<com.arcadelabs.spiderlily.core.ui.widgets.CheckableImageView
 		android:id="@+id/icon"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"

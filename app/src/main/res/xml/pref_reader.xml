@@ -35,7 +35,7 @@
 		android:summary="@string/webtoon_zoom_summary"
 		android:title="@string/webtoon_zoom" />
 
-	<io.github.landwarderer.futon.settings.utils.SliderPreference
+	<com.arcadelabs.spiderlily.settings.utils.SliderPreference
 		android:dependency="webtoon_zoom"
 		android:key="webtoon_zoom_out"
 		android:stepSize="10"
