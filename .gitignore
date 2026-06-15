@@ -40,3 +40,4 @@ replay_pid*.log
 *.jks
 *.keystore
 .idea/
+/Futon/

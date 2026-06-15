@@ -53,18 +53,18 @@
 ./gradlew connectedDebugAndroidTest
 
 # Run a specific test class
-./gradlew test --tests "io.github.landwarderer.futon.core.github.VersionIdTest"
+./gradlew test --tests "com.arcadelabs.spiderlily.core.github.VersionIdTest"
 
 # Run a specific test method
-./gradlew test --tests "io.github.landwarderer.futon.core.github.VersionIdTest.testVersionIdParse"
+./gradlew test --tests "com.arcadelabs.spiderlily.core.github.VersionIdTest.testVersionIdParse"
 
 # Run instrumented test class
 ./gradlew connectedDebugAndroidTest \
-  -Pandroid.testInstrumentationRunnerArguments.class=io.github.landwarderer.futon.core.db.MangaDatabaseTest
+  -Pandroid.testInstrumentationRunnerArguments.class=com.arcadelabs.spiderlily.core.db.MangaDatabaseTest
 
 # Run specific instrumented test method
 ./gradlew connectedDebugAndroidTest \
-  -Pandroid.testInstrumentationRunnerArguments.class=io.github.landwarderer.futon.core.db.MangaDatabaseTest#migrateAll
+  -Pandroid.testInstrumentationRunnerArguments.class=com.arcadelabs.spiderlily.core.db.MangaDatabaseTest#migrateAll
 ```
 
 ### Clean & Rebuild
@@ -86,7 +86,7 @@
 Imports follow a strict order:
 1. Android/AndroidX imports (grouped by component)
 2. Third-party libraries (Hilt, Kotlin coroutines, etc.)
-3. Internal project imports (`io.github.landwarderer.futon.*`)
+3. Internal project imports (`com.arcadelabs.spiderlily.*`)
 4. `javax.inject` imports (always last)
 
 ```kotlin
@@ -95,8 +95,8 @@ import androidx.activity.viewModels
 import androidx.lifecycle.Lifecycle
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
-import io.github.landwarderer.futon.R
-import io.github.landwarderer.futon.core.ui.BaseActivity
+import com.arcadelabs.spiderlily.R
+import com.arcadelabs.spiderlily.core.ui.BaseActivity
 import javax.inject.Inject
 ```
 
