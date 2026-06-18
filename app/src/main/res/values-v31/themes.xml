@@ -9,7 +9,7 @@
 
 	<style name="Theme.SpiderLily" parent="Base.V31.SpiderLily" />
 
-	<style name="Theme.futon.appWidgetContainer" parent="@android:style/Theme.DeviceDefault.DayNight">
+	<style name="Theme.SpiderLily.AppWidgetContainer" parent="@android:style/Theme.DeviceDefault.DayNight">
 		<item name="android:colorBackground">@color/m3_ref_palette_dynamic_secondary95</item>
 		<item name="android:panelColorBackground">@color/m3_ref_palette_dynamic_secondary90</item>
 		<item name="colorTertiary">@color/m3_ref_palette_dynamic_secondary70</item>
