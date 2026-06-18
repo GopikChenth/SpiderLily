@@ -63,7 +63,7 @@ class TwoLinesItemView @JvmOverloads constructor(
 			set = attrs,
 			attrs = R.styleable.TwoLinesItemView,
 			defStyleAttr = defStyleAttr,
-			defStyleRes = R.style.Widget_Futon_TwoLinesItemView,
+			defStyleRes = R.style.Widget_SpiderLily_TwoLinesItemView,
 		) {
 			val itemRippleColor = getRippleColor(context)
 			val shape = createShapeDrawable(this)
@@ -137,3 +137,4 @@ class TwoLinesItemView @JvmOverloads constructor(
 			?: ColorStateList.valueOf(Color.TRANSPARENT)
 	}
 }
+

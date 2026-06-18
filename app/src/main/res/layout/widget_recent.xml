@@ -7,7 +7,7 @@
 	android:clipToOutline="true"
 	android:outlineProvider="background"
 	android:padding="4dp"
-	android:theme="@style/Theme.Futon.AppWidgetContainer"
+	android:theme="@style/Theme.futon.appWidgetContainer"
 	tools:background="@drawable/bg_appwidget_root">
 
 	<StackView
@@ -26,3 +26,4 @@
 		android:textColor="?android:textColorPrimary" />
 
 </FrameLayout>
+

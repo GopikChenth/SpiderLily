@@ -17,7 +17,7 @@
 		android:scaleType="centerCrop"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent"
-		app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Futon.Cover.Medium"
+		app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.SpiderLily.Cover.Medium"
 		tools:src="@tools:sample/backgrounds/scenic" />
 
 	<TextView
@@ -51,3 +51,4 @@
 		tools:text="@tools:sample/lorem/random" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

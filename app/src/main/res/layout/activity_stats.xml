@@ -59,7 +59,7 @@
 
 			<com.google.android.material.chip.Chip
 				android:id="@+id/chip_period"
-				style="@style/Widget.Futon.Chip.Dropdown"
+				style="@style/Widget.SpiderLily.Chip.Dropdown"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/week"
@@ -67,7 +67,7 @@
 
 			<com.google.android.material.chip.Chip
 				android:id="@+id/chip_type"
-				style="@style/Widget.Futon.Chip.Dropdown"
+				style="@style/Widget.SpiderLily.Chip.Dropdown"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/manga"
@@ -114,3 +114,4 @@
 		tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

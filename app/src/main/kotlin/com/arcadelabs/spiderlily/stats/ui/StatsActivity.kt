@@ -27,7 +27,7 @@ import com.arcadelabs.spiderlily.core.ui.BaseListAdapter
 import com.arcadelabs.spiderlily.core.ui.dialog.buildAlertDialog
 import com.arcadelabs.spiderlily.core.ui.list.OnListItemClickListener
 import com.arcadelabs.spiderlily.core.ui.util.ReversibleActionObserver
-import com.arcadelabs.spiderlily.core.util.FutonColors
+import com.arcadelabs.spiderlily.core.util.SpiderLilyColors
 import com.arcadelabs.spiderlily.core.util.ext.end
 import com.arcadelabs.spiderlily.core.util.ext.observe
 import com.arcadelabs.spiderlily.core.util.ext.observeEvent
@@ -85,7 +85,7 @@ class StatsActivity : BaseActivity<ActivityStatsBinding>(),
                         value = (v.duration / 1000).toInt(),
                         label = v.manga?.title ?: v.tagName ?: getString(R.string.other_manga),
                         percent = (v.duration.toDouble() / sum).toFloat(),
-                        color = FutonColors.ofManga(this, v.manga),
+                        color = SpiderLilyColors.ofManga(this, v.manga),
                         tag = v.manga,
                     )
                 },
@@ -190,7 +190,7 @@ class StatsActivity : BaseActivity<ActivityStatsBinding>(),
         val checkedIds = viewModel.selectedCategories.value
         for (category in categories) {
             val chip = Chip(this)
-            val drawable = ChipDrawable.createFromAttributes(this, null, 0, R.style.Widget_Futon_Chip_Filter)
+            val drawable = ChipDrawable.createFromAttributes(this, null, 0, R.style.Widget_SpiderLily_Chip_Filter)
             chip.setChipDrawable(drawable)
             chip.text = category.title
             chip.tag = category
@@ -248,3 +248,4 @@ class StatsActivity : BaseActivity<ActivityStatsBinding>(),
         menu.show()
     }
 }
+

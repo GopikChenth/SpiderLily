@@ -95,7 +95,7 @@ class AppBackupAgentTest {
 		val agent = AppBackupAgent()
 		val backup = File.createTempFile("backup_", ".tmp")
 		InstrumentationRegistry.getInstrumentation().context.assets
-			.open("futon_test.bak", AssetManager.ACCESS_STREAMING)
+			.open("spiderlily_test.bak", AssetManager.ACCESS_STREAMING)
 			.use { input ->
 				backup.outputStream().use { output ->
 					input.copyTo(output)
@@ -111,3 +111,4 @@ class AppBackupAgentTest {
 		}
 	}
 }
+

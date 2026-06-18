@@ -16,9 +16,10 @@
 		android:clipChildren="false"
 		android:clipToPadding="false"
 		android:paddingVertical="@dimen/margin_small"
-		app:chipStyle="@style/Widget.Futon.Chip.Filter"
+		app:chipStyle="@style/Widget.SpiderLily.Chip.Filter"
 		app:selectionRequired="false"
 		app:singleLine="true"
 		app:singleSelection="false" />
 
 </HorizontalScrollView>
+

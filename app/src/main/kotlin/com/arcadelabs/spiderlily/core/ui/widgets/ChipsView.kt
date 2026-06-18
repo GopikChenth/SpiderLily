@@ -75,7 +75,7 @@ class ChipsView @JvmOverloads constructor(
 
 	init {
 		val ta = context.obtainStyledAttributes(attrs, R.styleable.ChipsView, defStyleAttr, 0)
-		chipStyle = ta.getResourceId(R.styleable.ChipsView_chipStyle, R.style.Widget_Futon_Chip)
+		chipStyle = ta.getResourceId(R.styleable.ChipsView_chipStyle, R.style.Widget_SpiderLily_Chip)
 		iconsVisible = ta.getBoolean(R.styleable.ChipsView_chipIconVisible, true)
 		ta.recycle()
 
@@ -290,3 +290,4 @@ class ChipsView @JvmOverloads constructor(
 		fun onChipLongClick(chip: Chip, data: Any?): Boolean
 	}
 }
+

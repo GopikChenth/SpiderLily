@@ -250,3 +250,4 @@ class KitsuRepository(
 		else -> throw IllegalArgumentException("Value $rawValue at \"$name\" is not of type long")
 	}
 }
+

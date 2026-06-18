@@ -8,7 +8,7 @@
 	android:background="?selectableItemBackground"
 	android:orientation="vertical"
 	android:padding="6dp"
-	tools:theme="@style/ThemeOverlay.Futon.Miku">
+	tools:theme="@style/ThemeOverlay.SpiderLily.Miku">
 
 	<com.google.android.material.card.MaterialCardView
 		android:id="@+id/card"
@@ -95,3 +95,4 @@
 		android:textColor="?android:attr/textColorPrimary"
 		tools:text="@string/theme_name_miku" />
 </LinearLayout>
+

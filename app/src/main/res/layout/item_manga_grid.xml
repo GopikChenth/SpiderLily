@@ -23,7 +23,7 @@
 			android:background="?colorSurfaceContainer"
 			android:orientation="horizontal"
 			app:allowRgb565="true"
-			app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Futon.Cover"
+			app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.SpiderLily.Cover"
 			tools:ignore="ContentDescription"
 			tools:src="@tools:sample/backgrounds/scenic[5]" />
 
@@ -74,3 +74,4 @@
 		tools:text="@tools:sample/lorem" />
 
 </LinearLayout>
+

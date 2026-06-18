@@ -6,7 +6,7 @@ import androidx.preference.PreferenceManager
 import leakcanary.LeakCanary
 import com.arcadelabs.spiderlily.core.BaseApp
 
-class FutonApp : BaseApp(), SharedPreferences.OnSharedPreferenceChangeListener {
+class SpiderLilyApp : BaseApp(), SharedPreferences.OnSharedPreferenceChangeListener {
 
 	override fun attachBaseContext(base: Context) {
 		super.attachBaseContext(base)

@@ -465,3 +465,4 @@ class MangaSourcesRepository @Inject constructor(
 		return MangaParserSource.entries.find { it.name == this }
 	}
 }
+

@@ -20,7 +20,7 @@
 			android:layout_height="0dp"
 			android:layout_weight="1"
 			android:scaleType="centerCrop"
-			app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Futon.Cover.Small"
+			app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.SpiderLily.Cover.Small"
 			tools:src="@tools:sample/backgrounds/scenic" />
 
 		<TextView
@@ -37,3 +37,4 @@
 	</LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>
+

@@ -62,7 +62,7 @@ abstract class BaseActivity<B : ViewBinding> :
 		isAmoledTheme = settings.isAmoledTheme
 		setTheme(settings.colorScheme.styleResId)
 		if (isAmoledTheme) {
-			setTheme(R.style.ThemeOverlay_Futon_Amoled)
+			setTheme(R.style.ThemeOverlay_SpiderLily_Amoled)
 		}
 		putDataToExtras(intent)
 		exceptionResolver = entryPoint.exceptionResolverFactory.create(this)
@@ -180,3 +180,4 @@ abstract class BaseActivity<B : ViewBinding> :
 
 	protected fun hasViewBinding() = ::viewBinding.isInitialized
 }
+

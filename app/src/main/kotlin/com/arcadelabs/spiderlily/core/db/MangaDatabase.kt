@@ -151,7 +151,7 @@ fun getDatabaseMigrations(context: Context): Array<Migration> = arrayOf(
 )
 
 fun MangaDatabase(context: Context): MangaDatabase = Room
-	.databaseBuilder(context, MangaDatabase::class.java, "futon-db")
+	.databaseBuilder(context, MangaDatabase::class.java, "spiderlily-db")
 	.addMigrations(*getDatabaseMigrations(context))
 	.addCallback(DatabasePrePopulateCallback(context.resources))
 	.build()

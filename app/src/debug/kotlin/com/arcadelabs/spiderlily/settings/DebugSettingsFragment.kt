@@ -3,7 +3,7 @@ package com.arcadelabs.spiderlily.settings
 import android.os.Bundle
 import androidx.preference.Preference
 import leakcanary.LeakCanary
-import com.arcadelabs.spiderlily.FutonApp
+import com.arcadelabs.spiderlily.SpiderLilyApp
 import com.arcadelabs.spiderlily.R
 import com.arcadelabs.spiderlily.core.model.TestMangaSource
 import com.arcadelabs.spiderlily.core.nav.router
@@ -15,7 +15,7 @@ class DebugSettingsFragment : BasePreferenceFragment(R.string.debug), Preference
 	Preference.OnPreferenceClickListener {
 
 	private val application
-		get() = requireContext().applicationContext as FutonApp
+		get() = requireContext().applicationContext as SpiderLilyApp
 
 	override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
 		addPreferencesFromResource(R.xml.pref_debug)

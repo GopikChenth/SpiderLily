@@ -237,10 +237,10 @@ fun Throwable.report(silent: Boolean = false) {
 	// ACRA removed: use logging as a placeholder for crash reporting
 	if (!silent) {
 		exception.printStackTrace()
-		Log.e("Futon", "Exception reported", exception)
+		Log.e("futon", "Exception reported", exception)
 	} else if (!BuildConfig.DEBUG) {
 		exception.printStackTrace()
-		Log.w("Futon", "Silent exception reported", exception)
+		Log.w("futon", "Silent exception reported", exception)
 	}
 }
 
@@ -282,4 +282,5 @@ fun FileNotFoundException.parseMessage(resources: Resources): String? {
         )
     }
 }
+
 

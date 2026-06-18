@@ -17,7 +17,7 @@
 		android:layout_marginTop="16dp"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent"
-		app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Futon.Cover.Small"
+		app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.SpiderLily.Cover.Small"
 		tools:src="@tools:sample/backgrounds/scenic" />
 
 	<TextView
@@ -51,3 +51,4 @@
 		tools:text="@tools:sample/lorem[2]" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

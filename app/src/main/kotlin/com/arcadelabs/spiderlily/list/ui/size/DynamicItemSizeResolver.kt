@@ -103,9 +103,9 @@ class DynamicItemSizeResolver(
 
 		private fun TextView.adjustTextAppearance(width: Int) {
 			val textAppearanceResId = if (width < widthThreshold) {
-				R.style.TextAppearance_Futon_GridTitle_Small
+				R.style.TextAppearance_SpiderLily_GridTitle_Small
 			} else {
-				R.style.TextAppearance_Futon_GridTitle
+				R.style.TextAppearance_SpiderLily_GridTitle
 			}
 			if (textAppearanceResId != prevTextAppearance) {
 				prevTextAppearance = textAppearanceResId
@@ -115,3 +115,4 @@ class DynamicItemSizeResolver(
 		}
 	}
 }
+

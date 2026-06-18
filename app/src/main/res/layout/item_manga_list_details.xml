@@ -22,7 +22,7 @@
 			app:layout_constraintDimensionRatio="2:3"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toTopOf="parent"
-			app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Futon.Cover.Medium"
+			app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.SpiderLily.Cover.Medium"
 			app:trimImage="true"
 			tools:src="@tools:sample/backgrounds/scenic" />
 
@@ -114,3 +114,4 @@
 	</androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
+

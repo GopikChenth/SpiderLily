@@ -47,7 +47,7 @@
 	</queries>
 
 	<application
-		android:name="com.arcadelabs.spiderlily.FutonApp"
+		android:name="com.arcadelabs.spiderlily.SpiderLilyApp"
 		android:allowBackup="true"
 		android:backupAgent="com.arcadelabs.spiderlily.backups.domain.AppBackupAgent"
 		android:dataExtractionRules="@xml/backup_rules"
@@ -64,7 +64,7 @@
 		android:requestLegacyExternalStorage="true"
 		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
-		android:theme="@style/Theme.Futon"
+		android:theme="@style/Theme.SpiderLily"
 		tools:ignore="UnusedAttribute">
 
 		<activity
@@ -1700,3 +1700,5 @@
 </application>
 
 </manifest>
+
+

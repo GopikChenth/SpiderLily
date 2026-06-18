@@ -9,7 +9,7 @@ import androidx.fragment.app.strictmode.FragmentStrictMode
 import leakcanary.LeakCanary
 import com.arcadelabs.spiderlily.core.BaseApp
 
-class FutonApp : BaseApp() {
+class SpiderLilyApp : BaseApp() {
 
 	var isLeakCanaryEnabled: Boolean
 		get() = getDebugPreferences(this).getBoolean(KEY_LEAK_CANARY, true)

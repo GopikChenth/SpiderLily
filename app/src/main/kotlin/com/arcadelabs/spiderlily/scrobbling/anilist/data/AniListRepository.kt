@@ -279,3 +279,4 @@ class AniListRepository @Inject constructor(
 
 	private fun String.shrink() = replace(shrinkRegex, " ")
 }
+

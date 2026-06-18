@@ -863,3 +863,4 @@ class AppRouter private constructor(
         private inline fun <reified F : Fragment> fragmentTag() = F::class.java.fragmentTag()
     }
 }
+

@@ -2,42 +2,42 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
 	<!-- Base application theme. -->
-	<style name="Base.Theme.Futon" parent="Theme.Material3.DayNight.NoActionBar">
+	<style name="Base.Theme.SpiderLily" parent="Theme.Material3.DayNight.NoActionBar">
 
 		<!-- Theme Colors -->
-		<item name="colorPrimary">@color/futon_primary</item>
-		<item name="colorPrimaryContainer">@color/futon_primaryContainer</item>
-		<item name="colorOnPrimary">@color/futon_onPrimary</item>
-		<item name="colorOnPrimaryContainer">@color/futon_onPrimaryContainer</item>
-		<item name="colorPrimaryInverse">@color/futon_inversePrimary</item>
-		<item name="colorSecondary">@color/futon_secondary</item>
-		<item name="colorSecondaryContainer">@color/futon_secondaryContainer</item>
-		<item name="colorOnSecondary">@color/futon_onSecondary</item>
-		<item name="colorOnSecondaryContainer">@color/futon_onSecondaryContainer</item>
-		<item name="colorTertiary">@color/futon_tertiary</item>
-		<item name="colorTertiaryContainer">@color/futon_tertiaryContainer</item>
-		<item name="colorOnTertiary">@color/futon_onTertiary</item>
-		<item name="colorOnTertiaryContainer">@color/futon_onTertiaryContainer</item>
-		<item name="colorSurface">@color/futon_surface</item>
-		<item name="colorSurfaceDim">@color/futon_surfaceDim</item>
-		<item name="colorSurfaceBright">@color/futon_surfaceBright</item>
-		<item name="colorSurfaceContainerLowest">@color/futon_surfaceContainerLowest</item>
-		<item name="colorSurfaceContainerLow">@color/futon_surfaceContainerLow</item>
-		<item name="colorSurfaceContainer">@color/futon_surfaceContainer</item>
-		<item name="colorSurfaceContainerHigh">@color/futon_surfaceContainerHigh</item>
-		<item name="colorSurfaceContainerHighest">@color/futon_surfaceContainerHighest</item>
-		<item name="colorSurfaceVariant">@color/futon_surfaceVariant</item>
-		<item name="colorOnSurface">@color/futon_onSurface</item>
-		<item name="colorOnSurfaceVariant">@color/futon_onSurfaceVariant</item>
-		<item name="colorSurfaceInverse">@color/futon_inverseSurface</item>
-		<item name="colorOnSurfaceInverse">@color/futon_inverseOnSurface</item>
-		<item name="colorOnBackground">@color/futon_onSurface</item>
+		<item name="colorPrimary">@color/spiderlily_primary</item>
+		<item name="colorPrimaryContainer">@color/spiderlily_primaryContainer</item>
+		<item name="colorOnPrimary">@color/spiderlily_onPrimary</item>
+		<item name="colorOnPrimaryContainer">@color/spiderlily_onPrimaryContainer</item>
+		<item name="colorPrimaryInverse">@color/spiderlily_inversePrimary</item>
+		<item name="colorSecondary">@color/spiderlily_secondary</item>
+		<item name="colorSecondaryContainer">@color/spiderlily_secondaryContainer</item>
+		<item name="colorOnSecondary">@color/spiderlily_onSecondary</item>
+		<item name="colorOnSecondaryContainer">@color/spiderlily_onSecondaryContainer</item>
+		<item name="colorTertiary">@color/spiderlily_tertiary</item>
+		<item name="colorTertiaryContainer">@color/spiderlily_tertiaryContainer</item>
+		<item name="colorOnTertiary">@color/spiderlily_onTertiary</item>
+		<item name="colorOnTertiaryContainer">@color/spiderlily_onTertiaryContainer</item>
+		<item name="colorSurface">@color/spiderlily_surface</item>
+		<item name="colorSurfaceDim">@color/spiderlily_surfaceDim</item>
+		<item name="colorSurfaceBright">@color/spiderlily_surfaceBright</item>
+		<item name="colorSurfaceContainerLowest">@color/spiderlily_surfaceContainerLowest</item>
+		<item name="colorSurfaceContainerLow">@color/spiderlily_surfaceContainerLow</item>
+		<item name="colorSurfaceContainer">@color/spiderlily_surfaceContainer</item>
+		<item name="colorSurfaceContainerHigh">@color/spiderlily_surfaceContainerHigh</item>
+		<item name="colorSurfaceContainerHighest">@color/spiderlily_surfaceContainerHighest</item>
+		<item name="colorSurfaceVariant">@color/spiderlily_surfaceVariant</item>
+		<item name="colorOnSurface">@color/spiderlily_onSurface</item>
+		<item name="colorOnSurfaceVariant">@color/spiderlily_onSurfaceVariant</item>
+		<item name="colorSurfaceInverse">@color/spiderlily_inverseSurface</item>
+		<item name="colorOnSurfaceInverse">@color/spiderlily_inverseOnSurface</item>
+		<item name="colorOnBackground">@color/spiderlily_onSurface</item>
 		<item name="colorError">@color/error</item>
 		<item name="colorErrorContainer">@color/errorContainer</item>
 		<item name="colorOnError">@color/onError</item>
 		<item name="colorOnErrorContainer">@color/onErrorContainer</item>
-		<item name="colorOutline">@color/futon_outline</item>
-		<item name="colorOutlineVariant">@color/futon_outline</item>
+		<item name="colorOutline">@color/spiderlily_outline</item>
+		<item name="colorOutlineVariant">@color/spiderlily_outline</item>
 
 		<!-- Drawables (icons) -->
 		<item name="actionModeCloseDrawable">@drawable/abc_ic_clear_material</item>
@@ -54,39 +54,39 @@
 		<item name="windowActionModeOverlay">true</item>
 
 		<!-- System components styles -->
-		<item name="android:alertDialogTheme">@style/ThemeOverlay.Futon.AlertDialog</item>
-		<item name="alertDialogTheme">@style/ThemeOverlay.Futon.AlertDialog</item>
-		<item name="bottomSheetDialogTheme">@style/ThemeOverlay.Futon.BottomSheetDialog</item>
-		<item name="sideSheetDialogTheme">@style/ThemeOverlay.Futon.SideSheetDialog</item>
-		<item name="recyclerViewStyle">@style/Widget.Futon.RecyclerView</item>
-		<item name="android:dropDownSpinnerStyle">@style/Widget.Futon.Spinner.DropDown</item>
+		<item name="android:alertDialogTheme">@style/ThemeOverlay.SpiderLily.AlertDialog</item>
+		<item name="alertDialogTheme">@style/ThemeOverlay.SpiderLily.AlertDialog</item>
+		<item name="bottomSheetDialogTheme">@style/ThemeOverlay.SpiderLily.BottomSheetDialog</item>
+		<item name="sideSheetDialogTheme">@style/ThemeOverlay.SpiderLily.SideSheetDialog</item>
+		<item name="recyclerViewStyle">@style/Widget.SpiderLily.RecyclerView</item>
+		<item name="android:dropDownSpinnerStyle">@style/Widget.SpiderLily.Spinner.DropDown</item>
 		<item name="switchPreferenceCompatStyle">@style/Preference.SwitchPreferenceCompat.M3</item>
-		<item name="circularProgressIndicatorStyle">@style/Widget.Futon.CircularProgressIndicator</item>
-		<item name="linearProgressIndicatorStyle">@style/Widget.Futon.LinearProgressIndicator</item>
-		<item name="bottomSheetDragHandleStyle">@style/Widget.Futon.BottomSheet.DragHandle</item>
-		<item name="preferenceTheme">@style/PreferenceThemeOverlay.Futon</item>
+		<item name="circularProgressIndicatorStyle">@style/Widget.SpiderLily.CircularProgressIndicator</item>
+		<item name="linearProgressIndicatorStyle">@style/Widget.SpiderLily.LinearProgressIndicator</item>
+		<item name="bottomSheetDragHandleStyle">@style/Widget.SpiderLily.BottomSheet.DragHandle</item>
+		<item name="preferenceTheme">@style/PreferenceThemeOverlay.SpiderLily</item>
 		<!-- Fix crash in A15 -->
 		<item name="actionButtonStyle">@style/Widget.AppCompat.ActionButton</item>
 
 		<!-- Custom views -->
-		<item name="fastScrollerStyle">@style/Widget.Futon.FastScroller</item>
-		<item name="listItemTextViewStyle">@style/Widget.Futon.ListItemTextView</item>
-		<item name="dotIndicatorStyle">@style/Widget.Futon.DotIndicator</item>
-		<item name="badgeViewStyle">@style/Widget.Futon.BadgeView</item>
-		<item name="coverImageViewStyle">@style/Widget.Futon.ImageView.Cover</item>
+		<item name="fastScrollerStyle">@style/Widget.SpiderLily.FastScroller</item>
+		<item name="listItemTextViewStyle">@style/Widget.SpiderLily.ListItemTextView</item>
+		<item name="dotIndicatorStyle">@style/Widget.SpiderLily.DotIndicator</item>
+		<item name="badgeViewStyle">@style/Widget.SpiderLily.BadgeView</item>
+		<item name="coverImageViewStyle">@style/Widget.SpiderLily.ImageView.Cover</item>
 	</style>
 
 	<!--== Default Theme ==-->
-	<style name="Theme.Futon" parent="Base.Theme.Futon" />
+	<style name="Theme.SpiderLily" parent="Base.Theme.SpiderLily" />
 
 	<!-- Base ThemeOverlay -->
-	<style name="ThemeOverlay.Futon" parent="ThemeOverlay.Material3.Light" />
+	<style name="ThemeOverlay.SpiderLily" parent="ThemeOverlay.Material3.Light" />
 
 	<!-- Monet theme only support S+ -->
-	<style name="ThemeOverlay.Futon.Monet" parent="ThemeOverlay.Material3.DynamicColors.Light" />
+	<style name="ThemeOverlay.SpiderLily.Monet" parent="ThemeOverlay.Material3.DynamicColors.Light" />
 
 	<!-- Expressive Monet theme -->
-	<style name="ThemeOverlay.Futon.Expressive" parent="ThemeOverlay.Material3Expressive.DynamicColors.DayNight">
+	<style name="ThemeOverlay.SpiderLily.Expressive" parent="ThemeOverlay.Material3Expressive.DynamicColors.DayNight">
 		<item name="alertDialogTheme">@style/ThemeOverlay.Material3Expressive.Dialog.Alert</item>
 		<item name="materialAlertDialogTheme">@style/ThemeOverlay.Material3Expressive.MaterialAlertDialog</item>
 
@@ -148,12 +148,14 @@
 	</style>
 
 	<!-- Changes only for night -->
-	<style name="ThemeOverlay.Futon.Amoled" parent="" />
+	<style name="ThemeOverlay.SpiderLily.Amoled" parent="" />
 
 	<!-- App Widgets -->
 
-	<style name="Theme.Futon.AppWidgetContainer" parent="@style/Theme.MaterialComponents.Light">
-		<item name="android:colorBackground">@color/futon_background</item>
-		<item name="android:panelColorBackground">@color/futon_primaryContainer</item>
+	<style name="Theme.futon.appWidgetContainer" parent="@style/Theme.MaterialComponents.Light">
+		<item name="android:colorBackground">@color/spiderlily_background</item>
+		<item name="android:panelColorBackground">@color/spiderlily_primaryContainer</item>
 	</style>
 </resources>
+
+

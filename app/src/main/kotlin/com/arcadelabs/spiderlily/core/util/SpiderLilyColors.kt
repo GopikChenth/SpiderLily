@@ -10,7 +10,7 @@ import com.arcadelabs.spiderlily.core.util.ext.getThemeColor
 import org.koitharu.kotatsu.parsers.model.Manga
 import kotlin.math.absoluteValue
 
-object FutonColors {
+object SpiderLilyColors {
 
 	@ColorInt
 	@Deprecated("")

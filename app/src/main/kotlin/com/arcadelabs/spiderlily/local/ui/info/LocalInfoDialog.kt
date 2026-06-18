@@ -15,7 +15,7 @@ import com.arcadelabs.spiderlily.R
 import com.arcadelabs.spiderlily.core.ui.AlertDialogFragment
 import com.arcadelabs.spiderlily.core.ui.widgets.SegmentedBarView
 import com.arcadelabs.spiderlily.core.util.FileSize
-import com.arcadelabs.spiderlily.core.util.FutonColors
+import com.arcadelabs.spiderlily.core.util.SpiderLilyColors
 import com.arcadelabs.spiderlily.core.util.ext.getQuantityStringSafe
 import com.arcadelabs.spiderlily.core.util.ext.observe
 import com.arcadelabs.spiderlily.core.util.ext.observeEvent
@@ -86,7 +86,7 @@ class LocalInfoDialog : AlertDialogFragment<DialogLocalInfoBinding>(), View.OnCl
 		val total = size + available
 		val segment = SegmentedBarView.Segment(
 			percent = (size.toDouble() / total.toDouble()).toFloat(),
-			color = FutonColors.segmentColor(view.context, appcompatR.attr.colorPrimary),
+			color = SpiderLilyColors.segmentColor(view.context, appcompatR.attr.colorPrimary),
 		)
 		requireViewBinding().labelUsed.text = view.context.getString(
 			R.string.memory_usage_pattern,
