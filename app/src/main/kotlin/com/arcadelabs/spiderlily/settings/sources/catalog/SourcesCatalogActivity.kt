@@ -15,6 +15,7 @@ import com.google.android.material.chip.Chip
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.combine
 import com.arcadelabs.spiderlily.R
+import com.arcadelabs.spiderlily.core.model.getTitle
 import com.arcadelabs.spiderlily.core.model.titleResId
 import com.arcadelabs.spiderlily.core.nav.router
 import com.arcadelabs.spiderlily.core.ui.BaseActivity
@@ -94,7 +95,7 @@ class SourcesCatalogActivity : BaseActivity<ActivitySourcesCatalogBinding>(),
 	}
 
 	override fun onItemClick(item: SourceCatalogItem.Source, view: View) {
-		router.openList(item.source, null, null)
+		router.openList(item.source, null, null, item.source.getTitle(this))
 	}
 
 	override fun onItemLongClick(item: SourceCatalogItem.Source, view: View): Boolean {

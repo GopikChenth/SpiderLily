@@ -21,6 +21,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import com.arcadelabs.spiderlily.R
 import com.arcadelabs.spiderlily.core.exceptions.resolve.SnackbarErrorObserver
 import com.arcadelabs.spiderlily.core.model.LocalMangaSource
+import com.arcadelabs.spiderlily.core.model.getTitle
 import com.arcadelabs.spiderlily.core.nav.router
 import com.arcadelabs.spiderlily.core.parser.external.ExternalMangaSource
 import com.arcadelabs.spiderlily.core.ui.BaseFragment
@@ -134,7 +135,7 @@ class ExploreFragment :
 		if (sourceSelectionController?.onItemClick(item.id) == true) {
 			return
 		}
-		router.openList(item.source, null, null)
+		router.openList(item.source, null, null, item.source.getTitle(view.context))
 	}
 
 	override fun onItemLongClick(item: MangaSourceItem, view: View): Boolean {
