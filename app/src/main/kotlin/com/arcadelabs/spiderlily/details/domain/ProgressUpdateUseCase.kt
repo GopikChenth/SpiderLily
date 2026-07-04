@@ -34,28 +34,40 @@ class ProgressUpdateUseCase @Inject constructor(
 		}
 		val chapter = details.findChapterById(history.chapterId) ?: return PROGRESS_NONE
 		val chapters = details.getChapters(chapter.branch)
-		val chapterRepo = if (repo.source == chapter.source) {
-			repo
-		} else {
-			mangaRepositoryFactory.create(chapter.source)
-		}
 		val chaptersCount = chapters.size
 		if (chaptersCount == 0) {
 			return PROGRESS_NONE
 		}
 		val chapterIndex = chapters.indexOfFirst { x -> x.id == history.chapterId }
-		val pagesCount = chapterRepo.getPages(chapter).size
-		if (pagesCount == 0) {
+		if (chapterIndex < 0) {
 			return PROGRESS_NONE
 		}
-		val pagePercent = (history.page + 1) / pagesCount.toFloat()
+		val isChapterCompleted = history.percent >= 1f || (history.chaptersCount > 0 && run {
+			val chaptersRead = history.percent * history.chaptersCount
+			kotlin.math.abs(chaptersRead - kotlin.math.round(chaptersRead)) < 0.001f
+		})
+		val pagePercent = if (isChapterCompleted) {
+			1.0f
+		} else {
+			val chapterRepo = if (repo.source == chapter.source) {
+				repo
+			} else {
+				mangaRepositoryFactory.create(chapter.source)
+			}
+			val pagesCount = chapterRepo.getPages(chapter).size
+			if (pagesCount == 0) {
+				return PROGRESS_NONE
+			}
+			(history.page + 1) / pagesCount.toFloat()
+		}
 		val ppc = 1f / chaptersCount
 		val result = ppc * chapterIndex + ppc * pagePercent
-		if (result != history.percent) {
+		if (result != history.percent || chaptersCount != history.chaptersCount) {
 			database.getHistoryDao().update(
 				history.copy(
 					chapterId = chapter.id,
 					percent = result,
+					chaptersCount = chaptersCount,
 				),
 			)
 		}
