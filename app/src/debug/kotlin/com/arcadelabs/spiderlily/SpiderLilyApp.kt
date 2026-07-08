@@ -39,7 +39,7 @@ class SpiderLilyApp : BaseApp() {
 		StrictMode.setThreadPolicy(
 			StrictMode.ThreadPolicy.Builder().apply {
 				detectNetwork()
-				detectDiskWrites()
+				// detectDiskWrites()
 				detectCustomSlowCalls()
 				detectResourceMismatches()
 				if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) detectUnbufferedIo()
