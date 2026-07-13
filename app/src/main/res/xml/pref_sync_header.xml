@@ -6,7 +6,7 @@
 
 		<intent
 			android:action="android.intent.action.VIEW"
-			android:data="futon://sync-settings" />
+			android:data="spiderlily://sync-settings" />
 	</Preference>
 
 </PreferenceScreen>

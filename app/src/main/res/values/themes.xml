@@ -152,7 +152,7 @@
 
 	<!-- App Widgets -->
 
-	<style name="Theme.futon.appWidgetContainer" parent="@style/Theme.MaterialComponents.Light">
+	<style name="Theme.spiderlily.appWidgetContainer" parent="@style/Theme.MaterialComponents.Light">
 		<item name="android:colorBackground">@color/spiderlily_background</item>
 		<item name="android:panelColorBackground">@color/spiderlily_primaryContainer</item>
 	</style>

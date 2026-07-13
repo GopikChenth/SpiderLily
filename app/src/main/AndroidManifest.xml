@@ -92,11 +92,11 @@
 
 				<data
 					android:scheme="https"
-					android:host="futon.app"
+					android:host="spiderlily.app"
 					android:pathPrefix="/manga" />
 				<data
 					android:scheme="http"
-					android:host="futon.app"
+					android:host="spiderlily.app"
 					android:pathPrefix="/manga" />
 			</intent-filter>
 			<intent-filter android:autoVerify="true">
@@ -107,11 +107,11 @@
 
 				<data
 					android:scheme="https"
-					android:host="futonapp.pages.dev"
+					android:host="spiderlilyapp.pages.dev"
 					android:pathPrefix="/manga" />
 				<data
 					android:scheme="http"
-					android:host="futonapp.pages.dev"
+					android:host="spiderlilyapp.pages.dev"
 					android:pathPrefix="/manga" />
 			</intent-filter>
 			<intent-filter>
@@ -120,7 +120,7 @@
 				<category android:name="android.intent.category.DEFAULT" />
 				<category android:name="android.intent.category.BROWSABLE" />
 
-				<data android:scheme="futon" android:host="manga" />
+				<data android:scheme="spiderlily" android:host="manga" />
 			</intent-filter>
 		</activity>
 		<activity
@@ -173,7 +173,7 @@
 				<category android:name="android.intent.category.DEFAULT" />
 				<category android:name="android.intent.category.BROWSABLE" />
 
-				<data android:scheme="futon" android:host="about" />
+				<data android:scheme="spiderlily" android:host="about" />
 			</intent-filter>
 			<intent-filter>
 				<action android:name="android.intent.action.VIEW" />
@@ -181,7 +181,7 @@
 				<category android:name="android.intent.category.DEFAULT" />
 				<category android:name="android.intent.category.BROWSABLE" />
 
-				<data android:scheme="futon" android:host="sync-settings" />
+				<data android:scheme="spiderlily" android:host="sync-settings" />
 			</intent-filter>
 			<intent-filter>
 				<action android:name="android.intent.action.VIEW" />
@@ -189,7 +189,7 @@
 				<category android:name="android.intent.category.DEFAULT" />
 				<category android:name="android.intent.category.BROWSABLE" />
 
-				<data android:scheme="futon" android:host="about" />
+				<data android:scheme="spiderlily" android:host="about" />
 			</intent-filter>
 			<intent-filter>
 				<action android:name="android.intent.action.VIEW" />
@@ -197,7 +197,7 @@
 				<category android:name="android.intent.category.DEFAULT" />
 				<category android:name="android.intent.category.BROWSABLE" />
 
-				<data android:scheme="futon" android:host="sync-settings" />
+				<data android:scheme="spiderlily" android:host="sync-settings" />
 			</intent-filter>
 		</activity>
 		<activity
