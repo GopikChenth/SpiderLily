@@ -5,9 +5,9 @@ import android.webkit.MimeTypeMap
 import org.jetbrains.annotations.Blocking
 import com.arcadelabs.spiderlily.core.util.ext.MimeType
 import com.arcadelabs.spiderlily.core.util.ext.toMimeTypeOrNull
-import org.koitharu.kotatsu.parsers.util.nullIfEmpty
-import org.koitharu.kotatsu.parsers.util.removeSuffix
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.util.nullIfEmpty
+import com.arcadelabs.spiderlily_parser.util.removeSuffix
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import java.io.File
 import java.nio.file.Files
 import coil3.util.MimeTypeMap as CoilMimeTypeMap

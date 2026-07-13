@@ -3,8 +3,8 @@ package com.arcadelabs.spiderlily.core.util.ext
 import android.content.Context
 import androidx.collection.arraySetOf
 import com.arcadelabs.spiderlily.R
-import org.koitharu.kotatsu.parsers.util.ellipsize
-import org.koitharu.kotatsu.parsers.util.nullIfEmpty
+import com.arcadelabs.spiderlily_parser.util.ellipsize
+import com.arcadelabs.spiderlily_parser.util.nullIfEmpty
 import java.util.UUID
 
 fun String.toUUIDOrNull(): UUID? = try {

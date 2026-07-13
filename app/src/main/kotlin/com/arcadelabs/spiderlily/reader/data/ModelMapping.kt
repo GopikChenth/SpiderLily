@@ -1,7 +1,7 @@
 package com.arcadelabs.spiderlily.reader.data
 
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaChapter
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaChapter
 
 fun Manga.filterChapters(branch: String?): Manga {
 	if (chapters.isNullOrEmpty()) return this

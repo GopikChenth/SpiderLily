@@ -37,7 +37,7 @@ import com.arcadelabs.spiderlily.list.ui.model.EmptyState
 import com.arcadelabs.spiderlily.list.ui.model.ListModel
 import com.arcadelabs.spiderlily.list.ui.model.LoadingState
 import com.arcadelabs.spiderlily.list.ui.model.toErrorState
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 import java.util.concurrent.atomic.AtomicBoolean
 import javax.inject.Inject
 import com.arcadelabs.spiderlily.local.data.LocalStorageChanges

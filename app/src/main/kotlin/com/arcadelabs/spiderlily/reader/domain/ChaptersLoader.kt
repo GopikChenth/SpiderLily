@@ -7,8 +7,8 @@ import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import com.arcadelabs.spiderlily.core.parser.MangaRepository
 import com.arcadelabs.spiderlily.details.data.MangaDetails
-import org.koitharu.kotatsu.parsers.model.MangaChapter
-import org.koitharu.kotatsu.parsers.model.MangaPage
+import com.arcadelabs.spiderlily_parser.model.MangaChapter
+import com.arcadelabs.spiderlily_parser.model.MangaPage
 import com.arcadelabs.spiderlily.reader.ui.pager.ReaderPage
 import javax.inject.Inject
 

@@ -15,7 +15,7 @@ import androidx.core.view.PointerIconCompat
 import androidx.core.view.ViewCompat
 import com.arcadelabs.spiderlily.core.util.ext.getThemeColor
 import com.arcadelabs.spiderlily.core.util.ext.resolveDp
-import org.koitharu.kotatsu.parsers.util.replaceWith
+import com.arcadelabs.spiderlily_parser.util.replaceWith
 import kotlin.math.atan2
 import kotlin.math.sqrt
 

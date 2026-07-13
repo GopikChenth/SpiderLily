@@ -33,11 +33,11 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.onStart
-import org.koitharu.kotatsu.parsers.model.SortOrder
-import org.koitharu.kotatsu.parsers.util.find
-import org.koitharu.kotatsu.parsers.util.mapNotNullToSet
-import org.koitharu.kotatsu.parsers.util.mapToSet
-import org.koitharu.kotatsu.parsers.util.nullIfEmpty
+import com.arcadelabs.spiderlily_parser.model.SortOrder
+import com.arcadelabs.spiderlily_parser.util.find
+import com.arcadelabs.spiderlily_parser.util.mapNotNullToSet
+import com.arcadelabs.spiderlily_parser.util.mapToSet
+import com.arcadelabs.spiderlily_parser.util.nullIfEmpty
 import java.io.File
 import java.net.Proxy
 import java.util.EnumSet

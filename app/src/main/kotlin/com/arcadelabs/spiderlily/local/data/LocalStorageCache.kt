@@ -14,9 +14,9 @@ import com.arcadelabs.spiderlily.core.util.ext.subdir
 import com.arcadelabs.spiderlily.core.util.ext.takeIfReadable
 import com.arcadelabs.spiderlily.core.util.ext.takeIfWriteable
 import com.arcadelabs.spiderlily.core.util.ext.writeAllCancellable
-import org.koitharu.kotatsu.parsers.util.ifNullOrEmpty
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
-import org.koitharu.kotatsu.parsers.util.suspendlazy.suspendLazy
+import com.arcadelabs.spiderlily_parser.util.ifNullOrEmpty
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.util.suspendlazy.suspendLazy
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runInterruptible
 import kotlinx.coroutines.withContext

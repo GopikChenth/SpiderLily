@@ -19,9 +19,9 @@ import com.arcadelabs.spiderlily.core.model.getTitle
 import com.arcadelabs.spiderlily.core.nav.AppRouter
 import com.arcadelabs.spiderlily.core.parser.ParserMangaRepository
 import com.arcadelabs.spiderlily.core.util.ext.getDisplayMessage
-import org.koitharu.kotatsu.parsers.MangaParserAuthProvider
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.MangaParserAuthProvider
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 
 @AndroidEntryPoint
 class SourceAuthActivity : BaseBrowserActivity(), BrowserCallback {

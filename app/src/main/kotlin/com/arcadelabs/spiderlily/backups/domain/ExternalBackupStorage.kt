@@ -7,7 +7,7 @@ import androidx.documentfile.provider.DocumentFile
 import dagger.hilt.android.qualifiers.ApplicationContext
 import com.arcadelabs.spiderlily.core.prefs.AppSettings
 import com.arcadelabs.spiderlily.core.util.ext.printStackTraceDebug
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runInterruptible
 import okio.buffer

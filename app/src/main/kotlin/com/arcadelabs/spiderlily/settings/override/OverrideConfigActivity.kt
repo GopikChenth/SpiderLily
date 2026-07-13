@@ -21,8 +21,8 @@ import com.arcadelabs.spiderlily.core.util.ext.observe
 import com.arcadelabs.spiderlily.core.util.ext.observeEvent
 import com.arcadelabs.spiderlily.core.util.ext.tryLaunch
 import com.arcadelabs.spiderlily.databinding.ActivityOverrideEditBinding
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.util.ifNullOrEmpty
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.util.ifNullOrEmpty
 import com.arcadelabs.spiderlily.picker.ui.PageImagePickContract
 import com.google.android.material.R as materialR
 

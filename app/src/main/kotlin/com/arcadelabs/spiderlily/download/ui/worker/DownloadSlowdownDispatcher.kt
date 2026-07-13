@@ -5,7 +5,7 @@ import androidx.collection.MutableObjectLongMap
 import kotlinx.coroutines.delay
 import com.arcadelabs.spiderlily.core.parser.MangaRepository
 import com.arcadelabs.spiderlily.core.parser.ParserMangaRepository
-import org.koitharu.kotatsu.parsers.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.MangaSource
 import javax.inject.Inject
 import javax.inject.Singleton
 

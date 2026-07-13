@@ -14,7 +14,7 @@ import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response
-import org.koitharu.kotatsu.parsers.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.MangaSource
 import java.io.IOException
 import java.net.URLDecoder
 import java.nio.charset.StandardCharsets

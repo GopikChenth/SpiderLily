@@ -16,7 +16,7 @@ import com.arcadelabs.spiderlily.core.ui.AlertDialogFragment
 import com.arcadelabs.spiderlily.core.util.ext.isHttpUrl
 import com.arcadelabs.spiderlily.core.util.ext.withArgs
 import com.arcadelabs.spiderlily.databinding.PreferenceDialogAutocompletetextviewBinding
-import org.koitharu.kotatsu.parsers.util.ifNullOrEmpty
+import com.arcadelabs.spiderlily_parser.util.ifNullOrEmpty
 import com.arcadelabs.spiderlily.settings.utils.validation.UrlValidator
 import com.arcadelabs.spiderlily.sync.data.SyncSettings
 import javax.inject.Inject

@@ -17,7 +17,7 @@ import com.arcadelabs.spiderlily.core.util.ext.consume
 import com.arcadelabs.spiderlily.core.util.ext.observe
 import com.arcadelabs.spiderlily.core.util.ext.textAndVisible
 import com.arcadelabs.spiderlily.databinding.SheetStatsMangaBinding
-import org.koitharu.kotatsu.parsers.util.format
+import com.arcadelabs.spiderlily_parser.util.format
 import com.arcadelabs.spiderlily.stats.ui.views.BarChartView
 
 @AndroidEntryPoint

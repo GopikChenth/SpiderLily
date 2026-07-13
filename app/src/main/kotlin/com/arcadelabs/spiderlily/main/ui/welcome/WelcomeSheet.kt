@@ -28,7 +28,7 @@ import com.arcadelabs.spiderlily.core.util.ext.observe
 import com.arcadelabs.spiderlily.core.util.ext.tryLaunch
 import com.arcadelabs.spiderlily.databinding.SheetWelcomeBinding
 import com.arcadelabs.spiderlily.filter.ui.model.FilterProperty
-import org.koitharu.kotatsu.parsers.model.ContentType
+import com.arcadelabs.spiderlily_parser.model.ContentType
 import java.util.Locale
 
 @AndroidEntryPoint

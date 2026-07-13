@@ -1,8 +1,8 @@
 package com.arcadelabs.spiderlily.core.exceptions
 
 import com.arcadelabs.spiderlily.core.model.UnknownMangaSource
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.network.CloudFlareHelper
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.network.CloudFlareHelper
 
 class CloudFlareBlockedException(
 	override val url: String,

@@ -24,8 +24,8 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.plus
-import org.koitharu.kotatsu.parsers.model.ContentType
-import org.koitharu.kotatsu.parsers.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.ContentType
+import com.arcadelabs.spiderlily_parser.model.MangaSource
 import java.util.EnumSet
 import java.util.Locale
 import javax.inject.Inject

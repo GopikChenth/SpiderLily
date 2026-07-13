@@ -34,7 +34,7 @@ material = "1.14.0-alpha05"
 moshi = "1.15.2"
 okhttp = "5.2.1"
 okio = "3.16.1"
-parsers = "59c033ecfd"
+spiderlilyParser = "f6a606bb0cf6883f7e6e2b9580fcc08c842cc078"
 preference = "1.2.1"
 quickjsKt = "1.0.5"
 recyclerview = "1.4.0"
@@ -124,6 +124,7 @@ okio = { module = "com.squareup.okio:okio", version.ref = "okio" }
 quickjs-kt = { module = "io.github.dokar3:quickjs-kt", version.ref = "quickjsKt" }
 sentry-android = { module = "io.sentry:sentry-android", version.ref = "sentry" }
 ssiv = { module = "com.github.AppFuton:subsampling-scale-image-view", version.ref = "ssiv" }
+spiderlily-parser = { module = "com.github.GopikChenth:SpiderLily_Parser", version.ref = "spiderlilyParser" }
 workinspector = { module = "com.github.Koitharu:WorkInspector", version.ref = "workinspector" }
 androidx-window = { module = "androidx.window:window", version.ref = "window" }
 injekt-core = { module = "uy.kohesive.injekt:injekt-core", version = "1.16.1" }

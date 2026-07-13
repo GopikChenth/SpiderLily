@@ -16,12 +16,12 @@ import com.arcadelabs.spiderlily.core.db.entity.toMangaTag
 import com.arcadelabs.spiderlily.core.db.entity.toMangaTagsList
 import com.arcadelabs.spiderlily.core.prefs.AppSettings
 import com.arcadelabs.spiderlily.explore.data.MangaSourcesRepository
-import org.koitharu.kotatsu.parsers.model.ContentType
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.model.MangaTag
-import org.koitharu.kotatsu.parsers.util.levenshteinDistance
-import org.koitharu.kotatsu.parsers.util.mapToSet
+import com.arcadelabs.spiderlily_parser.model.ContentType
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.MangaTag
+import com.arcadelabs.spiderlily_parser.util.levenshteinDistance
+import com.arcadelabs.spiderlily_parser.util.mapToSet
 import com.arcadelabs.spiderlily.search.ui.MangaSuggestionsProvider
 import javax.inject.Inject
 

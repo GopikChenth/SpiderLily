@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.FlowCollector
 import kotlinx.coroutines.withContext
 import com.arcadelabs.spiderlily.list.ui.adapter.ListItemType
 import com.arcadelabs.spiderlily.list.ui.model.ListModel
-import org.koitharu.kotatsu.parsers.util.move
+import com.arcadelabs.spiderlily_parser.util.move
 import java.util.LinkedList
 
 open class ReorderableListAdapter<T : ListModel> : ListDelegationAdapter<List<T>>(), FlowCollector<List<T>?> {

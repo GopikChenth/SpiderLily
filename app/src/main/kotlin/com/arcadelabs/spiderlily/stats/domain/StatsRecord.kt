@@ -2,7 +2,7 @@ package com.arcadelabs.spiderlily.stats.domain
 
 import com.arcadelabs.spiderlily.details.data.ReadingTime
 import com.arcadelabs.spiderlily.list.ui.model.ListModel
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 import java.util.concurrent.TimeUnit
 
 data class StatsRecord(

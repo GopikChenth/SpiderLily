@@ -8,7 +8,7 @@ import androidx.core.content.FileProvider
 import com.arcadelabs.spiderlily.BuildConfig
 import com.arcadelabs.spiderlily.R
 import com.arcadelabs.spiderlily.core.model.appUrl
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 import java.io.File
 
 private const val TYPE_TEXT = "text/plain"

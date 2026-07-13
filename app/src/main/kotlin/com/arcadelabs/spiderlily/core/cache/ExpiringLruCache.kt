@@ -1,7 +1,7 @@
 package com.arcadelabs.spiderlily.core.cache
 
 import com.arcadelabs.spiderlily.core.util.SynchronizedSieveCache
-import org.koitharu.kotatsu.parsers.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.MangaSource
 import java.util.concurrent.TimeUnit
 import com.arcadelabs.spiderlily.core.cache.MemoryContentCache.Key as CacheKey
 

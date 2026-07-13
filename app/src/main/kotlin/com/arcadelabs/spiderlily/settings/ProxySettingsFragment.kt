@@ -16,7 +16,7 @@ import com.arcadelabs.spiderlily.core.ui.BasePreferenceFragment
 import com.arcadelabs.spiderlily.core.util.ext.getDisplayMessage
 import com.arcadelabs.spiderlily.core.util.ext.printStackTraceDebug
 import com.arcadelabs.spiderlily.core.util.ext.viewLifecycleScope
-import org.koitharu.kotatsu.parsers.util.await
+import com.arcadelabs.spiderlily_parser.util.await
 import com.arcadelabs.spiderlily.settings.utils.EditTextBindListener
 import com.arcadelabs.spiderlily.settings.utils.PasswordSummaryProvider
 import com.arcadelabs.spiderlily.settings.utils.validation.DomainValidator

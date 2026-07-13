@@ -30,11 +30,11 @@ import com.arcadelabs.spiderlily.core.util.ext.mangaSourceExtra
 import com.arcadelabs.spiderlily.core.util.ext.printStackTraceDebug
 import com.arcadelabs.spiderlily.core.util.ext.processLifecycleScope
 import com.arcadelabs.spiderlily.history.data.HistoryRepository
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.util.ifNullOrEmpty
-import org.koitharu.kotatsu.parsers.util.mapNotNullToSet
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.util.ifNullOrEmpty
+import com.arcadelabs.spiderlily_parser.util.mapNotNullToSet
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch

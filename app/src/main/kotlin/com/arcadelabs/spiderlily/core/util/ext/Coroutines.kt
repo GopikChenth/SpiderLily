@@ -12,8 +12,8 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.plus
 import com.arcadelabs.spiderlily.core.util.AcraCoroutineErrorHandler
 import com.arcadelabs.spiderlily.core.util.RetainedLifecycleCoroutineScope
-import org.koitharu.kotatsu.parsers.util.cancelAll
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.util.cancelAll
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import kotlin.coroutines.CoroutineContext
 import kotlin.coroutines.EmptyCoroutineContext
 import kotlin.coroutines.cancellation.CancellationException

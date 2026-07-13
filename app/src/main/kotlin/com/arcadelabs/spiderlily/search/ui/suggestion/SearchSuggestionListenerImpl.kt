@@ -7,9 +7,9 @@ import androidx.core.net.toUri
 import com.google.android.material.search.SearchView
 import com.arcadelabs.spiderlily.core.nav.AppRouter
 import com.arcadelabs.spiderlily.core.parser.MangaLinkResolver
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.model.MangaTag
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.MangaTag
 import com.arcadelabs.spiderlily.search.domain.SearchKind
 
 class SearchSuggestionListenerImpl(

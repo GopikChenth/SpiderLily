@@ -32,9 +32,9 @@ import com.arcadelabs.spiderlily.core.util.ext.mangaSourceExtra
 import com.arcadelabs.spiderlily.core.util.ext.printStackTraceDebug
 import com.arcadelabs.spiderlily.download.domain.DownloadState
 import com.arcadelabs.spiderlily.download.ui.list.DownloadsActivity
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.util.format
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.util.format
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import java.util.UUID

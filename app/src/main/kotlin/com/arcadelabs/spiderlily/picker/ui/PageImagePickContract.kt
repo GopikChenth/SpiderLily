@@ -6,7 +6,7 @@ import android.net.Uri
 import androidx.activity.result.contract.ActivityResultContract
 import com.arcadelabs.spiderlily.core.model.parcelable.ParcelableManga
 import com.arcadelabs.spiderlily.core.nav.AppRouter
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 
 class PageImagePickContract : ActivityResultContract<Manga?, Uri?>() {
 

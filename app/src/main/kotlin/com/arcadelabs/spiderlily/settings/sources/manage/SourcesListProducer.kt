@@ -25,7 +25,7 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import org.koitharu.kotatsu.parsers.util.mapToSet
+import com.arcadelabs.spiderlily_parser.util.mapToSet
 import javax.inject.Inject
 
 @ViewModelScoped

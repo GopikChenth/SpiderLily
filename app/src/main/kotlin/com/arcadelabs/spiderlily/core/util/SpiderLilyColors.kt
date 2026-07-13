@@ -7,7 +7,7 @@ import androidx.core.graphics.ColorUtils
 import com.google.android.material.R
 import com.google.android.material.color.MaterialColors
 import com.arcadelabs.spiderlily.core.util.ext.getThemeColor
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 import kotlin.math.absoluteValue
 
 object SpiderLilyColors {

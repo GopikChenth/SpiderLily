@@ -8,7 +8,7 @@ import com.arcadelabs.spiderlily.list.ui.adapter.emptyHintAD
 import com.arcadelabs.spiderlily.list.ui.adapter.listHeaderAD
 import com.arcadelabs.spiderlily.list.ui.adapter.loadingStateAD
 import com.arcadelabs.spiderlily.list.ui.model.ListModel
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 
 class ExploreAdapter(
 	listener: ExploreListEventListener,

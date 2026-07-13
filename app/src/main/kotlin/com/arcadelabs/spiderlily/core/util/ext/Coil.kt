@@ -18,8 +18,8 @@ import coil3.toBitmap
 import okio.buffer
 import com.arcadelabs.spiderlily.bookmarks.domain.Bookmark
 import com.arcadelabs.spiderlily.core.image.RegionBitmapDecoder
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaSource
 
 fun ImageRequest.Builder.enqueueWith(loader: ImageLoader) = loader.enqueue(build())
 

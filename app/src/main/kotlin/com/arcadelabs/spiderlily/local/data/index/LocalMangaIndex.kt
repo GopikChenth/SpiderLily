@@ -10,7 +10,7 @@ import com.arcadelabs.spiderlily.core.util.ext.printStackTraceDebug
 import com.arcadelabs.spiderlily.local.data.LocalMangaRepository
 import com.arcadelabs.spiderlily.local.data.input.LocalMangaParser
 import com.arcadelabs.spiderlily.local.domain.model.LocalManga
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import kotlinx.coroutines.flow.FlowCollector
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock

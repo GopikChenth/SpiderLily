@@ -10,9 +10,9 @@ import com.arcadelabs.spiderlily.core.db.entity.toMangaTagsList
 import com.arcadelabs.spiderlily.core.model.toMangaSources
 import com.arcadelabs.spiderlily.core.util.ext.mapItems
 import com.arcadelabs.spiderlily.list.domain.ListFilterOption
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.model.MangaTag
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.MangaTag
 import com.arcadelabs.spiderlily.suggestions.data.SuggestionEntity
 import com.arcadelabs.spiderlily.suggestions.data.SuggestionWithManga
 import javax.inject.Inject

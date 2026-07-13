@@ -2,8 +2,8 @@ package com.arcadelabs.spiderlily.details.domain
 
 import com.arcadelabs.spiderlily.core.parser.MangaRepository
 import com.arcadelabs.spiderlily.core.util.ext.printStackTraceDebug
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import javax.inject.Inject
 
 class RelatedMangaUseCase @Inject constructor(

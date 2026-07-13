@@ -7,15 +7,15 @@ import com.arcadelabs.spiderlily.core.model.MangaSource
 import com.arcadelabs.spiderlily.core.model.UnknownMangaSource
 import com.arcadelabs.spiderlily.core.model.isNsfw
 import com.arcadelabs.spiderlily.core.util.ext.isHttpUrl
-import org.koitharu.kotatsu.parsers.MangaLoaderContext
-import org.koitharu.kotatsu.parsers.exception.NotFoundException
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaListFilter
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.util.almostEquals
-import org.koitharu.kotatsu.parsers.util.ifNullOrEmpty
-import org.koitharu.kotatsu.parsers.util.levenshteinDistance
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.MangaLoaderContext
+import com.arcadelabs.spiderlily_parser.exception.NotFoundException
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaListFilter
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.util.almostEquals
+import com.arcadelabs.spiderlily_parser.util.ifNullOrEmpty
+import com.arcadelabs.spiderlily_parser.util.levenshteinDistance
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import javax.inject.Inject
 
 @Reusable

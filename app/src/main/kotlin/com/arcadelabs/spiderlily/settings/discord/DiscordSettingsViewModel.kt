@@ -13,7 +13,7 @@ import kotlinx.coroutines.plus
 import com.arcadelabs.spiderlily.core.prefs.AppSettings
 import com.arcadelabs.spiderlily.core.ui.BaseViewModel
 import com.arcadelabs.spiderlily.core.util.ext.isNetworkError
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import com.arcadelabs.spiderlily.scrobbling.discord.data.DiscordRepository
 import javax.inject.Inject
 

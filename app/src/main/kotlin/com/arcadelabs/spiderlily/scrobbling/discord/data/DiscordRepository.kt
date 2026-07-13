@@ -18,8 +18,8 @@ import com.arcadelabs.spiderlily.core.network.BaseHttpClient
 import com.arcadelabs.spiderlily.core.network.CommonHeaders
 import com.arcadelabs.spiderlily.core.prefs.AppSettings
 import com.arcadelabs.spiderlily.core.util.ext.ensureSuccess
-import org.koitharu.kotatsu.parsers.util.await
-import org.koitharu.kotatsu.parsers.util.parseRaw
+import com.arcadelabs.spiderlily_parser.util.await
+import com.arcadelabs.spiderlily_parser.util.parseRaw
 import javax.inject.Inject
 
 private const val SCHEME_MP = "mp:"

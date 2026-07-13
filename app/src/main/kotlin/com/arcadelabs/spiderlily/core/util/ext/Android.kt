@@ -46,7 +46,7 @@ import androidx.work.CoroutineWorker
 import com.arcadelabs.spiderlily.BuildConfig
 import com.arcadelabs.spiderlily.R
 import com.arcadelabs.spiderlily.main.ui.MainActivity
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

@@ -6,7 +6,7 @@ import coil3.request.ImageResult
 import com.arcadelabs.spiderlily.core.model.unwrap
 import com.arcadelabs.spiderlily.core.network.CommonHeaders
 import com.arcadelabs.spiderlily.core.util.ext.mangaSourceKey
-import org.koitharu.kotatsu.parsers.model.MangaParserSource
+import com.arcadelabs.spiderlily_parser.model.MangaParserSource
 
 class MangaSourceHeaderInterceptor : Interceptor {
 

@@ -4,7 +4,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import com.arcadelabs.spiderlily.core.model.isNsfw
 import com.arcadelabs.spiderlily.list.ui.model.ListModel
-import org.koitharu.kotatsu.parsers.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.MangaSource
 
 sealed interface SourceConfigItem : ListModel {
 

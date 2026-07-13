@@ -1,7 +1,7 @@
 package com.arcadelabs.spiderlily.core.parser.external
 
 import android.content.Context
-import org.koitharu.kotatsu.parsers.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.MangaSource
 
 data class ExternalMangaSource(
 	val packageName: String,

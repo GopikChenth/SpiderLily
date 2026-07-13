@@ -1,6 +1,6 @@
 package com.arcadelabs.spiderlily.filter.ui.tags
 
-import org.koitharu.kotatsu.parsers.model.MangaTag
+import com.arcadelabs.spiderlily_parser.model.MangaTag
 import java.text.Collator
 import java.util.Locale
 

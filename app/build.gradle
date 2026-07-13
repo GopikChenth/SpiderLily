@@ -127,7 +127,7 @@ android {
 		unitTests.includeAndroidResources true
 		unitTests.returnDefaultValues false
 		kotlinOptions {
-			freeCompilerArgs += ['-opt-in=org.koitharu.kotatsu.parsers.InternalParsersApi']
+			freeCompilerArgs += ['-opt-in=com.arcadelabs.spiderlily_parser.InternalParsersApi']
 		}
 	}
 	applicationVariants.configureEach { variant ->
@@ -141,14 +141,14 @@ android {
 	}
 }
 dependencies {
-	def parsersVersion = libs.versions.parsers.get()
+	def parsersVersion = libs.versions.spiderlilyParser.get()
 	if (System.properties.containsKey('parsersVersionOverride')) {
 		// usage:
-		// -DparsersVersionOverride=$(curl -s https://api.github.com/repos/kotatsu-redo/kotatsu-parsers-redo/commits/master -H "Accept: application/vnd.github.sha" | cut -c -10)
+		// -DparsersVersionOverride=$(curl -s https://api.github.com/repos/GopikChenth/SpiderLily_Parser/commits/master -H "Accept: application/vnd.github.sha" | cut -c -10)
 		parsersVersion = System.getProperty('parsersVersionOverride')
 	}
 	//noinspection UseTomlInstead
-	implementation("com.github.clquwu:kotatsu-parsers-redo:$parsersVersion") {
+	implementation("com.github.GopikChenth:SpiderLily_Parser:$parsersVersion") {
 		exclude group: 'org.json', module: 'json'
 	}
 

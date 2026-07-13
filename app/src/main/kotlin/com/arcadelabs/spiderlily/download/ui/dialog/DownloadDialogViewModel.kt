@@ -22,11 +22,11 @@ import com.arcadelabs.spiderlily.download.ui.worker.DownloadWorker
 import com.arcadelabs.spiderlily.history.data.HistoryRepository
 import com.arcadelabs.spiderlily.local.data.LocalMangaRepository
 import com.arcadelabs.spiderlily.local.data.LocalStorageManager
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.util.mapToSet
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
-import org.koitharu.kotatsu.parsers.util.sizeOrZero
-import org.koitharu.kotatsu.parsers.util.suspendlazy.suspendLazy
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.util.mapToSet
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.util.sizeOrZero
+import com.arcadelabs.spiderlily_parser.util.suspendlazy.suspendLazy
 import com.arcadelabs.spiderlily.settings.storage.DirectoryModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async

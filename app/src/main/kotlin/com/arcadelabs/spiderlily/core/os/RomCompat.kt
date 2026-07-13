@@ -2,7 +2,7 @@ package com.arcadelabs.spiderlily.core.os
 
 import kotlinx.coroutines.Dispatchers
 import org.jetbrains.annotations.Blocking
-import org.koitharu.kotatsu.parsers.util.suspendlazy.suspendLazy
+import com.arcadelabs.spiderlily_parser.util.suspendlazy.suspendLazy
 import java.io.InputStreamReader
 
 object RomCompat {

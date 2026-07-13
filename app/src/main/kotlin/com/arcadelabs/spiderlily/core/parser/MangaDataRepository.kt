@@ -26,10 +26,10 @@ import com.arcadelabs.spiderlily.core.os.AppShortcutManager
 import com.arcadelabs.spiderlily.core.prefs.ReaderMode
 import com.arcadelabs.spiderlily.core.ui.model.MangaOverride
 import com.arcadelabs.spiderlily.core.util.ext.toFileOrNull
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.model.MangaTag
-import org.koitharu.kotatsu.parsers.util.nullIfEmpty
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.MangaTag
+import com.arcadelabs.spiderlily_parser.util.nullIfEmpty
 import com.arcadelabs.spiderlily.reader.domain.ReaderColorFilter
 import javax.inject.Inject
 import javax.inject.Provider

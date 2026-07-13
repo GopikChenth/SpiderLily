@@ -16,8 +16,8 @@ import kotlinx.coroutines.isActive
 import com.arcadelabs.spiderlily.BuildConfig
 import com.arcadelabs.spiderlily.core.db.entity.MangaSourceEntity
 import com.arcadelabs.spiderlily.explore.data.SourcesSortOrder
-import org.koitharu.kotatsu.parsers.network.CloudFlareHelper
-import org.koitharu.kotatsu.parsers.network.CloudFlareHelper.PROTECTION_CAPTCHA
+import com.arcadelabs.spiderlily_parser.network.CloudFlareHelper
+import com.arcadelabs.spiderlily_parser.network.CloudFlareHelper.PROTECTION_CAPTCHA
 
 @Dao
 abstract class MangaSourcesDao {

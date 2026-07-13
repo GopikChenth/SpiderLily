@@ -4,8 +4,8 @@ import okhttp3.Interceptor
 import okhttp3.Response
 import okio.IOException
 import com.arcadelabs.spiderlily.core.network.CommonHeaders
-import org.koitharu.kotatsu.parsers.util.mimeType
-import org.koitharu.kotatsu.parsers.util.parseHtml
+import com.arcadelabs.spiderlily_parser.util.mimeType
+import com.arcadelabs.spiderlily_parser.util.parseHtml
 import com.arcadelabs.spiderlily.scrobbling.common.data.ScrobblerStorage
 import com.arcadelabs.spiderlily.scrobbling.common.domain.ScrobblerAuthRequiredException
 import com.arcadelabs.spiderlily.scrobbling.common.domain.model.ScrobblerService

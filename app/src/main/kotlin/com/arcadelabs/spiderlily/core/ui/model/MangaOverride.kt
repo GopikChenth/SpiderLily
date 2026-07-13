@@ -1,6 +1,6 @@
 package com.arcadelabs.spiderlily.core.ui.model
 
-import org.koitharu.kotatsu.parsers.model.ContentRating
+import com.arcadelabs.spiderlily_parser.model.ContentRating
 
 data class MangaOverride(
 	val coverUrl: String?,

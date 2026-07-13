@@ -25,7 +25,7 @@ import com.arcadelabs.spiderlily.core.util.ext.tryLaunch
 import com.arcadelabs.spiderlily.core.util.ext.viewLifecycleScope
 import com.arcadelabs.spiderlily.download.ui.worker.DownloadWorker
 import com.arcadelabs.spiderlily.local.data.LocalStorageManager
-import org.koitharu.kotatsu.parsers.util.names
+import com.arcadelabs.spiderlily_parser.util.names
 import com.arcadelabs.spiderlily.settings.utils.DozeHelper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

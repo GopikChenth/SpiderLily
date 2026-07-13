@@ -10,10 +10,10 @@ import okhttp3.Request
 import org.json.JSONObject
 import com.arcadelabs.spiderlily.R
 import com.arcadelabs.spiderlily.core.db.MangaDatabase
-import org.koitharu.kotatsu.parsers.util.await
-import org.koitharu.kotatsu.parsers.util.json.getStringOrNull
-import org.koitharu.kotatsu.parsers.util.json.mapJSONNotNull
-import org.koitharu.kotatsu.parsers.util.parseJson
+import com.arcadelabs.spiderlily_parser.util.await
+import com.arcadelabs.spiderlily_parser.util.json.getStringOrNull
+import com.arcadelabs.spiderlily_parser.util.json.mapJSONNotNull
+import com.arcadelabs.spiderlily_parser.util.parseJson
 import com.arcadelabs.spiderlily.scrobbling.common.data.ScrobblerRepository
 import com.arcadelabs.spiderlily.scrobbling.common.data.ScrobblerStorage
 import com.arcadelabs.spiderlily.scrobbling.common.data.ScrobblingEntity

@@ -23,9 +23,9 @@ import com.arcadelabs.spiderlily.core.parser.ParserMangaRepository
 import com.arcadelabs.spiderlily.core.util.ext.configureForParser
 import com.arcadelabs.spiderlily.core.util.ext.printStackTraceDebug
 import com.arcadelabs.spiderlily.core.util.ext.sanitizeHeaderValue
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.util.nullIfEmpty
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.util.nullIfEmpty
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import java.lang.ref.WeakReference
 import javax.inject.Inject
 import javax.inject.Provider

@@ -4,7 +4,7 @@ import com.arcadelabs.spiderlily.core.model.MangaHistory
 import com.arcadelabs.spiderlily.core.prefs.AppSettings
 import com.arcadelabs.spiderlily.details.data.MangaDetails
 import com.arcadelabs.spiderlily.details.data.ReadingTime
-import org.koitharu.kotatsu.parsers.util.findById
+import com.arcadelabs.spiderlily_parser.util.findById
 import com.arcadelabs.spiderlily.stats.data.StatsRepository
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject

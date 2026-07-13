@@ -27,7 +27,7 @@ import com.arcadelabs.spiderlily.core.util.ext.isReadable
 import com.arcadelabs.spiderlily.core.util.ext.isWriteable
 import com.arcadelabs.spiderlily.core.util.ext.resolveFile
 import com.arcadelabs.spiderlily.core.util.ext.takeIfWriteable
-import org.koitharu.kotatsu.parsers.util.mapToSet
+import com.arcadelabs.spiderlily_parser.util.mapToSet
 import java.io.File
 import javax.inject.Inject
 

@@ -16,10 +16,10 @@ import com.arcadelabs.spiderlily.core.util.ext.toLocale
 import com.arcadelabs.spiderlily.core.util.ext.toLocaleOrNull
 import com.arcadelabs.spiderlily.mihon.model.MihonMangaSource
 import com.arcadelabs.spiderlily.mihon.parsers.model.ContentType as MihonContentType
-import org.koitharu.kotatsu.parsers.model.ContentType
-import org.koitharu.kotatsu.parsers.model.MangaParserSource
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.util.splitTwoParts
+import com.arcadelabs.spiderlily_parser.model.ContentType
+import com.arcadelabs.spiderlily_parser.model.MangaParserSource
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.util.splitTwoParts
 import java.util.Locale
 import java.util.concurrent.ConcurrentHashMap
 

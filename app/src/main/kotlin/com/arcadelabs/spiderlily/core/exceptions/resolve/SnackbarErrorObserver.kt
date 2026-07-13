@@ -9,7 +9,7 @@ import com.arcadelabs.spiderlily.core.util.ext.getDisplayMessage
 import com.arcadelabs.spiderlily.core.util.ext.isSerializable
 import com.arcadelabs.spiderlily.main.ui.owners.BottomNavOwner
 import com.arcadelabs.spiderlily.main.ui.owners.BottomSheetOwner
-import org.koitharu.kotatsu.parsers.exception.ParseException
+import com.arcadelabs.spiderlily_parser.exception.ParseException
 
 class SnackbarErrorObserver(
 	host: View,

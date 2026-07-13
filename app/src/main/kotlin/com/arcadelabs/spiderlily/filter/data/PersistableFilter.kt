@@ -4,8 +4,8 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.JsonIgnoreUnknownKeys
 import com.arcadelabs.spiderlily.core.model.MangaSourceSerializer
-import org.koitharu.kotatsu.parsers.model.MangaListFilter
-import org.koitharu.kotatsu.parsers.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.MangaListFilter
+import com.arcadelabs.spiderlily_parser.model.MangaSource
 
 @Serializable
 @JsonIgnoreUnknownKeys

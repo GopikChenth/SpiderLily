@@ -5,7 +5,7 @@ import android.webkit.WebView
 import com.arcadelabs.spiderlily.browser.BrowserClient
 import com.arcadelabs.spiderlily.core.network.cookies.MutableCookieJar
 import com.arcadelabs.spiderlily.core.network.webview.adblock.AdBlock
-import org.koitharu.kotatsu.parsers.network.CloudFlareHelper
+import com.arcadelabs.spiderlily_parser.network.CloudFlareHelper
 
 private const val LOOP_COUNTER = 3
 

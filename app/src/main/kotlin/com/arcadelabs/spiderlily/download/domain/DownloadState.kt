@@ -3,7 +3,7 @@ package com.arcadelabs.spiderlily.download.domain
 import androidx.work.Data
 import com.arcadelabs.spiderlily.list.domain.ReadingProgress.Companion.PROGRESS_NONE
 import com.arcadelabs.spiderlily.local.domain.model.LocalManga
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 import java.time.Instant
 
 data class DownloadState(

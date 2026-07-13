@@ -10,9 +10,9 @@ import com.arcadelabs.spiderlily.core.network.CommonHeaders
 import com.arcadelabs.spiderlily.core.prefs.AppSettings
 import com.arcadelabs.spiderlily.core.util.ext.isNotEmpty
 import com.arcadelabs.spiderlily.core.util.ext.printStackTraceDebug
-import org.koitharu.kotatsu.parsers.util.await
-import org.koitharu.kotatsu.parsers.util.requireBody
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.util.await
+import com.arcadelabs.spiderlily_parser.util.requireBody
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import okhttp3.HttpUrl
 import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import okhttp3.OkHttpClient

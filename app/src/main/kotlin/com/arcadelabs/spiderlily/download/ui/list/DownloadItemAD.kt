@@ -22,7 +22,7 @@ import com.arcadelabs.spiderlily.download.ui.list.chapters.downloadChapterAD
 import com.arcadelabs.spiderlily.list.ui.ListModelDiffCallback
 import com.arcadelabs.spiderlily.list.ui.adapter.ListItemType
 import com.arcadelabs.spiderlily.list.ui.model.ListModel
-import org.koitharu.kotatsu.parsers.util.format
+import com.arcadelabs.spiderlily_parser.util.format
 
 fun downloadItemAD(
 	lifecycleOwner: LifecycleOwner,

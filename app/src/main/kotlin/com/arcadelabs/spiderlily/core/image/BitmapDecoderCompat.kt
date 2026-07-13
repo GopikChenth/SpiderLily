@@ -14,7 +14,7 @@ import com.arcadelabs.spiderlily.core.util.ext.printStackTraceDebug
 import com.arcadelabs.spiderlily.core.util.ext.readByteBuffer
 import com.arcadelabs.spiderlily.core.util.ext.toByteBuffer
 import com.arcadelabs.spiderlily.core.util.ext.toMimeTypeOrNull
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import okio.IOException
 import okio.buffer
 import okio.source

@@ -3,7 +3,7 @@ package com.arcadelabs.spiderlily.core.model.parcelable
 import android.os.Parcel
 import kotlinx.parcelize.Parceler
 import com.arcadelabs.spiderlily.core.model.MangaSource
-import org.koitharu.kotatsu.parsers.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.MangaSource
 
 class MangaSourceParceler : Parceler<MangaSource> {
 

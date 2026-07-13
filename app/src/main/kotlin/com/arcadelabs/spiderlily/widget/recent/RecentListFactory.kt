@@ -19,9 +19,9 @@ import com.arcadelabs.spiderlily.core.prefs.AppSettings
 import com.arcadelabs.spiderlily.core.util.ext.getDrawableOrThrow
 import com.arcadelabs.spiderlily.core.util.ext.mangaExtra
 import com.arcadelabs.spiderlily.history.data.HistoryRepository
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.util.replaceWith
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.util.replaceWith
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 
 class RecentListFactory(
 	private val context: Context,

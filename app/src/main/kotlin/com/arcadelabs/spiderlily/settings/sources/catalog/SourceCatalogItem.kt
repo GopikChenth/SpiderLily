@@ -3,7 +3,7 @@ package com.arcadelabs.spiderlily.settings.sources.catalog
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import com.arcadelabs.spiderlily.list.ui.model.ListModel
-import org.koitharu.kotatsu.parsers.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.MangaSource
 
 sealed interface SourceCatalogItem : ListModel {
 

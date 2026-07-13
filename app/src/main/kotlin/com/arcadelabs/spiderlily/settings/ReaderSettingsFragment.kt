@@ -18,8 +18,8 @@ import com.arcadelabs.spiderlily.core.prefs.ReaderControl
 import com.arcadelabs.spiderlily.core.prefs.ReaderMode
 import com.arcadelabs.spiderlily.core.ui.BasePreferenceFragment
 import com.arcadelabs.spiderlily.core.util.ext.setDefaultValueCompat
-import org.koitharu.kotatsu.parsers.util.mapToSet
-import org.koitharu.kotatsu.parsers.util.names
+import com.arcadelabs.spiderlily_parser.util.mapToSet
+import com.arcadelabs.spiderlily_parser.util.names
 import com.arcadelabs.spiderlily.settings.utils.MultiSummaryProvider
 import com.arcadelabs.spiderlily.settings.utils.PercentSummaryProvider
 import com.arcadelabs.spiderlily.settings.utils.SliderPreference

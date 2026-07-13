@@ -1,7 +1,7 @@
 package com.arcadelabs.spiderlily.suggestions.domain
 
 import androidx.annotation.FloatRange
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 
 data class MangaSuggestion(
 	val manga: Manga,

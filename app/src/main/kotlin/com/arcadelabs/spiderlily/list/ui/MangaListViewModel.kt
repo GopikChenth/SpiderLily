@@ -23,7 +23,7 @@ import com.arcadelabs.spiderlily.core.ui.util.ReversibleAction
 import com.arcadelabs.spiderlily.core.util.ext.MutableEventFlow
 import com.arcadelabs.spiderlily.list.domain.ListFilterOption
 import com.arcadelabs.spiderlily.list.ui.model.ListModel
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 import com.arcadelabs.spiderlily.local.data.LocalStorageChanges
 import com.arcadelabs.spiderlily.local.domain.model.LocalManga
 

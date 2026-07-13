@@ -3,8 +3,8 @@ package com.arcadelabs.spiderlily.core.util.ext
 import android.content.Context
 import androidx.core.os.LocaleListCompat
 import com.arcadelabs.spiderlily.R
-import org.koitharu.kotatsu.parsers.util.Set
-import org.koitharu.kotatsu.parsers.util.toTitleCase
+import com.arcadelabs.spiderlily_parser.util.Set
+import com.arcadelabs.spiderlily_parser.util.toTitleCase
 import java.util.Locale
 
 operator fun LocaleListCompat.iterator(): ListIterator<Locale> = LocaleListCompatIterator(this)

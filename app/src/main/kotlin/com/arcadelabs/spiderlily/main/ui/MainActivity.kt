@@ -58,7 +58,7 @@ import com.arcadelabs.spiderlily.local.ui.LocalIndexUpdateService
 import com.arcadelabs.spiderlily.local.ui.LocalStorageCleanupWorker
 import com.arcadelabs.spiderlily.main.ui.owners.AppBarOwner
 import com.arcadelabs.spiderlily.main.ui.owners.BottomNavOwner
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 import com.arcadelabs.spiderlily.remotelist.ui.MangaSearchMenuProvider
 import com.arcadelabs.spiderlily.search.ui.suggestion.SearchSuggestionItemCallback
 import com.arcadelabs.spiderlily.search.ui.suggestion.SearchSuggestionListenerImpl

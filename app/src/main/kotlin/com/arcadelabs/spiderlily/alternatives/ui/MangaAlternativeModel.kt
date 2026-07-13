@@ -3,7 +3,7 @@ package com.arcadelabs.spiderlily.alternatives.ui
 import com.arcadelabs.spiderlily.core.model.chaptersCount
 import com.arcadelabs.spiderlily.list.ui.model.ListModel
 import com.arcadelabs.spiderlily.list.ui.model.MangaGridModel
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 
 data class MangaAlternativeModel(
 	val mangaModel: MangaGridModel,

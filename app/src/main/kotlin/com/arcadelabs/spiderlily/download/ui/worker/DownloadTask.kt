@@ -4,7 +4,7 @@ import android.os.Parcelable
 import androidx.work.Data
 import kotlinx.parcelize.Parcelize
 import com.arcadelabs.spiderlily.core.prefs.DownloadFormat
-import org.koitharu.kotatsu.parsers.util.find
+import com.arcadelabs.spiderlily_parser.util.find
 import java.io.File
 
 @Parcelize

@@ -34,7 +34,7 @@ import com.arcadelabs.spiderlily.core.ui.image.ChipIconTarget
 import com.arcadelabs.spiderlily.core.util.ext.enqueueWith
 import com.arcadelabs.spiderlily.core.util.ext.getThemeColor
 import com.arcadelabs.spiderlily.core.util.ext.setProgressIcon
-import org.koitharu.kotatsu.parsers.util.ifZero
+import com.arcadelabs.spiderlily_parser.util.ifZero
 import javax.inject.Inject
 import com.google.android.material.R as materialR
 

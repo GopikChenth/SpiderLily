@@ -20,7 +20,7 @@ import com.arcadelabs.spiderlily.core.ui.util.ActivityRecreationHandle
 import com.arcadelabs.spiderlily.list.ui.model.ListModel
 import com.arcadelabs.spiderlily.main.ui.MainActivity
 import com.arcadelabs.spiderlily.main.ui.MainNavigationDelegate
-import org.koitharu.kotatsu.parsers.util.move
+import com.arcadelabs.spiderlily_parser.util.move
 import com.arcadelabs.spiderlily.settings.nav.model.NavItemAddModel
 import com.arcadelabs.spiderlily.settings.nav.model.NavItemConfigModel
 import javax.inject.Inject

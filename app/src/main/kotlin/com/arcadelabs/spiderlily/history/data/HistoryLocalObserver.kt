@@ -9,7 +9,7 @@ import com.arcadelabs.spiderlily.list.domain.ListFilterOption
 import com.arcadelabs.spiderlily.list.domain.ListSortOrder
 import com.arcadelabs.spiderlily.local.data.index.LocalMangaIndex
 import com.arcadelabs.spiderlily.local.domain.LocalObserveMapper
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 import javax.inject.Inject
 
 @Reusable

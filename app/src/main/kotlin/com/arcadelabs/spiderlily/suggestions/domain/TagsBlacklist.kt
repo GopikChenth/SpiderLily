@@ -1,8 +1,8 @@
 package com.arcadelabs.spiderlily.suggestions.domain
 
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaTag
-import org.koitharu.kotatsu.parsers.util.almostEquals
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaTag
+import com.arcadelabs.spiderlily_parser.util.almostEquals
 
 class TagsBlacklist(
 	private val tags: Set<String>,

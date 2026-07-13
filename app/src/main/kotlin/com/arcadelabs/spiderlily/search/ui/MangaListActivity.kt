@@ -46,10 +46,10 @@ import com.arcadelabs.spiderlily.filter.ui.sheet.FilterSheetFragment
 import com.arcadelabs.spiderlily.list.ui.preview.PreviewFragment
 import com.arcadelabs.spiderlily.local.ui.LocalListFragment
 import com.arcadelabs.spiderlily.main.ui.owners.AppBarOwner
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaListFilter
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.model.SortOrder
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaListFilter
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.SortOrder
 import com.arcadelabs.spiderlily.remotelist.ui.RemoteListFragment
 import kotlin.math.absoluteValue
 import com.google.android.material.R as materialR

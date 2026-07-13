@@ -1,7 +1,7 @@
 package com.arcadelabs.spiderlily.list.ui.model
 
 import com.arcadelabs.spiderlily.core.ui.model.MangaOverride
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 
 data class MangaCompactListModel(
 	override val manga: Manga,

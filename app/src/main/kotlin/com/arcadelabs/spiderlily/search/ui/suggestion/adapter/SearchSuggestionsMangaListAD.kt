@@ -11,7 +11,7 @@ import com.arcadelabs.spiderlily.core.ui.list.decor.SpacingItemDecoration
 import com.arcadelabs.spiderlily.core.util.RecyclerViewScrollCallback
 import com.arcadelabs.spiderlily.core.util.ext.setTooltipCompat
 import com.arcadelabs.spiderlily.databinding.ItemSearchSuggestionMangaGridBinding
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 import com.arcadelabs.spiderlily.search.ui.suggestion.SearchSuggestionListener
 import com.arcadelabs.spiderlily.search.ui.suggestion.model.SearchSuggestionItem
 

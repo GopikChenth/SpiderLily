@@ -7,8 +7,8 @@ import com.arcadelabs.spiderlily.core.util.ext.printStackTraceDebug
 import okhttp3.Interceptor
 import okhttp3.Response
 import okio.IOException
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.network.CloudFlareHelper
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.network.CloudFlareHelper
 
 class CloudFlareInterceptor : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {

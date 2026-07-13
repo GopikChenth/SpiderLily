@@ -6,7 +6,7 @@ import kotlinx.parcelize.Parceler
 import kotlinx.parcelize.Parcelize
 import kotlinx.parcelize.TypeParceler
 import com.arcadelabs.spiderlily.core.model.MangaSource
-import org.koitharu.kotatsu.parsers.model.MangaTag
+import com.arcadelabs.spiderlily_parser.model.MangaTag
 
 object MangaTagParceler : Parceler<MangaTag> {
 	override fun create(parcel: Parcel) = MangaTag(

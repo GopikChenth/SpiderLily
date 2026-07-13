@@ -8,7 +8,7 @@ import com.arcadelabs.spiderlily.core.db.MangaDatabase
 import com.arcadelabs.spiderlily.core.prefs.AppSettings
 import com.arcadelabs.spiderlily.core.util.RetainedLifecycleCoroutineScope
 import com.arcadelabs.spiderlily.core.util.ext.printStackTraceDebug
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import com.arcadelabs.spiderlily.reader.ui.ReaderState
 import com.arcadelabs.spiderlily.stats.data.StatsEntity
 import kotlinx.coroutines.Dispatchers

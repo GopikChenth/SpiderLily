@@ -46,9 +46,9 @@ import com.arcadelabs.spiderlily.list.ui.model.MangaListModel
 import com.arcadelabs.spiderlily.local.data.LocalStorageChanges
 import com.arcadelabs.spiderlily.local.domain.DeleteLocalMangaUseCase
 import com.arcadelabs.spiderlily.local.domain.model.LocalManga
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.util.findById
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.util.findById
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import com.arcadelabs.spiderlily.reader.ui.ReaderState
 import com.arcadelabs.spiderlily.scrobbling.common.domain.Scrobbler
 import com.arcadelabs.spiderlily.scrobbling.common.domain.model.ScrobblingInfo

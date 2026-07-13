@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.annotation.StringRes
 import com.arcadelabs.spiderlily.core.model.getLocalizedTitle
 import com.arcadelabs.spiderlily.core.ui.model.DateTimeAgo
-import org.koitharu.kotatsu.parsers.model.MangaChapter
+import com.arcadelabs.spiderlily_parser.model.MangaChapter
 
 data class ListHeader private constructor(
 	private val textRaw: Any,

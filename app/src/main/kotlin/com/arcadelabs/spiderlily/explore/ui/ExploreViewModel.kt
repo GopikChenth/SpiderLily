@@ -33,9 +33,9 @@ import com.arcadelabs.spiderlily.list.ui.model.ListHeader
 import com.arcadelabs.spiderlily.list.ui.model.ListModel
 import com.arcadelabs.spiderlily.list.ui.model.LoadingState
 import com.arcadelabs.spiderlily.list.ui.model.MangaCompactListModel
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import com.arcadelabs.spiderlily.suggestions.domain.SuggestionRepository
 import javax.inject.Inject
 

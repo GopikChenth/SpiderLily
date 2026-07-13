@@ -43,8 +43,8 @@ import com.arcadelabs.spiderlily.explore.ui.adapter.ExploreListEventListener
 import com.arcadelabs.spiderlily.explore.ui.model.MangaSourceItem
 import com.arcadelabs.spiderlily.list.ui.adapter.TypedListSpacingDecoration
 import com.arcadelabs.spiderlily.list.ui.model.ListHeader
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaParserSource
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaParserSource
 
 @AndroidEntryPoint
 class ExploreFragment :

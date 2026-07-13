@@ -24,7 +24,7 @@ import com.arcadelabs.spiderlily.core.ui.util.ReversibleActionObserver
 import com.arcadelabs.spiderlily.core.util.ext.observe
 import com.arcadelabs.spiderlily.core.util.ext.observeEvent
 import com.arcadelabs.spiderlily.core.util.ext.withArgs
-import org.koitharu.kotatsu.parsers.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.MangaSource
 import java.io.File
 
 @AndroidEntryPoint

@@ -28,11 +28,11 @@ import com.arcadelabs.spiderlily.details.data.MangaDetails
 import com.arcadelabs.spiderlily.explore.domain.RecoverMangaUseCase
 import com.arcadelabs.spiderlily.local.data.LocalMangaRepository
 import com.arcadelabs.spiderlily.local.domain.model.LocalManga
-import org.koitharu.kotatsu.parsers.exception.NotFoundException
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.util.nullIfEmpty
-import org.koitharu.kotatsu.parsers.util.recoverNotNull
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.exception.NotFoundException
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.util.nullIfEmpty
+import com.arcadelabs.spiderlily_parser.util.recoverNotNull
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import javax.inject.Inject
 
 class DetailsLoadUseCase @Inject constructor(

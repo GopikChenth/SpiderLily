@@ -2,7 +2,7 @@ package com.arcadelabs.spiderlily.details.ui.pager.pages
 
 import coil3.key.Keyer
 import coil3.request.Options
-import org.koitharu.kotatsu.parsers.model.MangaPage
+import com.arcadelabs.spiderlily_parser.model.MangaPage
 
 class MangaPageKeyer : Keyer<MangaPage> {
 

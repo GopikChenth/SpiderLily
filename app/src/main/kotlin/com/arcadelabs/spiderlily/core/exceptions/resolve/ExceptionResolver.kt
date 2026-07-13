@@ -27,10 +27,10 @@ import com.arcadelabs.spiderlily.core.ui.dialog.buildAlertDialog
 import com.arcadelabs.spiderlily.core.util.ext.isHttpUrl
 import com.arcadelabs.spiderlily.core.util.ext.restartApplication
 import com.arcadelabs.spiderlily.details.ui.pager.EmptyMangaReason
-import org.koitharu.kotatsu.parsers.exception.AuthRequiredException
-import org.koitharu.kotatsu.parsers.exception.NotFoundException
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaSource
+import com.arcadelabs.spiderlily_parser.exception.AuthRequiredException
+import com.arcadelabs.spiderlily_parser.exception.NotFoundException
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaSource
 import com.arcadelabs.spiderlily.scrobbling.common.domain.ScrobblerAuthRequiredException
 import com.arcadelabs.spiderlily.scrobbling.common.ui.ScrobblerAuthHelper
 import com.arcadelabs.spiderlily.settings.sources.auth.SourceAuthActivity

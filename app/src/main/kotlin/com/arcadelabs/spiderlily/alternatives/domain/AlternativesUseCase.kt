@@ -9,10 +9,10 @@ import kotlinx.coroutines.sync.withPermit
 import com.arcadelabs.spiderlily.core.parser.MangaRepository
 import com.arcadelabs.spiderlily.core.util.ext.toLocale
 import com.arcadelabs.spiderlily.explore.data.MangaSourcesRepository
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaParserSource
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaParserSource
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import com.arcadelabs.spiderlily.search.domain.SearchKind
 import com.arcadelabs.spiderlily.search.domain.SearchV2Helper
 import java.util.Locale

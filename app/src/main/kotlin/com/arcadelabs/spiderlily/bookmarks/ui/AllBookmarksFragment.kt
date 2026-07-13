@@ -38,7 +38,7 @@ import com.arcadelabs.spiderlily.list.ui.adapter.ListStateHolderListener
 import com.arcadelabs.spiderlily.list.ui.adapter.TypedListSpacingDecoration
 import com.arcadelabs.spiderlily.list.ui.model.ListHeader
 import com.arcadelabs.spiderlily.main.ui.owners.AppBarOwner
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 import com.arcadelabs.spiderlily.reader.ui.PageSaveHelper
 import javax.inject.Inject
 

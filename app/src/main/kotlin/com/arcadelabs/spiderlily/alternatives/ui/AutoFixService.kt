@@ -29,8 +29,8 @@ import com.arcadelabs.spiderlily.core.util.ext.powerManager
 import com.arcadelabs.spiderlily.core.util.ext.printStackTraceDebug
 import com.arcadelabs.spiderlily.core.util.ext.toBitmapOrNull
 import com.arcadelabs.spiderlily.core.util.ext.withPartialWakeLock
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
 import androidx.appcompat.R as appcompatR

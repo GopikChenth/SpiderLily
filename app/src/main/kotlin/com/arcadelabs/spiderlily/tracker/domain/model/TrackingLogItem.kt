@@ -1,6 +1,6 @@
 package com.arcadelabs.spiderlily.tracker.domain.model
 
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 import java.time.Instant
 
 data class TrackingLogItem(

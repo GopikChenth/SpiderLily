@@ -5,7 +5,7 @@ import android.text.format.DateUtils
 import org.jsoup.internal.StringUtil.StringJoiner
 import com.arcadelabs.spiderlily.core.model.getLocalizedTitle
 import com.arcadelabs.spiderlily.list.ui.model.ListModel
-import org.koitharu.kotatsu.parsers.model.MangaChapter
+import com.arcadelabs.spiderlily_parser.model.MangaChapter
 import kotlin.experimental.and
 
 data class ChapterListItem(

@@ -19,9 +19,9 @@ import com.arcadelabs.spiderlily.core.util.ext.observe
 import com.arcadelabs.spiderlily.core.util.ext.textAndVisible
 import com.arcadelabs.spiderlily.databinding.FragmentPreviewBinding
 import com.arcadelabs.spiderlily.filter.ui.FilterCoordinator
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaTag
-import org.koitharu.kotatsu.parsers.util.ifNullOrEmpty
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaTag
+import com.arcadelabs.spiderlily_parser.util.ifNullOrEmpty
 import com.arcadelabs.spiderlily.search.ui.MangaListActivity
 
 @AndroidEntryPoint

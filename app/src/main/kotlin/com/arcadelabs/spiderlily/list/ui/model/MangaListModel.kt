@@ -7,9 +7,9 @@ import com.arcadelabs.spiderlily.core.model.getTitle
 import com.arcadelabs.spiderlily.core.model.withOverride
 import com.arcadelabs.spiderlily.core.ui.model.MangaOverride
 import com.arcadelabs.spiderlily.list.ui.ListModelDiffCallback.Companion.PAYLOAD_ANYTHING_CHANGED
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.util.ifNullOrEmpty
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.util.ifNullOrEmpty
 
 sealed class MangaListModel : ListModel {
 

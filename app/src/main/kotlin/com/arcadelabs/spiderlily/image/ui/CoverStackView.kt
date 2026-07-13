@@ -19,8 +19,8 @@ import com.arcadelabs.spiderlily.core.ui.widgets.StackLayout
 import com.arcadelabs.spiderlily.core.util.ext.getThemeColor
 import com.arcadelabs.spiderlily.databinding.ViewCoverStackBinding
 import com.arcadelabs.spiderlily.favourites.domain.model.Cover
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaSource
 
 class CoverStackView @JvmOverloads constructor(
 	context: Context,

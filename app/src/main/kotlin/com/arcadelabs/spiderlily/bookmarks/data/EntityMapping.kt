@@ -1,7 +1,7 @@
 package com.arcadelabs.spiderlily.bookmarks.data
 
 import com.arcadelabs.spiderlily.bookmarks.domain.Bookmark
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 import java.time.Instant
 
 fun BookmarkEntity.toBookmark(manga: Manga) = Bookmark(

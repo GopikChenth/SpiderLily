@@ -17,8 +17,8 @@ import com.arcadelabs.spiderlily.core.ui.BaseActivity
 import com.arcadelabs.spiderlily.core.util.ext.configureForParser
 import com.arcadelabs.spiderlily.core.util.ext.consumeAll
 import com.arcadelabs.spiderlily.databinding.ActivityBrowserBinding
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.util.nullIfEmpty
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.util.nullIfEmpty
 import javax.inject.Inject
 
 @AndroidEntryPoint

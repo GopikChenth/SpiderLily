@@ -2,7 +2,7 @@ package com.arcadelabs.spiderlily.core.parser
 
 import com.arcadelabs.spiderlily.core.cache.MemoryContentCache
 import com.arcadelabs.spiderlily.core.model.TestMangaSource
-import org.koitharu.kotatsu.parsers.MangaLoaderContext
+import com.arcadelabs.spiderlily_parser.MangaLoaderContext
 
 @Suppress("unused")
 class TestMangaRepository(

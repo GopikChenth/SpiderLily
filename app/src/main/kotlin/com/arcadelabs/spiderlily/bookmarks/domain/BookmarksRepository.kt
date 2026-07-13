@@ -14,7 +14,7 @@ import com.arcadelabs.spiderlily.core.db.entity.toManga
 import com.arcadelabs.spiderlily.core.ui.util.ReversibleHandle
 import com.arcadelabs.spiderlily.core.util.ext.mapItems
 import com.arcadelabs.spiderlily.core.util.ext.printStackTraceDebug
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject

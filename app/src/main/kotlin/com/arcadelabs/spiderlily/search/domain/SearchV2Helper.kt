@@ -9,13 +9,13 @@ import com.arcadelabs.spiderlily.core.parser.MangaRepository
 import com.arcadelabs.spiderlily.core.prefs.AppSettings
 import com.arcadelabs.spiderlily.core.util.ext.contains
 import com.arcadelabs.spiderlily.core.util.ext.printStackTraceDebug
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaListFilter
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.model.SortOrder
-import org.koitharu.kotatsu.parsers.util.almostEquals
-import org.koitharu.kotatsu.parsers.util.levenshteinDistance
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaListFilter
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.SortOrder
+import com.arcadelabs.spiderlily_parser.util.almostEquals
+import com.arcadelabs.spiderlily_parser.util.levenshteinDistance
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 
 private const val MATCH_THRESHOLD_DEFAULT = 0.2f
 

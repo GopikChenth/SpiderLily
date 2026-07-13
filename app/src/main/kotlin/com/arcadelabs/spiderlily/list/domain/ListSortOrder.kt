@@ -2,7 +2,7 @@ package com.arcadelabs.spiderlily.list.domain
 
 import androidx.annotation.StringRes
 import com.arcadelabs.spiderlily.R
-import org.koitharu.kotatsu.parsers.util.find
+import com.arcadelabs.spiderlily_parser.util.find
 import java.util.EnumSet
 
 enum class ListSortOrder(

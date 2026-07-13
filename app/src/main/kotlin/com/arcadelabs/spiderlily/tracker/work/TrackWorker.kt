@@ -47,8 +47,8 @@ import com.arcadelabs.spiderlily.core.util.ext.trySetForeground
 import com.arcadelabs.spiderlily.download.ui.worker.DownloadTask
 import com.arcadelabs.spiderlily.download.ui.worker.DownloadWorker
 import com.arcadelabs.spiderlily.local.data.LocalMangaRepository
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
-import org.koitharu.kotatsu.parsers.util.toIntUp
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.util.toIntUp
 import com.arcadelabs.spiderlily.settings.work.PeriodicWorkScheduler
 import com.arcadelabs.spiderlily.tracker.domain.CheckNewChaptersUseCase
 import com.arcadelabs.spiderlily.tracker.domain.GetTracksUseCase

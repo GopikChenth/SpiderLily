@@ -4,8 +4,8 @@ import com.arcadelabs.spiderlily.core.model.withOverride
 import com.arcadelabs.spiderlily.core.ui.model.MangaOverride
 import com.arcadelabs.spiderlily.list.ui.ListModelDiffCallback
 import com.arcadelabs.spiderlily.list.ui.model.ListModel
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.util.ifNullOrEmpty
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.util.ifNullOrEmpty
 
 data class FeedItem(
 	val id: Long,

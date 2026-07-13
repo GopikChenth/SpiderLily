@@ -10,9 +10,9 @@ import com.arcadelabs.spiderlily.R
 import com.arcadelabs.spiderlily.core.parser.EmptyMangaRepository
 import com.arcadelabs.spiderlily.core.parser.MangaRepository
 import com.arcadelabs.spiderlily.core.parser.ParserMangaRepository
-import org.koitharu.kotatsu.parsers.config.ConfigKey
-import org.koitharu.kotatsu.parsers.network.UserAgents
-import org.koitharu.kotatsu.parsers.util.mapToArray
+import com.arcadelabs.spiderlily_parser.config.ConfigKey
+import com.arcadelabs.spiderlily_parser.network.UserAgents
+import com.arcadelabs.spiderlily_parser.util.mapToArray
 import com.arcadelabs.spiderlily.settings.utils.AutoCompleteTextViewPreference
 import com.arcadelabs.spiderlily.settings.utils.EditTextBindListener
 import com.arcadelabs.spiderlily.settings.utils.EditTextDefaultSummaryProvider

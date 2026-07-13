@@ -1,8 +1,8 @@
 package com.arcadelabs.spiderlily.search.domain
 
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaListFilter
-import org.koitharu.kotatsu.parsers.model.SortOrder
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaListFilter
+import com.arcadelabs.spiderlily_parser.model.SortOrder
 
 data class SearchResults(
 	val listFilter: MangaListFilter,

@@ -38,12 +38,12 @@ import com.arcadelabs.spiderlily.core.util.ext.isNetworkError
 import com.arcadelabs.spiderlily.core.util.ext.mangaExtra
 import com.arcadelabs.spiderlily.core.util.ext.mangaSourceExtra
 import com.arcadelabs.spiderlily.favourites.domain.model.Cover
-import org.koitharu.kotatsu.parsers.exception.ContentUnavailableException
-import org.koitharu.kotatsu.parsers.exception.ParseException
-import org.koitharu.kotatsu.parsers.exception.TooManyRequestExceptions
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaPage
-import org.koitharu.kotatsu.parsers.model.MangaSource
+import com.arcadelabs.spiderlily_parser.exception.ContentUnavailableException
+import com.arcadelabs.spiderlily_parser.exception.ParseException
+import com.arcadelabs.spiderlily_parser.exception.TooManyRequestExceptions
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaPage
+import com.arcadelabs.spiderlily_parser.model.MangaSource
 import com.arcadelabs.spiderlily.reader.ui.pager.ReaderPage
 import kotlin.coroutines.resume
 import androidx.appcompat.R as appcompatR

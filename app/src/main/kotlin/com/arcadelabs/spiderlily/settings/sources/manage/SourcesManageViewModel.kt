@@ -13,8 +13,8 @@ import com.arcadelabs.spiderlily.core.ui.util.ReversibleAction
 import com.arcadelabs.spiderlily.core.util.ext.MutableEventFlow
 import com.arcadelabs.spiderlily.core.util.ext.call
 import com.arcadelabs.spiderlily.explore.data.MangaSourcesRepository
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.util.move
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.util.move
 import com.arcadelabs.spiderlily.settings.sources.model.SourceConfigItem
 import javax.inject.Inject
 

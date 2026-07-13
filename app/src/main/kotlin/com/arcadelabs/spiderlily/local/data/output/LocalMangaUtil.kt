@@ -3,7 +3,7 @@ package com.arcadelabs.spiderlily.local.data.output
 import androidx.core.net.toFile
 import androidx.core.net.toUri
 import com.arcadelabs.spiderlily.core.model.isLocal
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 
 class LocalMangaUtil(
 	private val manga: Manga,

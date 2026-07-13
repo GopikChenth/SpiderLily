@@ -10,8 +10,8 @@ import android.view.View
 import androidx.annotation.ColorInt
 import com.arcadelabs.spiderlily.core.util.ext.getThemeColor
 import com.arcadelabs.spiderlily.core.util.ext.resolveDp
-import org.koitharu.kotatsu.parsers.util.replaceWith
-import org.koitharu.kotatsu.parsers.util.toIntUp
+import com.arcadelabs.spiderlily_parser.util.replaceWith
+import com.arcadelabs.spiderlily_parser.util.toIntUp
 import kotlin.math.roundToInt
 import kotlin.random.Random
 import androidx.appcompat.R as appcompatR

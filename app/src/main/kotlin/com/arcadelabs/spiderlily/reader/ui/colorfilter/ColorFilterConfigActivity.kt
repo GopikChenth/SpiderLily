@@ -26,8 +26,8 @@ import com.arcadelabs.spiderlily.core.util.ext.setValueRounded
 import com.arcadelabs.spiderlily.core.util.ext.systemBarsInsets
 import com.arcadelabs.spiderlily.core.util.progress.ImageRequestIndicatorListener
 import com.arcadelabs.spiderlily.databinding.ActivityColorFilterBinding
-import org.koitharu.kotatsu.parsers.model.MangaPage
-import org.koitharu.kotatsu.parsers.util.format
+import com.arcadelabs.spiderlily_parser.model.MangaPage
+import com.arcadelabs.spiderlily_parser.util.format
 import com.arcadelabs.spiderlily.reader.domain.ReaderColorFilter
 import javax.inject.Inject
 

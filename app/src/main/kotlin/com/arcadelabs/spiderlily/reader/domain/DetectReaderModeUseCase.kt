@@ -13,9 +13,9 @@ import com.arcadelabs.spiderlily.core.prefs.ReaderMode
 import com.arcadelabs.spiderlily.core.util.ext.isFileUri
 import com.arcadelabs.spiderlily.core.util.ext.isZipUri
 import com.arcadelabs.spiderlily.core.util.ext.printStackTraceDebug
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaPage
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaPage
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import com.arcadelabs.spiderlily.reader.ui.ReaderState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runInterruptible

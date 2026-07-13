@@ -6,8 +6,8 @@ import kotlinx.coroutines.flow.asStateFlow
 import com.arcadelabs.spiderlily.core.model.toChipModel
 import com.arcadelabs.spiderlily.core.prefs.AppSettings
 import com.arcadelabs.spiderlily.list.ui.model.QuickFilter
-import org.koitharu.kotatsu.parsers.util.suspendlazy.getOrNull
-import org.koitharu.kotatsu.parsers.util.suspendlazy.suspendLazy
+import com.arcadelabs.spiderlily_parser.util.suspendlazy.getOrNull
+import com.arcadelabs.spiderlily_parser.util.suspendlazy.suspendLazy
 
 abstract class MangaListQuickFilter(
 	private val settings: AppSettings,

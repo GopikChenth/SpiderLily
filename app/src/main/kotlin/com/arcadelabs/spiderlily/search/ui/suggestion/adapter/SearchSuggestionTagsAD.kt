@@ -3,7 +3,7 @@ package com.arcadelabs.spiderlily.search.ui.suggestion.adapter
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 import com.arcadelabs.spiderlily.core.ui.widgets.ChipsView
 import com.arcadelabs.spiderlily.databinding.ItemSearchSuggestionTagsBinding
-import org.koitharu.kotatsu.parsers.model.MangaTag
+import com.arcadelabs.spiderlily_parser.model.MangaTag
 import com.arcadelabs.spiderlily.search.ui.suggestion.SearchSuggestionListener
 import com.arcadelabs.spiderlily.search.ui.suggestion.model.SearchSuggestionItem
 

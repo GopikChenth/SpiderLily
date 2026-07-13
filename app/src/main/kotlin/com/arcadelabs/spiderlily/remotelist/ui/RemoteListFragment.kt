@@ -25,7 +25,7 @@ import com.arcadelabs.spiderlily.core.util.ext.withArgs
 import com.arcadelabs.spiderlily.databinding.FragmentListBinding
 import com.arcadelabs.spiderlily.filter.ui.FilterCoordinator
 import com.arcadelabs.spiderlily.list.ui.MangaListFragment
-import org.koitharu.kotatsu.parsers.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.MangaSource
 import com.arcadelabs.spiderlily.search.domain.SearchKind
 
 @AndroidEntryPoint

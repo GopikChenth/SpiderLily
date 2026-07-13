@@ -19,8 +19,8 @@ import com.arcadelabs.spiderlily.list.ui.model.MangaDetailedListModel
 import com.arcadelabs.spiderlily.list.ui.model.MangaGridModel
 import com.arcadelabs.spiderlily.list.ui.model.MangaListModel
 import com.arcadelabs.spiderlily.local.data.index.LocalMangaIndex
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaTag
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaTag
 import com.arcadelabs.spiderlily.tracker.domain.TrackingRepository
 import com.arcadelabs.spiderlily.tracker.domain.model.TrackingLogItem
 import com.arcadelabs.spiderlily.tracker.ui.feed.model.FeedItem

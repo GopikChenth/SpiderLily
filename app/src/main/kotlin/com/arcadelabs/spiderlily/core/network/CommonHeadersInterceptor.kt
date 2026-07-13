@@ -12,10 +12,10 @@ import okhttp3.Interceptor.Chain
 import okhttp3.Request
 import okhttp3.Response
 import okio.IOException
-import org.koitharu.kotatsu.parsers.model.MangaParserSource
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.util.mergeWith
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.model.MangaParserSource
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.util.mergeWith
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import java.net.IDN
 import javax.inject.Inject
 import javax.inject.Singleton

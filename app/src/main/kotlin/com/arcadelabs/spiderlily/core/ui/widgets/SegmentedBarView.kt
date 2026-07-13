@@ -16,7 +16,7 @@ import androidx.interpolator.view.animation.FastOutSlowInInterpolator
 import com.arcadelabs.spiderlily.core.util.ext.getAnimationDuration
 import com.arcadelabs.spiderlily.core.util.ext.isAnimationsEnabled
 import com.arcadelabs.spiderlily.core.util.ext.resolveDp
-import org.koitharu.kotatsu.parsers.util.replaceWith
+import com.arcadelabs.spiderlily_parser.util.replaceWith
 
 class SegmentedBarView @JvmOverloads constructor(
 	context: Context,

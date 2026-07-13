@@ -18,12 +18,12 @@ import com.arcadelabs.spiderlily.core.util.ext.observe
 import com.arcadelabs.spiderlily.databinding.FragmentFilterHeaderBinding
 import com.arcadelabs.spiderlily.filter.data.PersistableFilter
 import com.arcadelabs.spiderlily.filter.ui.model.FilterHeaderModel
-import org.koitharu.kotatsu.parsers.model.ContentRating
-import org.koitharu.kotatsu.parsers.model.ContentType
-import org.koitharu.kotatsu.parsers.model.Demographic
-import org.koitharu.kotatsu.parsers.model.MangaState
-import org.koitharu.kotatsu.parsers.model.MangaTag
-import org.koitharu.kotatsu.parsers.model.YEAR_UNKNOWN
+import com.arcadelabs.spiderlily_parser.model.ContentRating
+import com.arcadelabs.spiderlily_parser.model.ContentType
+import com.arcadelabs.spiderlily_parser.model.Demographic
+import com.arcadelabs.spiderlily_parser.model.MangaState
+import com.arcadelabs.spiderlily_parser.model.MangaTag
+import com.arcadelabs.spiderlily_parser.model.YEAR_UNKNOWN
 import java.util.Locale
 import javax.inject.Inject
 

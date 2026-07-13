@@ -1,6 +1,6 @@
 package com.arcadelabs.spiderlily.settings.sources.catalog
 
-import org.koitharu.kotatsu.parsers.model.ContentType
+import com.arcadelabs.spiderlily_parser.model.ContentType
 
 data class SourcesCatalogFilter(
 	val types: Set<ContentType>,

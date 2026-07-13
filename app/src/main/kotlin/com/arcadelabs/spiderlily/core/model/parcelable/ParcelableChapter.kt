@@ -5,7 +5,7 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parceler
 import kotlinx.parcelize.Parcelize
 import com.arcadelabs.spiderlily.core.model.MangaSource
-import org.koitharu.kotatsu.parsers.model.MangaChapter
+import com.arcadelabs.spiderlily_parser.model.MangaChapter
 
 @Parcelize
 data class ParcelableChapter(

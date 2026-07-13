@@ -17,7 +17,7 @@ import com.arcadelabs.spiderlily.core.util.ext.getQuantityStringSafe
 import com.arcadelabs.spiderlily.core.util.ext.observe
 import com.arcadelabs.spiderlily.core.util.ext.setDefaultValueCompat
 import com.arcadelabs.spiderlily.explore.data.SourcesSortOrder
-import org.koitharu.kotatsu.parsers.util.names
+import com.arcadelabs.spiderlily_parser.util.names
 
 @AndroidEntryPoint
 class SourcesSettingsFragment : BasePreferenceFragment(R.string.remote_sources),

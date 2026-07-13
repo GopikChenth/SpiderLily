@@ -9,7 +9,7 @@ import com.arcadelabs.spiderlily.core.exceptions.resolve.ExceptionResolver
 import com.arcadelabs.spiderlily.core.os.NetworkState
 import com.arcadelabs.spiderlily.core.util.ext.printStackTraceDebug
 import com.arcadelabs.spiderlily.core.util.ext.throttle
-import org.koitharu.kotatsu.parsers.model.MangaPage
+import com.arcadelabs.spiderlily_parser.model.MangaPage
 import com.arcadelabs.spiderlily.reader.domain.PageLoader
 import com.arcadelabs.spiderlily.reader.ui.config.ReaderSettings
 import kotlinx.coroutines.CancellationException

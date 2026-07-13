@@ -43,8 +43,8 @@ import com.arcadelabs.spiderlily.history.data.HistoryRepository
 import com.arcadelabs.spiderlily.list.domain.ListFilterOption
 import com.arcadelabs.spiderlily.local.domain.DeleteLocalMangaUseCase
 import com.arcadelabs.spiderlily.local.domain.model.LocalManga
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaState
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaState
 import com.arcadelabs.spiderlily.reader.ui.ReaderActivity
 import com.arcadelabs.spiderlily.reader.ui.ReaderState
 import com.arcadelabs.spiderlily.reader.ui.ReaderViewModel

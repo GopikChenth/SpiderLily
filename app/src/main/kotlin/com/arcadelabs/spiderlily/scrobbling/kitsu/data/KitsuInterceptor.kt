@@ -6,10 +6,10 @@ import okhttp3.Response
 import okhttp3.internal.closeQuietly
 import okio.IOException
 import com.arcadelabs.spiderlily.core.network.CommonHeaders
-import org.koitharu.kotatsu.parsers.util.mimeType
-import org.koitharu.kotatsu.parsers.util.nullIfEmpty
-import org.koitharu.kotatsu.parsers.util.parseHtml
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.util.mimeType
+import com.arcadelabs.spiderlily_parser.util.nullIfEmpty
+import com.arcadelabs.spiderlily_parser.util.parseHtml
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import com.arcadelabs.spiderlily.scrobbling.common.data.ScrobblerStorage
 import com.arcadelabs.spiderlily.scrobbling.common.domain.ScrobblerAuthRequiredException
 import com.arcadelabs.spiderlily.scrobbling.common.domain.model.ScrobblerService

@@ -32,7 +32,7 @@ import com.arcadelabs.spiderlily.core.util.ext.parentView
 import com.arcadelabs.spiderlily.core.util.ext.showOrHide
 import com.arcadelabs.spiderlily.databinding.DialogDownloadBinding
 import com.arcadelabs.spiderlily.main.ui.owners.BottomNavOwner
-import org.koitharu.kotatsu.parsers.util.format
+import com.arcadelabs.spiderlily_parser.util.format
 import com.arcadelabs.spiderlily.settings.storage.DirectoryModel
 
 @AndroidEntryPoint

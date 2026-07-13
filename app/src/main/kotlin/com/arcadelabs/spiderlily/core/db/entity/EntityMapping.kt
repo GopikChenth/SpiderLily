@@ -1,17 +1,17 @@
 package com.arcadelabs.spiderlily.core.db.entity
 
 import com.arcadelabs.spiderlily.core.model.MangaSource
-import org.koitharu.kotatsu.parsers.model.ContentRating
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaChapter
-import org.koitharu.kotatsu.parsers.model.MangaState
-import org.koitharu.kotatsu.parsers.model.MangaTag
-import org.koitharu.kotatsu.parsers.model.SortOrder
-import org.koitharu.kotatsu.parsers.util.longHashCode
-import org.koitharu.kotatsu.parsers.util.mapToSet
-import org.koitharu.kotatsu.parsers.util.nullIfEmpty
-import org.koitharu.kotatsu.parsers.util.toArraySet
-import org.koitharu.kotatsu.parsers.util.toTitleCase
+import com.arcadelabs.spiderlily_parser.model.ContentRating
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaChapter
+import com.arcadelabs.spiderlily_parser.model.MangaState
+import com.arcadelabs.spiderlily_parser.model.MangaTag
+import com.arcadelabs.spiderlily_parser.model.SortOrder
+import com.arcadelabs.spiderlily_parser.util.longHashCode
+import com.arcadelabs.spiderlily_parser.util.mapToSet
+import com.arcadelabs.spiderlily_parser.util.nullIfEmpty
+import com.arcadelabs.spiderlily_parser.util.toArraySet
+import com.arcadelabs.spiderlily_parser.util.toTitleCase
 
 private const val VALUES_DIVIDER = '\n'
 

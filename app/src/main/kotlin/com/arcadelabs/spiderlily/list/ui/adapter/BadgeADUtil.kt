@@ -10,7 +10,7 @@ import com.google.android.material.badge.BadgeDrawable
 import com.google.android.material.badge.BadgeUtils
 import com.google.android.material.badge.ExperimentalBadgeUtils
 import com.arcadelabs.spiderlily.R
-import org.koitharu.kotatsu.parsers.util.nullIfEmpty
+import com.arcadelabs.spiderlily_parser.util.nullIfEmpty
 
 @Deprecated("")
 @CheckResult

@@ -5,8 +5,8 @@ import androidx.core.net.toFile
 import androidx.core.net.toUri
 import com.arcadelabs.spiderlily.core.util.ext.contains
 import com.arcadelabs.spiderlily.core.util.ext.creationTime
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaTag
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaTag
 import java.io.File
 
 data class LocalManga(

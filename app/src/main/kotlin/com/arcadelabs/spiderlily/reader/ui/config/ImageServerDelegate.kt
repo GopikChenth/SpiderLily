@@ -8,11 +8,11 @@ import kotlinx.coroutines.withContext
 import com.arcadelabs.spiderlily.R
 import com.arcadelabs.spiderlily.core.parser.MangaRepository
 import com.arcadelabs.spiderlily.core.parser.ParserMangaRepository
-import org.koitharu.kotatsu.parsers.config.ConfigKey
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.util.mapToArray
-import org.koitharu.kotatsu.parsers.util.suspendlazy.getOrNull
-import org.koitharu.kotatsu.parsers.util.suspendlazy.suspendLazy
+import com.arcadelabs.spiderlily_parser.config.ConfigKey
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.util.mapToArray
+import com.arcadelabs.spiderlily_parser.util.suspendlazy.getOrNull
+import com.arcadelabs.spiderlily_parser.util.suspendlazy.suspendLazy
 import kotlin.coroutines.resume
 
 class ImageServerDelegate(

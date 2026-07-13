@@ -18,7 +18,7 @@ import com.arcadelabs.spiderlily.core.util.ext.call
 import com.arcadelabs.spiderlily.explore.data.MangaSourcesRepository
 import com.arcadelabs.spiderlily.history.data.HistoryRepository
 import com.arcadelabs.spiderlily.main.domain.ReadingResumeEnabledUseCase
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 import com.arcadelabs.spiderlily.tracker.domain.TrackingRepository
 import javax.inject.Inject
 

@@ -4,7 +4,7 @@ import android.graphics.Bitmap
 import android.webkit.WebView
 import com.arcadelabs.spiderlily.browser.BrowserCallback
 import com.arcadelabs.spiderlily.browser.BrowserClient
-import org.koitharu.kotatsu.parsers.util.removeSurrounding
+import com.arcadelabs.spiderlily_parser.util.removeSurrounding
 
 class DiscordTokenWebClient(private val callback: Callback) : BrowserClient(callback, null) {
 

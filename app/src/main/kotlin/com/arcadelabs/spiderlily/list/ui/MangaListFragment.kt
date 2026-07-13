@@ -54,8 +54,8 @@ import com.arcadelabs.spiderlily.list.ui.model.ListModel
 import com.arcadelabs.spiderlily.list.ui.model.MangaListModel
 import com.arcadelabs.spiderlily.list.ui.size.DynamicItemSizeResolver
 import com.arcadelabs.spiderlily.main.ui.owners.AppBarOwner
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaTag
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaTag
 import com.arcadelabs.spiderlily.search.ui.MangaListActivity
 import javax.inject.Inject
 

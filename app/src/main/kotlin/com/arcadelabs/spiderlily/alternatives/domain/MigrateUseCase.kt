@@ -9,9 +9,9 @@ import com.arcadelabs.spiderlily.details.domain.ProgressUpdateUseCase
 import com.arcadelabs.spiderlily.history.data.HistoryEntity
 import com.arcadelabs.spiderlily.history.data.toMangaHistory
 import com.arcadelabs.spiderlily.list.domain.ReadingProgress.Companion.PROGRESS_NONE
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaChapter
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaChapter
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import com.arcadelabs.spiderlily.scrobbling.common.domain.Scrobbler
 import com.arcadelabs.spiderlily.scrobbling.common.domain.model.ScrobblingStatus
 import com.arcadelabs.spiderlily.tracker.data.TrackEntity

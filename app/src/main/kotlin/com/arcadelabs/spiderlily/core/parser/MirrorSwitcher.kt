@@ -8,9 +8,9 @@ import okhttp3.Request
 import com.arcadelabs.spiderlily.BuildConfig
 import com.arcadelabs.spiderlily.core.network.MangaHttpClient
 import com.arcadelabs.spiderlily.core.prefs.AppSettings
-import org.koitharu.kotatsu.parsers.model.MangaParserSource
-import org.koitharu.kotatsu.parsers.util.await
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.model.MangaParserSource
+import com.arcadelabs.spiderlily_parser.util.await
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import java.util.EnumSet
 import javax.inject.Inject
 

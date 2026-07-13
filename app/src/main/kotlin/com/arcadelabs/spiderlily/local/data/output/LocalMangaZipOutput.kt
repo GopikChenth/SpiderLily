@@ -13,8 +13,8 @@ import com.arcadelabs.spiderlily.core.util.ext.deleteAwait
 import com.arcadelabs.spiderlily.core.util.ext.readText
 import com.arcadelabs.spiderlily.core.zip.ZipOutput
 import com.arcadelabs.spiderlily.local.data.MangaIndex
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaChapter
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaChapter
 import java.io.File
 import java.util.zip.ZipFile
 

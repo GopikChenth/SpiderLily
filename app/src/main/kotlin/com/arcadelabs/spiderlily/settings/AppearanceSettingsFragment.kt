@@ -29,9 +29,9 @@ import com.arcadelabs.spiderlily.core.util.ext.postDelayed
 import com.arcadelabs.spiderlily.core.util.ext.setDefaultValueCompat
 import com.arcadelabs.spiderlily.core.util.ext.sortedWithSafe
 import com.arcadelabs.spiderlily.core.util.ext.toList
-import org.koitharu.kotatsu.parsers.util.mapToSet
-import org.koitharu.kotatsu.parsers.util.names
-import org.koitharu.kotatsu.parsers.util.toTitleCase
+import com.arcadelabs.spiderlily_parser.util.mapToSet
+import com.arcadelabs.spiderlily_parser.util.names
+import com.arcadelabs.spiderlily_parser.util.toTitleCase
 import com.arcadelabs.spiderlily.settings.protect.ProtectSetupActivity
 import com.arcadelabs.spiderlily.settings.utils.ActivityListPreference
 import com.arcadelabs.spiderlily.settings.utils.MultiSummaryProvider

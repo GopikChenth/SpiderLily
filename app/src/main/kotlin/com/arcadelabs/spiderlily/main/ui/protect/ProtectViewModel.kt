@@ -8,7 +8,7 @@ import com.arcadelabs.spiderlily.core.prefs.AppSettings
 import com.arcadelabs.spiderlily.core.ui.BaseViewModel
 import com.arcadelabs.spiderlily.core.util.ext.MutableEventFlow
 import com.arcadelabs.spiderlily.core.util.ext.call
-import org.koitharu.kotatsu.parsers.util.md5
+import com.arcadelabs.spiderlily_parser.util.md5
 import javax.inject.Inject
 
 private const val PASSWORD_COMPARE_DELAY = 1_000L

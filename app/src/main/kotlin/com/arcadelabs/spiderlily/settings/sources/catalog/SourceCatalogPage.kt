@@ -2,7 +2,7 @@ package com.arcadelabs.spiderlily.settings.sources.catalog
 
 import com.arcadelabs.spiderlily.list.ui.ListModelDiffCallback
 import com.arcadelabs.spiderlily.list.ui.model.ListModel
-import org.koitharu.kotatsu.parsers.model.ContentType
+import com.arcadelabs.spiderlily_parser.model.ContentType
 
 data class SourceCatalogPage(
 	val type: ContentType,

@@ -24,7 +24,7 @@ import com.arcadelabs.spiderlily.core.util.ext.observeEvent
 import com.arcadelabs.spiderlily.databinding.ActivityPickerBinding
 import com.arcadelabs.spiderlily.main.ui.owners.AppBarOwner
 import com.arcadelabs.spiderlily.main.ui.owners.SnackbarOwner
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 import com.arcadelabs.spiderlily.picker.ui.manga.MangaPickerFragment
 import com.arcadelabs.spiderlily.picker.ui.page.PagePickerFragment
 import com.arcadelabs.spiderlily.reader.ui.PageSaveHelper

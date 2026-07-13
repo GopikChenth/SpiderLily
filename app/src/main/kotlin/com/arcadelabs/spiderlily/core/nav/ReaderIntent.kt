@@ -5,7 +5,7 @@ import android.content.Intent
 import com.arcadelabs.spiderlily.BuildConfig
 import com.arcadelabs.spiderlily.bookmarks.domain.Bookmark
 import com.arcadelabs.spiderlily.core.model.parcelable.ParcelableManga
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 import com.arcadelabs.spiderlily.reader.ui.ReaderActivity
 import com.arcadelabs.spiderlily.reader.ui.ReaderState
 

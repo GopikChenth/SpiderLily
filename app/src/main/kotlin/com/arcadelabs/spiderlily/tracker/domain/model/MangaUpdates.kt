@@ -1,9 +1,9 @@
 package com.arcadelabs.spiderlily.tracker.domain.model
 
-import org.koitharu.kotatsu.parsers.exception.TooManyRequestExceptions
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaChapter
-import org.koitharu.kotatsu.parsers.util.ifZero
+import com.arcadelabs.spiderlily_parser.exception.TooManyRequestExceptions
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaChapter
+import com.arcadelabs.spiderlily_parser.util.ifZero
 
 sealed interface MangaUpdates {
 

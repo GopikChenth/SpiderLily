@@ -6,12 +6,12 @@ import androidx.core.content.edit
 import com.arcadelabs.spiderlily.core.util.ext.getEnumValue
 import com.arcadelabs.spiderlily.core.util.ext.putEnumValue
 import com.arcadelabs.spiderlily.core.util.ext.sanitizeHeaderValue
-import org.koitharu.kotatsu.parsers.config.ConfigKey
-import org.koitharu.kotatsu.parsers.config.MangaSourceConfig
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.model.SortOrder
-import org.koitharu.kotatsu.parsers.util.ifNullOrEmpty
-import org.koitharu.kotatsu.parsers.util.nullIfEmpty
+import com.arcadelabs.spiderlily_parser.config.ConfigKey
+import com.arcadelabs.spiderlily_parser.config.MangaSourceConfig
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.SortOrder
+import com.arcadelabs.spiderlily_parser.util.ifNullOrEmpty
+import com.arcadelabs.spiderlily_parser.util.nullIfEmpty
 import com.arcadelabs.spiderlily.settings.utils.validation.DomainValidator
 import java.io.File
 

@@ -8,21 +8,21 @@ import com.arcadelabs.spiderlily.core.exceptions.CloudFlareProtectedException
 import com.arcadelabs.spiderlily.core.exceptions.InteractiveActionRequiredException
 import com.arcadelabs.spiderlily.core.exceptions.ProxyConfigException
 import com.arcadelabs.spiderlily.core.prefs.SourceSettings
-import org.koitharu.kotatsu.parsers.MangaParser
-import org.koitharu.kotatsu.parsers.MangaParserAuthProvider
-import org.koitharu.kotatsu.parsers.config.ConfigKey
-import org.koitharu.kotatsu.parsers.exception.AuthRequiredException
-import org.koitharu.kotatsu.parsers.model.Favicons
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaChapter
-import org.koitharu.kotatsu.parsers.model.MangaListFilter
-import org.koitharu.kotatsu.parsers.model.MangaListFilterCapabilities
-import org.koitharu.kotatsu.parsers.model.MangaListFilterOptions
-import org.koitharu.kotatsu.parsers.model.MangaPage
-import org.koitharu.kotatsu.parsers.model.MangaParserSource
-import org.koitharu.kotatsu.parsers.model.SortOrder
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
-import org.koitharu.kotatsu.parsers.util.suspendlazy.suspendLazy
+import com.arcadelabs.spiderlily_parser.MangaParser
+import com.arcadelabs.spiderlily_parser.MangaParserAuthProvider
+import com.arcadelabs.spiderlily_parser.config.ConfigKey
+import com.arcadelabs.spiderlily_parser.exception.AuthRequiredException
+import com.arcadelabs.spiderlily_parser.model.Favicons
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaChapter
+import com.arcadelabs.spiderlily_parser.model.MangaListFilter
+import com.arcadelabs.spiderlily_parser.model.MangaListFilterCapabilities
+import com.arcadelabs.spiderlily_parser.model.MangaListFilterOptions
+import com.arcadelabs.spiderlily_parser.model.MangaPage
+import com.arcadelabs.spiderlily_parser.model.MangaParserSource
+import com.arcadelabs.spiderlily_parser.model.SortOrder
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.util.suspendlazy.suspendLazy
 
 class ParserMangaRepository(
 	private val parser: MangaParser,

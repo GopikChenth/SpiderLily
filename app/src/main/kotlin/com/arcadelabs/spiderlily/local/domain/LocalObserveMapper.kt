@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.mapLatest
 import kotlinx.coroutines.flow.onStart
 import com.arcadelabs.spiderlily.core.model.isLocal
 import com.arcadelabs.spiderlily.local.data.index.LocalMangaIndex
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 
 abstract class LocalObserveMapper<E : Any, R : Any>(
 	private val localMangaIndex: LocalMangaIndex,

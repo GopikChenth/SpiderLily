@@ -17,9 +17,9 @@ import org.jsoup.HttpStatusException
 import com.arcadelabs.spiderlily.BuildConfig
 import com.arcadelabs.spiderlily.core.exceptions.CloudFlareBlockedException
 import com.arcadelabs.spiderlily.core.util.ext.ensureSuccess
-import org.koitharu.kotatsu.parsers.util.await
-import org.koitharu.kotatsu.parsers.util.isHttpOrHttps
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.util.await
+import com.arcadelabs.spiderlily_parser.util.isHttpOrHttps
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import java.net.HttpURLConnection
 import java.util.Collections
 

@@ -32,7 +32,7 @@ import com.arcadelabs.spiderlily.core.util.ext.toLocale
 import com.arcadelabs.spiderlily.databinding.ActivitySourcesCatalogBinding
 import com.arcadelabs.spiderlily.list.ui.adapter.TypedListSpacingDecoration
 import com.arcadelabs.spiderlily.main.ui.owners.AppBarOwner
-import org.koitharu.kotatsu.parsers.model.ContentType
+import com.arcadelabs.spiderlily_parser.model.ContentType
 
 @AndroidEntryPoint
 class SourcesCatalogActivity : BaseActivity<ActivitySourcesCatalogBinding>(),

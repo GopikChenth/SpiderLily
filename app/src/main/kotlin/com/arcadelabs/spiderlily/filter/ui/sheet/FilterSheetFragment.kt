@@ -46,15 +46,15 @@ import com.arcadelabs.spiderlily.filter.data.PersistableFilter
 import com.arcadelabs.spiderlily.filter.data.PersistableFilter.Companion.MAX_TITLE_LENGTH
 import com.arcadelabs.spiderlily.filter.ui.FilterCoordinator
 import com.arcadelabs.spiderlily.filter.ui.model.FilterProperty
-import org.koitharu.kotatsu.parsers.model.ContentRating
-import org.koitharu.kotatsu.parsers.model.ContentType
-import org.koitharu.kotatsu.parsers.model.Demographic
-import org.koitharu.kotatsu.parsers.model.MangaState
-import org.koitharu.kotatsu.parsers.model.MangaTag
-import org.koitharu.kotatsu.parsers.model.SortOrder
-import org.koitharu.kotatsu.parsers.model.YEAR_UNKNOWN
-import org.koitharu.kotatsu.parsers.util.mapToSet
-import org.koitharu.kotatsu.parsers.util.toIntUp
+import com.arcadelabs.spiderlily_parser.model.ContentRating
+import com.arcadelabs.spiderlily_parser.model.ContentType
+import com.arcadelabs.spiderlily_parser.model.Demographic
+import com.arcadelabs.spiderlily_parser.model.MangaState
+import com.arcadelabs.spiderlily_parser.model.MangaTag
+import com.arcadelabs.spiderlily_parser.model.SortOrder
+import com.arcadelabs.spiderlily_parser.model.YEAR_UNKNOWN
+import com.arcadelabs.spiderlily_parser.util.mapToSet
+import com.arcadelabs.spiderlily_parser.util.toIntUp
 import java.util.Locale
 import java.util.TreeSet
 

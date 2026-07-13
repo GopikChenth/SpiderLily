@@ -7,10 +7,10 @@ import org.json.JSONObject
 import com.arcadelabs.spiderlily.core.exceptions.SyncApiException
 import com.arcadelabs.spiderlily.core.network.BaseHttpClient
 import com.arcadelabs.spiderlily.core.util.ext.toRequestBody
-import org.koitharu.kotatsu.parsers.util.await
-import org.koitharu.kotatsu.parsers.util.parseJson
-import org.koitharu.kotatsu.parsers.util.parseRaw
-import org.koitharu.kotatsu.parsers.util.removeSurrounding
+import com.arcadelabs.spiderlily_parser.util.await
+import com.arcadelabs.spiderlily_parser.util.parseJson
+import com.arcadelabs.spiderlily_parser.util.parseRaw
+import com.arcadelabs.spiderlily_parser.util.removeSurrounding
 import javax.inject.Inject
 
 @Reusable

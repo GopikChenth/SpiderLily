@@ -41,9 +41,9 @@ import com.arcadelabs.spiderlily.list.ui.model.LoadingState
 import com.arcadelabs.spiderlily.local.data.LocalMangaRepository
 import com.arcadelabs.spiderlily.local.data.LocalStorageChanges
 import com.arcadelabs.spiderlily.local.domain.model.LocalManga
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.util.mapToSet
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.util.mapToSet
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import java.util.LinkedList
 import java.util.UUID
 import javax.inject.Inject

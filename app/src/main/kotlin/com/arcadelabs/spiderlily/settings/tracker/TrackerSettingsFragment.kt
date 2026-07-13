@@ -24,7 +24,7 @@ import com.arcadelabs.spiderlily.core.prefs.TrackerDownloadStrategy
 import com.arcadelabs.spiderlily.core.ui.BasePreferenceFragment
 import com.arcadelabs.spiderlily.core.util.ext.observe
 import com.arcadelabs.spiderlily.core.util.ext.setDefaultValueCompat
-import org.koitharu.kotatsu.parsers.util.names
+import com.arcadelabs.spiderlily_parser.util.names
 import com.arcadelabs.spiderlily.settings.utils.DozeHelper
 import com.arcadelabs.spiderlily.settings.utils.MultiSummaryProvider
 import com.arcadelabs.spiderlily.tracker.ui.debug.TrackerDebugActivity

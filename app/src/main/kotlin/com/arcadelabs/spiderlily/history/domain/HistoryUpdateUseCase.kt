@@ -3,8 +3,8 @@ package com.arcadelabs.spiderlily.history.domain
 import com.arcadelabs.spiderlily.core.util.ext.printStackTraceDebug
 import com.arcadelabs.spiderlily.core.util.ext.processLifecycleScope
 import com.arcadelabs.spiderlily.history.data.HistoryRepository
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import com.arcadelabs.spiderlily.reader.ui.ReaderState
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.Dispatchers

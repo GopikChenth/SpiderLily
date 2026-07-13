@@ -12,8 +12,8 @@ import okio.buffer
 import okio.source
 import com.arcadelabs.spiderlily.core.model.FavouriteCategory
 import com.arcadelabs.spiderlily.core.model.MangaSource
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaSource
 import java.time.Instant
 import java.util.Date
 import kotlin.reflect.KClass

@@ -38,7 +38,7 @@ import kotlinx.serialization.json.encodeToStream
 import kotlinx.serialization.serializer
 import org.json.JSONArray
 import org.json.JSONObject
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import java.io.InputStream
 import java.io.OutputStream
 import java.util.zip.ZipEntry

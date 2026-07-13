@@ -10,7 +10,7 @@ import okhttp3.Response
 import com.arcadelabs.spiderlily.core.prefs.AppSettings
 import com.arcadelabs.spiderlily.core.prefs.observeAsStateFlow
 import com.arcadelabs.spiderlily.core.util.ext.processLifecycleScope
-import org.koitharu.kotatsu.parsers.util.await
+import com.arcadelabs.spiderlily_parser.util.await
 import javax.inject.Inject
 import javax.inject.Singleton
 

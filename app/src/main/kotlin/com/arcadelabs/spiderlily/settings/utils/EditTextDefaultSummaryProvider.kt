@@ -3,7 +3,7 @@ package com.arcadelabs.spiderlily.settings.utils
 import androidx.preference.EditTextPreference
 import androidx.preference.Preference
 import com.arcadelabs.spiderlily.R
-import org.koitharu.kotatsu.parsers.util.ifNullOrEmpty
+import com.arcadelabs.spiderlily_parser.util.ifNullOrEmpty
 
 class EditTextDefaultSummaryProvider(
 	private val defaultValue: String,

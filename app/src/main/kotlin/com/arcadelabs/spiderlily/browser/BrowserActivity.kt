@@ -16,7 +16,7 @@ import com.arcadelabs.spiderlily.core.nav.router
 import com.arcadelabs.spiderlily.core.parser.ParserMangaRepository
 import com.arcadelabs.spiderlily.core.util.ext.getDisplayMessage
 import com.arcadelabs.spiderlily.core.util.ext.printStackTraceDebug
-import org.koitharu.kotatsu.parsers.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.MangaSource
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint

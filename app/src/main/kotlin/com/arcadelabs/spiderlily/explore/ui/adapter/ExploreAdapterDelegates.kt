@@ -27,7 +27,7 @@ import com.arcadelabs.spiderlily.explore.ui.model.RecommendationsItem
 import com.arcadelabs.spiderlily.list.ui.adapter.ListItemType
 import com.arcadelabs.spiderlily.list.ui.model.ListModel
 import com.arcadelabs.spiderlily.list.ui.model.MangaCompactListModel
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 
 fun exploreButtonsAD(
 	clickListener: View.OnClickListener,

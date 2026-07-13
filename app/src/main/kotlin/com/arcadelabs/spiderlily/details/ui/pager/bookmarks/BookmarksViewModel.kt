@@ -27,7 +27,7 @@ import com.arcadelabs.spiderlily.list.ui.model.EmptyState
 import com.arcadelabs.spiderlily.list.ui.model.ListHeader
 import com.arcadelabs.spiderlily.list.ui.model.ListModel
 import com.arcadelabs.spiderlily.list.ui.model.LoadingState
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 import com.arcadelabs.spiderlily.reader.ui.PageSaveHelper
 import javax.inject.Inject
 

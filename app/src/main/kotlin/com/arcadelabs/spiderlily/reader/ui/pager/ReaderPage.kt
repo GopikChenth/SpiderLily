@@ -4,8 +4,8 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 import kotlinx.parcelize.TypeParceler
 import com.arcadelabs.spiderlily.core.model.parcelable.MangaSourceParceler
-import org.koitharu.kotatsu.parsers.model.MangaPage
-import org.koitharu.kotatsu.parsers.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.MangaPage
+import com.arcadelabs.spiderlily_parser.model.MangaSource
 
 @Parcelize
 @TypeParceler<MangaSource, MangaSourceParceler>

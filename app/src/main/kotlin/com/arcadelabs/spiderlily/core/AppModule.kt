@@ -61,7 +61,7 @@ import com.arcadelabs.spiderlily.local.domain.model.LocalManga
 import com.arcadelabs.spiderlily.main.domain.CoverRestoreInterceptor
 import com.arcadelabs.spiderlily.main.ui.protect.AppProtectHelper
 import com.arcadelabs.spiderlily.main.ui.protect.ScreenshotPolicyHelper
-import org.koitharu.kotatsu.parsers.MangaLoaderContext
+import com.arcadelabs.spiderlily_parser.MangaLoaderContext
 import com.arcadelabs.spiderlily.search.ui.MangaSuggestionsProvider
 import com.arcadelabs.spiderlily.sync.domain.SyncController
 import com.arcadelabs.spiderlily.widget.WidgetUpdater

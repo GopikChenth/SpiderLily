@@ -1,6 +1,6 @@
 package com.arcadelabs.spiderlily.mihon.parsers.model
 
-import org.koitharu.kotatsu.parsers.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.MangaSource
 
 interface ContentSource : MangaSource {
 

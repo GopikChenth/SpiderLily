@@ -9,7 +9,7 @@ import com.arcadelabs.spiderlily.core.util.ext.readParcelableCompat
 import com.arcadelabs.spiderlily.core.util.ext.readSerializableCompat
 import com.arcadelabs.spiderlily.core.util.ext.readStringSet
 import com.arcadelabs.spiderlily.core.util.ext.writeStringSet
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 
 @Parcelize
 data class ParcelableManga(

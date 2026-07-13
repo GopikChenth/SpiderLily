@@ -6,7 +6,7 @@ import com.arcadelabs.spiderlily.core.os.NetworkState
 import com.arcadelabs.spiderlily.core.parser.MangaRepository
 import com.arcadelabs.spiderlily.list.domain.ReadingProgress.Companion.PROGRESS_NONE
 import com.arcadelabs.spiderlily.local.data.LocalMangaRepository
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 import javax.inject.Inject
 
 class ProgressUpdateUseCase @Inject constructor(

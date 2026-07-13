@@ -29,7 +29,7 @@ import com.arcadelabs.spiderlily.list.ui.adapter.emptyStateListAD
 import com.arcadelabs.spiderlily.list.ui.adapter.loadingFooterAD
 import com.arcadelabs.spiderlily.list.ui.adapter.loadingStateAD
 import com.arcadelabs.spiderlily.list.ui.model.ListModel
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 import javax.inject.Inject
 
 @AndroidEntryPoint

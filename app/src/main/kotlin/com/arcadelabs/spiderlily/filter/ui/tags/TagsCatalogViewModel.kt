@@ -23,8 +23,8 @@ import com.arcadelabs.spiderlily.list.ui.model.ListModel
 import com.arcadelabs.spiderlily.list.ui.model.LoadingState
 import com.arcadelabs.spiderlily.list.ui.model.toErrorFooter
 import com.arcadelabs.spiderlily.list.ui.model.toErrorState
-import org.koitharu.kotatsu.parsers.model.MangaParserSource
-import org.koitharu.kotatsu.parsers.model.MangaTag
+import com.arcadelabs.spiderlily_parser.model.MangaParserSource
+import com.arcadelabs.spiderlily_parser.model.MangaTag
 
 @HiltViewModel(assistedFactory = TagsCatalogViewModel.Factory::class)
 class TagsCatalogViewModel @AssistedInject constructor(

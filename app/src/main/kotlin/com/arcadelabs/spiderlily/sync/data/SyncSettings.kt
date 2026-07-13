@@ -7,7 +7,7 @@ import androidx.annotation.WorkerThread
 import dagger.hilt.android.qualifiers.ApplicationContext
 import com.arcadelabs.spiderlily.R
 import com.arcadelabs.spiderlily.core.util.ext.isHttpUrl
-import org.koitharu.kotatsu.parsers.util.ifNullOrEmpty
+import com.arcadelabs.spiderlily_parser.util.ifNullOrEmpty
 import javax.inject.Inject
 
 class SyncSettings(

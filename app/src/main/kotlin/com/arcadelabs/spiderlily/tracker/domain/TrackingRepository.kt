@@ -18,9 +18,9 @@ import com.arcadelabs.spiderlily.core.util.ext.mapItems
 import com.arcadelabs.spiderlily.core.util.ext.toInstantOrNull
 import com.arcadelabs.spiderlily.details.domain.ProgressUpdateUseCase
 import com.arcadelabs.spiderlily.list.domain.ListFilterOption
-import org.koitharu.kotatsu.parsers.config.ConfigKey
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.util.ifZero
+import com.arcadelabs.spiderlily_parser.config.ConfigKey
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.util.ifZero
 import com.arcadelabs.spiderlily.tracker.data.TrackEntity
 import com.arcadelabs.spiderlily.tracker.data.TrackLogEntity
 import com.arcadelabs.spiderlily.tracker.data.toTrackingLogItem

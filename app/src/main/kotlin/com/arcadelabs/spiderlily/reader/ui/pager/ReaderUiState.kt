@@ -2,7 +2,7 @@ package com.arcadelabs.spiderlily.reader.ui.pager
 
 import android.content.res.Resources
 import com.arcadelabs.spiderlily.core.model.getLocalizedTitle
-import org.koitharu.kotatsu.parsers.model.MangaChapter
+import com.arcadelabs.spiderlily_parser.model.MangaChapter
 
 data class ReaderUiState(
 	val mangaName: String?,

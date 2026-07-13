@@ -4,7 +4,7 @@ import android.content.res.Resources
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.arcadelabs.spiderlily.R
-import org.koitharu.kotatsu.parsers.model.SortOrder
+import com.arcadelabs.spiderlily_parser.model.SortOrder
 
 class DatabasePrePopulateCallback(private val resources: Resources) : RoomDatabase.Callback() {
 

@@ -15,9 +15,9 @@ import com.arcadelabs.spiderlily.core.util.ext.toList
 import com.arcadelabs.spiderlily.core.util.ext.toLocale
 import com.arcadelabs.spiderlily.explore.data.MangaSourcesRepository
 import com.arcadelabs.spiderlily.filter.ui.model.FilterProperty
-import org.koitharu.kotatsu.parsers.model.ContentType
-import org.koitharu.kotatsu.parsers.model.MangaParserSource
-import org.koitharu.kotatsu.parsers.util.mapToSet
+import com.arcadelabs.spiderlily_parser.model.ContentType
+import com.arcadelabs.spiderlily_parser.model.MangaParserSource
+import com.arcadelabs.spiderlily_parser.util.mapToSet
 import java.util.EnumSet
 import java.util.Locale
 import javax.inject.Inject

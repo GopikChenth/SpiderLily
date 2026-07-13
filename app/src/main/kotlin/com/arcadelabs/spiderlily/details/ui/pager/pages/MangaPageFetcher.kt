@@ -26,10 +26,10 @@ import com.arcadelabs.spiderlily.core.util.ext.isNetworkUri
 import com.arcadelabs.spiderlily.core.util.ext.toMimeTypeOrNull
 import com.arcadelabs.spiderlily.local.data.LocalStorageCache
 import com.arcadelabs.spiderlily.local.data.PageCache
-import org.koitharu.kotatsu.parsers.model.MangaPage
-import org.koitharu.kotatsu.parsers.util.mimeType
-import org.koitharu.kotatsu.parsers.util.requireBody
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.model.MangaPage
+import com.arcadelabs.spiderlily_parser.util.mimeType
+import com.arcadelabs.spiderlily_parser.util.requireBody
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import com.arcadelabs.spiderlily.reader.domain.PageLoader
 import javax.inject.Inject
 

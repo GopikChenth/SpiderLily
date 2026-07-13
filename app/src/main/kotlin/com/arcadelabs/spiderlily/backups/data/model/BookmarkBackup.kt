@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import com.arcadelabs.spiderlily.bookmarks.data.BookmarkEntity
 import com.arcadelabs.spiderlily.core.db.entity.MangaWithTags
-import org.koitharu.kotatsu.parsers.util.mapToSet
+import com.arcadelabs.spiderlily_parser.util.mapToSet
 
 @Serializable
 class BookmarkBackup(

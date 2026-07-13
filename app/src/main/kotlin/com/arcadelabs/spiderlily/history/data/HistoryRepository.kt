@@ -24,11 +24,11 @@ import com.arcadelabs.spiderlily.history.domain.model.MangaWithHistory
 import com.arcadelabs.spiderlily.list.domain.ListFilterOption
 import com.arcadelabs.spiderlily.list.domain.ListSortOrder
 import com.arcadelabs.spiderlily.list.domain.ReadingProgress
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.model.MangaTag
-import org.koitharu.kotatsu.parsers.util.findById
-import org.koitharu.kotatsu.parsers.util.levenshteinDistance
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.MangaTag
+import com.arcadelabs.spiderlily_parser.util.findById
+import com.arcadelabs.spiderlily_parser.util.levenshteinDistance
 import com.arcadelabs.spiderlily.scrobbling.common.domain.Scrobbler
 import com.arcadelabs.spiderlily.scrobbling.common.domain.tryScrobble
 import com.arcadelabs.spiderlily.search.domain.SearchKind

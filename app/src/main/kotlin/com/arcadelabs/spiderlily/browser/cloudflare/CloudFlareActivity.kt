@@ -27,11 +27,11 @@ import com.arcadelabs.spiderlily.core.network.cookies.MutableCookieJar
 import com.arcadelabs.spiderlily.core.parser.ParserMangaRepository
 import com.arcadelabs.spiderlily.core.util.ext.getDisplayMessage
 import com.arcadelabs.spiderlily.core.util.ext.printStackTraceDebug
-import org.koitharu.kotatsu.parsers.config.ConfigKey
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.network.CloudFlareHelper
-import org.koitharu.kotatsu.parsers.util.ifNullOrEmpty
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.config.ConfigKey
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.network.CloudFlareHelper
+import com.arcadelabs.spiderlily_parser.util.ifNullOrEmpty
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import javax.inject.Inject
 
 @AndroidEntryPoint

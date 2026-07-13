@@ -17,7 +17,7 @@ import com.arcadelabs.spiderlily.core.ui.BaseActivity
 import com.arcadelabs.spiderlily.core.ui.util.DefaultTextWatcher
 import com.arcadelabs.spiderlily.core.util.ext.consume
 import com.arcadelabs.spiderlily.databinding.ActivityKitsuAuthBinding
-import org.koitharu.kotatsu.parsers.util.urlEncoded
+import com.arcadelabs.spiderlily_parser.util.urlEncoded
 
 class KitsuAuthActivity : BaseActivity<ActivityKitsuAuthBinding>(),
 	View.OnClickListener,

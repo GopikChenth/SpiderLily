@@ -1,6 +1,6 @@
 package com.arcadelabs.spiderlily.core.github
 
-import org.koitharu.kotatsu.parsers.util.digits
+import com.arcadelabs.spiderlily_parser.util.digits
 import java.util.Locale
 
 data class VersionId(

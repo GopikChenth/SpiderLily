@@ -11,7 +11,7 @@ import com.arcadelabs.spiderlily.core.ui.util.ReversibleAction
 import com.arcadelabs.spiderlily.core.util.ext.call
 import com.arcadelabs.spiderlily.filter.ui.FilterCoordinator
 import com.arcadelabs.spiderlily.list.ui.MangaListViewModel
-import org.koitharu.kotatsu.parsers.model.MangaListFilter
+import com.arcadelabs.spiderlily_parser.model.MangaListFilter
 
 class MangaSearchMenuProvider(
 	private val filter: FilterCoordinator,

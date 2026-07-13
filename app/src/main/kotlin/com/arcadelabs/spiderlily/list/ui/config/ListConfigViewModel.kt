@@ -12,7 +12,7 @@ import com.arcadelabs.spiderlily.core.util.ext.sortedByOrdinal
 import com.arcadelabs.spiderlily.favourites.domain.FavouritesRepository
 import com.arcadelabs.spiderlily.favourites.ui.list.FavouritesListFragment.Companion.NO_ID
 import com.arcadelabs.spiderlily.list.domain.ListSortOrder
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import javax.inject.Inject
 
 @HiltViewModel

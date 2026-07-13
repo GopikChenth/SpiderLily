@@ -25,7 +25,7 @@ import com.arcadelabs.spiderlily.core.util.ext.isLowRamDevice
 import com.arcadelabs.spiderlily.core.util.ext.isSerializable
 import com.arcadelabs.spiderlily.core.util.ext.observe
 import com.arcadelabs.spiderlily.databinding.LayoutPageInfoBinding
-import org.koitharu.kotatsu.parsers.util.ifZero
+import com.arcadelabs.spiderlily_parser.util.ifZero
 import com.arcadelabs.spiderlily.reader.domain.PageLoader
 import com.arcadelabs.spiderlily.reader.ui.config.ReaderSettings
 import com.arcadelabs.spiderlily.reader.ui.pager.vm.PageState

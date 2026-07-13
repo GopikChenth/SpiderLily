@@ -51,10 +51,10 @@ import com.arcadelabs.spiderlily.core.util.progress.ProgressDeferred
 import com.arcadelabs.spiderlily.download.ui.worker.DownloadSlowdownDispatcher
 import com.arcadelabs.spiderlily.local.data.LocalStorageCache
 import com.arcadelabs.spiderlily.local.data.PageCache
-import org.koitharu.kotatsu.parsers.model.MangaPage
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.util.requireBody
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.model.MangaPage
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.util.requireBody
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import com.arcadelabs.spiderlily.reader.ui.pager.ReaderPage
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Deferred

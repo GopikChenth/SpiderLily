@@ -14,10 +14,10 @@ import com.arcadelabs.spiderlily.core.cache.MemoryContentCache
 import com.arcadelabs.spiderlily.core.cache.SafeDeferred
 import com.arcadelabs.spiderlily.core.util.MultiMutex
 import com.arcadelabs.spiderlily.core.util.ext.processLifecycleScope
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaChapter
-import org.koitharu.kotatsu.parsers.model.MangaPage
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaChapter
+import com.arcadelabs.spiderlily_parser.model.MangaPage
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 
 abstract class CachingMangaRepository(
 	private val cache: MemoryContentCache,

@@ -40,7 +40,7 @@ import com.arcadelabs.spiderlily.list.ui.adapter.ListItemType
 import com.arcadelabs.spiderlily.stats.domain.StatsPeriod
 import com.arcadelabs.spiderlily.stats.domain.StatsRecord
 import com.arcadelabs.spiderlily.stats.ui.views.PieChartView
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 
 @AndroidEntryPoint
 class StatsActivity : BaseActivity<ActivityStatsBinding>(),

@@ -1,6 +1,6 @@
 package com.arcadelabs.spiderlily.core.model
 
-import org.koitharu.kotatsu.parsers.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.MangaSource
 
 data class MangaSourceInfo(
 	val mangaSource: MangaSource,

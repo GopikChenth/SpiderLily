@@ -3,8 +3,8 @@ package com.arcadelabs.spiderlily.bookmarks.domain
 import com.arcadelabs.spiderlily.core.util.MimeTypes
 import com.arcadelabs.spiderlily.core.util.ext.isImage
 import com.arcadelabs.spiderlily.list.ui.model.ListModel
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaPage
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaPage
 import java.time.Instant
 
 data class Bookmark(

@@ -10,10 +10,10 @@ import com.arcadelabs.spiderlily.core.ui.BaseViewModel
 import com.arcadelabs.spiderlily.core.ui.widgets.ChipsView
 import com.arcadelabs.spiderlily.core.util.ext.printStackTraceDebug
 import com.arcadelabs.spiderlily.explore.data.MangaSourcesRepository
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.model.MangaTag
-import org.koitharu.kotatsu.parsers.util.mapToSet
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.MangaTag
+import com.arcadelabs.spiderlily_parser.util.mapToSet
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import com.arcadelabs.spiderlily.search.domain.MangaSearchRepository
 import com.arcadelabs.spiderlily.search.ui.suggestion.model.SearchSuggestionItem
 import kotlinx.coroutines.Dispatchers

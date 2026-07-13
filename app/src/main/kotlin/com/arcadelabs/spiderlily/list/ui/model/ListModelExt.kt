@@ -4,7 +4,7 @@ import androidx.annotation.StringRes
 import com.arcadelabs.spiderlily.R
 import com.arcadelabs.spiderlily.core.exceptions.resolve.ExceptionResolver
 import com.arcadelabs.spiderlily.core.util.ext.getDisplayIcon
-import org.koitharu.kotatsu.parsers.util.ifZero
+import com.arcadelabs.spiderlily_parser.util.ifZero
 
 fun Throwable.toErrorState(canRetry: Boolean = true, @StringRes secondaryAction: Int = 0) = ErrorState(
 	exception = this,

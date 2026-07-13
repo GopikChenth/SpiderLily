@@ -19,7 +19,7 @@ import com.arcadelabs.spiderlily.list.ui.model.LoadingState
 import com.arcadelabs.spiderlily.list.ui.model.toErrorState
 import com.arcadelabs.spiderlily.local.data.LocalStorageChanges
 import com.arcadelabs.spiderlily.local.domain.model.LocalManga
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

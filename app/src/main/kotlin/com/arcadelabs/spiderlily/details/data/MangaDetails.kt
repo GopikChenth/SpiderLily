@@ -5,11 +5,11 @@ import com.arcadelabs.spiderlily.core.model.isLocal
 import com.arcadelabs.spiderlily.core.model.withOverride
 import com.arcadelabs.spiderlily.core.ui.model.MangaOverride
 import com.arcadelabs.spiderlily.local.domain.model.LocalManga
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaChapter
-import org.koitharu.kotatsu.parsers.model.MangaState
-import org.koitharu.kotatsu.parsers.util.ifNullOrEmpty
-import org.koitharu.kotatsu.parsers.util.nullIfEmpty
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaChapter
+import com.arcadelabs.spiderlily_parser.model.MangaState
+import com.arcadelabs.spiderlily_parser.util.ifNullOrEmpty
+import com.arcadelabs.spiderlily_parser.util.nullIfEmpty
 import com.arcadelabs.spiderlily.reader.data.filterChapters
 import java.util.Locale
 

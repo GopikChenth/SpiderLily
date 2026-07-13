@@ -3,25 +3,25 @@ package com.arcadelabs.spiderlily.core.ui.model
 import androidx.annotation.StringRes
 import com.arcadelabs.spiderlily.R
 import com.arcadelabs.spiderlily.core.model.SortDirection
-import org.koitharu.kotatsu.parsers.model.SortOrder
-import org.koitharu.kotatsu.parsers.model.SortOrder.ADDED
-import org.koitharu.kotatsu.parsers.model.SortOrder.ADDED_ASC
-import org.koitharu.kotatsu.parsers.model.SortOrder.ALPHABETICAL
-import org.koitharu.kotatsu.parsers.model.SortOrder.ALPHABETICAL_DESC
-import org.koitharu.kotatsu.parsers.model.SortOrder.NEWEST
-import org.koitharu.kotatsu.parsers.model.SortOrder.NEWEST_ASC
-import org.koitharu.kotatsu.parsers.model.SortOrder.POPULARITY
-import org.koitharu.kotatsu.parsers.model.SortOrder.POPULARITY_ASC
-import org.koitharu.kotatsu.parsers.model.SortOrder.POPULARITY_HOUR
-import org.koitharu.kotatsu.parsers.model.SortOrder.POPULARITY_MONTH
-import org.koitharu.kotatsu.parsers.model.SortOrder.POPULARITY_TODAY
-import org.koitharu.kotatsu.parsers.model.SortOrder.POPULARITY_WEEK
-import org.koitharu.kotatsu.parsers.model.SortOrder.POPULARITY_YEAR
-import org.koitharu.kotatsu.parsers.model.SortOrder.RATING
-import org.koitharu.kotatsu.parsers.model.SortOrder.RATING_ASC
-import org.koitharu.kotatsu.parsers.model.SortOrder.RELEVANCE
-import org.koitharu.kotatsu.parsers.model.SortOrder.UPDATED
-import org.koitharu.kotatsu.parsers.model.SortOrder.UPDATED_ASC
+import com.arcadelabs.spiderlily_parser.model.SortOrder
+import com.arcadelabs.spiderlily_parser.model.SortOrder.ADDED
+import com.arcadelabs.spiderlily_parser.model.SortOrder.ADDED_ASC
+import com.arcadelabs.spiderlily_parser.model.SortOrder.ALPHABETICAL
+import com.arcadelabs.spiderlily_parser.model.SortOrder.ALPHABETICAL_DESC
+import com.arcadelabs.spiderlily_parser.model.SortOrder.NEWEST
+import com.arcadelabs.spiderlily_parser.model.SortOrder.NEWEST_ASC
+import com.arcadelabs.spiderlily_parser.model.SortOrder.POPULARITY
+import com.arcadelabs.spiderlily_parser.model.SortOrder.POPULARITY_ASC
+import com.arcadelabs.spiderlily_parser.model.SortOrder.POPULARITY_HOUR
+import com.arcadelabs.spiderlily_parser.model.SortOrder.POPULARITY_MONTH
+import com.arcadelabs.spiderlily_parser.model.SortOrder.POPULARITY_TODAY
+import com.arcadelabs.spiderlily_parser.model.SortOrder.POPULARITY_WEEK
+import com.arcadelabs.spiderlily_parser.model.SortOrder.POPULARITY_YEAR
+import com.arcadelabs.spiderlily_parser.model.SortOrder.RATING
+import com.arcadelabs.spiderlily_parser.model.SortOrder.RATING_ASC
+import com.arcadelabs.spiderlily_parser.model.SortOrder.RELEVANCE
+import com.arcadelabs.spiderlily_parser.model.SortOrder.UPDATED
+import com.arcadelabs.spiderlily_parser.model.SortOrder.UPDATED_ASC
 
 @get:StringRes
 val SortOrder.titleRes: Int

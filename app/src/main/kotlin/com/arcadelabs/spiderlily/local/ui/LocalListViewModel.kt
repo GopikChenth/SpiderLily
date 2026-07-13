@@ -32,7 +32,7 @@ import com.arcadelabs.spiderlily.local.data.LocalStorageChanges
 import com.arcadelabs.spiderlily.local.data.LocalStorageManager
 import com.arcadelabs.spiderlily.local.domain.DeleteLocalMangaUseCase
 import com.arcadelabs.spiderlily.local.domain.model.LocalManga
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 import com.arcadelabs.spiderlily.remotelist.ui.RemoteListViewModel
 import javax.inject.Inject
 

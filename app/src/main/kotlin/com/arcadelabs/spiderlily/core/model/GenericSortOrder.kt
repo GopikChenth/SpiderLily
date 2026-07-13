@@ -2,7 +2,7 @@ package com.arcadelabs.spiderlily.core.model
 
 import androidx.annotation.StringRes
 import com.arcadelabs.spiderlily.R
-import org.koitharu.kotatsu.parsers.model.SortOrder
+import com.arcadelabs.spiderlily_parser.model.SortOrder
 
 @Deprecated("")
 enum class GenericSortOrder(

@@ -3,7 +3,7 @@ package com.arcadelabs.spiderlily.reader.ui
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 import com.arcadelabs.spiderlily.core.model.MangaHistory
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 
 @Parcelize
 data class ReaderState(

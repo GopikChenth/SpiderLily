@@ -14,12 +14,12 @@ import kotlinx.serialization.encoding.encodeStructure
 import kotlinx.serialization.serializer
 import com.arcadelabs.spiderlily.core.model.MangaSource
 import com.arcadelabs.spiderlily.core.util.ext.toLocaleOrNull
-import org.koitharu.kotatsu.parsers.model.ContentRating
-import org.koitharu.kotatsu.parsers.model.ContentType
-import org.koitharu.kotatsu.parsers.model.Demographic
-import org.koitharu.kotatsu.parsers.model.MangaListFilter
-import org.koitharu.kotatsu.parsers.model.MangaState
-import org.koitharu.kotatsu.parsers.model.MangaTag
+import com.arcadelabs.spiderlily_parser.model.ContentRating
+import com.arcadelabs.spiderlily_parser.model.ContentType
+import com.arcadelabs.spiderlily_parser.model.Demographic
+import com.arcadelabs.spiderlily_parser.model.MangaListFilter
+import com.arcadelabs.spiderlily_parser.model.MangaState
+import com.arcadelabs.spiderlily_parser.model.MangaTag
 import java.util.Locale
 
 object MangaListFilterSerializer : KSerializer<MangaListFilter> {

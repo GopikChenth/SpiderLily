@@ -1,7 +1,7 @@
 package com.arcadelabs.spiderlily.reader.ui
 
 import com.google.android.material.slider.LabelFormatter
-import org.koitharu.kotatsu.parsers.util.format
+import com.arcadelabs.spiderlily_parser.util.format
 
 class PageLabelFormatter : LabelFormatter {
 

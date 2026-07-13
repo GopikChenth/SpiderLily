@@ -9,11 +9,11 @@ import com.arcadelabs.spiderlily.core.util.ext.readEnumSet
 import com.arcadelabs.spiderlily.core.util.ext.readParcelableCompat
 import com.arcadelabs.spiderlily.core.util.ext.readSerializableCompat
 import com.arcadelabs.spiderlily.core.util.ext.writeEnumSet
-import org.koitharu.kotatsu.parsers.model.ContentRating
-import org.koitharu.kotatsu.parsers.model.ContentType
-import org.koitharu.kotatsu.parsers.model.Demographic
-import org.koitharu.kotatsu.parsers.model.MangaListFilter
-import org.koitharu.kotatsu.parsers.model.MangaState
+import com.arcadelabs.spiderlily_parser.model.ContentRating
+import com.arcadelabs.spiderlily_parser.model.ContentType
+import com.arcadelabs.spiderlily_parser.model.Demographic
+import com.arcadelabs.spiderlily_parser.model.MangaListFilter
+import com.arcadelabs.spiderlily_parser.model.MangaState
 
 object MangaListFilterParceler : Parceler<MangaListFilter> {
 

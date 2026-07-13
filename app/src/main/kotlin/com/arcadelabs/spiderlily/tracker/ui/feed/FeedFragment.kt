@@ -33,8 +33,8 @@ import com.arcadelabs.spiderlily.list.ui.adapter.TypedListSpacingDecoration
 import com.arcadelabs.spiderlily.list.ui.model.ListHeader
 import com.arcadelabs.spiderlily.list.ui.model.MangaListModel
 import com.arcadelabs.spiderlily.list.ui.size.StaticItemSizeResolver
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaTag
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaTag
 import com.arcadelabs.spiderlily.tracker.ui.feed.adapter.FeedAdapter
 import javax.inject.Inject
 

@@ -4,8 +4,8 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import com.arcadelabs.spiderlily.core.db.entity.MangaEntity
 import com.arcadelabs.spiderlily.core.db.entity.MangaWithTags
-import org.koitharu.kotatsu.parsers.model.RATING_UNKNOWN
-import org.koitharu.kotatsu.parsers.util.mapToSet
+import com.arcadelabs.spiderlily_parser.model.RATING_UNKNOWN
+import com.arcadelabs.spiderlily_parser.util.mapToSet
 
 @Serializable
 class MangaBackup(

@@ -8,7 +8,7 @@ import com.arcadelabs.spiderlily.details.ui.model.ChapterListItem
 import com.arcadelabs.spiderlily.details.ui.model.toListItem
 import com.arcadelabs.spiderlily.list.ui.model.ListHeader
 import com.arcadelabs.spiderlily.list.ui.model.ListModel
-import org.koitharu.kotatsu.parsers.util.mapToSet
+import com.arcadelabs.spiderlily_parser.util.mapToSet
 
 fun MangaDetails.mapChapters(
 	currentChapterId: Long,

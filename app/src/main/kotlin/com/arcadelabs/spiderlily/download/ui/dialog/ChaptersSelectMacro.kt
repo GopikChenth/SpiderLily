@@ -2,8 +2,8 @@ package com.arcadelabs.spiderlily.download.ui.dialog
 
 import androidx.collection.ArraySet
 import androidx.collection.LongLongMap
-import org.koitharu.kotatsu.parsers.model.MangaChapter
-import org.koitharu.kotatsu.parsers.util.mapNotNullToSet
+import com.arcadelabs.spiderlily_parser.model.MangaChapter
+import com.arcadelabs.spiderlily_parser.util.mapNotNullToSet
 
 interface ChaptersSelectMacro {
 

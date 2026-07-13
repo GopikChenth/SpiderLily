@@ -62,7 +62,7 @@ import com.arcadelabs.spiderlily.core.util.ext.toUriOrNull
 import com.arcadelabs.spiderlily.core.util.ext.zipWithPrevious
 import com.arcadelabs.spiderlily.databinding.ActivityReaderBinding
 import com.arcadelabs.spiderlily.details.ui.pager.pages.PagesSavedObserver
-import org.koitharu.kotatsu.parsers.model.MangaChapter
+import com.arcadelabs.spiderlily_parser.model.MangaChapter
 import com.arcadelabs.spiderlily.reader.data.TapGridSettings
 import com.arcadelabs.spiderlily.reader.domain.TapGridArea
 import com.arcadelabs.spiderlily.reader.ui.config.ReaderConfigSheet

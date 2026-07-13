@@ -3,8 +3,8 @@ package com.arcadelabs.spiderlily.list.ui.adapter
 import android.view.View
 import com.arcadelabs.spiderlily.core.ui.list.OnListItemClickListener
 import com.arcadelabs.spiderlily.list.ui.model.MangaListModel
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaTag
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaTag
 
 interface MangaDetailsClickListener : OnListItemClickListener<MangaListModel> {
 

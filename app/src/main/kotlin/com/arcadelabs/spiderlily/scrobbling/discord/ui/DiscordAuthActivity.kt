@@ -6,7 +6,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import com.arcadelabs.spiderlily.browser.BaseBrowserActivity
 import com.arcadelabs.spiderlily.core.parser.ParserMangaRepository
 import com.arcadelabs.spiderlily.core.prefs.AppSettings
-import org.koitharu.kotatsu.parsers.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.MangaSource
 import javax.inject.Inject
 
 @AndroidEntryPoint

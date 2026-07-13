@@ -1,7 +1,7 @@
 package com.arcadelabs.spiderlily.filter.ui.model
 
 import com.arcadelabs.spiderlily.core.ui.widgets.ChipsView
-import org.koitharu.kotatsu.parsers.model.SortOrder
+import com.arcadelabs.spiderlily_parser.model.SortOrder
 
 data class FilterHeaderModel(
 	val chips: Collection<ChipsView.ChipModel>,

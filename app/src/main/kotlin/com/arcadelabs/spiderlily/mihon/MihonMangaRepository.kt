@@ -21,13 +21,13 @@ import com.arcadelabs.spiderlily.mihon.model.toMihonChapter
 import com.arcadelabs.spiderlily.mihon.model.toMihonManga
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaChapter
-import org.koitharu.kotatsu.parsers.model.MangaListFilter
-import org.koitharu.kotatsu.parsers.model.MangaListFilterCapabilities
-import org.koitharu.kotatsu.parsers.model.MangaListFilterOptions
-import org.koitharu.kotatsu.parsers.model.MangaPage
-import org.koitharu.kotatsu.parsers.model.SortOrder as ContentSortOrder
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaChapter
+import com.arcadelabs.spiderlily_parser.model.MangaListFilter
+import com.arcadelabs.spiderlily_parser.model.MangaListFilterCapabilities
+import com.arcadelabs.spiderlily_parser.model.MangaListFilterOptions
+import com.arcadelabs.spiderlily_parser.model.MangaPage
+import com.arcadelabs.spiderlily_parser.model.SortOrder as ContentSortOrder
 
 /**
  * Repository that adapts a Mihon CatalogueSource to app's ContentRepository interface.
@@ -351,7 +351,7 @@ class MihonMangaRepository(
     
     override suspend fun getRelatedMangaImpl(seed: Manga): List<Manga> = emptyList()
 
-    suspend fun getFavicons(): org.koitharu.kotatsu.parsers.model.Favicons {
-        return org.koitharu.kotatsu.parsers.model.Favicons(emptyList(), "")
+    suspend fun getFavicons(): com.arcadelabs.spiderlily_parser.model.Favicons {
+        return com.arcadelabs.spiderlily_parser.model.Favicons(emptyList(), "")
     }
 }

@@ -8,11 +8,11 @@ import com.arcadelabs.spiderlily.core.ui.widgets.ChipsView
 import com.arcadelabs.spiderlily.filter.data.PersistableFilter
 import com.arcadelabs.spiderlily.filter.ui.model.FilterHeaderModel
 import com.arcadelabs.spiderlily.filter.ui.model.FilterProperty
-import org.koitharu.kotatsu.parsers.model.MangaListFilter
-import org.koitharu.kotatsu.parsers.model.MangaListFilterCapabilities
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.model.MangaTag
-import org.koitharu.kotatsu.parsers.util.toTitleCase
+import com.arcadelabs.spiderlily_parser.model.MangaListFilter
+import com.arcadelabs.spiderlily_parser.model.MangaListFilterCapabilities
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.MangaTag
+import com.arcadelabs.spiderlily_parser.util.toTitleCase
 import com.arcadelabs.spiderlily.search.domain.MangaSearchRepository
 import javax.inject.Inject
 import androidx.appcompat.R as appcompatR

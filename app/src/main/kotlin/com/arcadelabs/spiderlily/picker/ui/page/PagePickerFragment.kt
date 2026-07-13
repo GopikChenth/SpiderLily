@@ -30,7 +30,7 @@ import com.arcadelabs.spiderlily.list.ui.GridSpanResolver
 import com.arcadelabs.spiderlily.list.ui.adapter.ListItemType
 import com.arcadelabs.spiderlily.list.ui.adapter.TypedListSpacingDecoration
 import com.arcadelabs.spiderlily.list.ui.model.ListModel
-import org.koitharu.kotatsu.parsers.util.ifNullOrEmpty
+import com.arcadelabs.spiderlily_parser.util.ifNullOrEmpty
 import com.arcadelabs.spiderlily.picker.ui.PageImagePickActivity
 import javax.inject.Inject
 

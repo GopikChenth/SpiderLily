@@ -19,8 +19,8 @@ import com.arcadelabs.spiderlily.list.domain.ReadingProgress
 import com.arcadelabs.spiderlily.list.ui.model.ListModel
 import com.arcadelabs.spiderlily.list.ui.model.LoadingFooter
 import com.arcadelabs.spiderlily.list.ui.model.LoadingState
-import org.koitharu.kotatsu.parsers.util.ifZero
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.util.ifZero
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import com.arcadelabs.spiderlily.scrobbling.common.domain.Scrobbler
 import com.arcadelabs.spiderlily.scrobbling.common.domain.model.ScrobblerManga
 import com.arcadelabs.spiderlily.scrobbling.common.domain.model.ScrobblingStatus

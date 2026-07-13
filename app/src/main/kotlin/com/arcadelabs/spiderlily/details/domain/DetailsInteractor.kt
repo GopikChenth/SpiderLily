@@ -16,8 +16,8 @@ import com.arcadelabs.spiderlily.favourites.domain.FavouritesRepository
 import com.arcadelabs.spiderlily.history.data.HistoryRepository
 import com.arcadelabs.spiderlily.local.data.LocalMangaRepository
 import com.arcadelabs.spiderlily.local.domain.model.LocalManga
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import com.arcadelabs.spiderlily.scrobbling.common.domain.Scrobbler
 import com.arcadelabs.spiderlily.scrobbling.common.domain.model.ScrobblingInfo
 import com.arcadelabs.spiderlily.tracker.domain.TrackingRepository

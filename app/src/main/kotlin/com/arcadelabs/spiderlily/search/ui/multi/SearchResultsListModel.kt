@@ -6,9 +6,9 @@ import com.arcadelabs.spiderlily.core.model.getTitle
 import com.arcadelabs.spiderlily.list.ui.ListModelDiffCallback
 import com.arcadelabs.spiderlily.list.ui.model.ListModel
 import com.arcadelabs.spiderlily.list.ui.model.MangaListModel
-import org.koitharu.kotatsu.parsers.model.MangaListFilter
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.model.SortOrder
+import com.arcadelabs.spiderlily_parser.model.MangaListFilter
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.SortOrder
 
 data class SearchResultsListModel(
 	@StringRes val titleResId: Int,

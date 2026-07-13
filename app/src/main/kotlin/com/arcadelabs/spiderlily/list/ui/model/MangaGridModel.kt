@@ -4,7 +4,7 @@ import com.arcadelabs.spiderlily.core.ui.model.MangaOverride
 import com.arcadelabs.spiderlily.list.domain.ReadingProgress
 import com.arcadelabs.spiderlily.list.ui.ListModelDiffCallback.Companion.PAYLOAD_ANYTHING_CHANGED
 import com.arcadelabs.spiderlily.list.ui.ListModelDiffCallback.Companion.PAYLOAD_PROGRESS_CHANGED
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 
 data class MangaGridModel(
 	override val manga: Manga,

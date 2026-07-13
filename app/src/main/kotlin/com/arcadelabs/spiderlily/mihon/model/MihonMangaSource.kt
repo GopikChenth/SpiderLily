@@ -4,7 +4,7 @@ import eu.kanade.tachiyomi.source.CatalogueSource
 import com.arcadelabs.spiderlily.mihon.extensions.runtime.getExternalExtensionLanguageDisplayName
 import com.arcadelabs.spiderlily.mihon.parsers.model.ContentSource
 import com.arcadelabs.spiderlily.mihon.parsers.model.ContentType
-import org.koitharu.kotatsu.parsers.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.MangaSource
 
 /**
  * Wrapper that adapts a Mihon CatalogueSource to App's ContentSource interface.

@@ -39,12 +39,12 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.onStart
-import org.koitharu.kotatsu.parsers.model.ContentType
-import org.koitharu.kotatsu.parsers.model.MangaParserSource
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.network.CloudFlareHelper
-import org.koitharu.kotatsu.parsers.util.mapNotNullToSet
-import org.koitharu.kotatsu.parsers.util.mapToSet
+import com.arcadelabs.spiderlily_parser.model.ContentType
+import com.arcadelabs.spiderlily_parser.model.MangaParserSource
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.network.CloudFlareHelper
+import com.arcadelabs.spiderlily_parser.util.mapNotNullToSet
+import com.arcadelabs.spiderlily_parser.util.mapToSet
 import java.util.Collections
 import java.util.EnumSet
 import java.util.concurrent.atomic.AtomicBoolean
@@ -172,17 +172,17 @@ class MangaSourcesRepository @Inject constructor(
 						val mihonType = it.contentType
 						types.any { kotatsuType ->
 							when (kotatsuType) {
-								org.koitharu.kotatsu.parsers.model.ContentType.MANGA -> mihonType == com.arcadelabs.spiderlily.mihon.parsers.model.ContentType.MANGA
-								org.koitharu.kotatsu.parsers.model.ContentType.HENTAI -> mihonType == com.arcadelabs.spiderlily.mihon.parsers.model.ContentType.HENTAI_MANGA
-								org.koitharu.kotatsu.parsers.model.ContentType.COMICS -> mihonType == com.arcadelabs.spiderlily.mihon.parsers.model.ContentType.COMICS
-								org.koitharu.kotatsu.parsers.model.ContentType.MANHWA -> mihonType == com.arcadelabs.spiderlily.mihon.parsers.model.ContentType.MANHWA
-								org.koitharu.kotatsu.parsers.model.ContentType.MANHUA -> mihonType == com.arcadelabs.spiderlily.mihon.parsers.model.ContentType.MANHUA
-								org.koitharu.kotatsu.parsers.model.ContentType.NOVEL -> mihonType == com.arcadelabs.spiderlily.mihon.parsers.model.ContentType.NOVEL
-								org.koitharu.kotatsu.parsers.model.ContentType.ONE_SHOT -> mihonType == com.arcadelabs.spiderlily.mihon.parsers.model.ContentType.ONE_SHOT
-								org.koitharu.kotatsu.parsers.model.ContentType.DOUJINSHI -> mihonType == com.arcadelabs.spiderlily.mihon.parsers.model.ContentType.DOUJINSHI
-								org.koitharu.kotatsu.parsers.model.ContentType.IMAGE_SET -> mihonType == com.arcadelabs.spiderlily.mihon.parsers.model.ContentType.IMAGE_SET
-								org.koitharu.kotatsu.parsers.model.ContentType.ARTIST_CG -> mihonType == com.arcadelabs.spiderlily.mihon.parsers.model.ContentType.ARTIST_CG
-								org.koitharu.kotatsu.parsers.model.ContentType.GAME_CG -> mihonType == com.arcadelabs.spiderlily.mihon.parsers.model.ContentType.GAME_CG
+								com.arcadelabs.spiderlily_parser.model.ContentType.MANGA -> mihonType == com.arcadelabs.spiderlily.mihon.parsers.model.ContentType.MANGA
+								com.arcadelabs.spiderlily_parser.model.ContentType.HENTAI -> mihonType == com.arcadelabs.spiderlily.mihon.parsers.model.ContentType.HENTAI_MANGA
+								com.arcadelabs.spiderlily_parser.model.ContentType.COMICS -> mihonType == com.arcadelabs.spiderlily.mihon.parsers.model.ContentType.COMICS
+								com.arcadelabs.spiderlily_parser.model.ContentType.MANHWA -> mihonType == com.arcadelabs.spiderlily.mihon.parsers.model.ContentType.MANHWA
+								com.arcadelabs.spiderlily_parser.model.ContentType.MANHUA -> mihonType == com.arcadelabs.spiderlily.mihon.parsers.model.ContentType.MANHUA
+								com.arcadelabs.spiderlily_parser.model.ContentType.NOVEL -> mihonType == com.arcadelabs.spiderlily.mihon.parsers.model.ContentType.NOVEL
+								com.arcadelabs.spiderlily_parser.model.ContentType.ONE_SHOT -> mihonType == com.arcadelabs.spiderlily.mihon.parsers.model.ContentType.ONE_SHOT
+								com.arcadelabs.spiderlily_parser.model.ContentType.DOUJINSHI -> mihonType == com.arcadelabs.spiderlily.mihon.parsers.model.ContentType.DOUJINSHI
+								com.arcadelabs.spiderlily_parser.model.ContentType.IMAGE_SET -> mihonType == com.arcadelabs.spiderlily.mihon.parsers.model.ContentType.IMAGE_SET
+								com.arcadelabs.spiderlily_parser.model.ContentType.ARTIST_CG -> mihonType == com.arcadelabs.spiderlily.mihon.parsers.model.ContentType.ARTIST_CG
+								com.arcadelabs.spiderlily_parser.model.ContentType.GAME_CG -> mihonType == com.arcadelabs.spiderlily.mihon.parsers.model.ContentType.GAME_CG
 								else -> false
 							}
 						}

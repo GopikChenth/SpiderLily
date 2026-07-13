@@ -15,10 +15,10 @@ import com.arcadelabs.spiderlily.R
 import com.arcadelabs.spiderlily.core.nav.AppRouter
 import com.arcadelabs.spiderlily.core.network.BaseHttpClient
 import com.arcadelabs.spiderlily.core.prefs.AppSettings
-import org.koitharu.kotatsu.parsers.util.await
-import org.koitharu.kotatsu.parsers.util.json.getBooleanOrDefault
-import org.koitharu.kotatsu.parsers.util.json.getStringOrNull
-import org.koitharu.kotatsu.parsers.util.parseJson
+import com.arcadelabs.spiderlily_parser.util.await
+import com.arcadelabs.spiderlily_parser.util.json.getBooleanOrDefault
+import com.arcadelabs.spiderlily_parser.util.json.getStringOrNull
+import com.arcadelabs.spiderlily_parser.util.parseJson
 import java.io.File
 import javax.inject.Inject
 

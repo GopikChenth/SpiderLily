@@ -9,9 +9,9 @@ import com.arcadelabs.spiderlily.core.model.LocalMangaSource
 import com.arcadelabs.spiderlily.core.model.unwrap
 import com.arcadelabs.spiderlily.core.parser.external.ExternalMangaSource
 import com.arcadelabs.spiderlily.core.parser.favicon.faviconUri
-import org.koitharu.kotatsu.parsers.model.MangaParserSource
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.model.MangaTag
+import com.arcadelabs.spiderlily_parser.model.MangaParserSource
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.MangaTag
 
 sealed interface ListFilterOption {
 

@@ -6,7 +6,7 @@ import com.arcadelabs.spiderlily.details.ui.model.ChapterListItem.Companion.FLAG
 import com.arcadelabs.spiderlily.details.ui.model.ChapterListItem.Companion.FLAG_GRID
 import com.arcadelabs.spiderlily.details.ui.model.ChapterListItem.Companion.FLAG_NEW
 import com.arcadelabs.spiderlily.details.ui.model.ChapterListItem.Companion.FLAG_UNREAD
-import org.koitharu.kotatsu.parsers.model.MangaChapter
+import com.arcadelabs.spiderlily_parser.model.MangaChapter
 import kotlin.experimental.or
 
 fun MangaChapter.toListItem(

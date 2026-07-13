@@ -2,7 +2,7 @@ package com.arcadelabs.spiderlily.explore.ui.model
 
 import com.arcadelabs.spiderlily.core.model.MangaSourceInfo
 import com.arcadelabs.spiderlily.list.ui.model.ListModel
-import org.koitharu.kotatsu.parsers.util.longHashCode
+import com.arcadelabs.spiderlily_parser.util.longHashCode
 
 data class MangaSourceItem(
 	val source: MangaSourceInfo,

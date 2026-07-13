@@ -8,8 +8,8 @@ import com.arcadelabs.spiderlily.core.exceptions.resolve.ExceptionResolver
 import com.arcadelabs.spiderlily.core.util.ext.getDisplayMessage
 import com.arcadelabs.spiderlily.core.util.ext.isNetworkError
 import com.arcadelabs.spiderlily.core.util.ext.isSerializable
-import org.koitharu.kotatsu.parsers.exception.NotFoundException
-import org.koitharu.kotatsu.parsers.exception.ParseException
+import com.arcadelabs.spiderlily_parser.exception.NotFoundException
+import com.arcadelabs.spiderlily_parser.exception.ParseException
 
 class DetailsErrorObserver(
 	override val activity: DetailsActivity,

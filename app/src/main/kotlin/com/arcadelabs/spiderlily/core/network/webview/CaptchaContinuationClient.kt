@@ -5,7 +5,7 @@ import android.webkit.WebResourceRequest
 import android.webkit.WebResourceResponse
 import android.webkit.WebView
 import com.arcadelabs.spiderlily.core.network.cookies.MutableCookieJar
-import org.koitharu.kotatsu.parsers.network.CloudFlareHelper
+import com.arcadelabs.spiderlily_parser.network.CloudFlareHelper
 import kotlin.coroutines.Continuation
 import okhttp3.OkHttpClient
 import okhttp3.Request

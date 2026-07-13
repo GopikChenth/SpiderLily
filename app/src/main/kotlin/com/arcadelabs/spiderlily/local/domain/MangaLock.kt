@@ -1,7 +1,7 @@
 package com.arcadelabs.spiderlily.local.domain
 
 import com.arcadelabs.spiderlily.core.util.MultiMutex
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 import javax.inject.Inject
 import javax.inject.Singleton
 

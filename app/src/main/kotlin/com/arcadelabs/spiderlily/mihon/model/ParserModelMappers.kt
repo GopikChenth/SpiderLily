@@ -9,14 +9,14 @@ import com.arcadelabs.spiderlily.mihon.parsers.model.ContentRating
 import com.arcadelabs.spiderlily.mihon.parsers.model.ContentSource
 import com.arcadelabs.spiderlily.mihon.parsers.model.ContentState
 import com.arcadelabs.spiderlily.mihon.parsers.model.ContentTag
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaChapter
-import org.koitharu.kotatsu.parsers.model.MangaListFilter
-import org.koitharu.kotatsu.parsers.model.MangaListFilterOptions
-import org.koitharu.kotatsu.parsers.model.MangaPage
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.model.MangaState
-import org.koitharu.kotatsu.parsers.model.MangaTag
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaChapter
+import com.arcadelabs.spiderlily_parser.model.MangaListFilter
+import com.arcadelabs.spiderlily_parser.model.MangaListFilterOptions
+import com.arcadelabs.spiderlily_parser.model.MangaPage
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.MangaState
+import com.arcadelabs.spiderlily_parser.model.MangaTag
 
 
 fun Content.toManga(): Manga {
@@ -28,14 +28,14 @@ fun Content.toManga(): Manga {
         publicUrl = Url,
         rating = rating,
         contentRating = when (contentRating) {
-            ContentRating.SAFE -> org.koitharu.kotatsu.parsers.model.ContentRating.SAFE
-            ContentRating.SUGGESTIVE -> org.koitharu.kotatsu.parsers.model.ContentRating.SUGGESTIVE
-            ContentRating.ADULT -> org.koitharu.kotatsu.parsers.model.ContentRating.ADULT
+            ContentRating.SAFE -> com.arcadelabs.spiderlily_parser.model.ContentRating.SAFE
+            ContentRating.SUGGESTIVE -> com.arcadelabs.spiderlily_parser.model.ContentRating.SUGGESTIVE
+            ContentRating.ADULT -> com.arcadelabs.spiderlily_parser.model.ContentRating.ADULT
             null -> null
         },
         coverUrl = coverUrl,
         tags = tags.map { it.toMangaTag() }.toSet(),
-        state = state?.toMangaState() ?: org.koitharu.kotatsu.parsers.model.MangaState.ONGOING,
+        state = state?.toMangaState() ?: com.arcadelabs.spiderlily_parser.model.MangaState.ONGOING,
         authors = authors,
         largeCoverUrl = largeCoverUrl,
         description = description,
@@ -53,9 +53,9 @@ fun Manga.toContent(source: ContentSource): Content {
         Url = publicUrl,
         rating = rating,
         contentRating = when (contentRating) {
-            org.koitharu.kotatsu.parsers.model.ContentRating.SAFE -> ContentRating.SAFE
-            org.koitharu.kotatsu.parsers.model.ContentRating.SUGGESTIVE -> ContentRating.SUGGESTIVE
-            org.koitharu.kotatsu.parsers.model.ContentRating.ADULT -> ContentRating.ADULT
+            com.arcadelabs.spiderlily_parser.model.ContentRating.SAFE -> ContentRating.SAFE
+            com.arcadelabs.spiderlily_parser.model.ContentRating.SUGGESTIVE -> ContentRating.SUGGESTIVE
+            com.arcadelabs.spiderlily_parser.model.ContentRating.ADULT -> ContentRating.ADULT
             null -> null
         },
         coverUrl = coverUrl,

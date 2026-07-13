@@ -15,7 +15,7 @@ import com.arcadelabs.spiderlily.core.image.CoilImageView
 import com.arcadelabs.spiderlily.core.parser.favicon.faviconUri
 import com.arcadelabs.spiderlily.core.util.ext.isAnimationsEnabled
 import com.arcadelabs.spiderlily.core.util.ext.mangaSourceExtra
-import org.koitharu.kotatsu.parsers.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.MangaSource
 
 class FaviconView @JvmOverloads constructor(
 	context: Context,

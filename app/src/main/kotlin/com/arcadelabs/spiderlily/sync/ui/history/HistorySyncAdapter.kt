@@ -9,7 +9,7 @@ import android.os.Bundle
 import dagger.hilt.android.EntryPointAccessors
 import com.arcadelabs.spiderlily.R
 import com.arcadelabs.spiderlily.core.util.ext.onError
-import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import com.arcadelabs.spiderlily.sync.domain.SyncController
 import com.arcadelabs.spiderlily.sync.ui.SyncAdapterEntryPoint
 

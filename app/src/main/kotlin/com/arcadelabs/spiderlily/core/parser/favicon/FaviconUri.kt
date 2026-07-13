@@ -1,7 +1,7 @@
 package com.arcadelabs.spiderlily.core.parser.favicon
 
 import android.net.Uri
-import org.koitharu.kotatsu.parsers.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.MangaSource
 
 const val URI_SCHEME_FAVICON = "favicon"
 

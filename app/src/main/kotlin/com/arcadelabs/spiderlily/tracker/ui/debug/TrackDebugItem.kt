@@ -1,7 +1,7 @@
 package com.arcadelabs.spiderlily.tracker.ui.debug
 
 import com.arcadelabs.spiderlily.list.ui.model.ListModel
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 import java.time.Instant
 
 data class TrackDebugItem(

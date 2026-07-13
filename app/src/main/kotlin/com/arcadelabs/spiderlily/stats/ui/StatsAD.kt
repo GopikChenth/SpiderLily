@@ -7,7 +7,7 @@ import com.arcadelabs.spiderlily.core.ui.list.OnListItemClickListener
 import com.arcadelabs.spiderlily.core.util.SpiderLilyColors
 import com.arcadelabs.spiderlily.databinding.ItemStatsBinding
 import com.arcadelabs.spiderlily.stats.domain.StatsRecord
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 
 fun statsAD(
 	listener: OnListItemClickListener<Manga>,

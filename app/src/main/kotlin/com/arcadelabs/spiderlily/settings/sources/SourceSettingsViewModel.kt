@@ -20,8 +20,8 @@ import com.arcadelabs.spiderlily.core.ui.util.ReversibleAction
 import com.arcadelabs.spiderlily.core.util.ext.MutableEventFlow
 import com.arcadelabs.spiderlily.core.util.ext.call
 import com.arcadelabs.spiderlily.explore.data.MangaSourcesRepository
-import org.koitharu.kotatsu.parsers.MangaParserAuthProvider
-import org.koitharu.kotatsu.parsers.exception.AuthRequiredException
+import com.arcadelabs.spiderlily_parser.MangaParserAuthProvider
+import com.arcadelabs.spiderlily_parser.exception.AuthRequiredException
 import javax.inject.Inject
 
 @HiltViewModel

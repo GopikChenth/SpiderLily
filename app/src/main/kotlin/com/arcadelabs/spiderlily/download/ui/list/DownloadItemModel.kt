@@ -12,7 +12,7 @@ import com.arcadelabs.spiderlily.core.util.ext.getThemeColor
 import com.arcadelabs.spiderlily.download.ui.list.chapters.DownloadChapter
 import com.arcadelabs.spiderlily.list.ui.ListModelDiffCallback
 import com.arcadelabs.spiderlily.list.ui.model.ListModel
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 import java.time.Instant
 import java.util.UUID
 import androidx.appcompat.R as appcompatR

@@ -99,15 +99,15 @@ import com.arcadelabs.spiderlily.stats.ui.StatsActivity
 import com.arcadelabs.spiderlily.stats.ui.sheet.MangaStatsSheet
 import com.arcadelabs.spiderlily.suggestions.ui.SuggestionsActivity
 import com.arcadelabs.spiderlily.tracker.ui.updates.UpdatesActivity
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaListFilter
-import org.koitharu.kotatsu.parsers.model.MangaPage
-import org.koitharu.kotatsu.parsers.model.MangaSource
-import org.koitharu.kotatsu.parsers.model.MangaTag
-import org.koitharu.kotatsu.parsers.model.SortOrder
-import org.koitharu.kotatsu.parsers.util.ellipsize
-import org.koitharu.kotatsu.parsers.util.isNullOrEmpty
-import org.koitharu.kotatsu.parsers.util.mapToArray
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaListFilter
+import com.arcadelabs.spiderlily_parser.model.MangaPage
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.MangaTag
+import com.arcadelabs.spiderlily_parser.model.SortOrder
+import com.arcadelabs.spiderlily_parser.util.ellipsize
+import com.arcadelabs.spiderlily_parser.util.isNullOrEmpty
+import com.arcadelabs.spiderlily_parser.util.mapToArray
 import java.io.File
 import androidx.appcompat.R as appcompatR
 

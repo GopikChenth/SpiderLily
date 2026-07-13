@@ -1,7 +1,7 @@
 package com.arcadelabs.spiderlily.core.exceptions
 
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaSource
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaSource
 
 class UnsupportedSourceException(
 	message: String?,

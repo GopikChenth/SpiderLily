@@ -23,8 +23,8 @@ import com.arcadelabs.spiderlily.core.util.ext.openSource
 import com.arcadelabs.spiderlily.core.util.ext.require
 import com.arcadelabs.spiderlily.core.util.ext.toMimeTypeOrNull
 import com.arcadelabs.spiderlily.core.util.ext.toUriOrNull
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.util.md5
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.util.md5
 import java.io.File
 import javax.inject.Inject
 

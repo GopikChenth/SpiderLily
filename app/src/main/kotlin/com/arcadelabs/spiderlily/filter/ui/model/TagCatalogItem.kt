@@ -2,7 +2,7 @@ package com.arcadelabs.spiderlily.filter.ui.model
 
 import com.arcadelabs.spiderlily.list.ui.ListModelDiffCallback
 import com.arcadelabs.spiderlily.list.ui.model.ListModel
-import org.koitharu.kotatsu.parsers.model.MangaTag
+import com.arcadelabs.spiderlily_parser.model.MangaTag
 
 data class TagCatalogItem(
 	val tag: MangaTag,

@@ -29,7 +29,7 @@ import com.arcadelabs.spiderlily.core.util.ext.getThemeColorStateList
 import com.arcadelabs.spiderlily.core.util.ext.isNightMode
 import com.arcadelabs.spiderlily.core.util.ext.measureDimension
 import com.arcadelabs.spiderlily.core.util.ext.printStackTraceDebug
-import org.koitharu.kotatsu.parsers.util.format
+import com.arcadelabs.spiderlily_parser.util.format
 import com.arcadelabs.spiderlily.reader.ui.pager.ReaderUiState
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter

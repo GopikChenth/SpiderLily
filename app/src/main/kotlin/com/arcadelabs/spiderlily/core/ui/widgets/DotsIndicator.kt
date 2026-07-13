@@ -15,7 +15,7 @@ import com.arcadelabs.spiderlily.R
 import com.arcadelabs.spiderlily.core.util.ext.getThemeColorStateList
 import com.arcadelabs.spiderlily.core.util.ext.measureDimension
 import com.arcadelabs.spiderlily.core.util.ext.resolveDp
-import org.koitharu.kotatsu.parsers.util.toIntUp
+import com.arcadelabs.spiderlily_parser.util.toIntUp
 import com.google.android.material.R as materialR
 
 class DotsIndicator @JvmOverloads constructor(

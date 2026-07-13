@@ -22,16 +22,16 @@ import com.arcadelabs.spiderlily.core.prefs.SourceSettings
 import com.arcadelabs.spiderlily.core.util.ext.toList
 import com.arcadelabs.spiderlily.core.util.ext.toMimeType
 import com.arcadelabs.spiderlily.core.util.ext.use
-import org.koitharu.kotatsu.parsers.MangaLoaderContext
-import org.koitharu.kotatsu.parsers.MangaParser
-import org.koitharu.kotatsu.parsers.bitmap.Bitmap
-import org.koitharu.kotatsu.parsers.config.MangaSourceConfig
-import org.koitharu.kotatsu.parsers.model.MangaSource
+import com.arcadelabs.spiderlily_parser.MangaLoaderContext
+import com.arcadelabs.spiderlily_parser.MangaParser
+import com.arcadelabs.spiderlily_parser.bitmap.Bitmap
+import com.arcadelabs.spiderlily_parser.config.MangaSourceConfig
+import com.arcadelabs.spiderlily_parser.model.MangaSource
 import com.arcadelabs.spiderlily.core.network.webview.WebViewRequestInterceptorExecutor
-import org.koitharu.kotatsu.parsers.webview.InterceptedRequest
-import org.koitharu.kotatsu.parsers.webview.InterceptionConfig as ParsersInterceptionConfig
-import org.koitharu.kotatsu.parsers.network.UserAgents
-import org.koitharu.kotatsu.parsers.util.map
+import com.arcadelabs.spiderlily_parser.webview.InterceptedRequest
+import com.arcadelabs.spiderlily_parser.webview.InterceptionConfig as ParsersInterceptionConfig
+import com.arcadelabs.spiderlily_parser.network.UserAgents
+import com.arcadelabs.spiderlily_parser.util.map
 import java.util.Locale
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject

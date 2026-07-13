@@ -24,8 +24,8 @@ import com.arcadelabs.spiderlily.core.util.ext.checkNotificationPermission
 import com.arcadelabs.spiderlily.core.util.ext.getQuantityStringSafe
 import com.arcadelabs.spiderlily.core.util.ext.mangaSourceExtra
 import com.arcadelabs.spiderlily.core.util.ext.toBitmapOrNull
-import org.koitharu.kotatsu.parsers.model.Manga
-import org.koitharu.kotatsu.parsers.model.MangaChapter
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaChapter
 import javax.inject.Inject
 
 class TrackerNotificationHelper @Inject constructor(

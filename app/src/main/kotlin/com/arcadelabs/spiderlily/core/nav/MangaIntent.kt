@@ -10,7 +10,7 @@ import com.arcadelabs.spiderlily.core.nav.AppRouter.Companion.KEY_MANGA
 import com.arcadelabs.spiderlily.core.nav.AppRouter.Companion.KEY_SOURCE_TITLE
 import com.arcadelabs.spiderlily.core.util.ext.getParcelableCompat
 import com.arcadelabs.spiderlily.core.util.ext.getParcelableExtraCompat
-import org.koitharu.kotatsu.parsers.model.Manga
+import com.arcadelabs.spiderlily_parser.model.Manga
 
 class MangaIntent private constructor(
 	@JvmField val manga: Manga?,
