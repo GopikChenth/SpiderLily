@@ -14,6 +14,13 @@ plugins {
     alias(libs.plugins.compose.compiler)
 }
 
+// Load local.properties at script scope so it is accessible in all blocks (defaultConfig, buildTypes, etc.)
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localProperties.load(new FileInputStream(localPropertiesFile))
+}
+
 android {
 	compileSdk = 36
 	namespace = 'com.arcadelabs.spiderlily'
@@ -40,11 +47,6 @@ android {
 			// https://issuetracker.google.com/issues/408030127
 			generateLocaleConfig false
 		}
-		def localProperties = new Properties()
-		def localPropertiesFile = rootProject.file('local.properties')
-		if (localPropertiesFile.exists()) {
-			localProperties.load(new FileInputStream(localPropertiesFile))
-		}
 		resValue 'string', 'tg_backup_bot_token', localProperties.getProperty('tg_backup_bot_token', '')
 	}
 	signingConfigs {
@@ -65,13 +67,17 @@ android {
 			shrinkResources true
 			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 			signingConfig signingConfigs.release
-			buildConfigField "String", "SENTRY_DSN", "\"${System.getenv('SENTRY_DSN') ?: ''}\""
+			// DSN priority: CI env var → local.properties sentry_dsn key → empty (crash reporting disabled)
+			def dsn = System.getenv('SENTRY_DSN') ?: localProperties.getProperty('sentry_dsn', '')
+			buildConfigField "String", "SENTRY_DSN", "\"${dsn}\""
 		}
 		nightly {
 			initWith release
 			applicationIdSuffix = '.nightly'
 			signingConfig signingConfigs.release
-			buildConfigField "String", "SENTRY_DSN", "\"${System.getenv('SENTRY_DSN') ?: ''}\""
+			// DSN priority: CI env var → local.properties sentry_dsn key → empty (crash reporting disabled)
+			def dsn = System.getenv('SENTRY_DSN') ?: localProperties.getProperty('sentry_dsn', '')
+			buildConfigField "String", "SENTRY_DSN", "\"${dsn}\""
 		}
 	}
 	buildFeatures {
@@ -260,19 +266,21 @@ dependencies {
 }
 
 sentry {
-	org = "appfuton"
-	projectName = "android"
+	// TODO: After creating your Sentry project at sentry.io, set these to your org slug and project name.
+	// Your org slug is visible in the Sentry URL: sentry.io/organizations/<slug>/
+	org = "spiderlily"           // TODO: replace with your actual Sentry org slug
+	projectName = "spiderlily"   // TODO: replace with your actual Sentry project name
 	authToken = System.getenv('SENTRY_AUTH_TOKEN') ?: ''
 
-	// Disable all uploads 
+	// Disable all artifact uploads — enable these once you have a valid org/authToken
 	includeSourceContext = false
 	autoUploadProguardMapping = false
 	autoUploadSourceContext = false
-	
+
 	// Disable instrumentation that causes manifest/UUID changes
 	tracingInstrumentation { enabled = false }
 	autoInstallation { enabled = false }
-	
+
 	// Disable telemetry and dependency reporting that cause non-deterministic builds
 	includeDependenciesReport = false
 	telemetry = false
