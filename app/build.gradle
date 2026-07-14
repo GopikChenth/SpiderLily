@@ -266,10 +266,8 @@ dependencies {
 }
 
 sentry {
-	// TODO: After creating your Sentry project at sentry.io, set these to your org slug and project name.
-	// Your org slug is visible in the Sentry URL: sentry.io/organizations/<slug>/
-	org = "spiderlily"           // TODO: replace with your actual Sentry org slug
-	projectName = "spiderlily"   // TODO: replace with your actual Sentry project name
+	org = "arcade-labs"
+	projectName = "android"
 	authToken = System.getenv('SENTRY_AUTH_TOKEN') ?: ''
 
 	// Disable all artifact uploads — enable these once you have a valid org/authToken
