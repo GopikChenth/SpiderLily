@@ -441,7 +441,7 @@ class MangaSourcesRepository @Inject constructor(
 
 	fun getExternalSources(): List<MangaSource> {
 		return context.packageManager.queryIntentContentProviders(
-			Intent("app.futon.parser.PROVIDE_MANGA"), 0,
+			Intent("app.spiderlily.parser.PROVIDE_MANGA"), 0,
 		).map { resolveInfo ->
 			ExternalMangaSource(
 				packageName = resolveInfo.providerInfo.packageName,
