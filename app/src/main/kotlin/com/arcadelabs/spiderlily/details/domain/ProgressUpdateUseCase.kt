@@ -1,0 +1,76 @@
+package com.arcadelabs.spiderlily.details.domain
+
+import com.arcadelabs.spiderlily.core.db.MangaDatabase
+import com.arcadelabs.spiderlily.core.model.isLocal
+import com.arcadelabs.spiderlily.core.os.NetworkState
+import com.arcadelabs.spiderlily.core.parser.MangaRepository
+import com.arcadelabs.spiderlily.list.domain.ReadingProgress.Companion.PROGRESS_NONE
+import com.arcadelabs.spiderlily.local.data.LocalMangaRepository
+import com.arcadelabs.spiderlily_parser.model.Manga
+import javax.inject.Inject
+
+class ProgressUpdateUseCase @Inject constructor(
+	private val mangaRepositoryFactory: MangaRepository.Factory,
+	private val database: MangaDatabase,
+	private val localMangaRepository: LocalMangaRepository,
+	private val networkState: NetworkState,
+) {
+
+	suspend operator fun invoke(manga: Manga): Float {
+		val history = database.getHistoryDao().find(manga.id) ?: return PROGRESS_NONE
+		val seed = if (manga.isLocal) {
+			localMangaRepository.getRemoteManga(manga) ?: manga
+		} else {
+			manga
+		}
+		if (!seed.isLocal && !networkState.value) {
+			return PROGRESS_NONE
+		}
+		val repo = mangaRepositoryFactory.create(seed.source)
+		val details = if (manga.source != seed.source || seed.chapters.isNullOrEmpty()) {
+			repo.getDetails(seed)
+		} else {
+			seed
+		}
+		val chapter = details.findChapterById(history.chapterId) ?: return PROGRESS_NONE
+		val chapters = details.getChapters(chapter.branch)
+		val chaptersCount = chapters.size
+		if (chaptersCount == 0) {
+			return PROGRESS_NONE
+		}
+		val chapterIndex = chapters.indexOfFirst { x -> x.id == history.chapterId }
+		if (chapterIndex < 0) {
+			return PROGRESS_NONE
+		}
+		val isChapterCompleted = history.percent >= 1f || (history.chaptersCount > 0 && run {
+			val chaptersRead = history.percent * history.chaptersCount
+			kotlin.math.abs(chaptersRead - kotlin.math.round(chaptersRead)) < 0.001f
+		})
+		val pagePercent = if (isChapterCompleted) {
+			1.0f
+		} else {
+			val chapterRepo = if (repo.source == chapter.source) {
+				repo
+			} else {
+				mangaRepositoryFactory.create(chapter.source)
+			}
+			val pagesCount = chapterRepo.getPages(chapter).size
+			if (pagesCount == 0) {
+				return PROGRESS_NONE
+			}
+			(history.page + 1) / pagesCount.toFloat()
+		}
+		val ppc = 1f / chaptersCount
+		val result = ppc * chapterIndex + ppc * pagePercent
+		if (result != history.percent || chaptersCount != history.chaptersCount) {
+			database.getHistoryDao().update(
+				history.copy(
+					chapterId = chapter.id,
+					percent = result,
+					chaptersCount = chaptersCount,
+				),
+			)
+		}
+		return result
+	}
+}
