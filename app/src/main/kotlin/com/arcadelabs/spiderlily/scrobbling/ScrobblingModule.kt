@@ -75,11 +75,12 @@ object ScrobblingModule {
 	@Singleton
 	fun provideKitsuRepository(
 		@ApplicationContext context: Context,
+		@BaseHttpClient baseHttpClient: OkHttpClient,
 		@ScrobblerType(ScrobblerService.KITSU) storage: ScrobblerStorage,
 		database: MangaDatabase,
 		authenticator: KitsuAuthenticator,
 	): KitsuRepository {
-		val okHttp = OkHttpClient.Builder().apply {
+		val okHttp = baseHttpClient.newBuilder().apply {
 			authenticator(authenticator)
 			addInterceptor(KitsuInterceptor(storage))
 			if (BuildConfig.DEBUG) {
