@@ -49,12 +49,20 @@ android {
 		}
 		resValue 'string', 'tg_backup_bot_token', localProperties.getProperty('tg_backup_bot_token', '')
 	}
+	def releaseKeystoreFile = file(System.getenv('KEYSTORE_FILE') ?: 'keystore.jks')
+	if (!releaseKeystoreFile.exists()) {
+		releaseKeystoreFile = rootProject.file('keystore.jks')
+	}
+	def hasReleaseKeystore = releaseKeystoreFile.exists()
+
 	signingConfigs {
-		release {
-            storeFile file(System.getenv('KEYSTORE_FILE') ?: 'keystore.jks')
-            storePassword System.getenv('KEYSTORE_PASSWORD') ?: System.console()?.readPassword("Store password: ")?.toString()
-            keyAlias System.getenv('KEY_ALIAS') ?: System.console()?.readLine("Key alias: ")
-            keyPassword = System.getenv('KEY_PASSWORD') ?: System.console()?.readPassword("Key password: ")?.toString()
+		if (hasReleaseKeystore) {
+			release {
+				storeFile releaseKeystoreFile
+				storePassword System.getenv('KEYSTORE_PASSWORD') ?: System.console()?.readPassword("Store password: ")?.toString()
+				keyAlias System.getenv('KEY_ALIAS') ?: System.console()?.readLine("Key alias: ")
+				keyPassword = System.getenv('KEY_PASSWORD') ?: System.console()?.readPassword("Key password: ")?.toString()
+			}
 		}
 	}
 	buildTypes {
@@ -66,7 +74,7 @@ android {
 			minifyEnabled true
 			shrinkResources true
 			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-			signingConfig signingConfigs.release
+			signingConfig hasReleaseKeystore ? signingConfigs.release : signingConfigs.debug
 			// DSN priority: CI env var → local.properties sentry_dsn key → empty (crash reporting disabled)
 			def dsn = System.getenv('SENTRY_DSN') ?: localProperties.getProperty('sentry_dsn', '')
 			buildConfigField "String", "SENTRY_DSN", "\"${dsn}\""
@@ -74,7 +82,7 @@ android {
 		nightly {
 			initWith release
 			applicationIdSuffix = '.nightly'
-			signingConfig signingConfigs.release
+			signingConfig hasReleaseKeystore ? signingConfigs.release : signingConfigs.debug
 			// DSN priority: CI env var → local.properties sentry_dsn key → empty (crash reporting disabled)
 			def dsn = System.getenv('SENTRY_DSN') ?: localProperties.getProperty('sentry_dsn', '')
 			buildConfigField "String", "SENTRY_DSN", "\"${dsn}\""
@@ -284,3 +292,8 @@ sentry {
 	includeDependenciesReport = false
 	telemetry = false
 }
+
+tasks.matching { it.name.startsWith("uploadSentry") }.configureEach {
+	enabled = false
+}
+
