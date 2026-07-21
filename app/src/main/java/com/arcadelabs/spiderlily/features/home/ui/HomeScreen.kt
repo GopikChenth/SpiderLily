@@ -17,9 +17,9 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.MenuBook
 import androidx.compose.material3.ExtendedFloatingActionButton
+ import androidx.compose.ui.res.painterResource
+import com.arcadelabs.spiderlily.R
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -80,7 +80,7 @@ fun HomeScreen(
                 contentColor = WarmIvory,
                 icon = {
                     Icon(
-                        imageVector = Icons.AutoMirrored.Filled.MenuBook,
+                        painter = painterResource(R.drawable.ic_menu_book),
                         contentDescription = null,
                     )
                 },

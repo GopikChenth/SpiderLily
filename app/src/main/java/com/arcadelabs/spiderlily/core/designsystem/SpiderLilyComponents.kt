@@ -19,14 +19,12 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.annotation.DrawableRes
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Download
-import androidx.compose.material.icons.filled.Explore
-import androidx.compose.material.icons.filled.FavoriteBorder
-import androidx.compose.material.icons.filled.History
 import androidx.compose.material.icons.filled.MoreVert
-import androidx.compose.material.icons.filled.RssFeed
 import androidx.compose.material.icons.filled.Search
+import androidx.compose.ui.res.painterResource
+import com.arcadelabs.spiderlily.R
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -41,7 +39,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -53,14 +50,14 @@ import com.arcadelabs.spiderlily.ui.theme.WarmIvory
 
 data class SpiderLilyNavItem(
     val label: String,
-    val icon: ImageVector,
+    @DrawableRes val icon: Int,
 )
 
 val SpiderLilyHomeNavItems = listOf(
-    SpiderLilyNavItem("Home", Icons.Filled.History),
-    SpiderLilyNavItem("Library", Icons.Filled.FavoriteBorder),
-    SpiderLilyNavItem("Explore", Icons.Filled.Explore),
-    SpiderLilyNavItem("Feed", Icons.Filled.RssFeed),
+    SpiderLilyNavItem("Home", R.drawable.ic_history),
+    SpiderLilyNavItem("Library", R.drawable.ic_fav),
+    SpiderLilyNavItem("Explore", R.drawable.ic_explore),
+    SpiderLilyNavItem("Feed", R.drawable.ic_rss_feed),
 )
 
 @Composable
@@ -102,7 +99,7 @@ fun SpiderLilySearchBar(
             )
             IconButton(onClick = onDownloadsClick) {
                 Icon(
-                    imageVector = Icons.Filled.Download,
+                    painter = painterResource(R.drawable.ic_download),
                     contentDescription = "Downloads",
                     tint = WarmIvory,
                 )
@@ -249,7 +246,7 @@ fun SpiderLilyBottomBar(
                 onClick = { onItemSelected(index) },
                 icon = {
                     Icon(
-                        imageVector = item.icon,
+                        painter = painterResource(item.icon),
                         contentDescription = item.label,
                     )
                 },
