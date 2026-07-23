@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+  <title id="title">Spider Lily Architecture and Features</title>
+  <desc id="desc">System architecture showing sources, engine core, and integrations.</desc>
+
+  <defs>
+    <linearGradient id="card-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#14141C"/>
+      <stop offset="100%" stop-color="#0E0E14"/>
+    </linearGradient>
+    <linearGradient id="accent-red" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E52E2E"/>
+      <stop offset="100%" stop-color="#FF5A5A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Outer Canvas background -->
+  <rect width="1200" height="300" rx="16" fill="#0B0B0E"/>
+  <rect x="0.5" y="0.5" width="1199" height="299" rx="15.5" fill="none" stroke="#261A20" stroke-width="1"/>
+
+  <!-- Section Title Header inside SVG -->
+  <g transform="translate(40, 35)">
+    <circle cx="6" cy="6" r="4" fill="#E52E2E"/>
+    <text x="20" y="10" font-family="ui-monospace, 'SFMono-Regular', Menlo, monospace" font-size="12" font-weight="700" fill="#FF8888" letter-spacing="1">SYSTEM ARCHITECTURE</text>
+    <text x="220" y="10" font-family="'Yu Gothic', 'Hiragino Sans', sans-serif" font-size="12" fill="#7E6E75">/ 構造図</text>
+  </g>
+
+  <!-- Column 1: Sources & Extensions -->
+  <g transform="translate(40, 65)">
+    <rect width="350" height="200" rx="12" fill="url(#card-bg)" stroke="#2B1A20" stroke-width="1"/>
+    <rect x="0" y="0" width="350" height="3" rx="1.5" fill="url(#accent-red)"/>
+    
+    <!-- Title -->
+    <text x="24" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#F0F0F5">1. Content Sources</text>
+    <text x="326" y="38" font-family="'Yu Gothic', sans-serif" font-size="13" font-weight="500" fill="#E52E2E" text-anchor="end">情報源</text>
+    <line x1="24" y1="52" x2="326" y2="52" stroke="#22181E" stroke-width="1"/>
+
+    <!-- Bullets -->
+    <g transform="translate(24, 75)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#B0B0C0">
+      <circle cx="4" cy="4" r="2.5" fill="#E52E2E"/>
+      <text x="16" y="8"><tspan font-weight="600" fill="#FFFFFF">1200+ Native Parsers</tspan> (Kotatsu-Redo)</text>
+
+      <circle cx="4" cy="34" r="2.5" fill="#E52E2E"/>
+      <text x="16" y="38"><tspan font-weight="600" fill="#FFFFFF">Tachiyomi Extension Engine</tspan> (Keiyoushi)</text>
+
+      <circle cx="4" cy="64" r="2.5" fill="#E52E2E"/>
+      <text x="16" y="68"><tspan font-weight="600" fill="#FFFFFF">Advanced Filters</tspan> &amp; Category Search</text>
+    </g>
+  </g>
+
+  <!-- Flow Connector 1 -> 2 -->
+  <g transform="translate(390, 155)">
+    <path d="M 5,0 L 20,0" stroke="#E52E2E" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <polygon points="20,-4 25,0 20,4" fill="#E52E2E"/>
+  </g>
+
+  <!-- Column 2: Reader Engine -->
+  <g transform="translate(425, 65)">
+    <rect width="350" height="200" rx="12" fill="url(#card-bg)" stroke="#2B1A20" stroke-width="1"/>
+    <rect x="0" y="0" width="350" height="3" rx="1.5" fill="url(#accent-red)"/>
+    
+    <!-- Title -->
+    <text x="24" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#F0F0F5">2. Reader Core Engine</text>
+    <text x="326" y="38" font-family="'Yu Gothic', sans-serif" font-size="13" font-weight="500" fill="#E52E2E" text-anchor="end">閲覧機</text>
+    <line x1="24" y1="52" x2="326" y2="52" stroke="#22181E" stroke-width="1"/>
+
+    <!-- Bullets -->
+    <g transform="translate(24, 75)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#B0B0C0">
+      <circle cx="4" cy="4" r="2.5" fill="#E52E2E"/>
+      <text x="16" y="8"><tspan font-weight="600" fill="#FFFFFF">Webtoon &amp; Standard Modes</tspan> with gestures</text>
+
+      <circle cx="4" cy="34" r="2.5" fill="#E52E2E"/>
+      <text x="16" y="38"><tspan font-weight="600" fill="#FFFFFF">Offline Downloader</tspan> &amp; CBZ / ZIP reader</text>
+
+      <circle cx="4" cy="64" r="2.5" fill="#E52E2E"/>
+      <text x="16" y="68"><tspan font-weight="600" fill="#FFFFFF">Biometric App Lock</tspan> &amp; Incognito Mode</text>
+    </g>
+  </g>
+
+  <!-- Flow Connector 2 -> 3 -->
+  <g transform="translate(775, 155)">
+    <path d="M 5,0 L 20,0" stroke="#E52E2E" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <polygon points="20,-4 25,0 20,4" fill="#E52E2E"/>
+  </g>
+
+  <!-- Column 3: Integrations & Sync -->
+  <g transform="translate(810, 65)">
+    <rect width="350" height="200" rx="12" fill="url(#card-bg)" stroke="#2B1A20" stroke-width="1"/>
+    <rect x="0" y="0" width="350" height="3" rx="1.5" fill="url(#accent-red)"/>
+    
+    <!-- Title -->
+    <text x="24" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#F0F0F5">3. Trackers &amp; Sync</text>
+    <text x="326" y="38" font-family="'Yu Gothic', sans-serif" font-size="13" font-weight="500" fill="#E52E2E" text-anchor="end">同期化</text>
+    <line x1="24" y1="52" x2="326" y2="52" stroke="#22181E" stroke-width="1"/>
+
+    <!-- Bullets -->
+    <g transform="translate(24, 75)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#B0B0C0">
+      <circle cx="4" cy="4" r="2.5" fill="#E52E2E"/>
+      <text x="16" y="8"><tspan font-weight="600" fill="#FFFFFF">MyAnimeList / AniList</tspan> / Kitsu / Shikimori</text>
+
+      <circle cx="4" cy="34" r="2.5" fill="#E52E2E"/>
+      <text x="16" y="38"><tspan font-weight="600" fill="#FFFFFF">Cross-Device Progress Sync</tspan></text>
+
+      <circle cx="4" cy="64" r="2.5" fill="#E52E2E"/>
+      <text x="16" y="68"><tspan font-weight="600" fill="#FFFFFF">Material You UI</tspan> for phones &amp; tablets</text>
+    </g>
+  </g>
+</svg>

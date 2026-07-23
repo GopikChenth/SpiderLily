@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Spider Lily — Manga Reader for Android</title>
+  <desc id="desc">Free and open-source Android manga reader featuring 1200+ sources, Tachiyomi extension compatibility, and clean Japanese dark aesthetics.</desc>
+
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F0F14"/>
+      <stop offset="60%" stop-color="#0B0B0E"/>
+      <stop offset="100%" stop-color="#140A0D"/>
+    </linearGradient>
+
+    <linearGradient id="crimson-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E52E2E"/>
+      <stop offset="100%" stop-color="#FF5A5A"/>
+    </linearGradient>
+
+    <linearGradient id="card-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3A181E"/>
+      <stop offset="100%" stop-color="#1F1A24"/>
+    </linearGradient>
+
+    <pattern id="dot-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="1" fill="#E52E2E" fill-opacity="0.07"/>
+    </pattern>
+  </defs>
+
+  <!-- Background Card -->
+  <rect width="1200" height="360" rx="20" fill="url(#bg-gradient)"/>
+  <rect width="1200" height="360" rx="20" fill="url(#dot-grid)"/>
+  <rect x="0.5" y="0.5" width="1199" height="359" rx="19.5" fill="none" stroke="url(#card-border)" stroke-width="1"/>
+
+  <!-- Left Accent Line -->
+  <rect x="0" y="40" width="4" height="280" rx="2" fill="url(#crimson-glow)"/>
+
+  <!-- Background Japanese Watermark Typography -->
+  <g opacity="0.04" fill="#E52E2E">
+    <text x="1140" y="240" font-family="'Yu Gothic', 'Hiragino Sans', 'Meiryo', sans-serif" font-size="190" font-weight="900" text-anchor="end">彼岸花</text>
+  </g>
+
+  <!-- Left Title Content Block -->
+  <g transform="translate(60, 55)">
+    <!-- Eyebrow Tag -->
+    <g transform="translate(0, 0)">
+      <rect width="210" height="28" rx="6" fill="#241014" stroke="#4A1820" stroke-width="1"/>
+      <circle cx="14" cy="14" r="4" fill="#E52E2E"/>
+      <text x="26" y="18.5" font-family="ui-monospace, 'SFMono-Regular', Menlo, monospace" font-size="11" font-weight="700" fill="#FF8888" letter-spacing="1.2">ANDROID MANGA READER</text>
+    </g>
+
+    <!-- Project Title -->
+    <text x="0" y="82" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="52" font-weight="800" fill="#F8F8FA" letter-spacing="-0.5">Spider Lily</text>
+    <text x="270" y="82" font-family="'Yu Gothic', 'Hiragino Sans', sans-serif" font-size="28" font-weight="500" fill="#E52E2E" opacity="0.85">蜘蛛百合</text>
+
+    <!-- Subtitle / Promise -->
+    <text x="0" y="122" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="400" fill="#A0A0B0">Free, open-source manga reader for Android featuring 1200+ sources,</text>
+    <text x="0" y="148" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="400" fill="#A0A0B0">Tachiyomi extension engine integration, and zero ads or paywalls.</text>
+
+    <!-- Feature Pills Grid -->
+    <g transform="translate(0, 185)">
+      <!-- Pill 1 -->
+      <g transform="translate(0, 0)">
+        <rect width="165" height="38" rx="10" fill="#161218" stroke="#2D1A22" stroke-width="1"/>
+        <text x="16" y="24" font-family="ui-monospace, 'SFMono-Regular', Menlo, monospace" font-size="13" font-weight="700" fill="#E52E2E">1200+</text>
+        <text x="68" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" fill="#D0D0E0">Sources</text>
+      </g>
+
+      <!-- Pill 2 -->
+      <g transform="translate(177, 0)">
+        <rect width="210" height="38" rx="10" fill="#161218" stroke="#2D1A22" stroke-width="1"/>
+        <text x="16" y="24" font-family="ui-monospace, 'SFMono-Regular', Menlo, monospace" font-size="13" font-weight="700" fill="#E52E2E">Keiyoushi</text>
+        <text x="90" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" fill="#D0D0E0">Extensions</text>
+      </g>
+
+      <!-- Pill 3 -->
+      <g transform="translate(399, 0)">
+        <rect width="170" height="38" rx="10" fill="#161218" stroke="#2D1A22" stroke-width="1"/>
+        <text x="16" y="24" font-family="ui-monospace, 'SFMono-Regular', Menlo, monospace" font-size="13" font-weight="700" fill="#E52E2E">Android 6.0+</text>
+        <text x="112" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" fill="#D0D0E0">Req</text>
+      </g>
+    </g>
+
+    <!-- Specs / Footer line -->
+    <g transform="translate(0, 252)">
+      <text x="0" y="0" font-family="ui-monospace, 'SFMono-Regular', Menlo, monospace" font-size="12" fill="#6E6E82">LICENSE: <tspan fill="#C0C0D0">GPL-3.0</tspan>   |   STACK: <tspan fill="#C0C0D0">Kotlin / Jetpack Compose / Room</tspan>   |   TRACKERS: <tspan fill="#C0C0D0">MAL / AniList / Kitsu</tspan></text>
+    </g>
+  </g>
+
+  <!-- Right Visual: Vector Red Spider Lily (Lycoris Radiata) Emblem -->
+  <g transform="translate(970, 180)">
+    <!-- Outer Decorative Orbit Ring -->
+    <circle cx="0" cy="0" r="125" fill="none" stroke="#E52E2E" stroke-opacity="0.12" stroke-width="1" stroke-dasharray="6 6"/>
+    <circle cx="0" cy="0" r="105" fill="none" stroke="#E52E2E" stroke-opacity="0.25" stroke-width="1"/>
+    <circle cx="0" cy="0" r="85" fill="#180C10" stroke="#3D141C" stroke-width="1.5"/>
+
+    <!-- Spider Lily Curved Stem -->
+    <path d="M 0,85 C -5,50 -2,20 0,-15" fill="none" stroke="#E52E2E" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 0,35 C -15,55 -25,75 -30,85" fill="none" stroke="#E52E2E" stroke-width="1.5" opacity="0.6"/>
+
+    <!-- Flower Center Core -->
+    <circle cx="0" cy="-15" r="7" fill="#FF4D4D"/>
+
+    <!-- Radiating Spider Lily Petals (Curved Lycoris Geometry) -->
+    <!-- Petal Pair 1: Upper Right -->
+    <path d="M 0,-15 C 20,-35 45,-45 55,-35 C 65,-25 45,-15 20,-10" fill="#E52E2E" opacity="0.9"/>
+    <path d="M 0,-15 C 30,-20 60,-20 70,-5 C 75,10 50,0 20,-5" fill="#FF4D4D" opacity="0.8"/>
+
+    <!-- Petal Pair 2: Upper Left -->
+    <path d="M 0,-15 C -20,-35 -45,-45 -55,-35 C -65,-25 -45,-15 -20,-10" fill="#E52E2E" opacity="0.9"/>
+    <path d="M 0,-15 C -30,-20 -60,-20 -70,-5 C -75,10 -50,0 -20,-5" fill="#FF4D4D" opacity="0.8"/>
+
+    <!-- Petal Pair 3: Lower Right / Left -->
+    <path d="M 0,-15 C 25,5 50,20 60,35 C 55,45 35,30 15,10" fill="#C41E1E" opacity="0.95"/>
+    <path d="M 0,-15 C -25,5 -50,20 -60,35 C -55,45 -35,30 -15,10" fill="#C41E1E" opacity="0.95"/>
+
+    <!-- Long Radiating Stamens with Anther Animate Dots (Lycoris Filament Signature) -->
+    <path d="M 0,-15 C 20,-60 45,-80 40,-90" fill="none" stroke="#FF5A5A" stroke-width="1.5"/>
+    <circle cx="40" cy="-90" r="3" fill="#FFD700"/>
+
+    <path d="M 0,-15 C -20,-60 -45,-80 -40,-90" fill="none" stroke="#FF5A5A" stroke-width="1.5"/>
+    <circle cx="-40" cy="-90" r="3" fill="#FFD700"/>
+
+    <path d="M 0,-15 C 40,-50 70,-60 80,-55" fill="none" stroke="#FF5A5A" stroke-width="1.5"/>
+    <circle cx="80" cy="-55" r="3" fill="#FFD700"/>
+
+    <path d="M 0,-15 C -40,-50 -70,-60 -80,-55" fill="none" stroke="#FF5A5A" stroke-width="1.5"/>
+    <circle cx="-80" cy="-55" r="3" fill="#FFD700"/>
+
+    <path d="M 0,-15 C 50,-30 85,-25 95,-15" fill="none" stroke="#FF5A5A" stroke-width="1.5"/>
+    <circle cx="95" cy="-15" r="3" fill="#FFD700"/>
+
+    <path d="M 0,-15 C -50,-30 -85,-25 -95,-15" fill="none" stroke="#FF5A5A" stroke-width="1.5"/>
+    <circle cx="-95" cy="-15" r="3" fill="#FFD700"/>
+
+    <path d="M 0,-15 C 0,-70 10,-95 15,-102" fill="none" stroke="#FF7777" stroke-width="1.5"/>
+    <circle cx="15" cy="-102" r="3.5" fill="#FFD700"/>
+
+    <path d="M 0,-15 C 0,-70 -10,-95 -15,-102" fill="none" stroke="#FF7777" stroke-width="1.5"/>
+    <circle cx="-15" cy="-102" r="3.5" fill="#FFD700"/>
+  </g>
+</svg>

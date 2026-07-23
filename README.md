@@ -1,117 +1,117 @@
-<div align="center">
+<p align="center">
+  <img src="./assets/readme/hero.svg" width="100%" alt="Spider Lily — Free & Open-Source Android Manga Reader featuring 1200+ sources, Tachiyomi extension compatibility, and clean Japanese dark aesthetics">
+</p>
 
-# 🌺 Spider Lily
-
-**A free and open-source manga reader for Android with built-in online content sources.**
-
-![Android 6.0](https://img.shields.io/badge/android-6.0+-brightgreen) [![Sources count](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2FKotatsu-Redo%2Fkotatsu-parsers-redo%2Frefs%2Fheads%2Fmaster%2F.github%2Fsummary.yaml&query=total&label=manga%20sources&color=%23E9321C)](https://github.com/Kotatsu-Redo/kotatsu-parsers-redo) [![License](https://img.shields.io/github/license/AppFuton/Futon)](https://github.com/AppFuton/Futon/blob/devel/LICENSE) [![GitHub Release](https://img.shields.io/github/v/release/appfuton/futon?sort=date&display_name=tag&style=flat&link=https%3A%2F%2Fgithub.com%2FAppFuton%2FFuton%2Freleases%2Flatest)](https://github.com/AppFuton/Futon/releases/latest) [![IzzyOnDroid Yearly Downloads](https://img.shields.io/badge/dynamic/json?url=https://dlstats.izzyondroid.org/iod-stats-collector/stats/basic/yearly/rolling.json&query=$.['com.arcadelabs.spiderlily']&label=IzzyOnDroid%20yearly%20downloads)](https://apt.izzysoft.de/packages/com.arcadelabs.spiderlily) [![F-Droid Version](https://img.shields.io/badge/F--Droid-%2311AB00.svg?logo=f-droid&logoColor=white)](https://f-droid.org/en/packages/com.arcadelabs.spiderlily/) [![Discord](https://img.shields.io/discord/1452862077134700628)](https://discord.gg/9sqBHXhwzz)
-
-</div>
-
----
-
-### ✨ Main Features
-
-- 🌐 **Online Catalogues**: Browse 1200+ online manga, manhwa, and manhua sources out of the box.
-- 🔌 **Extension Support**: Compatible with Tachiyomi / Keiyoushi extensions.
-- 🔍 **Advanced Search & Filtering**: Search by title, author, genres, and rich status filters.
-- 📁 **Custom Library Categories**: Organize favorites into user-defined categories.
-- 📖 **Tailored Reading Modes**: Standard page-by-page view and Webtoon continuous scrolling with gesture controls.
-- 📥 **Offline Downloads & CBZ Support**: Download chapters or open local `.cbz` / `.zip` archives.
-- 📊 **Tracking Integrations**: Sync progress with Shikimori, AniList, MyAnimeList, and Kitsu.
-- 🔔 **Chapter Notifications**: Automatic background checks for new chapter releases.
-- 🔒 **Privacy Controls**: Incognito reading mode, password, and biometric app lock.
-- ☁️ **Cloud & Local Sync**: Sync application data across your devices seamlessly.
+<p align="center">
+  <a href="https://github.com/Kotatsu-Redo/kotatsu-parsers-redo"><img src="https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2FKotatsu-Redo%2Fkotatsu-parsers-redo%2Frefs%2Fheads%2Fmaster%2F.github%2Fsummary.yaml&query=total&label=manga%20sources&color=%23E52E2E&style=for-the-badge" alt="Manga Sources"></a>
+  <a href="https://github.com/keiyoushi/extensions"><img src="https://img.shields.io/badge/Engine-Keiyoushi%20Extensions-E52E2E?style=for-the-badge" alt="Keiyoushi Extensions"></a>
+  <a href="https://github.com/AppFuton/Futon/blob/devel/LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-0B0B0E?style=for-the-badge&logo=gnu&logoColor=white" alt="License"></a>
+  <a href="https://apt.izzysoft.de/packages/com.arcadelabs.spiderlily"><img src="https://img.shields.io/badge/IzzyOnDroid-Available-11AB00?style=for-the-badge&logo=android&logoColor=white" alt="IzzyOnDroid"></a>
+  <a href="https://discord.gg/9sqBHXhwzz"><img src="https://img.shields.io/badge/Discord-Join%20Community-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord"></a>
+</p>
 
 ---
 
-### 📥 Downloads
+### 🌸 Overview / 概要
 
-Get Spider Lily from your preferred repository:
-
-- **[IzzyOnDroid Repository](https://apt.izzysoft.de/packages/com.arcadelabs.spiderlily)**
-- **[F-Droid Package](https://f-droid.org/packages/com.arcadelabs.spiderlily)**
-- **[GitHub Latest Release](https://github.com/AppFuton/Futon/releases/latest)**
+**Spider Lily** (蜘蛛百合) is a lightweight, privacy-focused, open-source manga reader for Android. Built with Kotlin and Jetpack Compose, it brings together **1,200+ native manga catalogues** alongside support for **Tachiyomi / Keiyoushi extensions**, providing an ad-free and continuous reading experience.
 
 ---
 
-### 🛠️ Development Setup
+### ⛩️ Architecture & Core Capabilities / 構造と機能
+
+<p align="center">
+  <img src="./assets/readme/features.svg" width="100%" alt="Spider Lily Architecture: Content Sources, Reader Core Engine, and Integrations">
+</p>
+
+| Feature Area | Key Capabilities |
+| :--- | :--- |
+| **🌐 Catalogues & Sources** | 1,200+ online manga sources, Tachiyomi extension compatibility, genre/tag filters, and global catalog search. |
+| **📖 Reading Experience** | Standard single/double page modes, Webtoon continuous vertical scroll, gesture controls, and color adjustments. |
+| **📥 Local & Offline** | High-speed chapter downloader for offline reading, plus native support for opening external `.cbz` / `.zip` files. |
+| **📊 Tracker Sync** | Auto-sync reading progress with **MyAnimeList**, **AniList**, **Kitsu**, and **Shikimori**. |
+| **🔒 Security & Privacy** | Incognito reading mode, fingerprint / biometric authentication, and local data isolation. |
+| **☁️ Device Sync** | Cross-device data synchronization for category management, favorites, and reading history. |
+
+---
+
+### 📥 Download & Installation / 入手方法
+
+Choose your preferred distribution channel to install Spider Lily:
+
+- **[IzzyOnDroid Repository](https://apt.izzysoft.de/packages/com.arcadelabs.spiderlily)** — Verified automated builds & updates.
+- **[F-Droid Repository](https://f-droid.org/packages/com.arcadelabs.spiderlily)** — Official F-Droid package build.
+- **[GitHub Releases](https://github.com/AppFuton/Futon/releases/latest)** — Download the latest direct `.apk` binaries (`app-release.apk`).
+
+---
+
+### 🛠️ Development & Building / 開発環境
 
 #### Prerequisites
-- **JDK 17** (Recommended: [Temurin 17](https://adoptium.net/temurin/releases/))
-- **Android SDK** (Compile SDK 36, Target SDK 36, Minimum SDK 23)
+- **JDK 17** (Recommended: [Adoptium Temurin 17](https://adoptium.net/temurin/releases/))
+- **Android SDK** (Compile SDK 36, Target SDK 36, Minimum SDK 23 / Android 6.0+)
 - **Android Studio** (Recommended) or Gradle CLI
 
 #### Build Commands
 
 ```bash
-# Clone the repository
+# Clone repository
 git clone https://github.com/AppFuton/Futon.git
 cd Futon
 
-# Debug build (for local testing)
+# Build Debug APK (Local Testing)
 ./gradlew assembleDebug
 
-# Release build
+# Build Release APK
 ./gradlew assembleRelease
 
-# Nightly build
+# Build Nightly Variant
 ./gradlew assembleNightly
 ```
 
-#### Running Verification & Tests
+#### Running Tests & Code Quality
 
 ```bash
 # Run unit tests
 ./gradlew test
 
-# Run instrumented tests (device/emulator connected)
+# Run instrumented UI & DB tests (Device/Emulator)
 ./gradlew connectedDebugAndroidTest
 
-# Run lint & static checks
+# Run code style & lint inspection
 ./gradlew check
 ```
 
 ---
 
-### 🌐 Localization
+### 🌐 Localization & Community / 翻訳・コミュニティ
 
-Help translate Spider Lily into your language on [Weblate](https://hosted.weblate.org/engage/futon/).
+Help translate Spider Lily into your language on **[Weblate](https://hosted.weblate.org/engage/futon/)**.
 
----
-
-### 🤝 Contributing
-
-Pull requests and issue reports are welcome! Please check [CONTRIBUTING.md](./CONTRIBUTING.md) for contribution guidelines.
-
-Join our community on [Discord](https://discord.gg/9sqBHXhwzz) for discussions, support, and announcements.
+Have questions, feature proposals, or issues? Connect with developers and users on our **[Discord Community](https://discord.gg/9sqBHXhwzz)**.
 
 ---
 
-### 🔑 Certificate Fingerprints
+### 🔑 Security & Certificate / 署名
 
 ```plaintext
+SHA-256 Fingerprint:
 EF:48:B2:2E:F2:C5:40:45:53:1F:6E:76:00:C2:7E:C3:D0:3B:71:22:1E:0B:05:FF:B6:8E:33:57:CF:8E:4D:40
 ```
 
 ---
 
-### 📄 DMCA Disclaimer
+### 📄 DMCA Disclaimer & License / 免責事項・ライセンス
 
-The developers of this application do not host, store, or distribute any copyrighted media content. Spider Lily acts purely as a client-side interface for freely available public content on the internet. DMCA takedown requests should be directed to the respective content host website owners.
-
----
-
-### ⚖️ License
-
-Distributed under the **GNU General Public License v3.0 (GPLv3)**. See [LICENSE](./LICENSE) for details.
+* **DMCA Notice:** The developers of Spider Lily do not host, store, or distribute any copyrighted media content. Spider Lily acts solely as an open client interface for freely available public content on the internet.
+* **License:** Distributed under the **GNU General Public License v3.0 (GPLv3)**. See [LICENSE](./LICENSE) for terms.
 
 ---
 
-### 💖 Acknowledgments
+### 💖 Acknowledgments / 謝辞
 
-Spider Lily is built upon the incredible open-source foundation of the **[Kotatsu](https://github.com/KotatsuApp/Kotatsu)** project. We extend our sincere gratitude to:
-- The original **Kotatsu** developers and contributors
-- The **Kotatsu-Redo** project for parser maintenance
-- The **Keiyoushi** extension ecosystem maintainers
-- All translators on Weblate helping localize the app
+Spider Lily builds upon the exceptional open-source work of the **[Kotatsu](https://github.com/KotatsuApp/Kotatsu)** project. Special thanks to:
+* The original **Kotatsu** project maintainers & community
+* The **Kotatsu-Redo** parser team
+* The **Keiyoushi** extension ecosystem developers
+* All open-source translators and contributors
