@@ -3,10 +3,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/GopikChenth/SpiderLily_Parser"><img src="https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2FGopikChenth%2FSpiderLily_Parser%2Frefs%2Fheads%2Fmaster%2F.github%2Fsummary.yaml&query=total&label=manga%20sources&color=%23E52E2E&style=for-the-badge" alt="Manga Sources"></a>
   <a href="https://github.com/keiyoushi/extensions"><img src="https://img.shields.io/badge/Engine-Keiyoushi%20Extensions-E52E2E?style=for-the-badge" alt="Keiyoushi Extensions"></a>
   <a href="https://github.com/AppFuton/Futon/blob/devel/LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-0B0B0E?style=for-the-badge&logo=gnu&logoColor=white" alt="License"></a>
-  <a href="https://apt.izzysoft.de/packages/com.arcadelabs.spiderlily"><img src="https://img.shields.io/badge/IzzyOnDroid-Available-11AB00?style=for-the-badge&logo=android&logoColor=white" alt="IzzyOnDroid"></a>
   <a href="https://discord.gg/9sqBHXhwzz"><img src="https://img.shields.io/badge/Discord-Join%20Community-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord"></a>
 </p>
 
@@ -39,7 +37,6 @@
 
 Choose your preferred distribution channel to install Spider Lily:
 
-- **[IzzyOnDroid Repository](https://apt.izzysoft.de/packages/com.arcadelabs.spiderlily)** — Verified automated builds & updates.
 - **[F-Droid Repository](https://f-droid.org/packages/com.arcadelabs.spiderlily)** — Official F-Droid package build.
 - **[GitHub Releases](https://github.com/AppFuton/Futon/releases/latest)** — Download the latest direct `.apk` binaries (`app-release.apk`).
 
