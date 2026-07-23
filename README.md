@@ -5,7 +5,6 @@
 <p align="center">
   <a href="https://github.com/keiyoushi/extensions"><img src="https://img.shields.io/badge/Engine-Keiyoushi%20Extensions-E52E2E?style=for-the-badge" alt="Keiyoushi Extensions"></a>
   <a href="https://github.com/AppFuton/Futon/blob/devel/LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-0B0B0E?style=for-the-badge&logo=gnu&logoColor=white" alt="License"></a>
-  <a href="https://discord.gg/9sqBHXhwzz"><img src="https://img.shields.io/badge/Discord-Join%20Community-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord"></a>
 </p>
 
 ---
@@ -31,14 +30,7 @@
 | **🔒 Security & Privacy** | Incognito reading mode, fingerprint / biometric authentication, and local data isolation. |
 | **☁️ Device Sync** | Cross-device data synchronization for category management, favorites, and reading history. |
 
----
 
-### 📥 Download & Installation / 入手方法
-
-Choose your preferred distribution channel to install Spider Lily:
-
-- **[F-Droid Repository](https://f-droid.org/packages/com.arcadelabs.spiderlily)** — Official F-Droid package build.
-- **[GitHub Releases](https://github.com/AppFuton/Futon/releases/latest)** — Download the latest direct `.apk` binaries (`app-release.apk`).
 
 ---
 
@@ -81,11 +73,9 @@ cd Futon
 
 ---
 
-### 🌐 Localization & Community / 翻訳・コミュニティ
+### 🌐 Localization / 翻訳
 
 Help translate Spider Lily into your language on **[Weblate](https://hosted.weblate.org/engage/futon/)**.
-
-Have questions, feature proposals, or issues? Connect with developers and users on our **[Discord Community](https://discord.gg/9sqBHXhwzz)**.
 
 ---
 
