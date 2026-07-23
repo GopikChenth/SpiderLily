@@ -37,7 +37,7 @@
     <!-- Bullets -->
     <g transform="translate(24, 75)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#B0B0C0">
       <circle cx="4" cy="4" r="2.5" fill="#E52E2E"/>
-      <text x="16" y="8"><tspan font-weight="600" fill="#FFFFFF">1200+ Native Parsers</tspan> (Kotatsu-Redo)</text>
+      <text x="16" y="8"><tspan font-weight="600" fill="#FFFFFF">1200+ Native Parsers</tspan> (SpiderLily Parser)</text>
 
       <circle cx="4" cy="34" r="2.5" fill="#E52E2E"/>
       <text x="16" y="38"><tspan font-weight="600" fill="#FFFFFF">Tachiyomi Extension Engine</tspan> (Keiyoushi)</text>

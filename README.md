@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Kotatsu-Redo/kotatsu-parsers-redo"><img src="https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2FKotatsu-Redo%2Fkotatsu-parsers-redo%2Frefs%2Fheads%2Fmaster%2F.github%2Fsummary.yaml&query=total&label=manga%20sources&color=%23E52E2E&style=for-the-badge" alt="Manga Sources"></a>
+  <a href="https://github.com/GopikChenth/SpiderLily_Parser"><img src="https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2FGopikChenth%2FSpiderLily_Parser%2Frefs%2Fheads%2Fmaster%2F.github%2Fsummary.yaml&query=total&label=manga%20sources&color=%23E52E2E&style=for-the-badge" alt="Manga Sources"></a>
   <a href="https://github.com/keiyoushi/extensions"><img src="https://img.shields.io/badge/Engine-Keiyoushi%20Extensions-E52E2E?style=for-the-badge" alt="Keiyoushi Extensions"></a>
   <a href="https://github.com/AppFuton/Futon/blob/devel/LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-0B0B0E?style=for-the-badge&logo=gnu&logoColor=white" alt="License"></a>
   <a href="https://apt.izzysoft.de/packages/com.arcadelabs.spiderlily"><img src="https://img.shields.io/badge/IzzyOnDroid-Available-11AB00?style=for-the-badge&logo=android&logoColor=white" alt="IzzyOnDroid"></a>
@@ -112,6 +112,6 @@ EF:48:B2:2E:F2:C5:40:45:53:1F:6E:76:00:C2:7E:C3:D0:3B:71:22:1E:0B:05:FF:B6:8E:33
 
 Spider Lily builds upon the exceptional open-source work of the **[Kotatsu](https://github.com/KotatsuApp/Kotatsu)** project. Special thanks to:
 * The original **Kotatsu** project maintainers & community
-* The **Kotatsu-Redo** parser team
+* The **SpiderLily Parser** maintainers ([GopikChenth/SpiderLily_Parser](https://github.com/GopikChenth/SpiderLily_Parser))
 * The **Keiyoushi** extension ecosystem developers
 * All open-source translators and contributors
