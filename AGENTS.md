@@ -61,6 +61,19 @@
 # Run instrumented test class
 ./gradlew connectedDebugAndroidTest \
   -Pandroid.testInstrumentationRunnerArguments.class=com.arcadelabs.spiderlily.core.db.MangaDatabaseTest
+sk :app:mergeReleaseStartupProfile
+> Task :app:minifyReleaseWithR8
+> Task :app:l8DexDesugarLibRelease
+> Task :app:compileReleaseArtProfile
+> Task :app:copyRoomSchemas NO-SOURCE
+> Task :app:generateSentryProguardUuidRelease
+> Task :app:generateReleaseAssets UP-TO-DATE
+> Task :app:mergeReleaseAssets
+> Task :app:injectSentryDebugMetaPropertiesIntoAssetsRelease
+> Task :app:compressReleaseAssets
+> Task :app:extractReleaseVersionControlInfo
+> Task :app:generateReleaseLintVitalReportModel
+> Task :app:lintVitalAnalyzeRelease FAILED
 
 # Run specific instrumented test method
 ./gradlew connectedDebugAndroidTest \

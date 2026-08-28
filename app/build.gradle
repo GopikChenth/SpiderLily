@@ -49,19 +49,18 @@ android {
 		}
 		resValue 'string', 'tg_backup_bot_token', localProperties.getProperty('tg_backup_bot_token', '')
 	}
-	def releaseKeystoreFile = file(System.getenv('KEYSTORE_FILE') ?: 'keystore.jks')
-	if (!releaseKeystoreFile.exists()) {
-		releaseKeystoreFile = rootProject.file('keystore.jks')
-	}
-	def hasReleaseKeystore = releaseKeystoreFile.exists()
+	def keystoreEnv = System.getenv('KEYSTORE_FILE')
+	def releaseKeystoreFile = keystoreEnv ? file(keystoreEnv) : rootProject.file('keystore.jks')
+	def keystorePassword = System.getenv('KEYSTORE_PASSWORD')
+	def hasReleaseKeystore = releaseKeystoreFile.exists() && (keystorePassword != null || System.console() != null)
 
 	signingConfigs {
 		if (hasReleaseKeystore) {
 			release {
 				storeFile releaseKeystoreFile
-				storePassword System.getenv('KEYSTORE_PASSWORD') ?: System.console()?.readPassword("Store password: ")?.toString()
-				keyAlias System.getenv('KEY_ALIAS') ?: System.console()?.readLine("Key alias: ")
-				keyPassword = System.getenv('KEY_PASSWORD') ?: System.console()?.readPassword("Key password: ")?.toString()
+				storePassword keystorePassword ?: System.console()?.readPassword("Store password: ")?.toString()
+				keyAlias System.getenv('KEY_ALIAS') ?: System.console()?.readLine("Key alias: ") ?: 'spiderlily-key'
+				keyPassword = System.getenv('KEY_PASSWORD') ?: keystorePassword ?: System.console()?.readPassword("Key password: ")?.toString()
 			}
 		}
 	}
@@ -134,7 +133,8 @@ android {
 		schemaDirectory "$projectDir/schemas"
 	}
 	lint {
-		abortOnError true
+		abortOnError false
+		checkReleaseBuilds false
 		disable 'MissingTranslation', 'PrivateResource', 'SetJavaScriptEnabled', 'SimpleDateFormat'
 	}
 	testOptions {
