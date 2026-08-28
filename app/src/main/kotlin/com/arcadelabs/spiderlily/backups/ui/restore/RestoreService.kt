@@ -22,6 +22,7 @@ import com.arcadelabs.spiderlily.core.util.ext.printStackTraceDebug
 import com.arcadelabs.spiderlily.core.util.ext.toUriOrNull
 import com.arcadelabs.spiderlily.core.util.ext.withPartialWakeLock
 import com.arcadelabs.spiderlily.core.util.progress.Progress
+import com.arcadelabs.spiderlily.local.ui.LocalIndexUpdateService
 import kotlinx.coroutines.cancelAndJoin
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
@@ -64,6 +65,9 @@ class RestoreService : BaseBackupRestoreService() {
 			}
 			val result = ZipInputStream(contentResolver.openInputStream(source)).use { input ->
                 repository.restoreBackup(input, sections, progress, isMerge)
+			}
+			if (result.isAllSuccess && sections.contains(BackupSection.SETTINGS)) {
+				startService(Intent(this@RestoreService, LocalIndexUpdateService::class.java))
 			}
 			progressUpdateJob?.cancelAndJoin()
 			showResultNotification(source, result)

@@ -9,6 +9,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.view.ActionMode
 import androidx.core.graphics.Insets
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.isVisible
 import androidx.core.view.updatePadding
 import coil3.ImageLoader
 import dagger.hilt.android.AndroidEntryPoint
@@ -17,8 +18,12 @@ import com.arcadelabs.spiderlily.core.nav.router
 import com.arcadelabs.spiderlily.core.ui.BaseActivity
 import com.arcadelabs.spiderlily.core.ui.list.ListSelectionController
 import com.arcadelabs.spiderlily.core.ui.list.RecyclerScrollKeeper
+import com.arcadelabs.spiderlily.core.ui.dialog.buildAlertDialog
+import com.arcadelabs.spiderlily.core.ui.dialog.setCheckbox
 import com.arcadelabs.spiderlily.core.ui.util.MenuInvalidator
 import com.arcadelabs.spiderlily.core.ui.util.ReversibleActionObserver
+import com.arcadelabs.spiderlily.core.util.FileSize
+import com.arcadelabs.spiderlily.download.ui.list.chapters.DownloadChapter
 import com.arcadelabs.spiderlily.core.util.ext.observe
 import com.arcadelabs.spiderlily.core.util.ext.observeEvent
 import com.arcadelabs.spiderlily.databinding.ActivityDownloadsBinding
@@ -66,6 +71,35 @@ class DownloadsActivity : BaseActivity<ActivityDownloadsBinding>(),
 		viewModel.hasActiveWorks.observe(this, menuInvalidator)
 		viewModel.hasPausedWorks.observe(this, menuInvalidator)
 		viewModel.hasCancellableWorks.observe(this, menuInvalidator)
+
+		viewModel.storageUsage.observe(this) { usage ->
+			if (usage != null && usage.totalBytes > 0) {
+				viewBinding.cardStorage.isVisible = true
+				val progress = (usage.currentBytes * 100 / usage.totalBytes).toInt()
+				viewBinding.progressStorage.progress = progress
+				val isOverQuota = usage.currentBytes >= usage.totalBytes
+				if (viewBinding.cardQuotaReached.isVisible != isOverQuota) {
+					viewBinding.cardQuotaReached.isVisible = isOverQuota
+				}
+				if (progress >= 90) {
+					viewBinding.progressStorage.setIndicatorColor(getColor(R.color.common_red))
+				} else {
+					viewBinding.progressStorage.setIndicatorColor(getColor(R.color.blue_primary))
+				}
+				val currentStr = FileSize.BYTES.format(this, usage.currentBytes)
+				val totalStr = FileSize.BYTES.format(this, usage.totalBytes)
+				viewBinding.textViewStorageDetails.text = getString(R.string.memory_usage_pattern, currentStr, totalStr)
+			} else {
+				viewBinding.cardStorage.isVisible = false
+				viewBinding.cardQuotaReached.isVisible = false
+			}
+		}
+		viewModel.refreshStorageUsage()
+	}
+
+	override fun onResume() {
+		super.onResume()
+		viewModel.refreshStorageUsage()
 	}
 
 	override fun onApplyWindowInsets(v: View, insets: WindowInsetsCompat): WindowInsetsCompat {
@@ -73,7 +107,10 @@ class DownloadsActivity : BaseActivity<ActivityDownloadsBinding>(),
 		viewBinding.recyclerView.updatePadding(
 			left = bars.left,
 			right = bars.right,
-			bottom = bars.bottom,
+			bottom = bars.bottom + resources.getDimensionPixelSize(R.dimen.list_spacing_large),
+		)
+		viewBinding.cardStorage.updatePadding(
+			bottom = bars.bottom
 		)
 		viewBinding.appbar.updatePadding(
 			left = bars.left,
@@ -160,8 +197,18 @@ class DownloadsActivity : BaseActivity<ActivityDownloadsBinding>(),
 			}
 
 			R.id.action_remove -> {
-				viewModel.remove(controller.snapshot())
-				mode?.finish()
+				var deleteFiles = false
+				buildAlertDialog(this) {
+					setTitle(R.string.remove_downloads_confirm)
+					setCheckbox(R.string.delete_downloaded_files, false) { _, isChecked ->
+						deleteFiles = isChecked
+					}
+					setPositiveButton(R.string.delete) { _, _ ->
+						viewModel.remove(controller.snapshot(), deleteFiles)
+						mode?.finish()
+					}
+					setNegativeButton(android.R.string.cancel, null)
+				}.show()
 				true
 			}
 
@@ -191,5 +238,16 @@ class DownloadsActivity : BaseActivity<ActivityDownloadsBinding>(),
 		menu.findItem(R.id.action_cancel)?.isVisible = canCancel
 		menu.findItem(R.id.action_remove)?.isVisible = canRemove
 		return super.onPrepareActionMode(controller, mode, menu)
+	}
+
+	override fun onDeleteChapterClick(item: DownloadItemModel, chapter: DownloadChapter) {
+		buildAlertDialog(this) {
+			setTitle(R.string.delete_chapter)
+			setMessage(getString(R.string.delete_chapter_confirm, chapter.name))
+			setPositiveButton(R.string.delete) { _, _ ->
+				viewModel.deleteChapter(item, chapter)
+			}
+			setNegativeButton(android.R.string.cancel, null)
+		}.show()
 	}
 }

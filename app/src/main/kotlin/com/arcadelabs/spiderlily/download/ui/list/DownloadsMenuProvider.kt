@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentActivity
 import com.arcadelabs.spiderlily.R
 import com.arcadelabs.spiderlily.core.nav.router
 import com.arcadelabs.spiderlily.core.ui.dialog.buildAlertDialog
+import com.arcadelabs.spiderlily.core.ui.dialog.setCheckbox
 
 class DownloadsMenuProvider(
 	private val activity: FragmentActivity,
@@ -24,6 +25,7 @@ class DownloadsMenuProvider(
 			R.id.action_resume -> viewModel.resumeAll()
 			R.id.action_cancel_all -> confirmCancelAll()
 			R.id.action_remove_completed -> confirmRemoveCompleted()
+			R.id.action_queue -> activity.router.openDownloadQueue()
 			R.id.action_settings -> activity.router.openDownloadsSetting()
 			else -> return false
 		}
@@ -48,12 +50,16 @@ class DownloadsMenuProvider(
 	}
 
 	private fun confirmRemoveCompleted() {
+		var deleteFiles = false
 		buildAlertDialog(activity, isCentered = true) {
 			setTitle(R.string.remove_completed)
 			setMessage(R.string.remove_completed_downloads_confirm)
 			setIcon(R.drawable.ic_clear_all)
+			setCheckbox(R.string.delete_downloaded_files, false) { _, isChecked ->
+				deleteFiles = isChecked
+			}
 			setNegativeButton(android.R.string.cancel, null)
-			setPositiveButton(R.string.clear) { _, _ -> viewModel.removeCompleted() }
+			setPositiveButton(R.string.clear) { _, _ -> viewModel.removeCompleted(deleteFiles) }
 		}.show()
 	}
 }

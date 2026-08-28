@@ -290,4 +290,3 @@ class ChipsView @JvmOverloads constructor(
 		fun onChipLongClick(chip: Chip, data: Any?): Boolean
 	}
 }
-

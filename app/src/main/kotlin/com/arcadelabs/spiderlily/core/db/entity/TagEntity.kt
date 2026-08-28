@@ -2,10 +2,16 @@ package com.arcadelabs.spiderlily.core.db.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 import com.arcadelabs.spiderlily.core.db.TABLE_TAGS
 
-@Entity(tableName = TABLE_TAGS)
+@Entity(
+	tableName = TABLE_TAGS,
+	indices = [
+		Index(value = ["title"]),
+	],
+)
 data class TagEntity(
 	@PrimaryKey(autoGenerate = false)
 	@ColumnInfo(name = "tag_id") val id: Long,

@@ -1,5 +1,6 @@
 package com.arcadelabs.spiderlily.suggestions.domain
 
+import android.util.Log
 import com.arcadelabs.spiderlily_parser.model.Manga
 import com.arcadelabs.spiderlily_parser.model.MangaTag
 import com.arcadelabs.spiderlily_parser.util.almostEquals
@@ -18,6 +19,7 @@ class TagsBlacklist(
 		for (mangaTag in manga.tags) {
 			for (tagTitle in tags) {
 				if (mangaTag.title.almostEquals(tagTitle, threshold)) {
+					Log.d("TagsBlacklist", "Manga \"${manga.title}\" blacklisted by tag: $tagTitle")
 					return true
 				}
 			}
@@ -25,7 +27,11 @@ class TagsBlacklist(
 		return false
 	}
 
-	operator fun contains(tag: MangaTag): Boolean = tags.any {
-		it.almostEquals(tag.title, threshold)
+	operator fun contains(tag: MangaTag): Boolean = tags.any { tagTitle ->
+		val matches = tag.title.almostEquals(tagTitle, threshold)
+		if (matches) {
+			Log.d("TagsBlacklist", "Tag \"${tag.title}\" is blacklisted (matches: $tagTitle)")
+		}
+		matches
 	}
 }

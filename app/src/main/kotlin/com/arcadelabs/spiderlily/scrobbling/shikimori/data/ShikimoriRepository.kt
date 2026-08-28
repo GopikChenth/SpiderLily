@@ -221,4 +221,3 @@ class ShikimoriRepository @Inject constructor(
 		service = ScrobblerService.SHIKIMORI,
 	)
 }
-

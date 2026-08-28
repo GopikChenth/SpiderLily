@@ -130,7 +130,7 @@ val Manga.isBroken: Boolean
 	get() = source == UnknownMangaSource
 
 val Manga.appUrl: Uri
-	get() = "https://spiderlilyapp.pages.dev/manga".toUri()
+	get() = "https://futonapp.pages.dev/manga".toUri()
 		.buildUpon()
 		.appendQueryParameter("source", source.name)
 		.appendQueryParameter("name", title)
@@ -223,4 +223,3 @@ fun Manga.withOverride(override: MangaOverride?) = if (override != null) {
 } else {
 	this
 }
-

@@ -137,4 +137,3 @@ class TwoLinesItemView @JvmOverloads constructor(
 			?: ColorStateList.valueOf(Color.TRANSPARENT)
 	}
 }
-

@@ -36,8 +36,8 @@ android {
 		applicationId 'com.arcadelabs.spiderlily'
 		minSdk = 23
 		targetSdk = 36
-		versionCode project.hasProperty('versionCode') ? project.property('versionCode').toInteger() : 90700
-        versionName project.hasProperty('versionName') ? project.property('versionName') : '9.7'
+		versionCode project.hasProperty('versionCode') ? project.property('versionCode').toInteger() : 90801
+        versionName project.hasProperty('versionName') ? project.property('versionName') : '9.8.1'
         generatedDensities = []
 		testInstrumentationRunner 'com.arcadelabs.spiderlily.HiltTestRunner'
 		ksp {
@@ -216,6 +216,8 @@ dependencies {
 	implementation libs.okhttp.dnsoverhttps
 	implementation libs.okio
 	implementation libs.kotlinx.serialization.json
+	implementation libs.kotlinx.serialization.json.okio
+	implementation libs.kotlinx.serialization.protobuf
 
 	implementation libs.adapterdelegates
 	implementation libs.adapterdelegates.viewbinding
@@ -234,7 +236,8 @@ dependencies {
 	implementation libs.disk.lru.cache
 	implementation libs.markwon
 	implementation libs.kizzyrpc
-
+	implementation libs.konfetti.xml
+	implementation libs.konfetti.core
 	implementation libs.conscrypt.android
 	implementation libs.sentry.android
 
@@ -258,6 +261,7 @@ dependencies {
 	testImplementation libs.junit
 	testImplementation libs.json
 	testImplementation libs.kotlinx.coroutines.test
+	testImplementation 'org.mockito:mockito-core:5.12.0'
 
 	androidTestImplementation libs.androidx.runner
 	androidTestImplementation libs.androidx.rules

@@ -180,4 +180,3 @@ abstract class BaseActivity<B : ViewBinding> :
 
 	protected fun hasViewBinding() = ::viewBinding.isInitialized
 }
-

@@ -18,6 +18,14 @@ import com.arcadelabs.spiderlily.local.data.output.LocalMangaOutput
 import com.arcadelabs.spiderlily.local.data.output.LocalMangaUtil
 import com.arcadelabs.spiderlily.local.domain.MangaLock
 import com.arcadelabs.spiderlily.local.domain.model.LocalManga
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.channelFlow
+import kotlinx.coroutines.flow.firstOrNull
+import kotlinx.coroutines.flow.toCollection
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runInterruptible
 import com.arcadelabs.spiderlily_parser.model.ContentRating
 import com.arcadelabs.spiderlily_parser.model.Manga
 import com.arcadelabs.spiderlily_parser.model.MangaChapter
@@ -30,14 +38,6 @@ import com.arcadelabs.spiderlily_parser.model.SortOrder
 import com.arcadelabs.spiderlily_parser.util.levenshteinDistance
 import com.arcadelabs.spiderlily_parser.util.mapToSet
 import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.channelFlow
-import kotlinx.coroutines.flow.firstOrNull
-import kotlinx.coroutines.flow.toCollection
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runInterruptible
 import java.io.File
 import java.util.EnumSet
 import javax.inject.Inject
@@ -251,9 +251,9 @@ class LocalMangaRepository @Inject constructor(
 		}
 	}
 
-	private suspend fun getRawList(): ArrayList<LocalManga> = getRawListAsFlow().toCollection(ArrayList())
+	suspend fun getRawList(): ArrayList<LocalManga> = getRawListAsFlow().toCollection(ArrayList())
 
-	private suspend fun getAllFiles() = storageManager.getReadableDirs()
+	suspend fun getAllFiles() = storageManager.getReadableDirs()
 		.asSequence()
 		.flatMap { dir ->
 			dir.withChildren { children -> children.filterNot { it.isHidden || it.shouldSkip() }.toList() }

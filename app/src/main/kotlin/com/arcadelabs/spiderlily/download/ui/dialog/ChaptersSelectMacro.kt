@@ -4,6 +4,7 @@ import androidx.collection.ArraySet
 import androidx.collection.LongLongMap
 import com.arcadelabs.spiderlily_parser.model.MangaChapter
 import com.arcadelabs.spiderlily_parser.util.mapNotNullToSet
+import com.arcadelabs.spiderlily_parser.util.mapToSet
 
 interface ChaptersSelectMacro {
 
@@ -13,7 +14,8 @@ interface ChaptersSelectMacro {
 		val chaptersCount: Int,
 	) : ChaptersSelectMacro {
 
-		override fun getChaptersIds(mangaId: Long, chapters: List<MangaChapter>): Set<Long>? = null
+		override fun getChaptersIds(mangaId: Long, chapters: List<MangaChapter>): Set<Long> =
+			chapters.mapToSet { it.id }
 	}
 
 	class WholeBranch(

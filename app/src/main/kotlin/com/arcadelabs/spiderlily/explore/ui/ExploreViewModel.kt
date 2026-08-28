@@ -3,15 +3,6 @@ package com.arcadelabs.spiderlily.explore.ui
 import androidx.collection.LongSet
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.flatMapLatest
-import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.flow.mapLatest
-import kotlinx.coroutines.flow.stateIn
-import kotlinx.coroutines.plus
 import com.arcadelabs.spiderlily.R
 import com.arcadelabs.spiderlily.core.model.MangaSourceInfo
 import com.arcadelabs.spiderlily.core.os.AppShortcutManager
@@ -33,10 +24,19 @@ import com.arcadelabs.spiderlily.list.ui.model.ListHeader
 import com.arcadelabs.spiderlily.list.ui.model.ListModel
 import com.arcadelabs.spiderlily.list.ui.model.LoadingState
 import com.arcadelabs.spiderlily.list.ui.model.MangaCompactListModel
+import com.arcadelabs.spiderlily.suggestions.domain.SuggestionRepository
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.flow.mapLatest
+import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.plus
 import com.arcadelabs.spiderlily_parser.model.Manga
 import com.arcadelabs.spiderlily_parser.model.MangaSource
 import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
-import com.arcadelabs.spiderlily.suggestions.domain.SuggestionRepository
 import javax.inject.Inject
 
 @HiltViewModel
@@ -196,13 +196,23 @@ class ExploreViewModel @Inject constructor(
 		}
 	}
 
-	private fun List<Manga>.toRecommendationList() = map { manga ->
+	private fun List<Manga>.toRecommendationList() = skipBlacklistedTags().map { manga ->
 		MangaCompactListModel(
 			manga = manga,
 			override = null,
 			subtitle = manga.tags.joinToString { it.title },
 			counter = 0,
 		)
+	}
+
+	private fun List<Manga>.skipBlacklistedTags(): List<Manga> {
+		val blacklist = settings.tagsBlacklist
+		if (blacklist.isEmpty()) {
+			return this
+		}
+		return filterNot { manga ->
+			manga.tags.any { it.title.lowercase() in blacklist }
+		}
 	}
 
 	companion object {

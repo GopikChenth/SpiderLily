@@ -7,25 +7,6 @@ import androidx.annotation.WorkerThread
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.CancellationException
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.cancelAndJoin
-import kotlinx.coroutines.ensureActive
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.SharedFlow
-import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.filterNotNull
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.flatMapLatest
-import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.flow.flowOn
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.mapNotNull
-import kotlinx.coroutines.flow.stateIn
-import kotlinx.coroutines.flow.update
-import kotlinx.coroutines.plus
 import com.arcadelabs.spiderlily.R
 import com.arcadelabs.spiderlily.bookmarks.domain.Bookmark
 import com.arcadelabs.spiderlily.bookmarks.domain.BookmarksRepository
@@ -58,12 +39,6 @@ import com.arcadelabs.spiderlily.list.domain.ReadingProgress.Companion.PROGRESS_
 import com.arcadelabs.spiderlily.local.data.LocalStorageChanges
 import com.arcadelabs.spiderlily.local.domain.DeleteLocalMangaUseCase
 import com.arcadelabs.spiderlily.local.domain.model.LocalManga
-import com.arcadelabs.spiderlily_parser.model.ContentRating
-import com.arcadelabs.spiderlily_parser.model.Manga
-import com.arcadelabs.spiderlily_parser.model.MangaPage
-import com.arcadelabs.spiderlily_parser.util.ifNullOrEmpty
-import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
-import com.arcadelabs.spiderlily_parser.util.sizeOrZero
 import com.arcadelabs.spiderlily.reader.domain.ChaptersLoader
 import com.arcadelabs.spiderlily.reader.domain.DetectReaderModeUseCase
 import com.arcadelabs.spiderlily.reader.domain.PageLoader
@@ -71,9 +46,32 @@ import com.arcadelabs.spiderlily.reader.ui.config.ReaderSettings
 import com.arcadelabs.spiderlily.reader.ui.pager.ReaderUiState
 import com.arcadelabs.spiderlily.scrobbling.discord.ui.DiscordRpc
 import com.arcadelabs.spiderlily.stats.domain.StatsCollector
-import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.cancelAndJoin
+import kotlinx.coroutines.ensureActive
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.filterNotNull
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.mapNotNull
+import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.plus
+import com.arcadelabs.spiderlily_parser.model.ContentRating
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaPage
+import com.arcadelabs.spiderlily_parser.util.ifNullOrEmpty
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
+import com.arcadelabs.spiderlily_parser.util.sizeOrZero
 import java.time.Instant
 import javax.inject.Inject
 
@@ -100,6 +98,9 @@ class ReaderViewModel @Inject constructor(
     interactor: DetailsInteractor,
     deleteLocalMangaUseCase: DeleteLocalMangaUseCase,
     downloadScheduler: DownloadWorker.Scheduler,
+    downloadQueueRepository: com.arcadelabs.spiderlily.download.data.repository.DownloadQueueRepository,
+    addUnreadToQueueUseCase: com.arcadelabs.spiderlily.download.domain.usecase.AddUnreadToQueueUseCase,
+    workManager: androidx.work.WorkManager,
     readerSettingsProducerFactory: ReaderSettings.Producer.Factory,
 ) : ChaptersPagesViewModel(
     settings = settings,
@@ -107,6 +108,9 @@ class ReaderViewModel @Inject constructor(
     bookmarksRepository = bookmarksRepository,
     historyRepository = historyRepository,
     downloadScheduler = downloadScheduler,
+    downloadQueueRepository = downloadQueueRepository,
+    addUnreadToQueueUseCase = addUnreadToQueueUseCase,
+    workManager = workManager,
     deleteLocalMangaUseCase = deleteLocalMangaUseCase,
     localStorageChanges = localStorageChanges,
 ) {
@@ -350,8 +354,12 @@ class ReaderViewModel @Inject constructor(
             }
             val centerPos = (lowerPos + upperPos) / 2
             pages.getOrNull(centerPos)?.let { page ->
+                val oldChapterId = readingState.value?.chapterId
                 readingState.update { cs ->
                     cs?.copy(chapterId = page.chapterId, page = page.index)
+                }
+                if (oldChapterId != null && oldChapterId != page.chapterId) {
+                    saveCurrentState()
                 }
             }
             notifyStateChanged()

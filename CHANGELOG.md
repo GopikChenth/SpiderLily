@@ -4,7 +4,57 @@ All notable changes to this project are documented in this file.
 
 The format is based on "Keep a Changelog" and follows semantic versioning where possible.
 
-## [Unreleased]
+## 9.8.1
+Date: 2026-08-16
+
+### Highlights
+- New mihon source settings feature
+- Support for multiple extension repo
+- Support for .pb files in extension manager
+
+### Fixes
+- Fixed extension manager updates error
+
+### Maintenance
+- Updated parsers and dependencies
+
+## 9.8
+Date: 2026-07-18
+
+### Highlights
+- Tag blacklisting in search
+- Download queue
+- Smart Downloads
+- Chapter deletion from downloads menu
+
+### Fixes
+- Fixed downloads from imported sources not working
+
+### Maintenance
+- Updated parsers and dependencies
+
+---
+
+## 9.7.1
+Date: 2026-06-30
+
+### Highlights
+- Mihon sources usability improved
+- Performance improvements
+- added option to add bulk manga to favorites
+- added merge option for backup restoration
+- Added an Easter egg :O
+### Fixes
+- Fixed the bug where Mihon sources could not be unpinned or disabled and stayed permanently pinned. Now they work the same as any other source.
+- Fixed a bug where downloaded manga won't be used instead manga is fetched all times. Now if local manga present, the local manga will be used.
+- hide spinner on main-frame load errors in BrowserClient
+- Fix app crashes on android 6
+
+### Maintenance
+- Updated parsers and dependencies
+
+---
+
 ## 9.7
 Date: 2026-04-27
 

@@ -8,6 +8,29 @@ import androidx.collection.set
 import androidx.lifecycle.viewModelScope
 import androidx.work.WorkInfo
 import dagger.hilt.android.lifecycle.HiltViewModel
+import com.arcadelabs.spiderlily.R
+import com.arcadelabs.spiderlily.core.parser.MangaDataRepository
+import com.arcadelabs.spiderlily.core.parser.MangaRepository
+import com.arcadelabs.spiderlily.core.ui.BaseViewModel
+import com.arcadelabs.spiderlily.core.ui.model.DateTimeAgo
+import com.arcadelabs.spiderlily.core.ui.util.ReversibleAction
+import com.arcadelabs.spiderlily.core.util.ext.MutableEventFlow
+import com.arcadelabs.spiderlily.core.util.ext.calculateTimeAgo
+import com.arcadelabs.spiderlily.core.util.ext.call
+import com.arcadelabs.spiderlily.core.util.ext.isEmpty
+import com.arcadelabs.spiderlily.core.util.ext.printStackTraceDebug
+import com.arcadelabs.spiderlily.download.domain.DownloadState
+import com.arcadelabs.spiderlily.download.ui.list.chapters.DownloadChapter
+import com.arcadelabs.spiderlily.download.ui.worker.DownloadWorker
+import com.arcadelabs.spiderlily.list.ui.model.EmptyState
+import com.arcadelabs.spiderlily.list.ui.model.ListHeader
+import com.arcadelabs.spiderlily.list.ui.model.ListModel
+import com.arcadelabs.spiderlily.list.ui.model.LoadingState
+import com.arcadelabs.spiderlily.local.data.LocalMangaRepository
+import com.arcadelabs.spiderlily.local.data.LocalStorageChanges
+import com.arcadelabs.spiderlily.local.domain.DeleteLocalMangaUseCase
+import com.arcadelabs.spiderlily.local.domain.EnforceStorageQuotaUseCase
+import com.arcadelabs.spiderlily.local.domain.model.LocalManga
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -21,26 +44,6 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.plus
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
-import com.arcadelabs.spiderlily.R
-import com.arcadelabs.spiderlily.core.parser.MangaDataRepository
-import com.arcadelabs.spiderlily.core.parser.MangaRepository
-import com.arcadelabs.spiderlily.core.ui.BaseViewModel
-import com.arcadelabs.spiderlily.core.ui.model.DateTimeAgo
-import com.arcadelabs.spiderlily.core.ui.util.ReversibleAction
-import com.arcadelabs.spiderlily.core.util.ext.MutableEventFlow
-import com.arcadelabs.spiderlily.core.util.ext.calculateTimeAgo
-import com.arcadelabs.spiderlily.core.util.ext.call
-import com.arcadelabs.spiderlily.core.util.ext.isEmpty
-import com.arcadelabs.spiderlily.download.domain.DownloadState
-import com.arcadelabs.spiderlily.download.ui.list.chapters.DownloadChapter
-import com.arcadelabs.spiderlily.download.ui.worker.DownloadWorker
-import com.arcadelabs.spiderlily.list.ui.model.EmptyState
-import com.arcadelabs.spiderlily.list.ui.model.ListHeader
-import com.arcadelabs.spiderlily.list.ui.model.ListModel
-import com.arcadelabs.spiderlily.list.ui.model.LoadingState
-import com.arcadelabs.spiderlily.local.data.LocalMangaRepository
-import com.arcadelabs.spiderlily.local.data.LocalStorageChanges
-import com.arcadelabs.spiderlily.local.domain.model.LocalManga
 import com.arcadelabs.spiderlily_parser.model.Manga
 import com.arcadelabs.spiderlily_parser.util.mapToSet
 import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
@@ -55,7 +58,11 @@ class DownloadsViewModel @Inject constructor(
 	private val mangaRepositoryFactory: MangaRepository.Factory,
 	@LocalStorageChanges private val localStorageChanges: MutableSharedFlow<LocalManga?>,
 	private val localMangaRepository: LocalMangaRepository,
+	private val enforceStorageQuotaUseCase: EnforceStorageQuotaUseCase,
+	private val deleteLocalMangaUseCase: DeleteLocalMangaUseCase,
 ) : BaseViewModel() {
+
+	val storageUsage = MutableStateFlow<EnforceStorageQuotaUseCase.StorageUsage?>(null)
 
 	private val mangaCache = LongSparseArray<Manga>()
 	private val cacheMutex = Mutex()
@@ -161,24 +168,61 @@ class DownloadsViewModel @Inject constructor(
 		onActionDone.call(ReversibleAction(R.string.downloads_resumed, null))
 	}
 
-	fun remove(ids: Set<Long>) {
+	fun remove(ids: Set<Long>, deleteFiles: Boolean) {
 		launchJob(Dispatchers.IO) {
 			val snapshot = works.value ?: return@launchJob
 			val uuids = HashSet<UUID>(ids.size)
 			for (work in snapshot) {
 				if (work.id.mostSignificantBits in ids) {
 					uuids.add(work.id)
+					if (deleteFiles) {
+						val manga = work.manga ?: continue
+						runCatchingCancellable {
+							deleteLocalMangaUseCase(manga)
+						}.onFailure {
+							it.printStackTraceDebug("DownloadsViewModel::remove")
+						}
+					}
 				}
 			}
 			workScheduler.delete(uuids)
 			onActionDone.call(ReversibleAction(R.string.downloads_removed, null))
+			refreshStorageUsage()
 		}
 	}
 
-	fun removeCompleted() {
+	fun removeCompleted(deleteFiles: Boolean) {
 		launchJob(Dispatchers.IO) {
+			if (deleteFiles) {
+				val snapshot = works.value ?: return@launchJob
+				for (work in snapshot) {
+					if (work.workState.isFinished) {
+						val manga = work.manga ?: continue
+						runCatchingCancellable {
+							deleteLocalMangaUseCase(manga)
+						}.onFailure {
+							it.printStackTraceDebug("DownloadsViewModel::removeCompleted")
+						}
+					}
+				}
+			}
 			workScheduler.removeCompleted()
 			onActionDone.call(ReversibleAction(R.string.downloads_removed, null))
+			refreshStorageUsage()
+		}
+	}
+
+	fun deleteChapter(item: DownloadItemModel, chapter: DownloadChapter) {
+		val manga = item.manga ?: return
+		launchJob(Dispatchers.IO) {
+			localMangaRepository.deleteChapters(manga, setOf(chapter.id))
+			refreshStorageUsage()
+		}
+	}
+
+	fun refreshStorageUsage() {
+		launchJob(Dispatchers.IO) {
+			storageUsage.value = enforceStorageQuotaUseCase.getUsage()
 		}
 	}
 
@@ -312,6 +356,7 @@ class DownloadsViewModel @Inject constructor(
 			return chapters.mapNotNullTo(ArrayList(size)) {
 				if (chapterIds == null || it.id in chapterIds) {
 					DownloadChapter(
+						id = it.id,
 						number = it.numberString(),
 						name = it.name,
 						isDownloaded = it.id in localChapters,

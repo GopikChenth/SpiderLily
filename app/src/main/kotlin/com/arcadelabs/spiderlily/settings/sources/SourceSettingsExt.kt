@@ -6,23 +6,36 @@ import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SwitchPreferenceCompat
+import eu.kanade.tachiyomi.source.ConfigurableSource
 import com.arcadelabs.spiderlily.R
 import com.arcadelabs.spiderlily.core.parser.EmptyMangaRepository
 import com.arcadelabs.spiderlily.core.parser.MangaRepository
 import com.arcadelabs.spiderlily.core.parser.ParserMangaRepository
-import com.arcadelabs.spiderlily_parser.config.ConfigKey
-import com.arcadelabs.spiderlily_parser.network.UserAgents
-import com.arcadelabs.spiderlily_parser.util.mapToArray
+import com.arcadelabs.spiderlily.core.util.ext.printStackTraceDebug
+import com.arcadelabs.spiderlily.mihon.MihonMangaRepository
 import com.arcadelabs.spiderlily.settings.utils.AutoCompleteTextViewPreference
 import com.arcadelabs.spiderlily.settings.utils.EditTextBindListener
 import com.arcadelabs.spiderlily.settings.utils.EditTextDefaultSummaryProvider
 import com.arcadelabs.spiderlily.settings.utils.validation.DomainValidator
 import com.arcadelabs.spiderlily.settings.utils.validation.HeaderValidator
+import com.arcadelabs.spiderlily_parser.config.ConfigKey
+import com.arcadelabs.spiderlily_parser.network.UserAgents
+import com.arcadelabs.spiderlily_parser.util.mapToArray
 
 fun PreferenceFragmentCompat.addPreferencesFromRepository(repository: MangaRepository) = when (repository) {
 	is ParserMangaRepository -> addPreferencesFromParserRepository(repository)
+	is MihonMangaRepository -> addPreferencesFromMihonRepository(repository)
 	is EmptyMangaRepository -> addPreferencesFromEmptyRepository()
 	else -> Unit
+}
+
+private fun PreferenceFragmentCompat.addPreferencesFromMihonRepository(repository: MihonMangaRepository) {
+	val configurableSource = repository.mihonSource as? ConfigurableSource ?: return
+	runCatching {
+		configurableSource.setupPreferenceScreen(preferenceScreen)
+	}.onFailure {
+		it.printStackTraceDebug()
+	}
 }
 
 private fun PreferenceFragmentCompat.addPreferencesFromParserRepository(repository: ParserMangaRepository) {

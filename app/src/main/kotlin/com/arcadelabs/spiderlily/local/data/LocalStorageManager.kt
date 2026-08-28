@@ -13,10 +13,6 @@ import androidx.annotation.WorkerThread
 import androidx.core.content.ContextCompat
 import androidx.core.net.toFile
 import dagger.Reusable
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.runInterruptible
-import kotlinx.coroutines.withContext
-import okhttp3.Cache
 import com.arcadelabs.spiderlily.core.LocalizedAppContext
 import com.arcadelabs.spiderlily.core.exceptions.NonFileUriException
 import com.arcadelabs.spiderlily.core.prefs.AppSettings
@@ -27,6 +23,11 @@ import com.arcadelabs.spiderlily.core.util.ext.isReadable
 import com.arcadelabs.spiderlily.core.util.ext.isWriteable
 import com.arcadelabs.spiderlily.core.util.ext.resolveFile
 import com.arcadelabs.spiderlily.core.util.ext.takeIfWriteable
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.runInterruptible
+import kotlinx.coroutines.withContext
+import okhttp3.Cache
 import com.arcadelabs.spiderlily_parser.util.mapToSet
 import java.io.File
 import javax.inject.Inject
@@ -91,6 +92,13 @@ class LocalStorageManager @Inject constructor(
 
 	suspend fun getApplicationStorageDirs(): Set<File> = runInterruptible(Dispatchers.IO) {
 		getAvailableStorageDirs()
+	}
+
+	@WorkerThread
+	fun getTotalBytesUsedByDownloads(): Long {
+		return runBlocking {
+			getConfiguredStorageDirs().sumOf { it.computeSize() }
+		}
 	}
 
 	suspend fun resolveUri(uri: Uri): File = runInterruptible(Dispatchers.IO) {

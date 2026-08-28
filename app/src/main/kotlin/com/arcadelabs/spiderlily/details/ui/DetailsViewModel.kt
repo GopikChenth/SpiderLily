@@ -3,21 +3,6 @@ package com.arcadelabs.spiderlily.details.ui
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.SharedFlow
-import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.flow.firstOrNull
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.mapLatest
-import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.flow.onStart
-import kotlinx.coroutines.flow.stateIn
-import kotlinx.coroutines.plus
 import com.arcadelabs.spiderlily.R
 import com.arcadelabs.spiderlily.bookmarks.domain.BookmarksRepository
 import com.arcadelabs.spiderlily.core.model.getPreferredBranch
@@ -46,14 +31,29 @@ import com.arcadelabs.spiderlily.list.ui.model.MangaListModel
 import com.arcadelabs.spiderlily.local.data.LocalStorageChanges
 import com.arcadelabs.spiderlily.local.domain.DeleteLocalMangaUseCase
 import com.arcadelabs.spiderlily.local.domain.model.LocalManga
-import com.arcadelabs.spiderlily_parser.model.Manga
-import com.arcadelabs.spiderlily_parser.util.findById
-import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import com.arcadelabs.spiderlily.reader.ui.ReaderState
 import com.arcadelabs.spiderlily.scrobbling.common.domain.Scrobbler
 import com.arcadelabs.spiderlily.scrobbling.common.domain.model.ScrobblingInfo
 import com.arcadelabs.spiderlily.scrobbling.common.domain.model.ScrobblingStatus
 import com.arcadelabs.spiderlily.stats.data.StatsRepository
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.firstOrNull
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.mapLatest
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.onStart
+import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.plus
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.util.findById
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import javax.inject.Inject
 import javax.inject.Provider
 
@@ -65,6 +65,9 @@ class DetailsViewModel @Inject constructor(
 	private val scrobblersProvider: Provider<Set<@JvmSuppressWildcards Scrobbler>>,
 	@LocalStorageChanges localStorageChanges: SharedFlow<LocalManga?>,
 	downloadScheduler: DownloadWorker.Scheduler,
+	downloadQueueRepository: com.arcadelabs.spiderlily.download.data.repository.DownloadQueueRepository,
+	addUnreadToQueueUseCase: com.arcadelabs.spiderlily.download.domain.usecase.AddUnreadToQueueUseCase,
+	workManager: androidx.work.WorkManager,
 	interactor: DetailsInteractor,
 	savedStateHandle: SavedStateHandle,
 	deleteLocalMangaUseCase: DeleteLocalMangaUseCase,
@@ -80,6 +83,9 @@ class DetailsViewModel @Inject constructor(
 	bookmarksRepository = bookmarksRepository,
 	historyRepository = historyRepository,
 	downloadScheduler = downloadScheduler,
+	downloadQueueRepository = downloadQueueRepository,
+	addUnreadToQueueUseCase = addUnreadToQueueUseCase,
+	workManager = workManager,
 	deleteLocalMangaUseCase = deleteLocalMangaUseCase,
 	localStorageChanges = localStorageChanges,
 ) {

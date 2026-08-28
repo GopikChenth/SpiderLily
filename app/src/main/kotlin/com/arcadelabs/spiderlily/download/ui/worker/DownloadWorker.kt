@@ -5,6 +5,7 @@ import android.app.NotificationManager
 import android.content.Context
 import android.content.pm.ServiceInfo
 import android.os.Build
+import android.util.Log
 import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
 import androidx.hilt.work.HiltWorker
@@ -33,6 +34,7 @@ import com.arcadelabs.spiderlily.core.network.imageproxy.ImageProxyInterceptor
 import com.arcadelabs.spiderlily.core.parser.MangaDataRepository
 import com.arcadelabs.spiderlily.core.parser.MangaRepository
 import com.arcadelabs.spiderlily.core.prefs.AppSettings
+import com.arcadelabs.spiderlily.core.util.BandwidthLimiter
 import com.arcadelabs.spiderlily.core.util.MimeTypes
 import com.arcadelabs.spiderlily.core.util.Throttler
 import com.arcadelabs.spiderlily.core.util.ext.MimeType
@@ -63,16 +65,9 @@ import com.arcadelabs.spiderlily.local.data.PageCache
 import com.arcadelabs.spiderlily.local.data.TempFileFilter
 import com.arcadelabs.spiderlily.local.data.input.LocalMangaParser
 import com.arcadelabs.spiderlily.local.data.output.LocalMangaOutput
+import com.arcadelabs.spiderlily.local.domain.DeleteReadChaptersUseCase
 import com.arcadelabs.spiderlily.local.domain.MangaLock
 import com.arcadelabs.spiderlily.local.domain.model.LocalManga
-import com.arcadelabs.spiderlily_parser.exception.TooManyRequestExceptions
-import com.arcadelabs.spiderlily_parser.model.Manga
-import com.arcadelabs.spiderlily_parser.model.MangaChapter
-import com.arcadelabs.spiderlily_parser.model.MangaSource
-import com.arcadelabs.spiderlily_parser.util.ifNullOrEmpty
-import com.arcadelabs.spiderlily_parser.util.mapToSet
-import com.arcadelabs.spiderlily_parser.util.requireBody
-import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import com.arcadelabs.spiderlily.reader.domain.PageLoader
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
@@ -93,6 +88,14 @@ import okio.IOException
 import okio.buffer
 import okio.sink
 import okio.use
+import com.arcadelabs.spiderlily_parser.exception.TooManyRequestExceptions
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaChapter
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.util.ifNullOrEmpty
+import com.arcadelabs.spiderlily_parser.util.mapToSet
+import com.arcadelabs.spiderlily_parser.util.requireBody
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import java.io.File
 import java.util.UUID
 import java.util.concurrent.TimeUnit
@@ -110,6 +113,8 @@ class DownloadWorker @AssistedInject constructor(
 	private val mangaDataRepository: MangaDataRepository,
 	private val mangaRepositoryFactory: MangaRepository.Factory,
 	private val settings: AppSettings,
+	private val deleteReadChaptersUseCase: DeleteReadChaptersUseCase,
+	private val enforceStorageQuotaUseCase: com.arcadelabs.spiderlily.local.domain.EnforceStorageQuotaUseCase,
 	@LocalStorageChanges private val localStorageChanges: MutableSharedFlow<LocalManga?>,
 	private val slowdownDispatcher: DownloadSlowdownDispatcher,
 	private val imageProxyInterceptor: ImageProxyInterceptor,
@@ -119,6 +124,7 @@ class DownloadWorker @AssistedInject constructor(
 	private val task = DownloadTask(params.inputData)
 	private val notificationFactory = notificationFactoryFactory.create(uuid = params.id, isSilent = task.isSilent)
 	private val notificationManager = appContext.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+	private val bandwidthLimiter = BandwidthLimiter { settings.downloadBandwidthLimit * 1024 }
 
 	@Volatile
 	private var lastPublishedState: DownloadState? = null
@@ -129,8 +135,12 @@ class DownloadWorker @AssistedInject constructor(
 	private val notificationThrottler = Throttler(400)
 
 	override suspend fun doWork(): Result {
+		Log.d("DownloadWorker", "Starting work for mangaId: ${task.mangaId}, taskId: $id")
 		setForeground(getForegroundInfo())
-		val manga = mangaDataRepository.findMangaById(task.mangaId, withChapters = true) ?: return Result.failure()
+		val manga = mangaDataRepository.findMangaById(task.mangaId, withChapters = true) ?: run {
+			Log.e("DownloadWorker", "Manga not found: ${task.mangaId}")
+			return Result.failure()
+		}
 		publishState(DownloadState(manga = manga, isIndeterminate = true).also { lastPublishedState = it })
 		val downloadedIds = getDoneChapters(manga)
 		return try {
@@ -141,8 +151,10 @@ class DownloadWorker @AssistedInject constructor(
 			withContext(pausingHandle) {
 				downloadMangaImpl(manga, task, downloadedIds)
 			}
+			Log.d("DownloadWorker", "Work finished successfully for manga: ${manga.title}")
 			Result.success(currentState.toWorkData())
-		} catch (_: CancellationException) {
+		} catch (e: CancellationException) {
+			Log.w("DownloadWorker", "Work cancelled for manga: ${manga.title}")
 			withContext(NonCancellable) {
 				val notification = notificationFactory.create(currentState.copy(isStopped = true))
 				notificationManager.notify(id.hashCode(), notification)
@@ -151,6 +163,7 @@ class DownloadWorker @AssistedInject constructor(
 				currentState.copy(eta = -1L, isStuck = false).toWorkData(),
 			)
 		} catch (e: Exception) {
+			Log.e("DownloadWorker", "Work failed for manga: ${manga.title}", e)
 			e.printStackTraceDebug("DownloadWorker::doWork")
 			Result.failure(
 				currentState.copy(
@@ -162,6 +175,8 @@ class DownloadWorker @AssistedInject constructor(
 			)
 		} finally {
 			notificationManager.cancel(id.hashCode())
+			Log.d("DownloadWorker", "Triggering scheduler from finally block")
+			DownloadSchedulerWorker.enqueue(WorkManager.getInstance(applicationContext), delay = 1000)
 		}
 	}
 
@@ -271,8 +286,25 @@ class DownloadWorker @AssistedInject constructor(
 						)
 					}
 					if (output.flushChapter(chapter.value)) {
+						Log.d("DownloadWorker", "Flushed chapter ${chapter.value.title} for ${manga.title}")
 						runCatchingCancellable {
 							localStorageChanges.emit(LocalMangaParser(output.rootFile).getManga(withDetails = false))
+						}.onFailure(Throwable::printStackTraceDebug)
+
+						runCatchingCancellable {
+							if (settings.isAutoDownloadNextChapterEnabled) {
+								Log.d("DownloadWorker", "Triggering smart cleanup for ${manga.title}")
+								val deletedCount = deleteReadChaptersUseCase(manga, oldestOnly = true, ignoreFavorite = true)
+								Log.d("DownloadWorker", "Smart cleanup deleted $deletedCount chapters for ${manga.title}")
+							}
+							if (settings.downloadStorageQuota > 0) {
+								Log.d("DownloadWorker", "Enforcing storage quota")
+								if (!enforceStorageQuotaUseCase()) {
+									Log.w("DownloadWorker", "Storage quota reached and cannot be enforced further. Pausing.")
+									applicationContext.sendBroadcast(PausingReceiver.getPauseIntent(applicationContext, id))
+									return@runCatchingCancellable
+								}
+							}
 						}.onFailure(Throwable::printStackTraceDebug)
 					}
 					publishState(currentState.copy(downloadedChapters = currentState.downloadedChapters + 1))
@@ -386,7 +418,7 @@ class DownloadWorker @AssistedInject constructor(
 			try {
 				cr.openSource(uri).use { input ->
 					file.sink(append = false).buffer().use {
-						it.writeAllCancellable(input)
+						it.writeAllCancellable(input, bandwidthLimiter)
 					}
 				}
 			} catch (e: Exception) {
@@ -407,7 +439,7 @@ class DownloadWorker @AssistedInject constructor(
 							ext = MimeTypes.getExtension(body.contentType()?.toMimeType())
 						)
 						file.sink(append = false).buffer().use {
-							it.writeAllCancellable(body.source())
+							it.writeAllCancellable(body.source(), bandwidthLimiter)
 						}
 					}
 				} catch (e: Exception) {
@@ -485,8 +517,12 @@ class DownloadWorker @AssistedInject constructor(
 	class Scheduler @Inject constructor(
 		@ApplicationContext private val context: Context,
 		private val mangaDataRepository: MangaDataRepository,
-		private val workManager: WorkManager,
+		val workManager: WorkManager,
 	) {
+
+		fun triggerScheduler() {
+			DownloadSchedulerWorker.enqueue(workManager)
+		}
 
 		fun observeWorks(): Flow<List<WorkInfo>> = workManager
 			.getWorkInfosByTagFlow(TAG)
@@ -544,17 +580,22 @@ class DownloadWorker @AssistedInject constructor(
 		}
 
 		suspend fun updateConstraints(allowMeteredNetwork: Boolean) {
-			val constraints = createConstraints(allowMeteredNetwork)
 			val works = workManager.awaitWorkInfosByTag(TAG)
 			for (work in works) {
 				if (work.state.isFinished) {
 					continue
 				}
+				val task = getTask(work.id) ?: continue
+				val constraints = createConstraints(allowMeteredNetwork, task.requiresCharging)
 				val request = OneTimeWorkRequestBuilder<DownloadWorker>()
 					.setConstraints(constraints)
 					.addTag(TAG)
 					.setId(work.id)
-					.setExpedited(OutOfQuotaPolicy.RUN_AS_NON_EXPEDITED_WORK_REQUEST)
+					.apply {
+						if (!task.requiresCharging) {
+							setExpedited(OutOfQuotaPolicy.RUN_AS_NON_EXPEDITED_WORK_REQUEST)
+						}
+					}
 					.build()
 				workManager.awaitUpdateWork(request)
 			}
@@ -567,23 +608,28 @@ class DownloadWorker @AssistedInject constructor(
 			val requests = tasks.map { (manga, task) ->
 				mangaDataRepository.storeManga(manga, replaceExisting = true)
 				OneTimeWorkRequestBuilder<DownloadWorker>()
-					.setConstraints(createConstraints(task.allowMeteredNetwork))
+					.setConstraints(createConstraints(task.allowMeteredNetwork, task.requiresCharging))
 					.addTag(TAG)
 					.keepResultsForAtLeast(30, TimeUnit.DAYS)
 					.setBackoffCriteria(BackoffPolicy.LINEAR, 10, TimeUnit.SECONDS)
 					.setInputData(task.toData())
-					.setExpedited(OutOfQuotaPolicy.RUN_AS_NON_EXPEDITED_WORK_REQUEST)
+					.apply {
+						if (!task.requiresCharging) {
+							setExpedited(OutOfQuotaPolicy.RUN_AS_NON_EXPEDITED_WORK_REQUEST)
+						}
+					}
 					.build()
 			}
 			workManager.enqueue(requests).await()
 		}
 
-		private fun createConstraints(allowMeteredNetwork: Boolean) = Constraints.Builder()
+		private fun createConstraints(allowMeteredNetwork: Boolean, requiresCharging: Boolean) = Constraints.Builder()
 			.setRequiredNetworkType(if (allowMeteredNetwork) NetworkType.CONNECTED else NetworkType.UNMETERED)
+			.setRequiresCharging(requiresCharging)
 			.build()
 	}
 
-	private companion object {
+	companion object {
 
 		const val MAX_FAILSAFE_ATTEMPTS = 2
 		const val MAX_PAGES_PARALLELISM = 4

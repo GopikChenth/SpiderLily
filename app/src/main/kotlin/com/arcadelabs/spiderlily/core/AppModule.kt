@@ -25,11 +25,6 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import dagger.multibindings.ElementsIntoSet
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.SharedFlow
-import kotlinx.coroutines.flow.asSharedFlow
-import okhttp3.OkHttpClient
 import com.arcadelabs.spiderlily.BuildConfig
 import com.arcadelabs.spiderlily.backups.domain.BackupObserver
 import com.arcadelabs.spiderlily.core.db.MangaDatabase
@@ -46,7 +41,6 @@ import com.arcadelabs.spiderlily.core.parser.favicon.FaviconFetcher
 import com.arcadelabs.spiderlily.core.prefs.AppSettings
 import com.arcadelabs.spiderlily.core.ui.image.CoilImageGetter
 import com.arcadelabs.spiderlily.core.ui.util.ActivityRecreationHandle
-
 import com.arcadelabs.spiderlily.core.util.FileSize
 import com.arcadelabs.spiderlily.core.util.ext.connectivityManager
 import com.arcadelabs.spiderlily.core.util.ext.isLowRamDevice
@@ -61,10 +55,15 @@ import com.arcadelabs.spiderlily.local.domain.model.LocalManga
 import com.arcadelabs.spiderlily.main.domain.CoverRestoreInterceptor
 import com.arcadelabs.spiderlily.main.ui.protect.AppProtectHelper
 import com.arcadelabs.spiderlily.main.ui.protect.ScreenshotPolicyHelper
-import com.arcadelabs.spiderlily_parser.MangaLoaderContext
 import com.arcadelabs.spiderlily.search.ui.MangaSuggestionsProvider
 import com.arcadelabs.spiderlily.sync.domain.SyncController
 import com.arcadelabs.spiderlily.widget.WidgetUpdater
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.asSharedFlow
+import okhttp3.OkHttpClient
+import com.arcadelabs.spiderlily_parser.MangaLoaderContext
 import javax.inject.Provider
 import javax.inject.Singleton
 
@@ -196,6 +195,16 @@ interface AppModule {
 		fun provideWorkManager(
 			@ApplicationContext context: Context,
 		): WorkManager = WorkManager.getInstance(context)
+
+		@Provides
+		fun provideDownloadQueueDao(
+			database: MangaDatabase,
+		): com.arcadelabs.spiderlily.download.data.dao.DownloadQueueDao = database.getDownloadQueueDao()
+
+		@Provides
+		fun provideMangaDao(
+			database: MangaDatabase,
+		): com.arcadelabs.spiderlily.core.db.dao.MangaDao = database.getMangaDao()
 
 		@Provides
 		@Singleton

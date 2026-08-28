@@ -1,6 +1,7 @@
 package com.arcadelabs.spiderlily.download.ui.list
 
 import com.arcadelabs.spiderlily.core.ui.list.OnListItemClickListener
+import com.arcadelabs.spiderlily.download.ui.list.chapters.DownloadChapter
 
 interface DownloadItemListener : OnListItemClickListener<DownloadItemModel> {
 
@@ -15,4 +16,6 @@ interface DownloadItemListener : OnListItemClickListener<DownloadItemModel> {
 	fun onSkipAllClick(item: DownloadItemModel)
 
 	fun onExpandClick(item: DownloadItemModel)
+
+	fun onDeleteChapterClick(item: DownloadItemModel, chapter: DownloadChapter)
 }

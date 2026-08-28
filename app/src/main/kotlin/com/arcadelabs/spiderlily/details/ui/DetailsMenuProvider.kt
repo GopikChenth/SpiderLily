@@ -13,7 +13,6 @@ import androidx.core.view.MenuProvider
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.coroutines.launch
 import com.arcadelabs.spiderlily.R
 import com.arcadelabs.spiderlily.core.model.LocalMangaSource
 import com.arcadelabs.spiderlily.core.nav.AppRouter
@@ -21,6 +20,7 @@ import com.arcadelabs.spiderlily.core.nav.router
 import com.arcadelabs.spiderlily.core.os.AppShortcutManager
 import com.arcadelabs.spiderlily.core.ui.dialog.buildAlertDialog
 import com.arcadelabs.spiderlily.core.util.ext.isHttpUrl
+import kotlinx.coroutines.launch
 
 class DetailsMenuProvider(
 	private val activity: FragmentActivity,
@@ -42,10 +42,11 @@ class DetailsMenuProvider(
 	}
 
 	override fun onPrepareMenu(menu: Menu) {
-		val manga = viewModel.manga.value
+		val mangaDetails = viewModel.mangaDetails.value
+		val manga = mangaDetails?.toManga()
 		menu.findItem(R.id.action_share).isVisible = manga != null && AppRouter.isShareSupported(manga)
 		menu.findItem(R.id.action_save).isVisible = manga?.source != null && manga.source != LocalMangaSource
-		menu.findItem(R.id.action_delete).isVisible = manga?.source == LocalMangaSource
+		menu.findItem(R.id.action_delete).isVisible = mangaDetails?.local != null
 		menu.findItem(R.id.action_browser).isVisible = manga?.publicUrl?.isHttpUrl() == true
 		menu.findItem(R.id.action_alternatives).isVisible = manga?.source != LocalMangaSource
 		menu.findItem(R.id.action_shortcut).isVisible = ShortcutManagerCompat.isRequestPinShortcutSupported(activity)

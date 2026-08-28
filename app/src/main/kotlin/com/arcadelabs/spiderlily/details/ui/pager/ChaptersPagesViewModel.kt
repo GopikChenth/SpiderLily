@@ -4,21 +4,6 @@ import android.app.Activity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.SharedFlow
-import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.flow.flatMapLatest
-import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.onStart
-import kotlinx.coroutines.flow.stateIn
-import kotlinx.coroutines.flow.update
-import kotlinx.coroutines.plus
-import okio.FileNotFoundException
 import com.arcadelabs.spiderlily.bookmarks.domain.BookmarksRepository
 import com.arcadelabs.spiderlily.core.model.toChipModel
 import com.arcadelabs.spiderlily.core.prefs.AppSettings
@@ -43,11 +28,26 @@ import com.arcadelabs.spiderlily.history.data.HistoryRepository
 import com.arcadelabs.spiderlily.list.domain.ListFilterOption
 import com.arcadelabs.spiderlily.local.domain.DeleteLocalMangaUseCase
 import com.arcadelabs.spiderlily.local.domain.model.LocalManga
-import com.arcadelabs.spiderlily_parser.model.Manga
-import com.arcadelabs.spiderlily_parser.model.MangaState
 import com.arcadelabs.spiderlily.reader.ui.ReaderActivity
 import com.arcadelabs.spiderlily.reader.ui.ReaderState
 import com.arcadelabs.spiderlily.reader.ui.ReaderViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.onStart
+import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.plus
+import okio.FileNotFoundException
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaState
 
 abstract class ChaptersPagesViewModel(
 	@JvmField protected val settings: AppSettings,
@@ -55,6 +55,9 @@ abstract class ChaptersPagesViewModel(
 	private val bookmarksRepository: BookmarksRepository,
 	private val historyRepository: HistoryRepository,
 	private val downloadScheduler: DownloadWorker.Scheduler,
+	private val downloadQueueRepository: com.arcadelabs.spiderlily.download.data.repository.DownloadQueueRepository,
+	private val addUnreadToQueueUseCase: com.arcadelabs.spiderlily.download.domain.usecase.AddUnreadToQueueUseCase,
+	private val workManager: androidx.work.WorkManager,
 	private val deleteLocalMangaUseCase: DeleteLocalMangaUseCase,
 	private val localStorageChanges: SharedFlow<LocalManga?>,
 ) : BaseViewModel() {
@@ -211,6 +214,7 @@ abstract class ChaptersPagesViewModel(
 	fun download(chaptersIds: Set<Long>?, allowMeteredNetwork: Boolean) {
 		launchJob(Dispatchers.IO) {
 			val manga = requireManga()
+			android.util.Log.d("ChaptersPagesVM", "Manual download start for manga: ${manga.title}, chapters: ${chaptersIds?.size ?: "all"}")
 			val task = DownloadTask(
 				mangaId = manga.id,
 				isPaused = false,
@@ -219,8 +223,38 @@ abstract class ChaptersPagesViewModel(
 				destination = null,
 				format = null,
 				allowMeteredNetwork = allowMeteredNetwork,
+				requiresCharging = false,
 			)
 			downloadScheduler.schedule(setOf(manga to task))
+			onDownloadStarted.call(Unit)
+		}
+	}
+
+	fun scheduleDownload(
+		chaptersIds: Set<Long>?,
+		wifiOnly: Boolean,
+		chargingOnly: Boolean,
+		offPeakOnly: Boolean
+	) {
+		launchJob(Dispatchers.IO) {
+			val manga = requireManga()
+			android.util.Log.d("ChaptersPagesVM", "Scheduling download for manga: ${manga.title}, chapters: ${chaptersIds?.size ?: "unread"}")
+			if (chaptersIds == null) {
+				addUnreadToQueueUseCase(
+					manga = manga,
+					wifiOnly = wifiOnly,
+					chargingOnly = chargingOnly,
+					offPeakOnly = offPeakOnly
+				)
+			} else {
+				downloadQueueRepository.addToQueue(
+					manga = manga,
+					chaptersIds = chaptersIds.toLongArray(),
+					wifiOnly = wifiOnly,
+					chargingOnly = chargingOnly,
+					offPeakOnly = offPeakOnly
+				)
+			}
 			onDownloadStarted.call(Unit)
 		}
 	}
@@ -231,9 +265,12 @@ abstract class ChaptersPagesViewModel(
 			errorEvent.call(FileNotFoundException())
 			return
 		}
+		val isActuallyLocal = mangaDetails.value?.isLocal == true
 		launchLoadingJob(Dispatchers.IO) {
 			deleteLocalMangaUseCase(m)
-			onMangaRemoved.call(m)
+			if (isActuallyLocal) {
+				onMangaRemoved.call(m)
+			}
 		}
 	}
 
@@ -245,9 +282,14 @@ abstract class ChaptersPagesViewModel(
 	}
 
 	protected open suspend fun onDownloadComplete(downloadedManga: LocalManga?) {
-		downloadedManga ?: return
 		mangaDetails.update {
-			interactor.updateLocal(it, downloadedManga)
+			if (downloadedManga == null) {
+				it?.copy(localManga = null)
+			} else if (it?.id == downloadedManga.manga.id) {
+				interactor.updateLocal(it, downloadedManga)
+			} else {
+				it
+			}
 		}
 	}
 

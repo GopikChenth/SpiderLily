@@ -1,0 +1,13 @@
+Date: 2026-07-18
+
+Highlights
+- Tag blacklisting in search
+- Download queue
+- Smart Downloads
+- Chapter deletion from downloads menu
+
+Fixes
+- Fixed downloads from imported sources not showing up
+
+Maintenance
+- Updated parsers and dependencies

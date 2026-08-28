@@ -27,6 +27,7 @@ import com.arcadelabs.spiderlily.core.parser.MangaDataRepository
 import com.arcadelabs.spiderlily.core.prefs.AppSettings
 import com.arcadelabs.spiderlily.local.data.LocalMangaRepository
 import com.arcadelabs.spiderlily.local.domain.DeleteReadChaptersUseCase
+import com.arcadelabs.spiderlily.local.domain.EnforceStorageQuotaUseCase
 import java.util.concurrent.TimeUnit
 
 @HiltWorker
@@ -37,12 +38,14 @@ class LocalStorageCleanupWorker @AssistedInject constructor(
 	private val localMangaRepository: LocalMangaRepository,
 	private val dataRepository: MangaDataRepository,
 	private val deleteReadChaptersUseCase: DeleteReadChaptersUseCase,
+	private val enforceStorageQuotaUseCase: EnforceStorageQuotaUseCase,
 ) : CoroutineWorker(appContext, params) {
 
 	override suspend fun doWork(): Result {
 		if (settings.isAutoLocalChaptersCleanupEnabled) {
 			deleteReadChaptersUseCase.invoke()
 		}
+		enforceStorageQuotaUseCase.invoke()
 		return if (localMangaRepository.cleanup()) {
 			dataRepository.cleanupLocalManga()
 			Result.success()

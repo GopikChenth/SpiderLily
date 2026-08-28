@@ -109,4 +109,3 @@ class KitsuAuthActivity : BaseActivity<ActivityKitsuAuthBinding>(),
 		finishAfterTransition()
 	}
 }
-

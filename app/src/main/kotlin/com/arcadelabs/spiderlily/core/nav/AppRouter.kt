@@ -86,9 +86,9 @@ import com.arcadelabs.spiderlily.search.domain.SearchKind
 import com.arcadelabs.spiderlily.search.ui.MangaListActivity
 import com.arcadelabs.spiderlily.search.ui.multi.SearchActivity
 import com.arcadelabs.spiderlily.settings.SettingsActivity
-import com.arcadelabs.spiderlily.settings.about.AppUpdateActivity
 import com.arcadelabs.spiderlily.settings.override.OverrideConfigActivity
 import com.arcadelabs.spiderlily.settings.reader.ReaderTapGridConfigActivity
+import com.arcadelabs.spiderlily.settings.sources.TagsBlacklistActivity
 import com.arcadelabs.spiderlily.settings.sources.auth.SourceAuthActivity
 import com.arcadelabs.spiderlily.settings.sources.catalog.SourcesCatalogActivity
 import com.arcadelabs.spiderlily.settings.sources.extension.ExtensionDownloaderActivity
@@ -200,7 +200,6 @@ class AppRouter private constructor(
 
     fun openBookmarks() = startActivity(AllBookmarksActivity::class.java)
 
-    fun openAppUpdate() = startActivity(AppUpdateActivity::class.java)
 
     fun openSuggestions() {
         startActivity(suggestionsIntent(contextOrNull() ?: return))
@@ -211,6 +210,10 @@ class AppRouter private constructor(
     fun openExtensionDownloader() = startActivity(ExtensionDownloaderActivity::class.java)
 
     fun openDownloads() = startActivity(DownloadsActivity::class.java)
+
+    fun openDownloadQueue() {
+        startActivity(Intent(contextOrNull() ?: return, Class.forName("com.arcadelabs.spiderlily.download.ui.DownloadQueueActivity")))
+    }
 
     fun openDirectoriesSettings() = startActivity(MangaDirectoriesActivity::class.java)
 
@@ -312,6 +315,8 @@ class AppRouter private constructor(
             manageSourcesIntent(contextOrNull() ?: return),
         )
     }
+
+    fun openTagsBlacklist() = startActivity(TagsBlacklistActivity::class.java)
 
     fun openStatistic() = startActivity(StatsActivity::class.java)
 
@@ -810,7 +815,7 @@ class AppRouter private constructor(
         }
 
         fun shortMangaUrl(mangaId: Long): Uri = Uri.Builder()
-            .scheme("spiderlily")
+            .scheme("futon")
             .path("manga")
             .appendQueryParameter("id", mangaId.toString())
             .build()
@@ -866,4 +871,3 @@ class AppRouter private constructor(
         private inline fun <reified F : Fragment> fragmentTag() = F::class.java.fragmentTag()
     }
 }
-

@@ -5,9 +5,11 @@ import androidx.room.Database
 import androidx.room.InvalidationTracker
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import androidx.room.migration.Migration
 import com.arcadelabs.spiderlily.bookmarks.data.BookmarkEntity
 import com.arcadelabs.spiderlily.bookmarks.data.BookmarksDao
+import com.arcadelabs.spiderlily.core.db.converters.DataConverters
 import com.arcadelabs.spiderlily.core.db.dao.ChaptersDao
 import com.arcadelabs.spiderlily.core.db.dao.ExternalExtensionRepoDao
 import com.arcadelabs.spiderlily.core.db.dao.MangaDao
@@ -43,6 +45,7 @@ import com.arcadelabs.spiderlily.core.db.migrations.Migration25To26
 import com.arcadelabs.spiderlily.core.db.migrations.Migration26To27
 import com.arcadelabs.spiderlily.core.db.migrations.Migration27To28
 import com.arcadelabs.spiderlily.core.db.migrations.Migration28To29
+import com.arcadelabs.spiderlily.core.db.migrations.Migration29To30
 import com.arcadelabs.spiderlily.core.db.migrations.Migration2To3
 import com.arcadelabs.spiderlily.core.db.migrations.Migration3To4
 import com.arcadelabs.spiderlily.core.db.migrations.Migration4To5
@@ -52,6 +55,10 @@ import com.arcadelabs.spiderlily.core.db.migrations.Migration7To8
 import com.arcadelabs.spiderlily.core.db.migrations.Migration8To9
 import com.arcadelabs.spiderlily.core.db.migrations.Migration9To10
 import com.arcadelabs.spiderlily.core.util.ext.processLifecycleScope
+import com.arcadelabs.spiderlily.download.data.dao.DownloadQueueDao
+import com.arcadelabs.spiderlily.download.data.dao.SmartDownloadDao
+import com.arcadelabs.spiderlily.download.data.entity.DownloadQueueEntity
+import com.arcadelabs.spiderlily.download.data.entity.SmartDownloadEntity
 import com.arcadelabs.spiderlily.favourites.data.FavouriteCategoriesDao
 import com.arcadelabs.spiderlily.favourites.data.FavouriteCategoryEntity
 import com.arcadelabs.spiderlily.favourites.data.FavouriteEntity
@@ -74,7 +81,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 
-const val DATABASE_VERSION = 29
+const val DATABASE_VERSION = 30
 
 @Database(
 	entities = [
@@ -82,9 +89,11 @@ const val DATABASE_VERSION = 29
 		FavouriteCategoryEntity::class, FavouriteEntity::class, MangaPrefsEntity::class, TrackEntity::class,
 		TrackLogEntity::class, SuggestionEntity::class, BookmarkEntity::class, ScrobblingEntity::class,
 		MangaSourceEntity::class, StatsEntity::class, LocalMangaIndexEntity::class, ExternalExtensionRepoEntity::class,
+		DownloadQueueEntity::class, SmartDownloadEntity::class,
 	],
 	version = DATABASE_VERSION,
 )
+@TypeConverters(DataConverters::class)
 abstract class MangaDatabase : RoomDatabase() {
 
 	abstract fun getHistoryDao(): HistoryDao
@@ -118,6 +127,10 @@ abstract class MangaDatabase : RoomDatabase() {
 	abstract fun getChaptersDao(): ChaptersDao
 
 	abstract fun getExternalExtensionRepoDao(): ExternalExtensionRepoDao
+
+	abstract fun getDownloadQueueDao(): DownloadQueueDao
+
+	abstract fun getSmartDownloadDao(): SmartDownloadDao
 }
 
 fun getDatabaseMigrations(context: Context): Array<Migration> = arrayOf(
@@ -150,6 +163,7 @@ fun getDatabaseMigrations(context: Context): Array<Migration> = arrayOf(
 	Migration26To27(),
 	Migration27To28(),
 	Migration28To29(),
+    Migration29To30(),
 )
 
 fun MangaDatabase(context: Context): MangaDatabase = Room

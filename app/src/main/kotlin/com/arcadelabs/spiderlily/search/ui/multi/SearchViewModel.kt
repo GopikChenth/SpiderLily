@@ -9,6 +9,8 @@ import com.arcadelabs.spiderlily.R
 import com.arcadelabs.spiderlily.core.model.LocalMangaSource
 import com.arcadelabs.spiderlily.core.model.UnknownMangaSource
 import com.arcadelabs.spiderlily.core.nav.AppRouter
+import com.arcadelabs.spiderlily.core.parser.MangaDataRepository
+import com.arcadelabs.spiderlily.core.prefs.AppSettings
 import com.arcadelabs.spiderlily.core.prefs.ListMode
 import com.arcadelabs.spiderlily.core.ui.BaseViewModel
 import com.arcadelabs.spiderlily.core.util.ext.append
@@ -23,10 +25,6 @@ import com.arcadelabs.spiderlily.list.ui.model.EmptyState
 import com.arcadelabs.spiderlily.list.ui.model.ListModel
 import com.arcadelabs.spiderlily.list.ui.model.LoadingFooter
 import com.arcadelabs.spiderlily.list.ui.model.LoadingState
-import com.arcadelabs.spiderlily_parser.model.Manga
-import com.arcadelabs.spiderlily_parser.model.MangaParserSource
-import com.arcadelabs.spiderlily_parser.model.MangaSource
-import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import com.arcadelabs.spiderlily.search.domain.SearchKind
 import com.arcadelabs.spiderlily.search.domain.SearchV2Helper
 import kotlinx.coroutines.Dispatchers
@@ -43,6 +41,10 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.plus
 import kotlinx.coroutines.sync.Semaphore
 import kotlinx.coroutines.sync.withPermit
+import com.arcadelabs.spiderlily_parser.model.Manga
+import com.arcadelabs.spiderlily_parser.model.MangaParserSource
+import com.arcadelabs.spiderlily_parser.model.MangaSource
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import java.util.Locale
 import javax.inject.Inject
 
@@ -51,11 +53,13 @@ private const val MAX_PARALLELISM = 4
 @HiltViewModel
 class SearchViewModel @Inject constructor(
 	savedStateHandle: SavedStateHandle,
+	private val settings: AppSettings,
 	private val mangaListMapper: MangaListMapper,
 	private val searchHelperFactory: SearchV2Helper.Factory,
 	private val sourcesRepository: MangaSourcesRepository,
 	private val historyRepository: HistoryRepository,
 	private val favouritesRepository: FavouritesRepository,
+	private val dataRepository: MangaDataRepository,
 ) : BaseViewModel() {
 
 	val query = savedStateHandle.get<String>(AppRouter.KEY_QUERY).orEmpty()
@@ -188,11 +192,12 @@ class SearchViewModel @Inject constructor(
 		searchHelper(query, kind)
 	}.fold(
 		onSuccess = { result ->
-			if (result == null || result.manga.isEmpty()) {
+			val filteredManga = result?.manga?.filterBlacklistedTags()
+			if (filteredManga.isNullOrEmpty()) {
 				null
 			} else {
 				val list = mangaListMapper.toListModelList(
-					manga = result.manga,
+					manga = filteredManga,
 					mode = ListMode.GRID,
 				)
 				SearchResultsListModel(
@@ -219,11 +224,12 @@ class SearchViewModel @Inject constructor(
 		historyRepository.search(query, kind, Int.MAX_VALUE)
 	}.fold(
 		onSuccess = { result ->
-			if (result.isNotEmpty()) {
+			val filteredManga = result.filterBlacklistedTags()
+			if (filteredManga.isNotEmpty()) {
 				SearchResultsListModel(
 					titleResId = R.string.history,
 					source = UnknownMangaSource,
-					list = mangaListMapper.toListModelList(manga = result, mode = ListMode.GRID),
+					list = mangaListMapper.toListModelList(manga = filteredManga, mode = ListMode.GRID),
 					error = null,
 					listFilter = null,
 					sortOrder = null,
@@ -248,12 +254,13 @@ class SearchViewModel @Inject constructor(
 		favouritesRepository.search(query, kind, Int.MAX_VALUE)
 	}.fold(
 		onSuccess = { result ->
-			if (result.isNotEmpty()) {
+			val filteredManga = result.filterBlacklistedTags()
+			if (filteredManga.isNotEmpty()) {
 				SearchResultsListModel(
 					titleResId = R.string.favourites,
 					source = UnknownMangaSource,
 					list = mangaListMapper.toListModelList(
-						manga = result,
+						manga = filteredManga,
 						mode = ListMode.GRID,
 						flags = MangaListMapper.NO_FAVORITE,
 					),
@@ -281,12 +288,13 @@ class SearchViewModel @Inject constructor(
 		searchHelperFactory.create(LocalMangaSource).invoke(query, kind)
 	}.fold(
 		onSuccess = { result ->
-			if (!result?.manga.isNullOrEmpty()) {
+			val filteredManga = result?.manga?.filterBlacklistedTags()
+			if (!filteredManga.isNullOrEmpty()) {
 				SearchResultsListModel(
 					titleResId = 0,
 					source = LocalMangaSource,
 					list = mangaListMapper.toListModelList(
-						manga = result.manga,
+						manga = filteredManga,
 						mode = ListMode.GRID,
 						flags = MangaListMapper.NO_SAVED,
 					),
@@ -322,5 +330,27 @@ class SearchViewModel @Inject constructor(
 			if (locale.toLocale() == Locale.getDefault()) res += 2
 		}
 		return res
+	}
+
+	private suspend fun List<Manga>.filterBlacklistedTags(): List<Manga> {
+        val blacklist = settings.tagsBlacklist
+        val filled = map { manga ->
+            if (manga.tags.isEmpty()) {
+                val dbManga = dataRepository.findMangaById(manga.id, false)
+                if (dbManga != null && dbManga.tags.isNotEmpty()) {
+                    manga.copy(tags = dbManga.tags)
+                } else {
+                    manga
+                }
+            } else {
+                manga
+            }
+        }
+        if (blacklist.isEmpty()) {
+            return filled
+        }
+        return filled.filterNot { manga ->
+            manga.tags.any { it.title.lowercase() in blacklist }
+        }
 	}
 }

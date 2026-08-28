@@ -218,4 +218,3 @@ class MALRepository @Inject constructor(
 		return Base64.encodeToString(codeVerifier, Base64.NO_WRAP or Base64.NO_PADDING or Base64.URL_SAFE)
 	}
 }
-

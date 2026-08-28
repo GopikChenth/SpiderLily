@@ -49,4 +49,3 @@ enum class ColorScheme(
 		}
 	}
 }
-

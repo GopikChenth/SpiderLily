@@ -8,7 +8,6 @@ import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.plus
 import com.arcadelabs.spiderlily.core.exceptions.EmptyHistoryException
-import com.arcadelabs.spiderlily.core.github.AppUpdateRepository
 import com.arcadelabs.spiderlily.core.prefs.AppSettings
 import com.arcadelabs.spiderlily.core.prefs.observeAsFlow
 import com.arcadelabs.spiderlily.core.prefs.observeAsStateFlow
@@ -25,7 +24,6 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor(
 	private val historyRepository: HistoryRepository,
-	private val appUpdateRepository: AppUpdateRepository,
 	trackingRepository: TrackingRepository,
 	private val settings: AppSettings,
 	readingResumeEnabledUseCase: ReadingResumeEnabledUseCase,
@@ -43,7 +41,6 @@ class MainViewModel @Inject constructor(
 			initialValue = false,
 		)
 
-	val appUpdate = appUpdateRepository.observeAvailableUpdate()
 
 	val feedCounter = trackingRepository.observeUnreadUpdatesCount()
 		.withErrorHandling()

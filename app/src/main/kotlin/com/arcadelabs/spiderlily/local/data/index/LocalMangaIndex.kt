@@ -10,10 +10,10 @@ import com.arcadelabs.spiderlily.core.util.ext.printStackTraceDebug
 import com.arcadelabs.spiderlily.local.data.LocalMangaRepository
 import com.arcadelabs.spiderlily.local.data.input.LocalMangaParser
 import com.arcadelabs.spiderlily.local.domain.model.LocalManga
-import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import kotlinx.coroutines.flow.FlowCollector
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
+import com.arcadelabs.spiderlily_parser.util.runCatchingCancellable
 import java.io.File
 import javax.inject.Inject
 import javax.inject.Provider
@@ -41,14 +41,23 @@ class LocalMangaIndex @Inject constructor(
 	}
 
 	suspend fun update() = mutex.withLock {
-		db.withTransaction {
-			val dao = db.getLocalMangaIndexDao()
-			dao.clear()
-			localMangaRepositoryProvider.get()
-				.getRawListAsFlow()
-				.collect { upsert(it) }
+		println("LocalMangaIndex: Starting update")
+		runCatchingCancellable {
+			db.withTransaction {
+				val dao = db.getLocalMangaIndexDao()
+				dao.clear()
+				localMangaRepositoryProvider.get()
+					.getRawListAsFlow()
+					.collect { 
+						println("LocalMangaIndex: Found manga ${it.manga.title} at ${it.file.path}")
+						upsert(it) 
+					}
+			}
+			currentVersion = VERSION
+			println("LocalMangaIndex: Update completed")
+		}.onFailure {
+			it.printStackTraceDebug("LocalMangaIndex::update")
 		}
-		currentVersion = VERSION
 	}
 
 	suspend fun updateIfRequired() {
