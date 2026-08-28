@@ -1,6 +1,6 @@
-# Futon - Agent Development Guide
+# SpiderLily - Agent Development Guide
 
-**Project:** Futon - Free and open-source manga reader for Android  
+**Project:** SpiderLily - Free and open-source manga reader for Android  
 **Fork of:** [Kotatsu](https://github.com/KotatsuApp/Kotatsu)  
 **Language:** Kotlin  
 **Build System:** Gradle with Kotlin DSL  
@@ -387,7 +387,7 @@ semaphore.withPermit {
 ### Feature-Based Architecture
 
 ```
-app/src/main/kotlin/io/github/landwarderer/futon/
+app/src/main/kotlin/io/github/landwarderer/spiderlily/
 ├── <feature>/
 │   ├── data/           # Repositories, DAOs, Entities
 │   ├── domain/         # Use cases, Business logic
@@ -423,11 +423,11 @@ app/src/main/kotlin/io/github/landwarderer/futon/
 ```
 app/src/
 ├── test/                    # Unit tests (JVM-only, fast)
-│   └── kotlin/io/github/landwarderer/futon/
+│   └── kotlin/io/github/landwarderer/spiderlily/
 │       └── *Test.kt
 └── androidTest/             # Instrumented tests (requires device)
     ├── assets/              # Test data (JSON, backups)
-    └── kotlin/io/github/landwarderer/futon/
+    └── kotlin/io/github/landwarderer/spiderlily/
         ├── HiltTestRunner.kt     # Custom runner
         ├── SampleData.kt         # Test data loader
         └── *Test.kt
@@ -495,7 +495,7 @@ val manga = SampleData.manga
 val categories = SampleData.categories
 
 // Load custom assets
-context.assets.open("futon_test.bak").use { input ->
+context.assets.open("spiderlily_test.bak").use { input ->
     // Process test file
 }
 ```
@@ -529,7 +529,7 @@ context.assets.open("futon_test.bak").use { input ->
 1. **Assign issues** to yourself before working on them
 2. **Open discussion** for new features before implementation
 3. **Translations** go through [Weblate](https://hosted.weblate.org/engage/kotatsu/)
-4. **Manga sources** go in [futon-parsers](https://github.com/AppFuton/futon-parsers)
+4. **Manga sources** go in [spiderlily-parsers](https://github.com/AppSpiderLily/spiderlily-parsers)
 5. **Do not modify** README or info files (except typos)
 6. **Avoid new dependencies** unless required
 
@@ -595,7 +595,7 @@ class MyWorker @AssistedInject constructor(
 ## Resources
 
 - **Discord:** https://discord.gg/9sqBHXhwzz
-- **Parsers Repo:** https://github.com/AppFuton/futon-parsers
+- **Parsers Repo:** https://github.com/AppSpiderLily/spiderlily-parsers
 - **Original Kotatsu:** https://github.com/KotatsuApp/Kotatsu
 - **CI/CD Setup:** See [CI.md](./CI.md)
 - **Contributing:** See [CONTRIBUTING.md](./CONTRIBUTING.md)

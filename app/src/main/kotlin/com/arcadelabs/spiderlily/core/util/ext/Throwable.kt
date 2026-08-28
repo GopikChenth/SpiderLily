@@ -237,10 +237,10 @@ fun Throwable.report(silent: Boolean = false) {
 	// ACRA removed: use logging as a placeholder for crash reporting
 	if (!silent) {
 		exception.printStackTrace()
-		Log.e("Futon", "Exception reported", exception)
+		Log.e("SpiderLily", "Exception reported", exception)
 	} else if (!BuildConfig.DEBUG) {
 		exception.printStackTrace()
-		Log.w("Futon", "Silent exception reported", exception)
+		Log.w("SpiderLily", "Silent exception reported", exception)
 	}
 }
 

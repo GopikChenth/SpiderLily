@@ -79,8 +79,8 @@ class ExtensionRepoService @Inject constructor(
 	suspend fun fetchRepoDetails(baseUrl: String, type: ExternalExtensionType): ExternalExtensionRepo {
 		if (type == ExternalExtensionType.IREADER || type == ExternalExtensionType.JAR) {
 			val now = System.currentTimeMillis()
-			val derived = deriveRepoName(baseUrl, if (type == ExternalExtensionType.IREADER) "IReader" else "Futon")
-			val repoName = if (type == ExternalExtensionType.IREADER) "IReader: $derived" else "Futon: $derived"
+			val derived = deriveRepoName(baseUrl, if (type == ExternalExtensionType.IREADER) "IReader" else "SpiderLily")
+			val repoName = if (type == ExternalExtensionType.IREADER) "IReader: $derived" else "SpiderLily: $derived"
 			val repoShort = derived
 			var version: String? = null
 			if (type == ExternalExtensionType.JAR) {

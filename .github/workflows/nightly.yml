@@ -87,15 +87,20 @@ jobs:
           echo "version=nightly-$DATE-$COMMIT_SHA" >> $GITHUB_OUTPUT
           echo "display_name=Nightly $DATE ($COMMIT_SHA)" >> $GITHUB_OUTPUT
 
+      - name: Prepare APK
+        run: |
+          mkdir -p release-output
+          cp app/build/outputs/apk/nightly/app-nightly.apk release-output/SpiderLily-${{ steps.version.outputs.version }}.apk
+
       - name: Create Nightly Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.version.outputs.version }}
-          name: Futon ${{ steps.version.outputs.display_name }}
+          name: SpiderLily ${{ steps.version.outputs.display_name }}
           draft: false
           prerelease: true
           files: |
-            app/build/outputs/apk/nightly/app-nightly.apk
+            release-output/*.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

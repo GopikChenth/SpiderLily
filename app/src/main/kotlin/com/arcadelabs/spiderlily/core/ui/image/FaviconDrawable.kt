@@ -20,7 +20,7 @@ import coil3.request.ImageRequest
 import com.google.android.material.color.MaterialColors
 import com.arcadelabs.spiderlily.R
 import com.arcadelabs.spiderlily.core.model.getTitle
-import com.arcadelabs.spiderlily.core.util.FutonColors
+import com.arcadelabs.spiderlily.core.util.SpiderLilyColors
 import com.arcadelabs.spiderlily.core.util.ext.hasFocusStateSpecified
 import com.arcadelabs.spiderlily.core.util.ext.mangaSourceKey
 
@@ -57,7 +57,7 @@ open class FaviconDrawable(
 		}
 		paint.textAlign = Paint.Align.CENTER
 		paint.isFakeBoldText = true
-		colorForeground = FutonColors.random(name)
+		colorForeground = SpiderLilyColors.random(name)
 		currentForegroundColor = MaterialColors.harmonize(colorForeground, colorBackground.defaultColor)
 		onStateChange(state)
 	}

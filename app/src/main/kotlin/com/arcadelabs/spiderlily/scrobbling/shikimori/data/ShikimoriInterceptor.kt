@@ -9,7 +9,7 @@ import com.arcadelabs.spiderlily.scrobbling.common.domain.ScrobblerAuthRequiredE
 import com.arcadelabs.spiderlily.scrobbling.common.domain.model.ScrobblerService
 import java.net.HttpURLConnection
 
-private const val USER_AGENT_SHIKIMORI = "Futon"
+private const val USER_AGENT_SHIKIMORI = "SpiderLily"
 
 class ShikimoriInterceptor(private val storage: ScrobblerStorage) : Interceptor {
 

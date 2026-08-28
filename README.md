@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://github.com/keiyoushi/extensions"><img src="https://img.shields.io/badge/Engine-Keiyoushi%20Extensions-E52E2E?style=for-the-badge" alt="Keiyoushi Extensions"></a>
-  <a href="https://github.com/AppFuton/Futon/blob/devel/LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-0B0B0E?style=for-the-badge&logo=gnu&logoColor=white" alt="License"></a>
+  <a href="https://github.com/GopikChenth/SpiderLily/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-0B0B0E?style=for-the-badge&logo=gnu&logoColor=white" alt="License"></a>
 </p>
 
 ---
@@ -45,8 +45,8 @@
 
 ```bash
 # Clone repository
-git clone https://github.com/AppFuton/Futon.git
-cd Futon
+git clone https://github.com/GopikChenth/SpiderLily.git
+cd SpiderLily
 
 # Build Debug APK (Local Testing)
 ./gradlew assembleDebug

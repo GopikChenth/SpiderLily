@@ -4,77 +4,66 @@ on:
   push:
     tags:
       - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version name (e.g. 9.8.1). If omitted, reads from build.gradle'
+        required: false
+        default: ''
+      draft:
+        description: 'Create as draft release'
+        type: boolean
+        required: false
+        default: false
+      prerelease:
+        description: 'Create as pre-release'
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: write
 
 jobs:
-  check_version:
+  prepare_version:
     runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      version_code: ${{ steps.version.outputs.version_code }}
+      tag_name: ${{ steps.version.outputs.tag_name }}
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Get version from tag
-        id: tag
+      - name: Determine version and version code
+        id: version
         run: |
-          TAG=${GITHUB_REF#refs/tags/}
-          VERSION=${TAG#v}
-          echo "Tag version: $VERSION"
+          if [ -n "${{ github.event.inputs.version }}" ]; then
+            VERSION="${{ github.event.inputs.version }}"
+            VERSION="${VERSION#v}"
+          elif [[ "${GITHUB_REF}" == refs/tags/v* ]]; then
+            TAG=${GITHUB_REF#refs/tags/}
+            VERSION=${TAG#v}
+          else
+            FILE=app/build.gradle
+            VERSION=$(grep -oP "versionName project.hasProperty\('versionName'\) \? project.property\('versionName'\) : '\K[^']+" "$FILE" | head -n1 || true)
+            if [ -z "$VERSION" ]; then
+              VERSION=$(grep -oP 'android:versionName="\K[^"]+' app/src/main/AndroidManifest.xml | head -n1)
+            fi
+          fi
+
           IFS='.' read -r MAJOR MINOR PATCH <<< "$VERSION"
           PATCH=${PATCH:-0}
           VERSION_CODE=$((MAJOR * 10000 + MINOR * 100 + PATCH))
+
+          echo "Detected version: $VERSION ($VERSION_CODE)"
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "version_code=$VERSION_CODE" >> $GITHUB_OUTPUT
-
-      - name: Read AndroidManifest versions
-        run: |
-          MANIFEST=app/src/main/AndroidManifest.xml
-          if [ ! -f "$MANIFEST" ]; then echo "Missing $MANIFEST" && exit 1; fi
-          MAN_VER=$(grep -oP 'android:versionName="\K[^"]+' "$MANIFEST" | head -n1)
-          MAN_CODE=$(grep -oP 'android:versionCode="\K[^\"]+' "$MANIFEST" | head -n1)
-          echo "manifest_version=$MAN_VER" >> $GITHUB_OUTPUT
-          echo "manifest_version_code=$MAN_CODE" >> $GITHUB_OUTPUT
-          echo "AndroidManifest: $MAN_VER ($MAN_CODE)"
-
-      - name: Read build.gradle defaults
-        run: |
-          FILE=app/build.gradle
-          if [ ! -f "$FILE" ]; then echo "Missing $FILE" && exit 1; fi
-          GRADLE_VER=$(grep -oP "versionName project.hasProperty\\('versionName'\\) \\? project.property\\('versionName'\\) : '\\K[^']+" "$FILE" | head -n1 || true)
-          GRADLE_CODE=$(grep -oP "versionCode project.hasProperty\\('versionCode'\\) \\? project.property\\('versionCode'\\).toInteger\\(\\) : \\K[0-9]+" "$FILE" | head -n1 || true)
-          echo "gradle_version=$GRADLE_VER" >> $GITHUB_OUTPUT
-          echo "gradle_version_code=$GRADLE_CODE" >> $GITHUB_OUTPUT
-          echo "build.gradle defaults: $GRADLE_VER ($GRADLE_CODE)"
-
-      - name: Compare tag with files
-        run: |
-          set -e
-          TAG=${GITHUB_REF#refs/tags/}
-          VERSION=${TAG#v}
-          IFS='.' read -r MAJOR MINOR PATCH <<< "$VERSION"
-          PATCH=${PATCH:-0}
-          EXPECTED_CODE=$((MAJOR * 10000 + MINOR * 100 + PATCH))
-
-          MAN_VER=$(grep -oP 'android:versionName="\K[^"]+' app/src/main/AndroidManifest.xml | head -n1)
-          MAN_CODE=$(grep -oP 'android:versionCode="\K[^\"]+' app/src/main/AndroidManifest.xml | head -n1)
-
-          GRADLE_VER=$(grep -oP "versionName project.hasProperty\\('versionName'\\) \\? project.property\\('versionName'\\) : '\\K[^']+" app/build.gradle | head -n1 || true)
-          GRADLE_CODE=$(grep -oP "versionCode project.hasProperty\\('versionCode'\\) \\? project.property\\('versionCode'\\).toInteger\\(\\) : \\K[0-9]+" app/build.gradle | head -n1 || true)
-
-          echo "Tag: $VERSION ($EXPECTED_CODE)"
-          echo "AndroidManifest: $MAN_VER ($MAN_CODE)"
-          echo "build.gradle: $GRADLE_VER ($GRADLE_CODE)"
-
-          if [ "$MAN_VER" != "$VERSION" ]; then echo "ERROR: AndroidManifest versionName ($MAN_VER) does not match tag ($VERSION)" && exit 1; fi
-          if [ "$GRADLE_VER" != "$VERSION" ]; then echo "ERROR: app/build.gradle default versionName ($GRADLE_VER) does not match tag ($VERSION)" && exit 1; fi
-          if [ "$MAN_CODE" != "$EXPECTED_CODE" ]; then echo "ERROR: AndroidManifest versionCode ($MAN_CODE) does not match expected ($EXPECTED_CODE)" && exit 1; fi
-          if [ "$GRADLE_CODE" != "$EXPECTED_CODE" ]; then echo "ERROR: app/build.gradle default versionCode ($GRADLE_CODE) does not match expected ($EXPECTED_CODE)" && exit 1; fi
-          echo "Version check passed."
+          echo "tag_name=v$VERSION" >> $GITHUB_OUTPUT
 
   build:
-    needs: check_version
+    needs: prepare_version
     runs-on: ubuntu-latest
 
     steps:
@@ -83,7 +72,7 @@ jobs:
           WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_BUILD }}
         run: |
           if [ -z "$WEBHOOK" ]; then exit 0; fi
-          payload=$(jq -n --arg content "Build started for ${{ github.ref_name }}" '{content: $content}')
+          payload=$(jq -n --arg content "SpiderLily Release build started for ${{ needs.prepare_version.outputs.tag_name }}" '{content: $content}')
           curl -s -H "Content-Type: application/json" -d "$payload" "$WEBHOOK" || true
 
       - name: Checkout code
@@ -98,39 +87,19 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Notify Discord - Environment Setup Complete
-        env:
-          WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_BUILD }}
+      - name: Check Keystore Configuration
+        id: keystore_check
         run: |
-          if [ -z "$WEBHOOK" ]; then exit 0; fi
-          payload=$(jq -n --arg content "Environment setup complete (Java 17, Android SDK)" '{content: $content}')
-          curl -s -H "Content-Type: application/json" -d "$payload" "$WEBHOOK" || true
+          if [ -n "${{ secrets.KEYSTORE_FILE }}" ]; then
+            echo "${{ secrets.KEYSTORE_FILE }}" | base64 -d > keystore.jks
+            echo "has_keystore=true" >> $GITHUB_OUTPUT
+            echo "Keystore decoded successfully."
+          else
+            echo "has_keystore=false" >> $GITHUB_OUTPUT
+            echo "No KEYSTORE_FILE secret provided. Will build debug/unsigned APK."
+          fi
 
-      - name: Get version from tag
-        id: version
-        run: |
-          TAG=${GITHUB_REF#refs/tags/}
-          VERSION=${TAG#v}
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
-          # Extract major.minor.patch and calculate version code
-          IFS='.' read -r MAJOR MINOR PATCH <<< "$VERSION" 
-          PATCH=${PATCH:-0}
-          VERSION_CODE=$((MAJOR * 10000 + MINOR * 100 + PATCH))
-          echo "version_code=$VERSION_CODE" >> $GITHUB_OUTPUT
-
-      - name: Decode keystore
-        run: |
-          echo "${{ secrets.KEYSTORE_FILE }}" | base64 -d > keystore.jks
-
-      - name: Notify Discord - Keystore Decoded
-        env:
-          WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_BUILD }}
-        run: |
-          if [ -z "$WEBHOOK" ]; then exit 0; fi
-          payload=$(jq -n --arg content "Keystore decoded" '{content: $content}')
-          curl -s -H "Content-Type: application/json" -d "$payload" "$WEBHOOK" || true
-
-      - name: Build release APK
+      - name: Build Release APK
         env:
           KEYSTORE_FILE: ${{ github.workspace }}/keystore.jks
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
@@ -139,38 +108,55 @@ jobs:
           SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
         run: |
-          ./gradlew assembleRelease \
-            -PversionName=${{ steps.version.outputs.version }} \
-            -PversionCode=${{ steps.version.outputs.version_code }} \
-            --no-build-cache --no-configuration-cache
+          if [ "${{ steps.keystore_check.outputs.has_keystore }}" = "true" ]; then
+            ./gradlew assembleRelease               -PversionName=${{ needs.prepare_version.outputs.version }}               -PversionCode=${{ needs.prepare_version.outputs.version_code }}               --no-build-cache --no-configuration-cache
+            
+            mkdir -p release-output
+            cp app/build/outputs/apk/release/app-release.apk release-output/SpiderLily-${{ needs.prepare_version.outputs.version }}.apk
+          else
+            ./gradlew assembleDebug               -PversionName=${{ needs.prepare_version.outputs.version }}               -PversionCode=${{ needs.prepare_version.outputs.version_code }}               --no-build-cache --no-configuration-cache
+            
+            mkdir -p release-output
+            cp app/build/outputs/apk/debug/app-debug.apk release-output/SpiderLily-${{ needs.prepare_version.outputs.version }}-debug.apk
+          fi
 
-      - name: Notify Discord - APK Build Complete
-        env:
-          WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_BUILD }}
+      - name: Prepare Changelog / Release Notes
+        id: release_notes
         run: |
-          if [ -z "$WEBHOOK" ]; then exit 0; fi
-          payload=$(jq -n --arg content "Release APK build complete" '{content: $content}')
-          curl -s -H "Content-Type: application/json" -d "$payload" "$WEBHOOK" || true
+          CHANGELOG_FILE="metadata/en-US/changelogs/${{ needs.prepare_version.outputs.version_code }}.txt"
+          if [ -f "$CHANGELOG_FILE" ]; then
+            echo "Found changelog file: $CHANGELOG_FILE"
+            BODY=$(cat "$CHANGELOG_FILE")
+          else
+            BODY="SpiderLily ${{ needs.prepare_version.outputs.version }} release."
+          fi
+          {
+            echo "body<<EOF"
+            echo "$BODY"
+            echo "EOF"
+          } >> $GITHUB_OUTPUT
 
-      - name: Create Release
+      - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ github.ref_name }}
-          name: Futon ${{ steps.version.outputs.version }}
-          draft: false
-          prerelease: false
-          files: |
-            app/build/outputs/apk/release/app-release.apk
+          tag_name: ${{ needs.prepare_version.outputs.tag_name }}
+          name: SpiderLily ${{ needs.prepare_version.outputs.version }}
+          body: ${{ steps.release_notes.outputs.body }}
+          draft: ${{ github.event.inputs.draft || false }}
+          prerelease: ${{ github.event.inputs.prerelease || false }}
+          generate_release_notes: true
+          files: release-output/*.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Notify Discord - Release Published
         env:
           WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_BUILD }}
-          RELEASE_URL: https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}
+          RELEASE_URL: https://github.com/${{ github.repository }}/releases/tag/${{ needs.prepare_version.outputs.tag_name }}
         run: |
           if [ -z "$WEBHOOK" ]; then exit 0; fi
-          payload=$(jq -n --arg content "Release published: ${{ github.ref_name }}\n$RELEASE_URL" '{content: $content}')
+          payload=$(jq -n --arg content "SpiderLily Release published: ${{ needs.prepare_version.outputs.tag_name }}
+$RELEASE_URL" '{content: $content}')
           curl -s -H "Content-Type: application/json" -d "$payload" "$WEBHOOK" || true
 
       - name: Clean up keystore
@@ -183,5 +169,6 @@ jobs:
           WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_BUILD }}
         run: |
           if [ -z "$WEBHOOK" ]; then exit 0; fi
-          payload=$(jq -n --arg content "Build failed for ${{ github.ref_name }}\nhttps://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" '{content: $content}')
+          payload=$(jq -n --arg content "SpiderLily Release build failed for ${{ needs.prepare_version.outputs.tag_name }}
+https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" '{content: $content}')
           curl -s -H "Content-Type: application/json" -d "$payload" "$WEBHOOK" || true

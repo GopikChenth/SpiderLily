@@ -1,6 +1,6 @@
 # CI/CD Setup Guide
 
-This document describes the automated build and release process for Futon.
+This document describes the automated build and release process for SpiderLily.
 
 ## Automated Workflows
 
@@ -50,14 +50,14 @@ To enable automated signing, configure the following secrets in your GitHub repo
    Create these secrets:
    - **KEYSTORE_FILE**: Base64-encoded keystore file (entire output from step 1)
    - **KEYSTORE_PASSWORD**: Password for the keystore
-   - **KEY_ALIAS**: Alias of the signing key (default: `futon-key`)
+   - **KEY_ALIAS**: Alias of the signing key (default: `spiderlily-key`)
    - **KEY_PASSWORD**: Password for the signing key
 
 ### Example for Fresh Setup
 
 A new keystore was generated with:
 ```
-Key Alias: futon-key
+Key Alias: spiderlily-key
 Keystore Password: [from setup]
 Key Password: [from setup]
 SHA-256 Fingerprint: EF:48:B2:2E:F2:C5:40:45:53:1F:6E:76:00:C2:7E:C3:D0:3B:71:22:1E:0B:05:FF:B6:8E:33:57:CF:8E:4D:40
@@ -81,7 +81,7 @@ To set up locally with a keystore:
 ```bash
 export KEYSTORE_FILE=/path/to/keystore.jks
 export KEYSTORE_PASSWORD=your-password
-export KEY_ALIAS=futon-key
+export KEY_ALIAS=spiderlily-key
 export KEY_PASSWORD=key-password
 
 ./gradlew assembleRelease

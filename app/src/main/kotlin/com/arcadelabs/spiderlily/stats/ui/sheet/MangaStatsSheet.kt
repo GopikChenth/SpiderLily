@@ -12,7 +12,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import com.arcadelabs.spiderlily.R
 import com.arcadelabs.spiderlily.core.nav.router
 import com.arcadelabs.spiderlily.core.ui.sheet.BaseAdaptiveSheet
-import com.arcadelabs.spiderlily.core.util.FutonColors
+import com.arcadelabs.spiderlily.core.util.SpiderLilyColors
 import com.arcadelabs.spiderlily.core.util.ext.consume
 import com.arcadelabs.spiderlily.core.util.ext.observe
 import com.arcadelabs.spiderlily.core.util.ext.textAndVisible
@@ -32,7 +32,7 @@ class MangaStatsSheet : BaseAdaptiveSheet<SheetStatsMangaBinding>(), View.OnClic
 	override fun onViewBindingCreated(binding: SheetStatsMangaBinding, savedInstanceState: Bundle?) {
 		super.onViewBindingCreated(binding, savedInstanceState)
 		binding.textViewTitle.text = viewModel.manga.title
-		binding.chartView.barColor = FutonColors.ofManga(binding.root.context, viewModel.manga)
+		binding.chartView.barColor = SpiderLilyColors.ofManga(binding.root.context, viewModel.manga)
 		viewModel.stats.observe(viewLifecycleOwner, ::onStatsChanged)
 		viewModel.startDate.observe(viewLifecycleOwner) {
 			binding.textViewStart.textAndVisible = it?.format(binding.root.context)

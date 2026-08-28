@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.FlowCollector
 import com.arcadelabs.spiderlily.R
 import com.arcadelabs.spiderlily.core.ui.widgets.SegmentedBarView
 import com.arcadelabs.spiderlily.core.util.FileSize
-import com.arcadelabs.spiderlily.core.util.FutonColors
+import com.arcadelabs.spiderlily.core.util.SpiderLilyColors
 import com.arcadelabs.spiderlily.databinding.PreferenceMemoryUsageBinding
 
 class StorageUsagePreference @JvmOverloads constructor(
@@ -34,15 +34,15 @@ class StorageUsagePreference @JvmOverloads constructor(
 		val binding = PreferenceMemoryUsageBinding.bind(holder.itemView)
 		val storageSegment = SegmentedBarView.Segment(
 			usage?.savedManga?.percent ?: 0f,
-			FutonColors.segmentColorRandom(context, Color.BLUE),
+			SpiderLilyColors.segmentColorRandom(context, Color.BLUE),
 		)
 		val pagesSegment = SegmentedBarView.Segment(
 			usage?.pagesCache?.percent ?: 0f,
-			FutonColors.segmentColorRandom(context, Color.GREEN),
+			SpiderLilyColors.segmentColorRandom(context, Color.GREEN),
 		)
 		val otherSegment = SegmentedBarView.Segment(
 			usage?.otherCache?.percent ?: 0f,
-			FutonColors.segmentColorRandom(context, Color.GRAY),
+			SpiderLilyColors.segmentColorRandom(context, Color.GRAY),
 		)
 
 		with(binding) {
