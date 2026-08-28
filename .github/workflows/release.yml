@@ -81,7 +81,6 @@ jobs:
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
-        uses: android-actions/setup-android@v3
 
       - name: Check Keystore Configuration
         id: keystore_check
